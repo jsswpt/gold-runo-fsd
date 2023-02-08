@@ -1,0 +1,101 @@
+@import url("../src/shared/assets/fonts/montserrat/stylesheet.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+:root {
+  --base: #221e22;
+
+  --background: #fffaff;
+
+  --text-primary: var(--base);
+  --text-contrast: var(--background);
+  --text-secondary: #c9b1c9;
+
+  --stroke: #fee0ff;
+
+  --primary: rgb(255, 214, 64);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #221e22;
+    --base: #fffaff;
+  }
+}
+
+body {
+  background: var(--background);
+}
+
+.h1 {
+}
+.h2 {
+}
+.h3 {
+}
+.h4 {
+}
+.h5 {
+}
+.h6 {
+}
+
+.subtitle1 {
+}
+.subtitle2 {
+}
+
+.body1 {
+}
+
+.body2 {
+}
+
+.link1 {
+}
+.link2 {
+}
+
+* {
+}
+
+.light-selection {
+  &::selection {
+    background: var(--text-contrast);
+    color: var(--base);
+  }
+}
+
+.dark-selection {
+  &::selection {
+    background: var(--base);
+    color: var(--text-contrast);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+q,
+blockquote {
+  color: var(--text-primary);
+}

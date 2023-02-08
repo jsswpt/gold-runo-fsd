@@ -1,0 +1,29 @@
+@use "../../shared/modules/funcs.module";
+@use "../../shared/modules/units.module";
+
+.header {
+  display: flex;
+  height: units.$header-height-desktop;
+}
+
+.header_container {
+  position: relative;
+  align-items: center;
+  gap: funcs.px-rem(64);
+}
+
+.logo_img_wrapper {
+  display: block;
+  width: funcs.px-rem(175);
+  height: funcs.px-rem(32);
+
+  background: url("../../shared/assets/media/imgs/logo.png");
+}
+
+.header_wrap__search {
+  flex-grow: 1;
+}
+
+.header_wrap__actions {
+  display: flex;
+}
