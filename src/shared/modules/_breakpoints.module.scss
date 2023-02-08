@@ -6,6 +6,7 @@ $md: funcs.px-rem(768 + 32);
 $lg: funcs.px-rem(992 + 32);
 $xl: funcs.px-rem(1200 + 32);
 $xxl: funcs.px-rem(1640 + 32);
+$xxxl: funcs.px-rem(1920);
 
 @mixin media-screen($width) {
   @media (min-width: $width) {

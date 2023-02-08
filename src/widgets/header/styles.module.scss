@@ -1,9 +1,25 @@
 @use "../../shared/modules/funcs.module";
 @use "../../shared/modules/units.module";
 
+.top_wrapper {
+  position: fixed;
+  width: 100%;
+}
+
+.info_block {
+  display: flex;
+  height: units.$info-block-height-desktop;
+}
+
+.info_container {
+  align-items: center;
+  background: var(--text-secondary);
+}
+
 .header {
   display: flex;
   height: units.$header-height-desktop;
+  background: var(--background);
 }
 
 .header_container {

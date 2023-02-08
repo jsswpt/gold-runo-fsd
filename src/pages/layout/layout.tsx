@@ -17,6 +17,7 @@ export const Layout = (props: Layout) => {
         animate={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         exit={{ opacity: 0 }}
+        transition={{ duration: 0.32 }}
         className={st.app}
         key={router.pathname}
       >

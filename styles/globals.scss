@@ -16,13 +16,12 @@ img {
 }
 
 :root {
-  --base: #221e22;
-
-  --background: #fffaff;
+  --base: #191919;
+  --background: #fff;
 
   --text-primary: var(--base);
   --text-contrast: var(--background);
-  --text-secondary: #c9b1c9;
+  --text-secondary: #ced0ce;
 
   --stroke: #fee0ff;
 
@@ -38,6 +37,8 @@ img {
 
 body {
   background: var(--background);
+
+  height: 500vh;
 }
 
 .h1 {

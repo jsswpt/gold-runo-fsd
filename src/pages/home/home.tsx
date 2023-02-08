@@ -6,7 +6,7 @@ import st from "./styles.module.scss";
 export const Home = () => {
   return (
     <>
-      <Link href={"/other"}>link</Link>
+      <Link href={"/empty"}>link</Link>
     </>
   );
 };
