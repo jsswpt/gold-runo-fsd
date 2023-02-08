@@ -10,7 +10,6 @@ import Link from "next/link";
 import { useScreen } from "@/shared/hooks";
 
 import { motion, useAnimationControls } from "framer-motion";
-import { InfoBlock } from "@/shared/ui";
 
 export const Header = () => {
   const [isScrolledEnough, setIsScrolledEnough] = useState(false);
@@ -18,6 +17,8 @@ export const Header = () => {
   const { currentScreen } = useScreen();
 
   const headerControls = useAnimationControls();
+
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -31,15 +32,15 @@ export const Header = () => {
 
   useEffect(() => {
     if (isScrolledEnough) {
-      console.log("rerendered enough");
+      headerControls.start({ y: `-${ref.current?.clientHeight}px` });
     } else if (!isScrolledEnough) {
-      console.log("rerendered not enough");
+      headerControls.start({ y: `0` });
     }
   }, [isScrolledEnough]);
 
   return (
     <div className={st.top_wrapper}>
-      <motion.div className={st.info_block}>
+      <motion.div ref={ref} className={st.info_block}>
         <Container className={st.info_container}>Важная инфа</Container>
       </motion.div>
       <motion.header animate={headerControls} className={st.header}>
