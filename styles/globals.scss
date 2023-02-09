@@ -1,3 +1,4 @@
+@use "../src/shared/modules/funcs.module";
 @import url("../src/shared/assets/fonts/montserrat/stylesheet.css");
 
 * {
@@ -7,6 +8,8 @@
   font-family: "Montserrat", sans-serif;
   list-style: none;
   text-decoration: none;
+
+  scroll-behavior: smooth;
 }
 
 img {
@@ -18,12 +21,12 @@ img {
 :root {
   --base: #191919;
   --background: #fff;
+  --stroke: #9a9a9a;
+  --light-stroke: #ececec;
 
   --text-primary: var(--base);
   --text-contrast: var(--background);
-  --text-secondary: #ced0ce;
-
-  --stroke: #fee0ff;
+  --text-secondary: var(--stroke);
 
   --primary: rgb(255, 214, 64);
 }
@@ -39,6 +42,11 @@ body {
   background: var(--background);
 
   height: 500vh;
+
+  &::-webkit-scrollbar {
+    width: 1px;
+    height: 10px;
+  }
 }
 
 .h1 {
@@ -60,13 +68,22 @@ body {
 }
 
 .body1 {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: funcs.px-rem(0.4);
 }
 
 .body2 {
 }
 
 .link1 {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: funcs.px-rem(0.4);
 }
+
 .link2 {
 }
 
@@ -99,4 +116,18 @@ a,
 q,
 blockquote {
   color: var(--text-primary);
+}
+
+.modal_wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: auto;
+}
+
+body {
+  overflow-y: auto;
+  &:has(#modal) {
+    overflow-y: hidden;
+  }
 }

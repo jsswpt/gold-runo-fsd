@@ -1,4 +1,6 @@
 @use "./funcs.module";
 
-$info-block-height-desktop: funcs.px-rem(36);
-$header-height-desktop: funcs.px-rem(72);
+$header-height-desktop: funcs.px-rem(122);
+$header-bottom-block-desktop: funcs.px-rem(36);
+
+$medium: funcs.px-rem(30);

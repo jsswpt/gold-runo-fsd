@@ -12,7 +12,7 @@ type Layout = {
 export const Layout = (props: Layout) => {
   const router = useRouter();
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode="wait" initial>
       <motion.div
         animate={{ opacity: 1 }}
         initial={{ opacity: 0 }}
