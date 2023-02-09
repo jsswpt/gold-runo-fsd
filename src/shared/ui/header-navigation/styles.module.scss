@@ -1,0 +1,28 @@
+@use "../../modules/funcs.module";
+@use "../../modules/breakpoints.module";
+
+.header_wrap__nav {
+  order: 0;
+  display: flex;
+
+  @include breakpoints.media-screen(breakpoints.$xxl) {
+    order: 1;
+  }
+}
+
+.header_nav__list {
+  display: flex;
+  align-items: center;
+  gap: funcs.px-rem(20);
+}
+
+.header_nav__link {
+  transition: 0.32s;
+  color: var(--text-secondary);
+
+  white-space: nowrap;
+
+  &:hover {
+    color: var(--text-primary);
+  }
+}

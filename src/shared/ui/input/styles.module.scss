@@ -8,8 +8,8 @@
 
 .input {
   width: 100%;
-  padding-left: funcs.px-rem(21 + 14 + 20);
-  padding-right: funcs.px-rem(35);
+  padding-left: funcs.px-rem(21 + 8 + 20);
+  padding-right: funcs.px-rem(8);
   outline: none;
   border-radius: 40px;
 
@@ -20,6 +20,15 @@
 
   &::placeholder {
     color: var(--text-secondary);
+  }
+}
+
+.input_wrapper {
+  &:has(.md) {
+    .icon_wrapper {
+      width: calc(units.$medium / 2.5);
+      height: calc(units.$medium / 2.5);
+    }
   }
 }
 

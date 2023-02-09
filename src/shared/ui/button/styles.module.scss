@@ -1,0 +1,50 @@
+@use "../../modules/units.module";
+@use "../../modules/funcs.module";
+
+.icon_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  outline: none;
+
+  color: var(--text-primary);
+
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: 0.16s ease-out;
+
+  &:hover {
+    scale: 1.05;
+  }
+}
+
+.sm {
+}
+.md {
+  width: units.$medium;
+  height: units.$medium;
+  flex-shrink: 0;
+
+  & > * {
+    width: calc(units.$medium / 2);
+    height: calc(units.$medium / 2);
+    object-fit: contain;
+  }
+}
+.lg {
+}
+
+.contained {
+  background: var(--background);
+
+  &:hover {
+    box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20)
+      rgba(0, 0, 0, 0.2);
+  }
+}
+
+.outlined {
+}

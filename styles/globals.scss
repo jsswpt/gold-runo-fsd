@@ -71,17 +71,18 @@ body {
   font-weight: 300;
   font-size: 16px;
   line-height: 130%;
-  letter-spacing: funcs.px-rem(0.4);
 }
 
 .body2 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
 }
 
 .link1 {
   font-weight: 300;
   font-size: 16px;
   line-height: 130%;
-  letter-spacing: funcs.px-rem(0.4);
 }
 
 .link2 {
@@ -116,6 +117,7 @@ a,
 q,
 blockquote {
   color: var(--text-primary);
+  letter-spacing: funcs.px-rem(0.4);
 }
 
 .modal_wrapper {
