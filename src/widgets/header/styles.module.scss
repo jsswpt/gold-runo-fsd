@@ -6,9 +6,18 @@
   width: 100%;
 }
 
+.top_wrapper__relative_wrapper {
+  position: relative;
+  width: 100%;
+}
+
 .info_block {
+  z-index: 2;
+  position: absolute;
+  top: 0;
   display: flex;
   height: units.$info-block-height-desktop;
+  width: 100%;
 }
 
 .info_container {
@@ -17,7 +26,11 @@
 }
 
 .header {
+  z-index: 3;
+  position: absolute;
+  top: units.$info-block-height-desktop;
   display: flex;
+  width: 100%;
   height: units.$header-height-desktop;
   background: var(--background);
 }
@@ -42,4 +55,11 @@
 
 .header_wrap__actions {
   display: flex;
+}
+
+.bottom_block {
+  z-index: 1;
+  position: absolute;
+  top: calc(units.$info-block-height-desktop + units.$header-height-desktop);
+  width: 100%;
 }
