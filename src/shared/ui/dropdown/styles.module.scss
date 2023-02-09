@@ -1,0 +1,17 @@
+@use "../../modules/funcs.module";
+
+.dropdown_wrapper {
+  position: absolute;
+  padding-top: funcs.px-rem(32);
+}
+
+.menu {
+  box-shadow: 0 0 funcs.px-rem(24) rgba(0, 0, 0, 0.1);
+  background: var(--background);
+  overflow: hidden;
+}
+
+.menu_inner {
+  padding: funcs.px-rem(16) funcs.px-rem(32);
+  background: blue;
+}
