@@ -7,6 +7,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+        <div id="modal_wrapper" className="modal_wrapper"></div>
       </body>
     </Html>
   );
