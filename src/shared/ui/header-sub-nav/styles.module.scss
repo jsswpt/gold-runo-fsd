@@ -2,12 +2,14 @@
 @use "../../modules/units.module";
 
 .sub_nav {
-  z-index: 1;
+  z-index: 90;
   position: fixed;
   display: flex;
   top: units.$header-height-desktop;
   height: units.$header-bottom-block-desktop;
   width: 100%;
+
+  background: var(--background);
 }
 
 .sub_nav_container {

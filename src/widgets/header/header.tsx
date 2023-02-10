@@ -36,7 +36,7 @@ export const Header = () => {
               <Logo />
             </Link>
           </div>
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" initial={false}>
             {currentScreen === "xxl" || currentScreen === "xxxl" ? (
               <motion.nav
                 animate={{ width: "fit-content", overflowY: "hidden" }}
@@ -61,7 +61,7 @@ export const Header = () => {
           <div className={cn(st.header_wrap, st.header_wrap__search)}>
             <SearchFurniture />
           </div>
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" initial={false}>
             {currentScreen !== "xs" &&
               currentScreen !== "sm" &&
               currentScreen !== "md" && (

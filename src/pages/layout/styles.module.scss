@@ -1,0 +1,16 @@
+@use "../../shared/modules/breakpoints.module";
+@use "../../shared/modules/units.module";
+@use "../../shared/modules/funcs.module";
+
+.main {
+  padding-top: units.$header-height-mobile;
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    padding-top: units.$header-height-tablet;
+  }
+  @include breakpoints.media-screen(breakpoints.$xxl) {
+    padding-top: calc(
+      units.$header-height-desktop + units.$header-bottom-block-desktop
+    );
+  }
+}

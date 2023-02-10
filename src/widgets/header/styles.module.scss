@@ -3,13 +3,21 @@
 @use "../../shared/modules/breakpoints.module";
 
 .header {
-  z-index: 2;
+  z-index: 100;
   position: fixed;
   top: 0;
   display: flex;
   width: 100%;
-  height: units.$header-height-desktop;
   background: var(--background);
+
+  height: units.$header-height-mobile;
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    height: units.$header-height-tablet;
+  }
+  @include breakpoints.media-screen(breakpoints.$xxl) {
+    height: units.$header-height-desktop;
+  }
 }
 
 .header_container {

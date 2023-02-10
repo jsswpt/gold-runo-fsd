@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 
-import st from "./styles.module.scss";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import { Header } from "@/widgets";
+
+import st from "./styles.module.scss";
 
 type Layout = {
   children: React.ReactNode;
@@ -12,7 +13,7 @@ type Layout = {
 export const Layout = (props: Layout) => {
   const router = useRouter();
   return (
-    <AnimatePresence mode="wait" initial>
+    <AnimatePresence mode="wait" initial={false}>
       <motion.div
         animate={{ opacity: 1 }}
         initial={{ opacity: 0 }}
@@ -22,7 +23,7 @@ export const Layout = (props: Layout) => {
         key={router.pathname}
       >
         <Header />
-        <main>{props.children}</main>
+        <main className={st.main}>{props.children}</main>
         <footer>футер</footer>
       </motion.div>
     </AnimatePresence>

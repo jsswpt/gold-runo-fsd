@@ -1,3 +1,5 @@
+export { Button } from "./button/button";
+
 export { HeaderSubNav } from "./header-sub-nav/header-sub-nav";
 
 export { HeaderBurger } from "./header-burger/header-burger";

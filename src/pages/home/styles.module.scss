@@ -1,0 +1,80 @@
+@use "../../shared/modules/funcs.module";
+@use "../../shared/modules/units.module";
+@use "../../shared/modules/breakpoints.module";
+
+.section_banner {
+  display: flex;
+
+  min-height: calc(100vh - units.$header-height-mobile);
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    min-height: calc(100vh - units.$header-height-tablet);
+  }
+  @include breakpoints.media-screen(breakpoints.$xxl) {
+    min-height: calc(100vh - units.$header-height-desktop);
+  }
+}
+
+.swiper_slide {
+  position: relative;
+}
+
+.banner_bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section {
+  padding: funcs.px-rem(96) 0;
+}
+
+.section_container {
+  flex-direction: column;
+}
+
+.section_wrap__headlines {
+  margin-bottom: funcs.px-rem(72);
+}
+
+.section_title {
+  color: var(--text-primary);
+  margin-bottom: funcs.px-rem(32);
+  text-align: center;
+}
+
+.section_subtitle {
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.section_body {
+  display: flex;
+  flex-direction: column;
+  gap: funcs.px-rem(96);
+}
+
+.sales_section_wrap__products {
+  display: grid;
+  column-gap: funcs.px-rem(32);
+  row-gap: funcs.px-rem(16);
+
+  grid-template-columns: 1fr;
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include breakpoints.media-screen(breakpoints.$lg) {
+    column-gap: funcs.px-rem(32);
+    row-gap: funcs.px-rem(16);
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include breakpoints.media-screen(breakpoints.$xxxl) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
