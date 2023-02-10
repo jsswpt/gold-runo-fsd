@@ -1,17 +1,9 @@
-import { CSSProperties, Ref, useEffect, useRef, useState } from "react";
-
 import st from "../styles.module.scss";
 import cn from "classnames";
-import { Container } from "@/shared/ui";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import SwiperT from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { ProductCard } from "@/widgets";
-import { useScreen } from "@/shared/hooks";
 
 export const Banner = () => {
-  const { currentScreen } = useScreen();
-
   return (
     <section className={cn(st.section_banner)}>
       <Swiper loop slidesPerView={1} className={st.swiper}>
