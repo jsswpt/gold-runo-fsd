@@ -22,7 +22,10 @@
 }
 
 .sub_nav__link {
+  transition: 0.32s;
   color: var(--text-secondary);
+
+  white-space: nowrap;
 
   &:hover {
     color: var(--text-primary);

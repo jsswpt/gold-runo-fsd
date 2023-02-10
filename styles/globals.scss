@@ -44,8 +44,14 @@ body {
   height: 500vh;
 
   &::-webkit-scrollbar {
-    width: 1px;
-    height: 10px;
+    width: funcs.px-rem(8);
+    height: funcs.px-rem(8);
+    background: #414141;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 16px;
+    background: var(--text-secondary);
   }
 }
 
@@ -80,7 +86,7 @@ body {
 }
 
 .link1 {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
   line-height: 130%;
 }

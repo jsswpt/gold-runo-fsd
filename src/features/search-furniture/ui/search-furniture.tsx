@@ -8,7 +8,7 @@ import { useScreen } from "@/shared/hooks";
 
 export const SearchFurniture = memo(() => {
   const { currentScreen } = useScreen();
-  return currentScreen === "xs" ? (
+  return currentScreen === "sm" || currentScreen === "xs" ? (
     <IconButton>
       <Search />
     </IconButton>
