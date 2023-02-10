@@ -46,8 +46,8 @@ body {
   height: 500vh;
 
   &::-webkit-scrollbar {
-    width: funcs.px-rem(8);
-    height: funcs.px-rem(8);
+    width: funcs.px-rem(6);
+    height: funcs.px-rem(6);
     background: #414141;
   }
 

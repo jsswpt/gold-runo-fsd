@@ -73,7 +73,7 @@ export const HeaderSubNav = memo(({ navList }: HeaderSubNav) => {
               <li className={st.sub_nav__item} key={item.href + item.title}>
                 <Link
                   href={item.href}
-                  className={cn("link1", st.sub_nav__link)}
+                  className={cn("link1", "dark-selection", st.sub_nav__link)}
                 >
                   {item.title}
                 </Link>

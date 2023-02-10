@@ -72,12 +72,19 @@ export const Header = () => {
                   className={cn(st.header_wrap, st.header_wrap__info)}
                 >
                   <div className={st.header_info_wrapper}>
-                    <p className={cn("body2", st.info_text)}>г. Челябинск</p>
+                    <p className={cn("body2", "dark-selection", st.info_text)}>
+                      г. Челябинск
+                    </p>
                   </div>
                   <div className={st.header_info_wrapper}>
                     <a
                       href="tel:89000928086"
-                      className={cn("body2", st.info_text, st.link)}
+                      className={cn(
+                        "body2",
+                        "dark-selection",
+                        st.info_text,
+                        st.link
+                      )}
                     >
                       8 (900) 092 80-86
                     </a>

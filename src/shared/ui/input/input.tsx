@@ -27,7 +27,7 @@ export const Input = (props: InputBase) => {
 
       <input
         {...restProps}
-        className={cn(st.input, {
+        className={cn(st.input, "dark-selection", {
           [st.sm]: size === "sm",
           [st.md]: size === "md" || !size,
           [st.lg]: size === "lg",

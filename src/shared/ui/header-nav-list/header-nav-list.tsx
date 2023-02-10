@@ -10,7 +10,10 @@ export const HeaderNavList = () => {
     <ul className={st.header_nav__list}>
       {headerLinks.map((item) => (
         <li className={st.header_nav__item} key={`${item.href}-${item.title}`}>
-          <Link href={item.href} className={cn("link1", st.header_nav__link)}>
+          <Link
+            href={item.href}
+            className={cn("link1", "dark-selection", st.header_nav__link)}
+          >
             {item.title}
           </Link>
         </li>
