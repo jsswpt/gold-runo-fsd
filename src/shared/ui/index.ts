@@ -1,4 +1,8 @@
-export { HeaderNavigation } from "./header-navigation/header-navigation";
+export { HeaderSubNav } from "./header-sub-nav/header-sub-nav";
+
+export { HeaderBurger } from "./header-burger/header-burger";
+
+export { HeaderNavList } from "./header-nav-list/header-nav-list";
 
 export { IconButton } from "./button/icon-button";
 

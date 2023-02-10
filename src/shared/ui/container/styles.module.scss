@@ -12,15 +12,15 @@
   // box-shadow: inset 0 0 1px black;
 
   @include breakpoints.media-screen(breakpoints.$lg) {
-    width: breakpoints.$lg;
+    // width: breakpoints.$lg;
   }
 
   @include breakpoints.media-screen(breakpoints.$xl) {
-    width: breakpoints.$xl;
+    // width: breakpoints.$xl;
   }
 
   @include breakpoints.media-screen(breakpoints.$xxl) {
-    width: breakpoints.$xxl;
+    // width: breakpoints.$xxl;
   }
 
   @include breakpoints.media-screen(breakpoints.$xxxl) {

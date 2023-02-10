@@ -12,12 +12,11 @@ type Modal = {
   onClose: () => void;
   children: React.ReactNode;
   closeOn?: "missClick" | "buttonClick";
+  bg?: "background" | "darken";
 };
 
 export const Modal = (props: Modal) => {
   const [mounted, setMounted] = useState(false);
-
-  const childrenRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -33,20 +32,6 @@ export const Modal = (props: Modal) => {
       el!.className = st.closed;
     }
   }, [mounted]);
-
-  useEffect(() => {
-    if (props.isOpen && props.closeOn !== "buttonClick") {
-      document
-        .getElementById("modal_wrapper")!
-        .addEventListener("click", (evt) => {
-          const path = evt.composedPath();
-
-          if (!path.includes(childrenRef.current!)) {
-            props.onClose();
-          }
-        });
-    }
-  }, [props.isOpen]);
 
   return mounted ? (
     ReactDOM.createPortal(
@@ -64,31 +49,13 @@ export const Modal = (props: Modal) => {
                 when: "afterChildren",
               }}
               id="modal"
-              className={st.modal}
+              key="empty"
+              className={cn(st.modal, {
+                [st.bg_background]: props.bg === "background" || !props.bg,
+                [st.bg_darken]: props.bg === "darken",
+              })}
             >
-              <motion.div
-                initial={{
-                  position: "absolute",
-                  right: "10%",
-                  top: "-10%",
-                  zIndex: 2000,
-                  opacity: 0,
-                }}
-                animate={{
-                  right: "10%",
-                  top: "10%",
-                  opacity: 1,
-                }}
-                transition={{
-                  duration: 0.32,
-                  delay: 0.88,
-                }}
-              >
-                <IconButton>X</IconButton>
-              </motion.div>
-              <div className={st.modal_children_wrapper} ref={childrenRef}>
-                {props.children}
-              </div>
+              <div className={st.modal_children_wrapper}>{props.children}</div>
             </motion.div>
           </>
         )}

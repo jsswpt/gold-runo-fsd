@@ -1,3 +1,5 @@
+export { Burger } from "./ui/svgs/burger";
+
 export { Cart } from "./ui/svgs/cart";
 export { Favorite } from "./ui/svgs/favorite";
 export { Person } from "./ui/svgs/person";

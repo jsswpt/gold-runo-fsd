@@ -1,5 +1,6 @@
 @use "../../shared/modules/funcs.module";
 @use "../../shared/modules/units.module";
+@use "../../shared/modules/breakpoints.module";
 
 .header {
   z-index: 2;
@@ -15,18 +16,38 @@
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: funcs.px-rem(40);
+
+  @include breakpoints.media-screen(breakpoints.$lg) {
+    justify-content: baseline;
+  }
 }
 
 .header_wrap__logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
   display: flex;
-  order: 1;
+
+  transform: translate(-50%, -50%);
+
+  @include breakpoints.media-screen(breakpoints.$lg) {
+    position: static;
+    order: 1;
+    transform: none;
+  }
 }
 
 .logo_img_wrapper {
   display: block;
-  width: funcs.px-rem(180);
-  height: funcs.px-rem(27);
+  width: funcs.px-rem(180 / 1.5);
+  height: funcs.px-rem(27 / 1.5);
+
+  @include breakpoints.media-screen(breakpoints.$md) {
+    width: funcs.px-rem(180);
+    height: funcs.px-rem(27);
+  }
 
   svg {
     width: 100%;
@@ -36,8 +57,17 @@
 }
 
 .header_wrap__search {
-  order: 2;
-  flex-grow: 1;
+  position: absolute;
+  left: funcs.px-rem(64);
+  top: 50%;
+  transform: translate(0, -50%);
+
+  @include breakpoints.media-screen(breakpoints.$lg) {
+    position: static;
+    order: 2;
+    flex-grow: 1;
+    transform: none;
+  }
 }
 
 .header_wrap__info {
@@ -57,25 +87,9 @@
   order: 4;
   display: flex;
   align-items: center;
-  gap: funcs.px-rem(16);
-}
+  gap: funcs.px-rem(4);
 
-.bottom_block {
-  z-index: 1;
-  position: fixed;
-  display: flex;
-  top: units.$header-height-desktop;
-  height: units.$header-bottom-block-desktop;
-  width: 100%;
-}
-
-.bottom_container {
-  display: flex;
-  align-items: center;
-}
-
-.bottom_nav__list {
-  display: flex;
-  align-items: center;
-  gap: funcs.px-rem(20);
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    gap: funcs.px-rem(16);
+  }
 }

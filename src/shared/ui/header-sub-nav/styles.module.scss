@@ -1,0 +1,30 @@
+@use "../../modules/funcs.module";
+@use "../../modules/units.module";
+
+.sub_nav {
+  z-index: 1;
+  position: fixed;
+  display: flex;
+  top: units.$header-height-desktop;
+  height: units.$header-bottom-block-desktop;
+  width: 100%;
+}
+
+.sub_nav_container {
+  display: flex;
+  align-items: center;
+}
+
+.sub_nav__list {
+  display: flex;
+  align-items: center;
+  gap: funcs.px-rem(20);
+}
+
+.sub_nav__link {
+  color: var(--text-secondary);
+
+  &:hover {
+    color: var(--text-primary);
+  }
+}
