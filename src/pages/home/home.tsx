@@ -1,3 +1,4 @@
+// import CustomSlider from "@/shared/ui/slider/CustomSlider";
 import { Banner } from "./sections/banner";
 import { SalesLeader } from "./sections/sales-leader";
 
@@ -8,6 +9,9 @@ export const Home = () => {
     <>
       <Banner />
       <SalesLeader />
+      {/* <CustomSlider
+        items={[{ id: 1, image_url: "", price: 12300, title: "Заголовок" }]}
+      /> */}
     </>
   );
 };
