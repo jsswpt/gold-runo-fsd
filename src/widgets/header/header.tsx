@@ -25,39 +25,11 @@ import { headerLinks } from "@/shared/api/internal/data";
  * сделать animatePresence, перенести bottom в ui
  */
 export const Header = () => {
-  const [isScrolledEnough, setIsScrolledEnough] = useState(false);
-
   const { currentScreen } = useScreen();
-
-  const headerControls = useAnimationControls();
-
-  const headerRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY >= 72) {
-        setIsScrolledEnough(true);
-      } else {
-        setIsScrolledEnough(false);
-      }
-    });
-  }, []);
-
-  useEffect(() => {
-    if (isScrolledEnough) {
-    } else if (!isScrolledEnough) {
-      headerControls.start({ y: `0` });
-    }
-  }, [isScrolledEnough]);
 
   return (
     <>
-      <motion.header
-        ref={headerRef}
-        animate={headerControls}
-        transition={{ duration: 0.24, mass: 2 }}
-        className={st.header}
-      >
+      <motion.header className={st.header}>
         <Container className={st.header_container}>
           <div className={cn(st.header_wrap, st.header_wrap__logo)}>
             <Link href="/" className={st.logo_img_wrapper}>
@@ -67,7 +39,7 @@ export const Header = () => {
           <AnimatePresence mode="wait">
             {currentScreen === "xxl" || currentScreen === "xxxl" ? (
               <motion.nav
-                animate={{ width: "fit-content", overflow: "auto" }}
+                animate={{ width: "fit-content", overflowY: "hidden" }}
                 initial={{ width: 0, order: 1, overflow: "hidden" }}
                 exit={{ width: 0 }}
                 className={st.header_wrap__nav}
@@ -78,7 +50,7 @@ export const Header = () => {
             ) : (
               <motion.nav
                 initial={{ order: 0, opacity: 1 }}
-                exit={{ opacity: 0 }}
+                exit={{ opacity: 0, overflow: "visible" }}
                 className={st.header_wrap__nav}
                 key="burger"
               >
@@ -135,7 +107,7 @@ export const Header = () => {
           </div>
         </Container>
       </motion.header>
-      <HeaderSubNav isScrolledEnough={isScrolledEnough} navList={headerLinks} />
+      <HeaderSubNav navList={headerLinks} />
     </>
   );
 };
