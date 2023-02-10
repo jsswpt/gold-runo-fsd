@@ -38,9 +38,9 @@
 }
 
 .contained {
-  background: var(--background);
-
+  background: none;
   &:hover {
+    background: var(--surface);
     box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20)
       rgba(0, 0, 0, 0.2);
   }
