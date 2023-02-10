@@ -1,9 +1,7 @@
-import {} from "react";
-
 import st from "./styles.module.scss";
 import cn from "classnames";
-import { Button } from "../../shared/ui/button/button";
 import Link from "next/link";
+import { Button } from "@/shared/ui";
 
 export const ProductCard = () => {
   return (
