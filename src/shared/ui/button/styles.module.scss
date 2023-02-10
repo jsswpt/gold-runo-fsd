@@ -45,8 +45,6 @@
   }
 }
 
-.sm {
-}
 .icon_button.md {
   width: units.$medium;
   height: units.$medium;
@@ -63,9 +61,6 @@
   height: units.$medium;
 }
 
-.lg {
-}
-
 .contained {
   background: none;
   &:hover {
@@ -73,7 +68,4 @@
     box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20)
       rgba(0, 0, 0, 0.2);
   }
-}
-
-.outlined {
 }

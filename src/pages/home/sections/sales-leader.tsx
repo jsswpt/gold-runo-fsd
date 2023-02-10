@@ -22,7 +22,7 @@ export const SalesLeader = () => {
               st.sales_section_wrap__products
             )}
           >
-            {Array(100)
+            {Array(25)
               .fill(0)
               .map((item, idx) => (
                 <ProductCard key={idx} />
