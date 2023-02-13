@@ -47,6 +47,14 @@
   }
 }
 
+.header_wrap__nav {
+  order: 0;
+
+  @include breakpoints.media-screen(breakpoints.$xxl) {
+    order: 2;
+  }
+}
+
 .logo_img_wrapper {
   display: block;
   width: funcs.px-rem(180 / 1.5);

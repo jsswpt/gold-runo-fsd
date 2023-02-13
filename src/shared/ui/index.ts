@@ -1,3 +1,5 @@
+export { AuthorizeCard } from "./authorize-card/authorize-card";
+
 export { Button } from "./button/button";
 
 export { HeaderSubNav } from "./header-sub-nav/header-sub-nav";

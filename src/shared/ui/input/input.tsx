@@ -11,7 +11,7 @@ export const Input = (props: InputBase) => {
   return (
     <div
       className={cn(st.input_wrapper, {
-        fullWidth: fullWidth,
+        [st.fullWidth]: fullWidth,
       })}
     >
       {icon && (

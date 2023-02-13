@@ -10,6 +10,7 @@ import { useScreen } from "@/shared/hooks";
 
 import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
 import {
+  AuthorizeCard,
   Dropdown,
   HeaderBurger,
   HeaderNavList,
@@ -21,9 +22,6 @@ import { Cart, Favorite, Logo, Person } from "@/shared/assets";
 import { SearchFurniture } from "@/features";
 import { headerLinks } from "@/shared/api/internal/data";
 
-/**Нужно отрефакторить:
- * сделать animatePresence, перенести bottom в ui
- */
 export const Header = () => {
   const { currentScreen } = useScreen();
 
@@ -36,62 +34,40 @@ export const Header = () => {
               <Logo />
             </Link>
           </div>
-          <AnimatePresence mode="wait" initial={false}>
+          <nav className={st.header_wrap__nav}>
             {currentScreen === "xxl" || currentScreen === "xxxl" ? (
-              <motion.nav
-                animate={{ width: "fit-content", overflowY: "hidden" }}
-                initial={{ width: 0, order: 1, overflow: "hidden" }}
-                exit={{ width: 0 }}
-                className={st.header_wrap__nav}
-                key="list"
-              >
-                <HeaderNavList />
-              </motion.nav>
+              <HeaderNavList />
             ) : (
-              <motion.nav
-                initial={{ order: 0, opacity: 1 }}
-                exit={{ opacity: 0, overflow: "visible" }}
-                className={st.header_wrap__nav}
-                key="burger"
-              >
-                <HeaderBurger />
-              </motion.nav>
+              <HeaderBurger />
             )}
-          </AnimatePresence>
+          </nav>
           <div className={cn(st.header_wrap, st.header_wrap__search)}>
             <SearchFurniture />
           </div>
-          <AnimatePresence mode="wait" initial={false}>
-            {currentScreen !== "xs" &&
-              currentScreen !== "sm" &&
-              currentScreen !== "md" && (
-                <motion.div
-                  initial={{ width: 0, opacity: 0, overflow: "hidden" }}
-                  animate={{ width: "fit-content", opacity: 1 }}
-                  exit={{ width: 0, opacity: 0 }}
-                  className={cn(st.header_wrap, st.header_wrap__info)}
-                >
-                  <div className={st.header_info_wrapper}>
-                    <p className={cn("body2", "dark-selection", st.info_text)}>
-                      г. Челябинск
-                    </p>
-                  </div>
-                  <div className={st.header_info_wrapper}>
-                    <a
-                      href="tel:89000928086"
-                      className={cn(
-                        "body2",
-                        "dark-selection",
-                        st.info_text,
-                        st.link
-                      )}
-                    >
-                      8 (900) 092 80-86
-                    </a>
-                  </div>
-                </motion.div>
-              )}
-          </AnimatePresence>
+          {currentScreen !== "xs" &&
+            currentScreen !== "sm" &&
+            currentScreen !== "md" && (
+              <div className={cn(st.header_wrap, st.header_wrap__info)}>
+                <div className={st.header_info_wrapper}>
+                  <p className={cn("body2", "dark-selection", st.info_text)}>
+                    г. Челябинск
+                  </p>
+                </div>
+                <div className={st.header_info_wrapper}>
+                  <a
+                    href="tel:89000928086"
+                    className={cn(
+                      "body2",
+                      "dark-selection",
+                      st.info_text,
+                      st.link
+                    )}
+                  >
+                    8 (900) 092 80-86
+                  </a>
+                </div>
+              </div>
+            )}
 
           <div className={cn(st.header_wrap, st.header_wrap__actions)}>
             <div className={st.header_actions_wrapper}>
@@ -106,9 +82,18 @@ export const Header = () => {
             </div>
             {currentScreen !== "xs" && (
               <div className={st.header_actions_wrapper}>
-                <IconButton>
-                  <Person />
-                </IconButton>
+                <Dropdown
+                  justify="start"
+                  align="bottom"
+                  anchorEl={
+                    <IconButton>
+                      <Person />
+                    </IconButton>
+                  }
+                  triggerOn="click"
+                >
+                  <AuthorizeCard />
+                </Dropdown>
               </div>
             )}
           </div>

@@ -8,6 +8,9 @@ import { AnimatePresence, motion } from "framer-motion";
 type Dropdown = {
   anchorEl: React.ReactNode;
   triggerOn?: "hover" | "click";
+  justify?: "end" | "start" | "center";
+  align?: "top" | "center" | "bottom";
+  children?: React.ReactNode;
 };
 
 /**
@@ -35,7 +38,7 @@ export const Dropdown = (props: Dropdown) => {
   }, [isOpened]);
 
   return (
-    <>
+    <div className={st.dropdown_wrapper}>
       <div
         ref={labelRef}
         onMouseOver={() => {
@@ -48,7 +51,18 @@ export const Dropdown = (props: Dropdown) => {
       >
         {props.anchorEl}
       </div>
-      <motion.div ref={menuRef} className={st.dropdown_wrapper}>
+      <div
+        ref={menuRef}
+        className={cn(st.menu_wrapper, {
+          [st.justify_center]: props.justify === "center" || !props.justify,
+          [st.justify_start]: props.justify === "start",
+          [st.justify_end]: props.justify === "end",
+
+          [st.align_center]: props.align === "center" || !props.align,
+          [st.align_top]: props.align === "top",
+          [st.align_bottom]: props.align === "bottom",
+        })}
+      >
         <motion.div
           initial={{ maxHeight: 0 }}
           animate={
@@ -63,11 +77,12 @@ export const Dropdown = (props: Dropdown) => {
                 }
           }
           transition={{ duration: 0.45, mass: 0 }}
-          className={st.menu}
+          className={cn(st.menu)}
         >
-          <div className={st.menu_inner}>menu</div>
+          {props.children}
+          {/* <div className={st.menu_inner}>{props.children}</div> */}
         </motion.div>
-      </motion.div>
-    </>
+      </div>
+    </div>
   );
 };

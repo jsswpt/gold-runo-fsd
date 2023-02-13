@@ -11,7 +11,7 @@ type Modal = {
   isOpen: boolean;
   onClose: () => void;
   children: React.ReactNode;
-  closeOn?: "missClick" | "buttonClick";
+  closeButton?: boolean;
   bg?: "background" | "darken";
 };
 
@@ -37,27 +37,48 @@ export const Modal = (props: Modal) => {
     ReactDOM.createPortal(
       <AnimatePresence mode="wait">
         {props.isOpen && (
-          <>
-            <motion.div
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              exit={{ y: "-100%" }}
-              transition={{
-                duration: 0.88,
-                type: "spring",
-                bounce: 0,
-                when: "afterChildren",
-              }}
-              id="modal"
-              key="empty"
-              className={cn(st.modal, {
-                [st.bg_background]: props.bg === "background" || !props.bg,
-                [st.bg_darken]: props.bg === "darken",
-              })}
+          <motion.div
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "-100%" }}
+            transition={{
+              duration: 0.88,
+              type: "spring",
+              bounce: 0,
+              when: "beforeChildren",
+            }}
+            id="modal"
+            key="empty"
+            onClick={() => {
+              if (!props.closeButton) {
+                props.onClose();
+              }
+            }}
+            className={cn(st.modal, {
+              [st.bg_background]: props.bg === "background" || !props.bg,
+              [st.bg_darken]: props.bg === "darken",
+            })}
+          >
+            <AnimatePresence mode="wait">
+              {props.closeButton && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.32, delay: 0.8 }}
+                  className={st.close_button_wrapper}
+                >
+                  <IconButton onClick={props.onClose}>X</IconButton>
+                </motion.div>
+              )}
+            </AnimatePresence>
+            <div
+              className={st.modal_children_wrapper}
+              onClick={(e) => e.stopPropagation()}
             >
-              <div className={st.modal_children_wrapper}>{props.children}</div>
-            </motion.div>
-          </>
+              {props.children}
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>,
       document.getElementById("modal_wrapper")!

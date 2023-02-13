@@ -1,17 +1,42 @@
 @use "../../modules/funcs.module";
+@use "../../modules/units.module";
 
 .dropdown_wrapper {
+  position: relative;
+}
+.menu_wrapper {
   position: absolute;
-  padding-top: funcs.px-rem(32);
 }
 
 .menu {
   box-shadow: 0 0 funcs.px-rem(24) rgba(0, 0, 0, 0.1);
   background: var(--background);
+  border-radius: calc(units.$round-xl / 2);
   overflow: hidden;
+}
+
+.justify_center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.justify_start {
+  right: 50%;
+}
+.justify_end {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.align_center {
+  top: 50%;
+}
+.align_top {
+  top: 0;
+}
+.align_bottom {
+  // padding-top: funcs.px-rem(32);
+  top: 100%;
 }
 
 .menu_inner {
   padding: funcs.px-rem(16) funcs.px-rem(32);
-  background: blue;
 }

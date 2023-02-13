@@ -1,0 +1,30 @@
+@use "../../../shared/modules/funcs.module";
+
+.link {
+  position: relative;
+  font-size: funcs.px-rem(12);
+  font-weight: 600;
+  color: var(--text-secondary);
+
+  transition: 0.32s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: funcs.px-rem(-4);
+    width: 100%;
+    height: funcs.px-rem(1);
+    background: var(--text-secondary);
+
+    transform: translate(-50%, 0);
+    transition: 0.32s;
+  }
+
+  &:hover {
+    color: var(--text-primary);
+    &::before {
+      background: var(--text-primary);
+    }
+  }
+}
