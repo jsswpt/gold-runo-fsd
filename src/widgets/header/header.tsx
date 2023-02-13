@@ -20,7 +20,7 @@ import {
 } from "@/shared/ui";
 import { Cart, Favorite, Logo, Person } from "@/shared/assets";
 import { SearchFurniture } from "@/features";
-import { headerLinks } from "@/shared/api/internal/data";
+import { headerLinks } from "@/shared/api/internal/";
 
 export const Header = () => {
   const { currentScreen } = useScreen();
@@ -71,12 +71,12 @@ export const Header = () => {
 
           <div className={cn(st.header_wrap, st.header_wrap__actions)}>
             <div className={st.header_actions_wrapper}>
-              <IconButton>
+              <IconButton variant="contained" color="default">
                 <Favorite />
               </IconButton>
             </div>
             <div className={st.header_actions_wrapper}>
-              <IconButton>
+              <IconButton variant="contained" color="default">
                 <Cart />
               </IconButton>
             </div>
@@ -86,7 +86,7 @@ export const Header = () => {
                   justify="start"
                   align="bottom"
                   anchorEl={
-                    <IconButton>
+                    <IconButton variant="contained" color="default">
                       <Person />
                     </IconButton>
                   }

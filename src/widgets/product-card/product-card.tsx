@@ -14,7 +14,9 @@ export const ProductCard = () => {
         <div className={st.product_card_info_wrapper}>
           <div className={st.product_info_wrap__name}>
             <h3 className={cn("subtitle2", "dark-selection", st.product_name)}>
-              <Link href={""}>Какой-то диван</Link>
+              <Link href={""} className="dark-selection">
+                Какой-то диван
+              </Link>
             </h3>
           </div>
           <div className={st.product_info_wrap__price}>

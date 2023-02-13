@@ -1,4 +1,4 @@
-import { Home } from "@/pages";
+import { Home, Layout } from "@/pages";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -8,7 +8,9 @@ export default function Index() {
       <Head>
         <title>Главная | YORCOM</title>
       </Head>
-      <Home />
+      <Layout>
+        <Home />
+      </Layout>
     </>
   );
 }

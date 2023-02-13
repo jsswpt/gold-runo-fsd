@@ -1,0 +1,28 @@
+@use "../../modules/funcs.module";
+
+.divider_wrapper {
+  position: relative;
+}
+
+.title_wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--background);
+}
+
+.title {
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.divider {
+  display: block;
+  width: 100%;
+  height: 0;
+  border: none;
+  border-top: funcs.px-rem(1) solid var(--stroke);
+
+  background: none;
+}

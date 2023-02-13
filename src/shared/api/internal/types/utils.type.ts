@@ -5,3 +5,5 @@ export type AlignIcon = "start" | "end";
 export type Icon = {
   className?: any;
 };
+
+export type Colors = "primary" | "success" | "danger" | "warning" | "default";

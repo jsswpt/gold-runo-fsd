@@ -6,7 +6,7 @@ import cn from "classnames";
 import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
 import Link from "next/link";
 import { Container } from "../container/container";
-import { HeaderLinks } from "@/shared/api/internal/data";
+import { HeaderLinks } from "@/shared/api/internal/";
 import { useScreen } from "@/shared/hooks";
 
 type HeaderSubNav = {

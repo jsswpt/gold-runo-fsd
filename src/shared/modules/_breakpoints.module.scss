@@ -1,6 +1,6 @@
 @use "./funcs.module";
 
-$xs: 0;
+$xs: funcs.px-rem(340 + 32);
 $sm: funcs.px-rem(576 + 32);
 $md: funcs.px-rem(768 + 32);
 $lg: funcs.px-rem(992 + 32);

@@ -3,7 +3,7 @@ import { useState } from "react";
 import st from "./styles.module.scss";
 import cn from "classnames";
 import Link from "next/link";
-import { headerLinks } from "@/shared/api/internal/data";
+import { headerLinks } from "@/shared/api/internal/";
 
 export const HeaderNavList = () => {
   return (

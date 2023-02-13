@@ -6,6 +6,7 @@ import cn from "classnames";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { IconButton } from "../button/icon-button";
+import { Close } from "@/shared/assets";
 
 type Modal = {
   isOpen: boolean;
@@ -68,7 +69,13 @@ export const Modal = (props: Modal) => {
                   transition={{ duration: 0.32, delay: 0.8 }}
                   className={st.close_button_wrapper}
                 >
-                  <IconButton onClick={props.onClose}>X</IconButton>
+                  <IconButton
+                    onClick={props.onClose}
+                    color="default"
+                    variant="contained"
+                  >
+                    <Close />
+                  </IconButton>
                 </motion.div>
               )}
             </AnimatePresence>

@@ -1,0 +1,10 @@
+.section_actions {
+  display: flex;
+  min-height: 100vh;
+}
+
+.actions_container {
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}

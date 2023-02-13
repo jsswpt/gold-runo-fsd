@@ -11,12 +11,7 @@ export const HeaderBurger = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <motion.div
-        initial={{ scale: 0, rotate: 360 }}
-        animate={{ scale: 1, rotate: 0 }}
-        exit={{ scale: 0, rotate: 360, opacity: 0 }}
-        transition={{ duration: 0.64 }}
-      >
+      <motion.div>
         <IconButton onClick={() => setIsOpen(true)} key="button">
           <Burger />
         </IconButton>

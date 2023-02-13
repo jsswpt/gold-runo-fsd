@@ -1,3 +1,11 @@
+export { Divider } from "./divider/divider";
+
+export { AuthFormLayout } from "./auth-form-layout/auth-form-layout";
+
+export { AuthLayout } from "./auth-layout/auth-layout";
+
+export { Footer } from "./footer/footer";
+
 export { AuthorizeCard } from "./authorize-card/authorize-card";
 
 export { Button } from "./button/button";

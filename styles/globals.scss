@@ -2,6 +2,32 @@
 @use "../src/shared/modules/breakpoints.module";
 @import url("../src/shared/assets/fonts/montserrat/stylesheet.css");
 
+:root {
+  --base: #191919;
+  --background: #fffaff;
+  --surface: #fff;
+  --stroke: #9a9a9a;
+  --light-stroke: #ececec;
+
+  --text-primary: var(--base);
+  --text-contrast: var(--background);
+  --text-secondary: var(--stroke);
+
+  // --primary: rgb(255, 214, 64);
+  --primary: #007fff;
+  --success: #93a11a;
+  --danger: #ed544a;
+  --warning: #d7ed1a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #191919;
+    --surface: rgb(56, 49, 56);
+    --base: #fffaff;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -19,30 +45,10 @@ img {
   height: 100%;
 }
 
-:root {
-  --base: #191919;
-  --background: #fffaff;
-  --surface: #fff;
-  --stroke: #9a9a9a;
-  --light-stroke: #ececec;
-
-  --text-primary: var(--base);
-  --text-contrast: var(--background);
-  --text-secondary: var(--stroke);
-
-  --primary: rgb(255, 214, 64);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #221e22;
-    --surface: #2c272c;
-    --base: #fffaff;
-  }
-}
-
 body {
   background: var(--background);
+
+  overflow-x: hidden;
 
   &::-webkit-scrollbar {
     width: funcs.px-rem(6);
@@ -54,54 +60,74 @@ body {
     border-radius: 16px;
     background: var(--text-secondary);
   }
+
+  overflow-y: auto;
+  &:has(#modal) {
+    overflow-y: hidden;
+  }
 }
 
 .h1 {
 }
 .h2 {
   font-weight: 600;
-  line-height: 1.05;
-  font-size: funcs.px-rem(50);
+  font-size: funcs.px-rem(40);
+
+  @include breakpoints.media-screen(breakpoints.$md) {
+    font-size: funcs.px-rem(50);
+  }
 }
 .h3 {
 }
 .h4 {
 }
 .h5 {
+  font-size: funcs.px-rem(18);
+  font-weight: 500;
+  line-height: 1.1;
 }
 .h6 {
 }
 
 .subtitle1 {
   font-weight: 400;
-  font-size: funcs.px-rem(25);
+  font-size: funcs.px-rem(20);
   line-height: 1.05;
+
+  @include breakpoints.media-screen(breakpoints.$md) {
+    font-size: funcs.px-rem(24);
+  }
 }
 .subtitle2 {
   font-weight: 400;
-  font-size: funcs.px-rem(22);
+  font-size: funcs.px-rem(18);
   line-height: 1.3;
+  @include breakpoints.media-screen(breakpoints.$md) {
+    font-size: funcs.px-rem(22);
+  }
 }
 
 .body1 {
   font-weight: 400;
-  font-size: 16px;
-  line-height: 1.1;
+  font-size: funcs.px-rem(16);
 }
 
 .body2 {
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.1;
+  font-size: funcs.px-rem(14);
 }
 
 .link1 {
   font-weight: 400;
-  font-size: 16px;
-  line-height: 1.1;
+  font-size: funcs.px-rem(16);
 }
 
 .link2 {
+}
+
+.caption {
+  font-size: funcs.px-rem(10);
+  font-weight: 600;
 }
 
 * {
@@ -134,6 +160,7 @@ q,
 blockquote {
   color: var(--text-primary);
   letter-spacing: funcs.px-rem(0.4);
+  line-height: 1.1;
 }
 
 .modal_wrapper {
@@ -141,11 +168,4 @@ blockquote {
   top: 0;
   left: 0;
   bottom: auto;
-}
-
-body {
-  overflow-y: auto;
-  &:has(#modal) {
-    overflow-y: hidden;
-  }
 }

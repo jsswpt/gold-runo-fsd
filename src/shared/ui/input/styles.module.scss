@@ -4,12 +4,21 @@
 .input_wrapper {
   position: relative;
   width: fit-content;
+
+  .input {
+    padding: 0 funcs.px-rem(16);
+  }
+
+  &:has(.icon_wrapper) {
+    .input {
+      padding-left: funcs.px-rem(21 + 8 + 20);
+      padding-right: funcs.px-rem(8);
+    }
+  }
 }
 
 .input {
   width: 100%;
-  padding-left: funcs.px-rem(21 + 8 + 20);
-  padding-right: funcs.px-rem(8);
   outline: none;
   border-radius: units.$round-xl;
 

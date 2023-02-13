@@ -59,22 +59,48 @@
   gap: funcs.px-rem(96);
 }
 
-.sales_section_wrap__products {
-  display: grid;
-  column-gap: funcs.px-rem(32);
-  row-gap: funcs.px-rem(16);
+.sales_wrap__products {
+  position: relative;
+  overflow-x: visible;
+  // display: grid;
+  // column-gap: funcs.px-rem(32);
+  // row-gap: funcs.px-rem(16);
 
-  grid-template-columns: 1fr;
+  // grid-template-columns: 1fr;
 
-  @include breakpoints.media-screen(breakpoints.$sm) {
-    grid-template-columns: repeat(2, 1fr);
+  // @include breakpoints.media-screen(breakpoints.$sm) {
+  //   grid-template-columns: repeat(2, 1fr);
+  // }
+  // @include breakpoints.media-screen(breakpoints.$lg) {
+  //   column-gap: funcs.px-rem(32);
+  //   row-gap: funcs.px-rem(16);
+  //   grid-template-columns: repeat(3, 1fr);
+  // }
+  // @include breakpoints.media-screen(breakpoints.$xxxl) {
+  //   grid-template-columns: repeat(4, 1fr);
+  // }
+}
+
+.swiper {
+  & > * {
+    display: flex;
+    align-items: center;
   }
-  @include breakpoints.media-screen(breakpoints.$lg) {
-    column-gap: funcs.px-rem(32);
-    row-gap: funcs.px-rem(16);
-    grid-template-columns: repeat(3, 1fr);
-  }
-  @include breakpoints.media-screen(breakpoints.$xxxl) {
-    grid-template-columns: repeat(4, 1fr);
-  }
+}
+
+.button_forward_wrapper,
+.button_back_wrapper {
+  z-index: 5;
+  position: absolute;
+  top: 50%;
+}
+
+.button_back_wrapper {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.button_forward_wrapper {
+  right: 0;
+  transform: translate(50%, -50%);
 }

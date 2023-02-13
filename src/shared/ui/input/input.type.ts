@@ -10,8 +10,7 @@ import { InputHTMLAttributes } from "react";
  *@fullWidth - ширина
  */
 
-export interface InputBase
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "type"> {
+export interface InputBase {
   size?: Size;
   variant?: Variants;
   icon?: React.ReactNode;
@@ -19,3 +18,7 @@ export interface InputBase
   alignText?: "start" | "center";
   fullWidth?: boolean;
 }
+
+export interface InputProps
+  extends InputBase,
+    Omit<InputHTMLAttributes<HTMLInputElement>, "size"> {}

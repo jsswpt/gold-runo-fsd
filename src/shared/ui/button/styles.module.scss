@@ -64,11 +64,54 @@
 }
 
 .contained {
-  background: none;
+  color: #fff;
   &:hover,
   &:focus {
-    background: var(--surface);
     box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20)
       rgba(0, 0, 0, 0.2);
   }
+}
+
+.outlined {
+  background: var(--surface);
+}
+
+.bg_primary {
+  background: var(--primary);
+}
+
+.bg_warning {
+  background: var(--warning);
+}
+.bg_danger {
+  background: var(--danger);
+}
+.bg_success {
+  background: var(--success);
+}
+.bg_default {
+  background: var(--surface);
+  color: var(--text-primary);
+}
+
+.border_primary {
+  border: funcs.px-rem(2) solid var(--primary);
+  color: var(--primary);
+}
+
+.border_warning {
+  border: funcs.px-rem(2) solid var(--warning);
+  color: var(--warning);
+}
+.border_danger {
+  border: funcs.px-rem(2) solid var(--danger);
+  color: var(--danger);
+}
+.border_success {
+  border: funcs.px-rem(2) solid var(--success);
+  color: var(--success);
+}
+.border_default {
+  border: funcs.px-rem(2) solid var(--stroke);
+  color: var(--stroke);
 }

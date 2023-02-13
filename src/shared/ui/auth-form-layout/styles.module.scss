@@ -1,0 +1,31 @@
+@use "../../modules/funcs.module";
+
+.form_layout {
+  display: flex;
+  flex-direction: column;
+  gap: funcs.px-rem(16);
+  width: 100%;
+
+  & > * {
+    width: 100%;
+  }
+}
+
+.inputs_wrapper,
+.buttons_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: funcs.px-rem(8);
+}
+
+.alternate_text {
+  font-size: funcs.px-rem(12);
+  font-weight: 400;
+  color: var(--text-secondary);
+
+  text-align: center;
+
+  & > * {
+    font-weight: 500;
+  }
+}
