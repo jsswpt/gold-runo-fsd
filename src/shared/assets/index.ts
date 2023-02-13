@@ -1,3 +1,5 @@
+export { ChevronLeft } from "./ui/svgs/chevron-left";
+
 export { Close } from "./ui/svgs/close";
 
 export { Burger } from "./ui/svgs/burger";

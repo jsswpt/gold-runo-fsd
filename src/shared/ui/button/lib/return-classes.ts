@@ -17,11 +17,11 @@ export const returnClasses = (props: ButtonBase) => {
     [st.bg_default]:
       (color === "default" || !color) && (variant === "contained" || !variant),
 
-    [st.border_primary]:
-      (color === "primary" || !color) && variant === "outlined",
+    [st.border_default]:
+      (color === "default" || !color) && variant === "outlined",
     [st.border_warning]: color === "warning" && variant === "outlined",
     [st.border_danger]: color === "danger" && variant === "outlined",
     [st.border_success]: color === "success" && variant === "outlined",
-    [st.border_default]: color === "default" && variant === "outlined",
+    [st.border_primary]: color === "primary" && variant === "outlined",
   };
 };

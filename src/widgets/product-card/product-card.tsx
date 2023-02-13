@@ -2,7 +2,7 @@ import st from "./styles.module.scss";
 import cn from "classnames";
 import Link from "next/link";
 import { Button } from "@/shared/ui";
-import { BuyByOneTap } from "@/features";
+import { AddToCart, BuyByOneTap } from "@/features";
 
 export const ProductCard = () => {
   return (
@@ -30,7 +30,7 @@ export const ProductCard = () => {
         </div>
 
         <div className={st.product_card_actions_wrapper}>
-          <Button>В корзину</Button>
+          <AddToCart />
           <BuyByOneTap />
         </div>
       </div>

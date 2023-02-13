@@ -2,10 +2,12 @@ import st from "../styles.module.scss";
 import cn from "classnames";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { Container } from "@/shared/ui";
 
 export const Banner = () => {
   return (
     <section className={cn(st.section_banner)}>
+      {/* <Container> */}
       <Swiper loop slidesPerView={1} className={st.swiper}>
         <SwiperSlide className={st.swiper_slide}>
           <video
@@ -29,6 +31,7 @@ export const Banner = () => {
         <SwiperSlide className={st.swiper_slide}>слайд 5</SwiperSlide>
         <SwiperSlide className={st.swiper_slide}>слайд 6</SwiperSlide>
       </Swiper>
+      {/* </Container> */}
     </section>
   );
 };

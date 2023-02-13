@@ -1,3 +1,5 @@
+export { AddToCart } from "./add-to-cart/ui/add-to-cart";
+
 export { SignUp } from "./sign-up/ui/sign-up";
 
 export { SignIn } from "./sign-in/ui/sign-in";

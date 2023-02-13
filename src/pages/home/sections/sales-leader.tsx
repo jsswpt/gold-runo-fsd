@@ -8,6 +8,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useScreen } from "@/shared/hooks";
+import { ChevronLeft } from "@/shared/assets";
+import { ChevronRight } from "@/shared/assets/ui/svgs/chevron-right";
 
 const length = 7;
 
@@ -22,8 +24,9 @@ export const SalesLeader = () => {
       return 1;
     } else if (currentScreen === "sm" || currentScreen === "md") {
       return 2;
-    }
-    return 3;
+    } else if (currentScreen === "lg") {
+      return 3;
+    } else return 4;
   }, [currentScreen]);
 
   return (
@@ -49,14 +52,16 @@ export const SalesLeader = () => {
                   className={st.button_back_wrapper}
                   key="back"
                 >
-                  <IconButton onClick={() => swiper.slidePrev()}>b</IconButton>
+                  <IconButton size="lg" onClick={() => swiper.slidePrev()}>
+                    <ChevronLeft />
+                  </IconButton>
                 </motion.div>
               )}
             </AnimatePresence>
 
             <Swiper
               slidesPerView={slidesPerView}
-              spaceBetween={16}
+              spaceBetween={32}
               className={st.swiper}
               onSlideChange={(e) => setActiveIndex(e.activeIndex)}
               onInit={(e) => setSwiper(e)}
@@ -90,7 +95,9 @@ export const SalesLeader = () => {
                   className={st.button_forward_wrapper}
                   key="forward"
                 >
-                  <IconButton onClick={() => swiper.slideNext()}>f</IconButton>
+                  <IconButton size="lg" onClick={() => swiper.slideNext()}>
+                    <ChevronRight />
+                  </IconButton>
                 </motion.div>
               )}
             </AnimatePresence>
