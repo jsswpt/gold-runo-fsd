@@ -47,9 +47,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <ScreenContext.Provider value={{ currentScreen: screen }}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Component {...pageProps} />
     </ScreenContext.Provider>
   );
 }
