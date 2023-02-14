@@ -1,7 +1,7 @@
 import st from "./styles.module.scss";
 import cn from "classnames";
 import Link from "next/link";
-import { Button } from "@/shared/ui";
+import { Button, Divider } from "@/shared/ui";
 import { AddToCart, BuyByOneTap } from "@/features";
 
 export const ProductCard = () => {
@@ -28,7 +28,7 @@ export const ProductCard = () => {
             </p>
           </div>
         </div>
-
+        <Divider />
         <div className={st.product_card_actions_wrapper}>
           <AddToCart />
           <BuyByOneTap />

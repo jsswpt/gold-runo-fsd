@@ -3,15 +3,16 @@
 @import url("../src/shared/assets/fonts/montserrat/stylesheet.css");
 
 :root {
-  --base: #191919;
-  --background: #fffaff;
+  --base: #262626;
   --surface: #fff;
-  --stroke: #9a9a9a;
-  --light-stroke: #ececec;
-
+  --background: #fff;
+  
   --text-primary: var(--base);
   --text-contrast: var(--background);
-  --text-secondary: var(--stroke);
+  --text-secondary: #a7a7a7;
+
+  --stroke: var(--text-secondary);
+  --light-stroke: #e7e7e7;
 
   // --primary: rgb(255, 214, 64);
   --primary: #007fff;
@@ -22,7 +23,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #191919;
+    --background: #262626;
     --surface: rgb(56, 49, 56);
     --base: #fffaff;
   }
@@ -62,6 +63,7 @@ body {
   }
 
   overflow-y: auto;
+
   &:has(#modal) {
     overflow-y: hidden;
   }
@@ -119,7 +121,7 @@ body {
 
 .link1 {
   font-weight: 400;
-  font-size: funcs.px-rem(16);
+  font-size: funcs.px-rem(14);
 }
 
 .link2 {
@@ -128,9 +130,6 @@ body {
 .caption {
   font-size: funcs.px-rem(10);
   font-weight: 600;
-}
-
-* {
 }
 
 .light-selection {
@@ -164,8 +163,8 @@ blockquote {
 }
 
 .modal_wrapper {
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
-  bottom: auto;
 }

@@ -22,10 +22,20 @@ import { Cart, Favorite, Logo, Person } from "@/shared/assets";
 import { SearchFurniture } from "@/features";
 import { headerLinks } from "@/shared/api/internal/";
 
-export const Header = () => {
+type Header = {
+  actions: React.ReactNode;
+};
+
+export const Header = (props: Header) => {
   const { currentScreen } = useScreen();
 
-  return (
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  return isMounted ? (
     <>
       <motion.header className={st.header}>
         <Container className={st.header_container}>
@@ -70,36 +80,13 @@ export const Header = () => {
             )}
 
           <div className={cn(st.header_wrap, st.header_wrap__actions)}>
-            <div className={st.header_actions_wrapper}>
-              <IconButton variant="contained" color="default">
-                <Favorite />
-              </IconButton>
-            </div>
-            <div className={st.header_actions_wrapper}>
-              <IconButton variant="contained" color="default">
-                <Cart />
-              </IconButton>
-            </div>
-            {currentScreen !== "xs" && (
-              <div className={st.header_actions_wrapper}>
-                <Dropdown
-                  justify="start"
-                  align="bottom"
-                  anchorEl={
-                    <IconButton variant="contained" color="default">
-                      <Person />
-                    </IconButton>
-                  }
-                  triggerOn="click"
-                >
-                  <AuthorizeCard />
-                </Dropdown>
-              </div>
-            )}
+            {props.actions}
           </div>
         </Container>
       </motion.header>
       <HeaderSubNav navList={headerLinks} />
     </>
+  ) : (
+    <></>
   );
 };

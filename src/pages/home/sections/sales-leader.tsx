@@ -71,7 +71,7 @@ export const SalesLeader = () => {
                 .map((item, idx) => (
                   <SwiperSlide key={idx} className={st.swiper_slide}>
                     <motion.div
-                      viewport={{ once: false }}
+                      viewport={{ once: true }}
                       initial={{ scale: 0, opacity: 0 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.32 }}

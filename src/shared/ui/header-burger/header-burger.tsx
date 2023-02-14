@@ -4,7 +4,7 @@ import st from "./styles.module.scss";
 import cn from "classnames";
 import { Burger } from "@/shared/assets";
 import { IconButton } from "../button/icon-button";
-import { Modal } from "../";
+import { FullScreenPopup, Modal } from "../";
 import { motion, AnimatePresence } from "framer-motion";
 
 export const HeaderBurger = memo(() => {
@@ -16,14 +16,13 @@ export const HeaderBurger = memo(() => {
           <Burger />
         </IconButton>
       </motion.div>
-      <Modal
+      <FullScreenPopup
         isOpen={isOpen}
-        closeButton
         onClose={() => setIsOpen(false)}
         key="modal"
       >
         <div>123</div>
-      </Modal>
+      </FullScreenPopup>
     </>
   );
 });

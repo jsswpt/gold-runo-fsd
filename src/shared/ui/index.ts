@@ -1,3 +1,5 @@
+export { FullScreenPopup } from "./full-screen-popup/full-screen-popup";
+
 export { Divider } from "./divider/divider";
 
 export { AuthFormLayout } from "./auth-form-layout/auth-form-layout";

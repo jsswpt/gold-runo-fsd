@@ -90,7 +90,7 @@
 }
 
 .contained {
-  color: #fff;
+  color: var(--text-contrast);
   &:hover {
     box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20)
       rgba(0, 0, 0, 0.2);
@@ -115,7 +115,7 @@
   background: var(--success);
 }
 .bg_default {
-  background: var(--surface);
+  // background: var(--surface);
   color: var(--text-primary);
 }
 

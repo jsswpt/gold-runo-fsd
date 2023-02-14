@@ -1,0 +1,36 @@
+@use "../../modules/funcs.module";
+@use "../../modules/breakpoints.module";
+
+.popup {
+  position: fixed;
+  background: var(--background);
+  top: 0;
+  height: 100vh;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.top {
+  top: 0;
+}
+
+.bottom {
+  top: auto;
+  bottom: 0;
+}
+
+.vertical {
+  min-width: funcs.px-rem(340);
+  width: 25vw;
+}
+.horizontal {
+  min-height: funcs.px-rem(340);
+  width: 100%;
+  height: 25vh;
+}

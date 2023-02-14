@@ -1,0 +1,17 @@
+@use "../../modules/funcs.module";
+
+.popup {
+  background: var(--background);
+  height: 100vh;
+  width: 100%;
+}
+
+.popup_wrap__navigation {
+  padding: funcs.px-rem(36) 0;
+}
+
+.popup_navigation_container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

@@ -2,9 +2,16 @@ import { memo, useState } from "react";
 
 import st from "./styles.module.scss";
 import cn from "classnames";
-import { Container, IconButton, Input, Modal } from "@/shared/ui";
+import {
+  Container,
+  FullScreenPopup,
+  IconButton,
+  Input,
+  Modal,
+} from "@/shared/ui";
 import { Search } from "@/shared/assets";
 import { useScreen } from "@/shared/hooks";
+import { QuarterScreenPopup } from "@/shared/ui/quarter-screen-popup/quarter-screen-popup";
 
 export const SearchFurniture = memo(() => {
   const [isOpened, setIsOpened] = useState(false);
@@ -25,7 +32,11 @@ export const SearchFurniture = memo(() => {
           placeholder="Введите запрос"
         />
       )}
-      <Modal closeButton isOpen={isOpened} onClose={() => setIsOpened(false)}>
+      <QuarterScreenPopup
+        position="top"
+        isOpen={isOpened}
+        onClose={() => setIsOpened(false)}
+      >
         <Container>
           <Input
             autoFocus
@@ -34,7 +45,7 @@ export const SearchFurniture = memo(() => {
             fullWidth
           />
         </Container>
-      </Modal>
+      </QuarterScreenPopup>
     </>
   );
 });
