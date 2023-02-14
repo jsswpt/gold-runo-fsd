@@ -4,12 +4,14 @@ import { Suspense } from "react";
 
 import st from "./styles.module.scss";
 
-const SalesLeader = dynamic(() =>
-  import("./sections/sales-leader").then((mod) => mod.SalesLeader)
+const SalesLeader = dynamic(
+  () => import("./sections/sales-leader").then((mod) => mod.SalesLeader),
+  { ssr: false }
 );
 
-const Banner = dynamic(() =>
-  import("./sections/banner").then((mod) => mod.Banner)
+const Banner = dynamic(
+  () => import("./sections/banner").then((mod) => mod.Banner),
+  { ssr: false }
 );
 
 export const Home = () => {

@@ -12,8 +12,9 @@ type Layout = {
   children: React.ReactNode;
 };
 
-const Header = dynamic(() =>
-  import("widgets/header/header").then((mod) => mod.Header)
+const Header = dynamic(
+  () => import("widgets/header/header").then((mod) => mod.Header),
+  { ssr: false }
 );
 
 export const Layout = (props: Layout) => {
