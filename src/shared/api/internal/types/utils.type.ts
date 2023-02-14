@@ -7,3 +7,8 @@ export type Icon = {
 };
 
 export type Colors = "primary" | "success" | "danger" | "warning" | "default";
+
+export type ColorObjT = {
+  name: string;
+  img: string;
+};

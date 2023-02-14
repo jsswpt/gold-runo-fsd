@@ -6,6 +6,7 @@ import { Burger } from "@/shared/assets";
 import { IconButton } from "../button/icon-button";
 import { FullScreenPopup, Modal } from "../";
 import { motion, AnimatePresence } from "framer-motion";
+import { QuarterScreenPopup } from "../quarter-screen-popup/quarter-screen-popup";
 
 export const HeaderBurger = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,13 +17,14 @@ export const HeaderBurger = memo(() => {
           <Burger />
         </IconButton>
       </motion.div>
-      <FullScreenPopup
+      <QuarterScreenPopup
+        position="left"
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
         key="modal"
       >
         <div>123</div>
-      </FullScreenPopup>
+      </QuarterScreenPopup>
     </>
   );
 });

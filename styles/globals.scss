@@ -6,7 +6,7 @@
   --base: #262626;
   --surface: #fff;
   --background: #fff;
-  
+
   --text-primary: var(--base);
   --text-contrast: var(--background);
   --text-secondary: #a7a7a7;
@@ -29,17 +29,6 @@
   }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-  list-style: none;
-  text-decoration: none;
-
-  scroll-behavior: smooth;
-}
-
 img {
   display: block;
   width: 100%;
@@ -50,17 +39,6 @@ body {
   background: var(--background);
 
   overflow-x: hidden;
-
-  &::-webkit-scrollbar {
-    width: funcs.px-rem(6);
-    height: funcs.px-rem(6);
-    background: #414141;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 16px;
-    background: var(--text-secondary);
-  }
 
   overflow-y: auto;
 
@@ -167,4 +145,27 @@ blockquote {
   position: fixed;
   top: 0;
   left: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  list-style: none;
+  text-decoration: none;
+
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    width: funcs.px-rem(6);
+    height: funcs.px-rem(6);
+    background: #414141;
+    border-radius: 16px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 16px;
+    background: var(--text-secondary);
+  }
 }

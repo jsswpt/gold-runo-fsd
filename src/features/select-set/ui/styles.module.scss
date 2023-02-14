@@ -1,0 +1,17 @@
+@use "../../../shared/modules/funcs.module";
+
+.select_set_wrapper {
+  display: flex;
+  align-items: center;
+  gap: funcs.px-rem(32);
+}
+
+.select {
+  white-space: nowrap;
+  color: var(--text-primary);
+  transition: 0.16s;
+}
+
+.active {
+  font-weight: 600;
+}

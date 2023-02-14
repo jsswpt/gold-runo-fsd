@@ -1,31 +1,16 @@
 // import CustomSlider from "@/shared/ui/slider/CustomSlider";
-import dynamic from "next/dynamic";
-import { Suspense } from "react";
 
+import { Banner } from "./sections/banner/banner";
+import { SalesLeader } from "./sections/sales-leader/sales-leader";
+import { Sets } from "./sections/sets/sets";
 import st from "./styles.module.scss";
-
-const SalesLeader = dynamic(
-  () => import("./sections/sales-leader").then((mod) => mod.SalesLeader),
-  { ssr: false }
-);
-
-const Banner = dynamic(
-  () => import("./sections/banner").then((mod) => mod.Banner),
-  { ssr: false }
-);
 
 export const Home = () => {
   return (
     <>
-      <Suspense fallback="loading">
-        <Banner />
-      </Suspense>
-      <Suspense fallback="loading">
-        <SalesLeader />
-      </Suspense>
-      {/* <CustomSlider
-        items={[{ id: 1, image_url: "", price: 12300, title: "Заголовок" }]}
-      /> */}
+      <Banner />
+      <SalesLeader />
+      <Sets />
     </>
   );
 };

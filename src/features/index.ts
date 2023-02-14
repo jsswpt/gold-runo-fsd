@@ -1,3 +1,5 @@
+export { SelectSet } from "./select-set/ui/select-set";
+
 export { AddToCart } from "./add-to-cart/ui/add-to-cart";
 
 export { SignUp } from "./sign-up/ui/sign-up";

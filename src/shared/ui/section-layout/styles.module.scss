@@ -1,0 +1,60 @@
+@use "../../modules/funcs.module";
+@use "../../modules/breakpoints.module";
+
+.section {
+  padding: funcs.px-rem(96) 0;
+}
+
+.section_container {
+  flex-direction: column;
+}
+
+.section_wrap__headlines {
+  margin-bottom: funcs.px-rem(72);
+}
+
+.headlines_wrap__title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: funcs.px-rem(32);
+
+  & > * {
+    text-align: center;
+  }
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    justify-content: flex-start;
+    & > * {
+      text-align: start;
+    }
+  }
+}
+
+.headlines_wrap__subtitle {
+  display: flex;
+  justify-content: center;
+  & > * {
+    text-align: center;
+  }
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    justify-content: flex-start;
+    & > * {
+      text-align: start;
+    }
+  }
+}
+
+.section_title {
+  color: var(--text-primary);
+}
+
+.section_subtitle {
+  color: var(--text-secondary);
+}
+
+.section_body {
+  display: flex;
+  flex-direction: column;
+  gap: funcs.px-rem(96);
+}

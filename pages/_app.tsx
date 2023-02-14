@@ -5,6 +5,9 @@ import { ScreenContext } from "@/shared/contexts";
 import { useEffect, useState } from "react";
 import { ScreenTypes } from "@/shared/contexts/screen/screen.type";
 
+import { Provider } from "react-redux";
+import { store } from "../store/store";
+
 const pxToRem = (width: number) => (width + 32) / 16;
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -46,8 +49,10 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <ScreenContext.Provider value={{ currentScreen: screen }}>
-      <Component {...pageProps} />
-    </ScreenContext.Provider>
+    <Provider store={store}>
+      <ScreenContext.Provider value={{ currentScreen: screen }}>
+        <Component {...pageProps} />
+      </ScreenContext.Provider>
+    </Provider>
   );
 }

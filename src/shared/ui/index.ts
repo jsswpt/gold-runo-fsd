@@ -1,3 +1,5 @@
+export { SectionLayout } from "./section-layout/section-layout";
+
 export { FullScreenPopup } from "./full-screen-popup/full-screen-popup";
 
 export { Divider } from "./divider/divider";

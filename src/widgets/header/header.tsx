@@ -8,25 +8,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useScreen } from "@/shared/hooks";
 
-import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
-import {
-  AuthorizeCard,
-  Dropdown,
-  HeaderBurger,
-  HeaderNavList,
-  HeaderSubNav,
-  IconButton,
-  Modal,
-} from "@/shared/ui";
-import { Cart, Favorite, Logo, Person } from "@/shared/assets";
+import { motion } from "framer-motion";
+import { HeaderBurger, HeaderNavList, HeaderSubNav } from "@/shared/ui";
+import { Logo } from "@/shared/assets";
 import { SearchFurniture } from "@/features";
 import { headerLinks } from "@/shared/api/internal/";
+import { HeaderT } from "./header.type";
 
-type Header = {
-  actions: React.ReactNode;
-};
-
-export const Header = (props: Header) => {
+export const HeaderChunk = (props: HeaderT) => {
   const { currentScreen } = useScreen();
 
   const [isMounted, setIsMounted] = useState(false);
