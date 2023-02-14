@@ -85,3 +85,17 @@
   align-items: center;
   flex-wrap: wrap;
 }
+
+.product_info_wrap__color {
+  display: flex;
+  gap: funcs.px-rem(5);
+}
+
+.color_point {
+  width: funcs.px-rem(30);
+  height: funcs.px-rem(30);
+  border: 1px solid var(--text-secondary);
+  border-radius: 5px;
+
+  overflow: hidden;
+}
