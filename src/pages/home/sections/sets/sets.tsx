@@ -18,6 +18,7 @@ export const Sets = memo((props: Sets) => {
   return (
     <SectionLayout
       title="Комплекты"
+      alignHeadlines="start"
       subElement={
         <div className={st.sets_wrap__select}>
           <SelectSet />

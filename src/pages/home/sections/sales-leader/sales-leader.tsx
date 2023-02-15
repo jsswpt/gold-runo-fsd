@@ -35,6 +35,7 @@ export const SalesLeader = memo(() => {
   return (
     <SectionLayout
       title="Лидеры продаж"
+      alignHeadlines="start"
       subElement="Наиболее популярные модели из всех категорий интернет-магазина"
     >
       <div className={cn(st.sales_wrap, st.sales_wrap__products)}>
@@ -48,6 +49,11 @@ export const SalesLeader = memo(() => {
             .map((item, idx) => (
               <SwiperSlide key={idx}>
                 <ProductCard
+                  animation={{
+                    whileInView: { opacity: 1 },
+                    exit: { opacity: 0 },
+                    initial: { opacity: 0 },
+                  }}
                   colors={[]}
                   description="Описание"
                   id={1}

@@ -34,8 +34,15 @@
 .sets_wrap__select {
   padding: funcs.px-rem(8);
   width: 100%;
-  overflow-x: auto;
   overflow-y: hidden;
+
+  overflow-x: hidden;
+
+  &:hover,
+  &:focus,
+  &:active {
+    overflow-x: auto;
+  }
 }
 
 .sets_wrap__presentation {
@@ -52,7 +59,8 @@
 .presentation_wrap__img {
   position: relative;
   width: 100%;
-  padding-top: 67%;
+
+  padding-top: 128%;
 
   & > * {
     position: absolute;
@@ -61,9 +69,13 @@
     width: 100%;
     height: 100%;
     border: 1px solid var(--stroke);
+
+    background: green;
   }
+
   @include breakpoints.media-screen(breakpoints.$sm) {
-    width: 63%;
+    padding-top: 34%;
+    width: 75%;
 
     flex-direction: row;
     justify-content: space-between;
@@ -88,6 +100,6 @@
   }
 
   @include breakpoints.media-screen(breakpoints.$sm) {
-    width: 37%;
+    width: 25%;
   }
 }

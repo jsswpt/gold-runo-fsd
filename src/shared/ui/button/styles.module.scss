@@ -73,6 +73,22 @@
   height: units.$md;
 }
 
+.icon_button.sm {
+  width: units.$sm;
+  height: units.$sm;
+  flex-shrink: 0;
+
+  & > * {
+    width: calc(units.$sm / 2);
+    height: calc(units.$sm / 2);
+    object-fit: contain;
+  }
+}
+
+.button.sm {
+  height: units.$sm;
+}
+
 .icon_button.lg {
   width: units.$lg;
   height: units.$lg;

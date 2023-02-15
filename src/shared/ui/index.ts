@@ -1,3 +1,5 @@
+export { ReviewSliderCard } from "./review-slider-card/review-slider-card";
+
 export { CustomSwiper } from "./custom-swiper/custom-swiper";
 
 export { SectionLayout } from "./section-layout/section-layout";
