@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button } from "../button/button";
 
 import { HTMLMotionProps, motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { memo } from "react";
 
 type ReviewSliderCard = {
   id: string;
@@ -14,24 +14,13 @@ type ReviewSliderCard = {
   animation?: HTMLMotionProps<"article">;
 };
 
-export const ReviewSliderCard = (props: ReviewSliderCard) => {
-  const { inView, ref } = useInView({ threshold: 1, triggerOnce: true });
-
+export const ReviewSliderCard = memo((props: ReviewSliderCard) => {
   return (
-    <motion.article
-      ref={ref}
-      {...props.animation}
-      className={st.review_slider_card}
-    >
+    <motion.article {...props.animation} className={st.review_slider_card}>
       <div className={st.review_wrap__img}>
         <div className={st.review_img}></div>
       </div>
-      <motion.div
-        initial={{ y: "500%", opacity: 0 }}
-        animate={inView ? { y: 0, opacity: 1 } : { y: "100%", opacity: 0 }}
-        transition={{ duration: 0.64, delay: 0 }}
-        className={st.review_wrap__info}
-      >
+      <div className={st.review_wrap__info}>
         <div className={st.review_info_wrap__top}>
           <h3 className={st.review_title}>{props.name}</h3>
         </div>
@@ -47,7 +36,7 @@ export const ReviewSliderCard = (props: ReviewSliderCard) => {
             </Link>
           </div>
         </div>
-      </motion.div>
+      </div>
     </motion.article>
   );
-};
+});

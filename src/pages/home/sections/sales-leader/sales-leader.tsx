@@ -53,6 +53,7 @@ export const SalesLeader = memo(() => {
                     whileInView: { opacity: 1 },
                     exit: { opacity: 0 },
                     initial: { opacity: 0 },
+                    viewport: { once: true },
                   }}
                   colors={[]}
                   description="Описание"
