@@ -8,6 +8,9 @@ import { useAppSelector } from "@/shared/lib";
 import { ProductCard } from "@/widgets";
 import { AnimatePresence, motion } from "framer-motion";
 
+import SetImage from "shared/assets/media/imgs/set-example.jpg";
+import Image from "next/image";
+
 type Sets = {};
 
 export const Sets = memo((props: Sets) => {
@@ -36,7 +39,7 @@ export const Sets = memo((props: Sets) => {
               key={currentSet!.id}
               className={st.presentation_img_wrapper}
             >
-              <div></div>
+              <Image src={SetImage} alt="" />
             </motion.div>
           </AnimatePresence>
         </div>
@@ -53,6 +56,7 @@ export const Sets = memo((props: Sets) => {
                 transition: { duration: 0.32 },
               }}
               {...currentSet!}
+              imgs={[SetImage]}
               key={currentSet!.id}
             />
           </AnimatePresence>

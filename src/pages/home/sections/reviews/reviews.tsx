@@ -7,6 +7,8 @@ import { SwiperSlide } from "swiper/react";
 import { CustomSwiper, ReviewSliderCard, SectionLayout } from "@/shared/ui";
 import { useScreen } from "@/shared/hooks";
 
+import ReviewImg from "shared/assets/media/imgs/review-example.jpg";
+
 type Reviews = {};
 
 export const Reviews = (props: Reviews) => {
@@ -38,7 +40,7 @@ export const Reviews = (props: Reviews) => {
                     viewport: { once: true },
                   }}
                   id="1"
-                  img=""
+                  img={ReviewImg}
                   name="Олег Майами"
                   city="Москва"
                 />

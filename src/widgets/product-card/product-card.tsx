@@ -7,6 +7,7 @@ import { memo } from "react";
 import { ProductVariantT } from "@/shared/api/internal";
 
 import { HTMLMotionProps, motion } from "framer-motion";
+import Image from "next/image";
 
 interface ProductCard extends ProductVariantT {
   animation?: HTMLMotionProps<"article">;
@@ -16,7 +17,9 @@ export const ProductCard = memo((props: ProductCard) => {
   return (
     <motion.article {...props.animation} className={st.product_card}>
       <div className={st.product_card_image_wrapper}>
-        <Link href={`/product/${props.id}`}></Link>
+        <Link href={`/product/${props.id}`}>
+          <Image src={props.imgs[0]} alt="Картинка" />
+        </Link>
       </div>
       <div className={st.product_card_body}>
         <div className={st.product_card_info_wrapper}>

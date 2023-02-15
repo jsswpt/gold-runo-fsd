@@ -37,6 +37,7 @@ export const CustomSwiper = (props: CustomSwiper) => {
         onSlideNextTransitionEnd={(e) => setCurrentSlide(e.activeIndex)}
         onSlidePrevTransitionEnd={(e) => setCurrentSlide(e.activeIndex)}
         onInit={(el) => setSwiper(el)}
+        className={cn(st.swiper, props.className)}
       >
         {swiper && props.children}
       </Swiper>

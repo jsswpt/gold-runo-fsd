@@ -5,12 +5,13 @@ import { Button } from "../button/button";
 
 import { HTMLMotionProps, motion } from "framer-motion";
 import { memo } from "react";
+import Image, { StaticImageData } from "next/image";
 
 type ReviewSliderCard = {
   id: string;
   city: string;
   name: string;
-  img: string;
+  img: string | StaticImageData;
   animation?: HTMLMotionProps<"article">;
 };
 
@@ -18,7 +19,7 @@ export const ReviewSliderCard = memo((props: ReviewSliderCard) => {
   return (
     <motion.article {...props.animation} className={st.review_slider_card}>
       <div className={st.review_wrap__img}>
-        <div className={st.review_img}></div>
+        <Image src={props.img} alt="img" className={st.review_img} />
       </div>
       <div className={st.review_wrap__info}>
         <div className={st.review_info_wrap__top}>

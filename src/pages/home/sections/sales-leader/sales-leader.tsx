@@ -2,18 +2,12 @@ import { memo, useMemo, useState } from "react";
 
 import st from "../../styles.module.scss";
 import cn from "classnames";
-import {
-  Container,
-  CustomSwiper,
-  IconButton,
-  SectionLayout,
-} from "@/shared/ui";
+import { CustomSwiper, SectionLayout } from "@/shared/ui";
 import { ProductCard } from "@/widgets";
 import { SwiperSlide } from "swiper/react";
 
-import { Swiper } from "swiper";
+import SalesImg from "shared/assets/media/imgs/sales-example.jpeg";
 
-import { motion } from "framer-motion";
 import { useScreen } from "@/shared/hooks";
 
 const length = 7;
@@ -58,7 +52,7 @@ export const SalesLeader = memo(() => {
                   colors={[]}
                   description="Описание"
                   id={1}
-                  imgs={[]}
+                  imgs={[SalesImg]}
                   name="Название"
                   oldPrice={null}
                   price={32000}

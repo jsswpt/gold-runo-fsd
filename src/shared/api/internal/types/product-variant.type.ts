@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import { ColorObjT } from "./utils.type";
 
 export type ProductVariantT = {
@@ -7,5 +8,5 @@ export type ProductVariantT = {
   price: number;
   oldPrice: number | null;
   description: string;
-  imgs: string[];
+  imgs: string[] | StaticImageData[];
 };
