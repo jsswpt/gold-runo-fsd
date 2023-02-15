@@ -5,7 +5,7 @@ export type ProductVariantT = {
   colors: ColorObjT[];
   name: string;
   price: number;
-  oldPrice: number;
+  oldPrice: number | null;
   description: string;
   imgs: string[];
 };

@@ -1,0 +1,66 @@
+@use "../../modules/funcs.module";
+
+.swiper_wrap {
+  position: relative;
+}
+
+.swiper {
+}
+
+.button_next_wrapper,
+.button_prev_wrapper {
+  z-index: 5;
+  position: absolute;
+  top: 50%;
+}
+
+.button_prev_wrapper {
+  left: 0;
+  transform: translate(0, -50%);
+}
+
+.button_next_wrapper {
+  right: 0;
+  transform: translate(0, -50%);
+}
+
+.swiper_nav_plates_wrap {
+  z-index: 5;
+
+  position: absolute;
+
+  left: 50%;
+  bottom: funcs.px-rem(64);
+
+  display: flex;
+  align-items: center;
+  gap: funcs.px-rem(16);
+
+  transform: translate(-50%, -50%);
+}
+
+.swiper_nav_plate {
+  height: funcs.px-rem(6);
+  width: funcs.px-rem(80);
+
+  border: none;
+  outline: none;
+  background: var(--text-primary);
+
+  transition: 0.48s;
+
+  cursor: pointer;
+
+  border-radius: 12px;
+}
+
+.swiper_nav_plate__active {
+  background: var(--text-secondary);
+  transform: scaleY(1.5);
+
+  cursor: default;
+
+  &:hover {
+    transform: scaleY(1.5);
+  }
+}

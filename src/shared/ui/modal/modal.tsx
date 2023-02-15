@@ -28,9 +28,9 @@ export const Modal = (props: Modal) => {
       <AnimatePresence mode="wait">
         {props.isOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 0.2, 0.4, 0.6, 0.8, 1] }}
-            exit={{ opacity: [1, 0.8, 0.6, 0.4, 0.2, 0] }}
+            initial={{ backdropFilter: " brightness(1) grayscale(0)" }}
+            animate={{ backdropFilter: "brightness(0.5) grayscale(0.7)" }}
+            exit={{ backdropFilter: "brightness(1) grayscale(0)" }}
             transition={{ duration: 0.64 }}
             className={cn(st.modal_bg, {
               [st.bg_none]: props.bg === "none" || !props.bg,

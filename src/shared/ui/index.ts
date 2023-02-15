@@ -1,3 +1,5 @@
+export { CustomSwiper } from "./custom-swiper/custom-swiper";
+
 export { SectionLayout } from "./section-layout/section-layout";
 
 export { FullScreenPopup } from "./full-screen-popup/full-screen-popup";

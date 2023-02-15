@@ -4,6 +4,7 @@ import st from "./styles.module.scss";
 import cn from "classnames";
 import { ButtonProps } from "./button.type";
 import { returnClasses } from "./lib/return-classes";
+import { motion } from "framer-motion";
 
 interface IconButton extends ButtonProps {}
 

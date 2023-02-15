@@ -1,22 +1,25 @@
 import st from "../../styles.module.scss";
 import cn from "classnames";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { Container } from "@/shared/ui";
 import { memo } from "react";
+import { CustomSwiper } from "@/shared/ui";
+
+const slides = [0, 1, 2];
 
 export const Banner = memo(() => {
   return (
     <section className={cn(st.section_banner)}>
-      <Swiper loop slidesPerView={1} className={st.swiper}>
-        <SwiperSlide style={{ background: "blue" }} className={st.swiper_slide}>
-          1
-        </SwiperSlide>
-        <SwiperSlide className={st.swiper_slide}>слайд 3</SwiperSlide>
-        <SwiperSlide className={st.swiper_slide}>слайд 4</SwiperSlide>
-        <SwiperSlide className={st.swiper_slide}>слайд 5</SwiperSlide>
-        <SwiperSlide className={st.swiper_slide}>слайд 6</SwiperSlide>
-      </Swiper>
+      <CustomSwiper
+        navType="plates"
+        wrapperClassName={st.banner_wrap__slider}
+        className={st.banner_wrap__slider}
+        slidesPerView={1}
+      >
+        {slides.map((item) => (
+          <SwiperSlide key={item}>Slide {item}</SwiperSlide>
+        ))}
+      </CustomSwiper>
     </section>
   );
 });

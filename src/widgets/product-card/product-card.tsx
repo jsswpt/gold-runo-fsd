@@ -6,9 +6,15 @@ import { AddToCart, BuyByOneTap } from "@/features";
 import { memo } from "react";
 import { ProductVariantT } from "@/shared/api/internal";
 
-export const ProductCard = memo((props: ProductVariantT) => {
+import { HTMLMotionProps, motion } from "framer-motion";
+
+interface ProductCard extends ProductVariantT {
+  animation?: HTMLMotionProps<"article">;
+}
+
+export const ProductCard = memo((props: ProductCard) => {
   return (
-    <article className={st.product_card}>
+    <motion.article {...props.animation} className={st.product_card}>
       <div className={st.product_card_image_wrapper}>
         <Link href={`/product/${props.id}`}></Link>
       </div>
@@ -17,10 +23,19 @@ export const ProductCard = memo((props: ProductVariantT) => {
           {props.colors && (
             <div className={st.product_info_wrap__color}>
               {props.colors.map((item) => (
-                <div>{item.name}</div>
+                <Link
+                  href={`/product/${props.id}/${item.name}`}
+                  className={st.color_point}
+                >
+                  {item.name}
+                </Link>
               ))}
+              <Link href={`/product/${props.id}`} className={st.color_point}>
+                +7
+              </Link>
             </div>
           )}
+
           <div className={st.product_info_wrap__name}>
             <h3 className={cn("subtitle2", "dark-selection", st.product_name)}>
               <Link href={""} className="dark-selection">
@@ -32,9 +47,13 @@ export const ProductCard = memo((props: ProductVariantT) => {
             <p className={cn("dark-selection", st.product_current_price)}>
               {props.price} ₽
             </p>
-            <p className={cn("body1", "dark-selection", st.product_old_price)}>
-              {props.oldPrice} ₽
-            </p>
+            {props.oldPrice && (
+              <p
+                className={cn("body1", "dark-selection", st.product_old_price)}
+              >
+                {props.oldPrice} ₽
+              </p>
+            )}
           </div>
         </div>
         <Divider />
@@ -43,6 +62,6 @@ export const ProductCard = memo((props: ProductVariantT) => {
           <BuyByOneTap />
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 });
