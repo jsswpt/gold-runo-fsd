@@ -28,7 +28,7 @@ export const Modal = (props: Modal) => {
       <AnimatePresence mode="wait">
         {props.isOpen && (
           <motion.div
-            initial={{ backdropFilter: " brightness(1) grayscale(0)" }}
+            initial={{ backdropFilter: "brightness(1) grayscale(0)" }}
             animate={{ backdropFilter: "brightness(0.5) grayscale(0.7)" }}
             exit={{ backdropFilter: "brightness(1) grayscale(0)" }}
             transition={{ duration: 0.64 }}

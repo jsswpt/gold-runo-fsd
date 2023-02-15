@@ -24,7 +24,7 @@ export const CustomSwiper = (props: CustomSwiper) => {
   useEffect(() => {
     if (swiper) {
       if (swiper.slides) {
-        setLength(swiper.slides.length);
+        setLength(swiper.slides.length - 1);
       }
     }
   }, [swiper]);
@@ -40,11 +40,10 @@ export const CustomSwiper = (props: CustomSwiper) => {
       >
         {swiper && props.children}
       </Swiper>
-
       {swiper && props.navType === "buttons" && (
         <SwiperButtons
           activeIndex={currentSlide}
-          length={length - 1}
+          length={length}
           slideBack={() => {
             if (swiper.slidePrev) {
               swiper.slidePrev();
@@ -61,7 +60,7 @@ export const CustomSwiper = (props: CustomSwiper) => {
       {swiper && props.navType === "plates" && (
         <SwiperNavPlates
           activeIndex={currentSlide}
-          length={length - 1}
+          length={length}
           slideTo={(arg) => {
             if (swiper.slideTo) {
               swiper.slideTo(arg);

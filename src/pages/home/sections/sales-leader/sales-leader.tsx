@@ -28,7 +28,8 @@ export const SalesLeader = memo(() => {
       return 2;
     } else if (currentScreen === "lg") {
       return 3;
-    } else return 4;
+    }
+    return 4;
   }, [currentScreen]);
 
   return (
@@ -36,7 +37,32 @@ export const SalesLeader = memo(() => {
       title="Лидеры продаж"
       subElement="Наиболее популярные модели из всех категорий интернет-магазина"
     >
-      <div className={cn(st.sales_wrap, st.sales_wrap__products)}></div>
+      <div className={cn(st.sales_wrap, st.sales_wrap__products)}>
+        <CustomSwiper
+          slidesPerView={slidesPerView}
+          navType="buttons"
+          swiperProps={{ spaceBetween: 32 }}
+        >
+          {Array(length)
+            .fill(0)
+            .map((item, idx) => (
+              <SwiperSlide key={idx}>
+                <ProductCard
+                  colors={[]}
+                  description="Описание"
+                  id={1}
+                  imgs={[]}
+                  name="Название"
+                  oldPrice={null}
+                  price={32000}
+                />
+              </SwiperSlide>
+            ))}
+          <SwiperSlide>
+            <button>показать ещё</button>
+          </SwiperSlide>
+        </CustomSwiper>
+      </div>
     </SectionLayout>
   );
 });

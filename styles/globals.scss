@@ -3,13 +3,13 @@
 @import url("../src/shared/assets/fonts/montserrat/stylesheet.css");
 
 :root {
-  --base: #262626;
+  --base: #151515;
   --surface: #fff;
-  --background: #f8f1f8;
+  --background: #fff;
 
   --text-primary: var(--base);
   --text-contrast: var(--background);
-  --text-secondary: #a7a7a7;
+  --text-secondary: #9a9a9a;
 
   --stroke: var(--text-secondary);
   --light-stroke: #e7e7e7;
@@ -22,11 +22,6 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #262626;
-    --surface: rgb(56, 49, 56);
-    --base: #fffaff;
-  }
 }
 
 img {
