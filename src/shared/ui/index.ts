@@ -1,8 +1,8 @@
+export { ReviewAndBlogCard } from "./review-and-blog-card/review-and-blog-card";
+
 export { Select } from "./select/select";
 
 export { ThreeAndOneQuarterLayout } from "./three-and-one-quarter-layout/three-and-one-quarter-layout";
-
-export { ReviewSliderCard } from "./review-slider-card/review-slider-card";
 
 export { CustomSwiper } from "./custom-swiper/custom-swiper";
 

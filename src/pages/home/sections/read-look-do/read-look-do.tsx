@@ -4,6 +4,7 @@ import st from "../../styles.module.scss";
 import cn from "classnames";
 import { SectionLayout, Select } from "@/shared/ui";
 import dynamic from "next/dynamic";
+import { AnimatePresence } from "framer-motion";
 
 const YouTube = dynamic(
   () => import("./youtube/youtube").then((m) => m.YouTubeChunk),
@@ -66,9 +67,11 @@ export const ReadLookDo = (props: ReadLookDo) => {
         </div>
       }
     >
-      {currentCategory === "youtube" && <YouTube />}
-      {currentCategory === "blog" && <Blog />}
-      {currentCategory === "reviews" && <Reviews />}
+      <AnimatePresence mode="wait">
+        {currentCategory === "youtube" && <YouTube key="youtube" />}
+        {currentCategory === "blog" && <Blog key="blog" />}
+        {currentCategory === "reviews" && <Reviews key="reviews" />}
+      </AnimatePresence>
     </SectionLayout>
   );
 };

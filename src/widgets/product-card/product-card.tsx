@@ -51,13 +51,11 @@ export const ProductCard = memo((props: ProductCard) => {
             </h3>
           </div>
           <div className={st.product_info_wrap__price}>
-            <p className={cn("dark-selection", st.product_current_price)}>
+            <p className={cn("dark-selection", "h5", st.product_current_price)}>
               {props.price} ₽
             </p>
             {props.oldPrice && (
-              <p
-                className={cn("body1", "dark-selection", st.product_old_price)}
-              >
+              <p className={cn("h6", "dark-selection", st.product_old_price)}>
                 {props.oldPrice} ₽
               </p>
             )}

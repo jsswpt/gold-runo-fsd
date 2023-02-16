@@ -24,7 +24,7 @@ export const Select = (props: Select) => {
         onChange={() => props.onSelect(props.value)}
       />
       <label htmlFor={props.id}>
-        <p className={cn("body2", "dark-selection", st.select)}>
+        <p className={cn("subtitle1", "dark-selection", st.select)}>
           {props.title}
         </p>
       </label>

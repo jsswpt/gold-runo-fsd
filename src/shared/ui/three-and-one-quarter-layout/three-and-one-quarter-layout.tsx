@@ -8,14 +8,20 @@ type ThreeAndOneQuarterLayout = {
 
   oneQuarterKey?: string | number;
   threeQuarterKey?: string | number;
+  blockKey?: string | number;
 
   oneQuarterAnimation?: HTMLMotionProps<"div">;
   threeQuarterAnimation?: HTMLMotionProps<"div">;
+  blockAnimation?: HTMLMotionProps<"div">;
 };
 
 export const ThreeAndOneQuarterLayout = (props: ThreeAndOneQuarterLayout) => {
   return (
-    <div className={st.quarters_layout}>
+    <motion.div
+      {...props.blockAnimation}
+      className={st.quarters_layout}
+      key={props.blockKey}
+    >
       <div className={st.quarters_wrap__big}>
         <AnimatePresence mode="wait">
           <motion.div
@@ -34,6 +40,6 @@ export const ThreeAndOneQuarterLayout = (props: ThreeAndOneQuarterLayout) => {
           </motion.div>
         </AnimatePresence>
       </div>
-    </div>
+    </motion.div>
   );
 };

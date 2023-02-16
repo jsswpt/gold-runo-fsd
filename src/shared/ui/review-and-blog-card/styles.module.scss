@@ -1,0 +1,33 @@
+@use "../../modules/funcs.module";
+@use "../../modules/units.module";
+@use "../../modules/breakpoints.module";
+
+.card {
+  border-radius: units.$round-xl;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.card_wrap__img {
+  position: relative;
+  padding-top: 88.72%;
+
+  & > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: green;
+  }
+}
+
+.card_wrap__info {
+  margin-bottom: funcs.px-rem(24);
+  padding: funcs.px-rem(32) funcs.px-rem(40);
+}
+
+.info_top_wrap__title {
+  margin-bottom: funcs.px-rem(16);
+}
