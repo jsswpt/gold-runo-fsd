@@ -27,7 +27,6 @@
   }
 
   @include breakpoints.media-screen(breakpoints.$lg) {
-    flex-direction: row;
     gap: funcs.px-rem(64);
 
     .quarters_wrap__big {
@@ -39,7 +38,6 @@
   }
 
   @include breakpoints.media-screen(breakpoints.$xl) {
-    flex-direction: row;
     gap: funcs.px-rem(64);
 
     .quarters_wrap__big {
@@ -52,7 +50,11 @@
 }
 
 .reversed {
-  flex-direction: row-reverse;
+  flex-direction: column-reverse;
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    flex-direction: row-reverse;
+  }
 }
 
 .quarters_wrap__big {
