@@ -1,8 +1,34 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 
 import st from "../../styles.module.scss";
 import cn from "classnames";
 import { SectionLayout, Select } from "@/shared/ui";
+import dynamic from "next/dynamic";
+
+const YouTube = dynamic(
+  () => import("./youtube/youtube").then((m) => m.YouTubeChunk),
+  {
+    ssr: false,
+    loading(loadingProps) {
+      return loadingProps.isLoading ? <>loading</> : null;
+    },
+  }
+);
+const Blog = dynamic(() => import("./blog/blog").then((m) => m.BlogChunk), {
+  ssr: false,
+  loading(loadingProps) {
+    return loadingProps.isLoading ? <>loading</> : null;
+  },
+});
+const Reviews = dynamic(
+  () => import("./reviews/reviews").then((m) => m.ReviewsChunk),
+  {
+    ssr: false,
+    loading(loadingProps) {
+      return loadingProps.isLoading ? <>loading</> : null;
+    },
+  }
+);
 
 type ReadLookDo = {};
 
@@ -40,7 +66,9 @@ export const ReadLookDo = (props: ReadLookDo) => {
         </div>
       }
     >
-      {currentCategory}
+      {currentCategory === "youtube" && <YouTube />}
+      {currentCategory === "blog" && <Blog />}
+      {currentCategory === "reviews" && <Reviews />}
     </SectionLayout>
   );
 };
