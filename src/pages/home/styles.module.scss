@@ -86,6 +86,10 @@
   gap: funcs.px-rem(16);
   row-gap: funcs.px-rem(8);
   justify-content: center;
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    justify-content: flex-start;
+  }
 }
 
 .payment_wrap__info {
@@ -118,8 +122,10 @@
   }
 }
 
-.read_look_do_wrap__options {
+.options_wrap {
   display: flex;
   align-items: center;
   gap: funcs.px-rem(32);
+  overflow-x: auto;
+  overflow-y: hidden;
 }

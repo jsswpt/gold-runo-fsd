@@ -17,13 +17,13 @@ export const Select = (props: Select) => {
     <div className={st.radio_wrapper}>
       <input
         defaultChecked={props.defaultChecked}
-        id={props.id}
+        id={`${props.selectName}-${props.id}`}
         name={props.selectName}
         type={"radio"}
         hidden
         onChange={() => props.onSelect(props.value)}
       />
-      <label htmlFor={props.id}>
+      <label htmlFor={`${props.selectName}-${props.id}`}>
         <p className={cn("subtitle1", "dark-selection", st.select)}>
           {props.title}
         </p>

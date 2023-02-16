@@ -28,9 +28,9 @@ export const SalesLeader = memo(() => {
 
   return (
     <SectionLayout
+      alignHeadlines="center"
       risingAnimation
       title="Лидеры продаж"
-      alignHeadlines="start"
       subElement="Наиболее популярные модели из всех категорий интернет-магазина"
     >
       <div className={cn(st.sales_wrap, st.sales_wrap__products)}>

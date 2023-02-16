@@ -28,30 +28,28 @@ export const SectionLayout = (props: SectionLayout) => {
     >
       <Container className={st.section_container}>
         <div className={st.section_wrap__headlines}>
-          <div className={st.headlines_wrap__title}>
-            <h2
-              className={cn(
-                "h2",
-                "dark-selection",
-                st.section_title,
-                props.alignHeadlines === "start" || !props.alignHeadlines
-                  ? st.align_start
-                  : st.align_center
-              )}
-            >
+          <div
+            className={cn(
+              st.headlines_wrap__title,
+              props.alignHeadlines === "center" && st.align_center
+            )}
+          >
+            <h2 className={cn("h2", "dark-selection", st.section_title)}>
               {props.title}
             </h2>
           </div>
-          <div className={st.headlines_wrap__subtitle}>
+          <div
+            className={cn(
+              st.headlines_wrap__subtitle,
+              props.alignHeadlines === "center" && st.align_center
+            )}
+          >
             {subElementType === "string" ? (
               <p
                 className={cn(
                   "subtitle1",
                   "dark-selection",
-                  st.section_subtitle,
-                  props.alignHeadlines === "start" || !props.alignHeadlines
-                    ? st.align_start
-                    : st.align_center
+                  st.section_subtitle
                 )}
               >
                 {props.subElement}

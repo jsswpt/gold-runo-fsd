@@ -19,15 +19,19 @@ export const ReviewAndBlogCard = memo((props: ReviewAndBlogCard) => {
   return (
     <motion.article {...props.animation} className={st.card}>
       <div className={st.card_wrap__img}>
-        <Image src={props.img} alt={props.title} />
+        <Image src={props.img} alt={props.title} className="dark-selection" />
       </div>
       <div className={st.card_wrap__info}>
         <div className={st.info_wrap__top}>
           <div className={st.info_top_wrap__title}>
-            <h3 className={st.info_title}>{props.title}</h3>
+            <h3 className={cn("h5", "dark-selection", st.info_title)}>
+              {props.title}
+            </h3>
           </div>
           <div className={st.info_top_wrap__body}>
-            <p className={cn("body2", st.info_body)}>{props.body}</p>
+            <p className={cn("body2", "dark-selection", st.info_body)}>
+              {props.body}
+            </p>
           </div>
         </div>
         <div className={st.info_wrap__bottom}>

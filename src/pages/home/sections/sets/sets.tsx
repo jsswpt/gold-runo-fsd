@@ -26,7 +26,6 @@ export const Sets = memo((props: Sets) => {
     <SectionLayout
       risingAnimation
       title="Комплекты"
-      alignHeadlines="start"
       subElement={
         <div className={st.sets_wrap__select}>
           <SelectSet />

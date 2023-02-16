@@ -21,7 +21,7 @@ export const ProductCard = memo((props: ProductCard) => {
           <Image
             src={props.imgs[0]}
             alt="Картинка"
-            className="dark-selection"
+            className={cn("dark-selection", st.card_img)}
           />
         </Link>
       </div>

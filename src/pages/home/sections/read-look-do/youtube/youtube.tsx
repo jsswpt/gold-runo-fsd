@@ -10,6 +10,7 @@ type YouTubeChunk = {};
 export const YouTubeChunk = (props: YouTubeChunk) => {
   return (
     <ThreeAndOneQuarterLayout
+      direction="row-reversed"
       blockAnimation={{
         exit: { opacity: 0 },
         initial: { opacity: 0 },
