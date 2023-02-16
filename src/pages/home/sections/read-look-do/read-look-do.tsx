@@ -41,7 +41,36 @@ export const ReadLookDo = (props: ReadLookDo) => {
     <SectionLayout
       risingAnimation
       alignHeadlines="center"
-      title="Читай, смотри, действуй"
+      title={
+        <>
+          <span
+            className={cn(
+              st.read_look_do_span,
+              currentCategory === "youtube" && st.read_look_do_span__active
+            )}
+          >
+            Смотри
+          </span>
+          ,{" "}
+          <span
+            className={cn(
+              st.read_look_do_span,
+              currentCategory === "blog" && st.read_look_do_span__active
+            )}
+          >
+            читай
+          </span>
+          ,{" "}
+          <span
+            className={cn(
+              st.read_look_do_span,
+              currentCategory === "reviews" && st.read_look_do_span__active
+            )}
+          >
+            действуй
+          </span>
+        </>
+      }
       subElement={
         <div className={st.options_wrap}>
           <Select

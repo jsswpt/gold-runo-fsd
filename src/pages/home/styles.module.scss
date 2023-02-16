@@ -129,3 +129,13 @@
   overflow-x: auto;
   overflow-y: hidden;
 }
+
+.read_look_do_span {
+  color: var(--text-primary);
+
+  transition: 0.32s;
+}
+
+.read_look_do_span__active {
+  color: var(--primary);
+}

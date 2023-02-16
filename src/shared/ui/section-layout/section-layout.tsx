@@ -7,7 +7,7 @@ import { Container } from "..";
 import { HTMLMotionProps, motion } from "framer-motion";
 
 type SectionLayout = {
-  title?: string;
+  title?: React.ReactNode;
   subElement?: React.ReactNode | string;
   children: React.ReactNode;
   alignHeadlines?: "center" | "start";
