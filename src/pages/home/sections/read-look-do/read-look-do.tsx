@@ -39,6 +39,7 @@ export const ReadLookDo = (props: ReadLookDo) => {
   const [currentCategory, setCurrentCategory] = useState<Categories>("youtube");
   return (
     <SectionLayout
+      risingAnimation
       alignHeadlines="center"
       title="Читай, смотри, действуй"
       subElement={

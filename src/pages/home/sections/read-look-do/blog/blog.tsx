@@ -35,11 +35,10 @@ export const BlogChunk = (props: BlogChunk) => {
             <SwiperSlide key={idx}>
               <ReviewAndBlogCard
                 animation={{
-                  whileInView: { opacity: 1 },
                   exit: { opacity: 0 },
                   initial: { opacity: 0 },
-                  transition: { duration: 0.64 },
-                  viewport: { once: true },
+                  whileInView: { opacity: 1 },
+                  viewport: { amount: 0.5, once: true },
                 }}
                 id={idx}
                 img={BlogExample}

@@ -45,10 +45,10 @@ export const SalesLeader = memo(() => {
               <SwiperSlide key={idx}>
                 <ProductCard
                   animation={{
-                    whileInView: { opacity: 1 },
                     exit: { opacity: 0 },
                     initial: { opacity: 0 },
-                    viewport: { once: true },
+                    whileInView: { opacity: 1 },
+                    viewport: { amount: 0.5, once: true },
                   }}
                   colors={[]}
                   description="Описание"

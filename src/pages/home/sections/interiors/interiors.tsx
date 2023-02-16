@@ -13,6 +13,7 @@ type Interiors = {};
 export const Interiors = (props: Interiors) => {
   return (
     <SectionLayout
+      risingAnimation
       title="Интерьеры с нашими моделями"
       subElement={
         <div className={st.options_wrap}>

@@ -26,6 +26,7 @@ export const NewProducts = (props: NewProducts) => {
   }, [currentScreen]);
   return (
     <SectionLayout
+      risingAnimation
       alignHeadlines="center"
       title="Новинки"
       subElement="Обратите внимание на последние поступления"
@@ -37,83 +38,27 @@ export const NewProducts = (props: NewProducts) => {
           slidesPerView={slidesPerView}
           className={st.products_slider}
         >
-          <SwiperSlide>
-            <ProductCard
-              colors={[]}
-              description="??"
-              id={1}
-              imgs={[NewProductExample]}
-              name="Новый диван"
-              price={10000}
-              oldPrice={8000}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProductCard
-              colors={[]}
-              description="??"
-              id={1}
-              imgs={[NewProductExample]}
-              name="Новый диван"
-              price={10000}
-              oldPrice={8000}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProductCard
-              colors={[]}
-              description="??"
-              id={1}
-              imgs={[NewProductExample]}
-              name="Новый диван"
-              price={10000}
-              oldPrice={8000}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProductCard
-              colors={[]}
-              description="??"
-              id={1}
-              imgs={[NewProductExample]}
-              name="Новый диван"
-              price={10000}
-              oldPrice={8000}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProductCard
-              colors={[]}
-              description="??"
-              id={1}
-              imgs={[NewProductExample]}
-              name="Новый диван"
-              price={10000}
-              oldPrice={8000}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProductCard
-              colors={[]}
-              description="??"
-              id={1}
-              imgs={[NewProductExample]}
-              name="Новый диван"
-              price={10000}
-              oldPrice={8000}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ProductCard
-              colors={[]}
-              description="??"
-              id={1}
-              imgs={[NewProductExample]}
-              name="Новый диван"
-              price={10000}
-              oldPrice={8000}
-            />
-          </SwiperSlide>
+          {Array(10)
+            .fill(0)
+            .map((item, idx) => (
+              <SwiperSlide key={idx}>
+                <ProductCard
+                  animation={{
+                    exit: { opacity: 0 },
+                    initial: { opacity: 0 },
+                    whileInView: { opacity: 1 },
+                    viewport: { amount: 0.5, once: true },
+                  }}
+                  colors={[]}
+                  description="??"
+                  id={1}
+                  imgs={[NewProductExample]}
+                  name="Новый диван"
+                  price={10000}
+                  oldPrice={8000}
+                />
+              </SwiperSlide>
+            ))}
         </CustomSwiper>
       </div>
     </SectionLayout>
