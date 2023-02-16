@@ -1,0 +1,13 @@
+.radio_wrapper {
+  &:has(input:checked) {
+    label p {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+  }
+}
+
+.select {
+  color: var(--text-secondary);
+  transition: 0.16s;
+}

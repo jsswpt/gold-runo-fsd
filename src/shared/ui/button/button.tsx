@@ -17,7 +17,8 @@ export const Button = (props: ButtonProps) => {
           [st.md]: size === "md" || !size,
           [st.lg]: size === "lg",
         },
-        returnClasses({ color, size, variant })
+        returnClasses({ color, size, variant }),
+        props.className
       )}
     >
       {props.children}

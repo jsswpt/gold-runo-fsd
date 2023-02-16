@@ -18,7 +18,11 @@ export const ProductCard = memo((props: ProductCard) => {
     <motion.article {...props.animation} className={st.product_card}>
       <div className={st.product_card_image_wrapper}>
         <Link href={`/product/${props.id}`}>
-          <Image src={props.imgs[0]} alt="Картинка" />
+          <Image
+            src={props.imgs[0]}
+            alt="Картинка"
+            className="dark-selection"
+          />
         </Link>
       </div>
       <div className={st.product_card_body}>

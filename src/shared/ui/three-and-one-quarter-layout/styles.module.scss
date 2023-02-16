@@ -1,0 +1,80 @@
+@use "../../modules/funcs.module";
+@use "../../modules/breakpoints.module";
+
+.quarters_layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: funcs.px-rem(32);
+
+  .quarters_wrap__big {
+    width: 100%;
+  }
+  .quarters_wrap__small {
+    width: 100%;
+  }
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    flex-direction: row;
+    gap: funcs.px-rem(64);
+
+    .quarters_wrap__big {
+      width: 55%;
+    }
+    .quarters_wrap__small {
+      width: 45%;
+    }
+  }
+
+  @include breakpoints.media-screen(breakpoints.$lg) {
+    flex-direction: row;
+    gap: funcs.px-rem(64);
+
+    .quarters_wrap__big {
+      width: 65%;
+    }
+    .quarters_wrap__small {
+      width: 35%;
+    }
+  }
+
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    flex-direction: row;
+    gap: funcs.px-rem(64);
+
+    .quarters_wrap__big {
+      width: 75%;
+    }
+    .quarters_wrap__small {
+      width: 25%;
+    }
+  }
+}
+
+.quarters_wrap__big {
+  width: 75%;
+}
+
+.big_img_wrapper {
+  position: relative;
+  padding-top: 128%;
+
+  & > * {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  @include breakpoints.media-screen(breakpoints.$lg) {
+    padding-top: 47.82%;
+  }
+}
+
+.quarters_wrap__small {
+  overflow: hidden;
+  width: 25%;
+}

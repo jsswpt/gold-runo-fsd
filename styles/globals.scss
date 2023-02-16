@@ -66,11 +66,11 @@ body {
 
 .subtitle1 {
   font-weight: 400;
-  font-size: funcs.px-rem(18);
+  font-size: funcs.px-rem(16);
   line-height: 1.05;
 
   @include breakpoints.media-screen(breakpoints.$md) {
-    font-size: funcs.px-rem(20);
+    font-size: funcs.px-rem(18);
   }
 }
 .subtitle2 {
@@ -155,12 +155,12 @@ blockquote {
   &::-webkit-scrollbar {
     width: funcs.px-rem(6);
     height: funcs.px-rem(6);
-    background: #414141;
+    background: var(--text-secondary);
     border-radius: 16px;
   }
 
   &::-webkit-scrollbar-thumb {
     border-radius: 16px;
-    background: var(--text-secondary);
+    background: var(--text-primary);
   }
 }

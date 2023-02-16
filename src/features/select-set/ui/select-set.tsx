@@ -4,6 +4,7 @@ import st from "./styles.module.scss";
 import cn from "classnames";
 import { useAppDispatch, useAppSelector } from "@/shared/lib";
 import { setsPreview } from "entities/index";
+import { Select } from "@/shared/ui";
 
 type SelectSet = {};
 
@@ -23,29 +24,14 @@ export const SelectSet = (props: SelectSet) => {
   return (
     <div className={st.select_set_wrapper}>
       {list.map((item) => (
-        <div key={item.id}>
-          <input
-            name="set-radio"
-            checked={currentSet?.id === item.id}
-            type={"radio"}
-            hidden
-          />
-          <label
-            htmlFor="set-radio"
-            onClick={() => dispatch(setsPreview.actions.setCurrentSet(item.id))}
-          >
-            <p
-              className={cn(
-                "body2",
-                "dark-selection",
-                st.select,
-                currentSet?.id === item.id && st.active
-              )}
-            >
-              Комплект {item.name}
-            </p>
-          </label>
-        </div>
+        <Select
+          value={item.id}
+          id={`radio-${item.id}`}
+          selectName={`select-set`}
+          title={item.name}
+          onSelect={(val) => dispatch(setsPreview.actions.setCurrentSet(val))}
+          key={item.id}
+        />
       ))}
     </div>
   );

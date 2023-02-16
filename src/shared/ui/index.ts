@@ -1,3 +1,7 @@
+export { Select } from "./select/select";
+
+export { ThreeAndOneQuarterLayout } from "./three-and-one-quarter-layout/three-and-one-quarter-layout";
+
 export { ReviewSliderCard } from "./review-slider-card/review-slider-card";
 
 export { CustomSwiper } from "./custom-swiper/custom-swiper";

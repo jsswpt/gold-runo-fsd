@@ -15,6 +15,7 @@ export const Reviews = (props: Reviews) => {
   const { currentScreen } = useScreen();
   return (
     <SectionLayout
+      risingAnimation
       alignHeadlines="start"
       subElement="Отзывы клиентов Yorcom"
       title="Отзывы"

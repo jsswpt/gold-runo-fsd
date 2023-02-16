@@ -28,6 +28,7 @@ export const SalesLeader = memo(() => {
 
   return (
     <SectionLayout
+      risingAnimation
       title="Лидеры продаж"
       alignHeadlines="start"
       subElement="Наиболее популярные модели из всех категорий интернет-магазина"

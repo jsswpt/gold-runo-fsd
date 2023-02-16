@@ -19,7 +19,11 @@ export const ReviewSliderCard = memo((props: ReviewSliderCard) => {
   return (
     <motion.article {...props.animation} className={st.review_slider_card}>
       <div className={st.review_wrap__img}>
-        <Image src={props.img} alt="img" className={st.review_img} />
+        <Image
+          src={props.img}
+          alt="img"
+          className={cn("dark-selection", st.review_img)}
+        />
       </div>
       <div className={st.review_wrap__info}>
         <div className={st.review_info_wrap__top}>

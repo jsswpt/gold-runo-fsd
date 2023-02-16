@@ -2,7 +2,11 @@ import { memo, useState } from "react";
 
 import st from "../../styles.module.scss";
 import cn from "classnames";
-import { Container, SectionLayout } from "@/shared/ui";
+import {
+  Container,
+  SectionLayout,
+  ThreeAndOneQuarterLayout,
+} from "@/shared/ui";
 import { SelectSet } from "@/features";
 import { useAppSelector } from "@/shared/lib";
 import { ProductCard } from "@/widgets";
@@ -20,6 +24,7 @@ export const Sets = memo((props: Sets) => {
   );
   return (
     <SectionLayout
+      risingAnimation
       title="Комплекты"
       alignHeadlines="start"
       subElement={
@@ -28,40 +33,31 @@ export const Sets = memo((props: Sets) => {
         </div>
       }
     >
-      <div className={st.sets_wrap__presentation}>
-        <div className={st.presentation_wrap__img}>
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.div
-              animate={{ opacity: 1, scale: 1 }}
-              initial={{ opacity: 0, scale: 0 }}
-              exit={{ opacity: 0, scale: 0 }}
-              transition={{ duration: 0.32 }}
-              key={currentSet!.id}
-              className={st.presentation_img_wrapper}
-            >
-              <Image src={SetImage} alt="" />
-            </motion.div>
-          </AnimatePresence>
-        </div>
-        <div
-          className={st.presentation_wrap__card}
-          style={{ overflow: "hidden" }}
-        >
-          <AnimatePresence mode="wait" initial={false}>
-            <ProductCard
-              animation={{
-                initial: { y: "-100%", opacity: 0 },
-                animate: { y: 0, opacity: 1 },
-                exit: { y: "100%", opacity: 0 },
-                transition: { duration: 0.32 },
-              }}
-              {...currentSet!}
-              imgs={[SetImage]}
-              key={currentSet!.id}
-            />
-          </AnimatePresence>
-        </div>
-      </div>
+      <ThreeAndOneQuarterLayout
+        oneQuarterKey={currentSet!.id}
+        threeQuarterKey={currentSet!.id}
+        oneQuarterEl={
+          <ProductCard
+            {...currentSet!}
+            imgs={[SetImage]}
+            key={currentSet!.id}
+          />
+        }
+        threeQuartersEl={
+          <Image src={SetImage} alt="" className="dark-selection" />
+        }
+        oneQuarterAnimation={{
+          initial: { rotateY: "-90deg", opacity: 0 },
+          animate: { rotateY: 0, opacity: 1 },
+          exit: { rotateY: "-90deg", opacity: 0 },
+          transition: { duration: 0.32 },
+        }}
+        threeQuarterAnimation={{
+          initial: { scale: 0, opacity: 0 },
+          animate: { scale: 1, opacity: 1 },
+          exit: { scale: 0, opacity: 0 },
+        }}
+      />
     </SectionLayout>
   );
 });

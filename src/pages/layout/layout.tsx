@@ -1,10 +1,11 @@
 import { CartPopup, Header } from "@/widgets";
 
 import { AuthorizeCard, Dropdown, Footer, IconButton } from "@/shared/ui";
-import { Cart, Person } from "@/shared/assets";
+import { Cart, Favorite, Person } from "@/shared/assets";
 import { useScreen } from "@/shared/hooks";
 
 import st from "./styles.module.scss";
+import Link from "next/link";
 
 type Layout = {
   children: React.ReactNode;
@@ -17,6 +18,13 @@ export const Layout = (props: Layout) => {
       <Header
         actions={
           <>
+            <div className={st.header_actions_wrapper}>
+              <Link href="/favorites">
+                <IconButton>
+                  <Favorite />
+                </IconButton>
+              </Link>
+            </div>
             <div className={st.header_actions_wrapper}>
               <CartPopup />
             </div>

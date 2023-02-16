@@ -59,61 +59,67 @@
   }
 }
 
-.sets_wrap__presentation {
-  display: flex;
-  flex-direction: column;
-  gap: funcs.px-rem(64);
-
-  @include breakpoints.media-screen(breakpoints.$sm) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-.presentation_wrap__img {
+.payment_wrapper {
   position: relative;
-  width: 100%;
 
-  padding-top: 128%;
+  @include breakpoints.media-screen(breakpoints.$md) {
+    &::before {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      right: 0;
+      top: funcs.px-rem(-289);
 
-  & > * {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    border: 1px solid var(--stroke);
+      height: funcs.px-rem(578);
+      width: funcs.px-rem(674);
 
-    background: green;
+      background: url("../../shared/assets/media/imgs/payment-illustration.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
   }
+}
+
+.payment_points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: funcs.px-rem(16);
+  row-gap: funcs.px-rem(8);
+  justify-content: center;
+}
+
+.payment_wrap__info {
+  max-width: funcs.px-rem(760);
+}
+
+.info_wrap__title {
+  margin-bottom: funcs.px-rem(32);
+}
+
+.title_wrap__text {
+  text-align: center;
 
   @include breakpoints.media-screen(breakpoints.$sm) {
-    padding-top: 34%;
-    width: 75%;
-
-    flex-direction: row;
-    justify-content: space-between;
+    text-align: start;
   }
-}
 
-.presentation_img_wrapper {
+  color: var(--text-primary);
   & > * {
-    width: 100%;
-    height: 100%;
+    color: var(--primary);
   }
 }
 
-.presentation_wrap__card {
+.info_wrap__buttons {
+  display: flex;
+
+  justify-content: center;
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    justify-content: flex-start;
+  }
+}
+
+.read_look_do_wrap__options {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-
-  & > * {
-    width: 100%;
-  }
-
-  @include breakpoints.media-screen(breakpoints.$sm) {
-    width: 25%;
-  }
+  gap: funcs.px-rem(32);
 }

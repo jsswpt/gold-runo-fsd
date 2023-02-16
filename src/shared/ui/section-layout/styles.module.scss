@@ -2,7 +2,7 @@
 @use "../../modules/breakpoints.module";
 
 .section {
-  padding: funcs.px-rem(96) 0;
+  padding: funcs.px-rem(64) 0;
 }
 
 .section_container {
@@ -10,13 +10,13 @@
 }
 
 .section_wrap__headlines {
-  margin-bottom: funcs.px-rem(72);
+  margin-bottom: funcs.px-rem(48);
 }
 
 .headlines_wrap__title {
   display: flex;
   justify-content: center;
-  margin-bottom: funcs.px-rem(32);
+  margin-bottom: funcs.px-rem(24);
 
   & > * {
     text-align: center;

@@ -23,7 +23,11 @@ export const Banner = memo(() => {
         {slides.map((item) => (
           <SwiperSlide key={item}>
             <div className={st.banner_bg_wrapper}>
-              <Image src={BannerImage} alt="banner" />
+              <Image
+                src={BannerImage}
+                alt="banner"
+                className="dark-selection"
+              />
             </div>
           </SwiperSlide>
         ))}

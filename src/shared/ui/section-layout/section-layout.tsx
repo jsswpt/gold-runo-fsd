@@ -4,17 +4,28 @@ import st from "./styles.module.scss";
 import cn from "classnames";
 import { Container } from "..";
 
+import { HTMLMotionProps, motion } from "framer-motion";
+
 type SectionLayout = {
   title?: string;
   subElement?: React.ReactNode | string;
   children: React.ReactNode;
   alignHeadlines?: "center" | "start";
+  risingAnimation?: boolean;
+  className?: any;
 };
 
 export const SectionLayout = (props: SectionLayout) => {
   const subElementType = typeof props.subElement;
   return (
-    <section className={cn(st.section)}>
+    <motion.section
+      whileInView={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      initial={{ opacity: props.risingAnimation ? 0 : 1 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.64 }}
+      className={cn(st.section, props.className)}
+    >
       <Container className={st.section_container}>
         <div className={st.section_wrap__headlines}>
           <div className={st.headlines_wrap__title}>
@@ -52,6 +63,6 @@ export const SectionLayout = (props: SectionLayout) => {
         </div>
         <div className={st.section_wrap__body}>{props.children}</div>
       </Container>
-    </section>
+    </motion.section>
   );
 };

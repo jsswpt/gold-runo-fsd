@@ -12,9 +12,7 @@ export default function Index() {
         <title>Главная | YORCOM</title>
       </Head>
 
-      <Layout>
-        <Home />
-      </Layout>
+      <Home />
     </>
   );
 }
