@@ -13,7 +13,20 @@ export const OurBranch = (props: OurBranch) => {
 
   useEffect(() => {
     if (inView && ref.current) {
-      window.scrollTo({ behavior: "smooth", top: ref.current.offsetTop });
+      const scrollTo = async () => {
+        return new Promise((res, rej) => {
+          window.scrollTo({ behavior: "smooth", top: ref.current!.offsetTop });
+          setTimeout(() => {
+            res(0);
+          }, 500);
+        });
+      };
+
+      document.body.style.overflowY = "hidden";
+
+      scrollTo().then(() => {
+        document.body.style.overflowY = "auto";
+      });
     }
   }, [inView, ref]);
   return (
