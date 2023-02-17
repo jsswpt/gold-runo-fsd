@@ -1,4 +1,5 @@
 @use "../../modules/funcs.module";
+@use "../../modules/breakpoints.module";
 
 .swiper {
   position: relative;
@@ -8,27 +9,32 @@
 }
 
 .with_shadows {
-  &::after {
-    z-index: 10;
-    content: "";
-    position: absolute;
-    left: -1px;
-    top: 0;
-    height: 100%;
-    width: 1px;
-    background: none;
-    box-shadow: 0 0 40px 56px #fff;
-  }
-  &::before {
-    z-index: 10;
-    content: "";
-    position: absolute;
-    right: -1px;
-    top: 0;
-    height: 100%;
-    width: 1px;
-    background: none;
-    box-shadow: 0 0 32px 40px #fff;
+  $blur: 8px;
+  $spread: 24px;
+
+  @include breakpoints.media-screen(breakpoints.$md) {
+    &::after {
+      z-index: 10;
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: 0;
+      height: 100%;
+      width: 1px;
+      background: none;
+      box-shadow: 0 0 $blur $spread var(--background);
+    }
+    &::before {
+      z-index: 10;
+      content: "";
+      position: absolute;
+      right: -1px;
+      top: 0;
+      height: 100%;
+      width: 1px;
+      background: none;
+      box-shadow: 0 0 $blur $spread #fff;
+    }
   }
 }
 
