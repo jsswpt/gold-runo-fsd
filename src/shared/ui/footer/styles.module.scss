@@ -1,0 +1,59 @@
+@use "../../modules/funcs.module";
+@use "../../modules/breakpoints.module";
+
+.footer {
+  padding: funcs.px-rem(32) 0;
+  background: var(--light-stroke);
+}
+
+.footer_container {
+  flex-direction: column;
+  gap: funcs.px-rem(32);
+}
+
+.footer_wrap__top {
+}
+.footer_wrap__body {
+  width: 100%;
+}
+.footer_wrap__grid {
+  display: grid;
+  gap: funcs.px-rem(32);
+  grid-template-columns: 100%;
+
+  @include breakpoints.media-screen(breakpoints.$md) {
+    grid-template-columns: 15% auto auto auto 30%;
+  }
+}
+.footer_grid__item {
+  flex-grow: 1;
+}
+
+.footer_point_wrap__title {
+  margin-bottom: funcs.px-rem(16);
+}
+
+.footer_point_body_wrap__list {
+  display: flex;
+  flex-direction: column;
+  gap: funcs.px-rem(8);
+}
+
+.footer_point_wrap__body {
+  display: flex;
+  flex-direction: column;
+  gap: funcs.px-rem(32);
+}
+
+.footer_wrap__bottom {
+}
+
+.footer_bottom_wrap__points {
+  display: flex;
+  align-items: center;
+  gap: funcs.px-rem(16);
+}
+
+.footer_bottom_point__title {
+  color: var(--text-secondary);
+}

@@ -46,7 +46,8 @@ export const ReadLookDo = (props: ReadLookDo) => {
           <span
             className={cn(
               st.read_look_do_span,
-              currentCategory === "youtube" && st.read_look_do_span__active
+              currentCategory === "youtube" && st.accent_text,
+              "dark-selection"
             )}
           >
             Смотри
@@ -55,7 +56,8 @@ export const ReadLookDo = (props: ReadLookDo) => {
           <span
             className={cn(
               st.read_look_do_span,
-              currentCategory === "blog" && st.read_look_do_span__active
+              currentCategory === "blog" && st.accent_text,
+              "dark-selection"
             )}
           >
             читай
@@ -64,7 +66,8 @@ export const ReadLookDo = (props: ReadLookDo) => {
           <span
             className={cn(
               st.read_look_do_span,
-              currentCategory === "reviews" && st.read_look_do_span__active
+              currentCategory === "reviews" && st.accent_text,
+              "dark-selection"
             )}
           >
             действуй

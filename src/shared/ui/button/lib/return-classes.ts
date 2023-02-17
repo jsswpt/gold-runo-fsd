@@ -4,6 +4,10 @@ import st from "../styles.module.scss";
 export const returnClasses = (props: ButtonBase) => {
   const { color, size, variant } = props;
   return {
+    [st.sm]: size === "sm",
+    [st.md]: size === "md" || !size,
+    [st.lg]: size === "lg",
+
     [st.outlined]: variant === "outlined",
     [st.contained]: variant === "contained" || !variant,
 
@@ -23,5 +27,11 @@ export const returnClasses = (props: ButtonBase) => {
     [st.border_danger]: color === "danger" && variant === "outlined",
     [st.border_success]: color === "success" && variant === "outlined",
     [st.border_primary]: color === "primary" && variant === "outlined",
+
+    [st.primary_on_hover]: props.colorOnHover === "primary",
+    [st.danger_on_hover]: props.colorOnHover === "danger",
+    [st.default_on_hover]: props.colorOnHover === "default",
+    [st.warning_on_hover]: props.colorOnHover === "warning",
+    [st.success_on_hover]: props.colorOnHover === "success",
   };
 };

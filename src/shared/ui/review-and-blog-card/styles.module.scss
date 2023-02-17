@@ -6,6 +6,8 @@
   border-radius: units.$round-xl;
   background: var(--surface);
   overflow: hidden;
+
+  border: funcs.px-rem(1) solid var(--light-stroke);
 }
 
 .card_wrap__img {

@@ -137,6 +137,67 @@
   transition: 0.32s;
 }
 
-.read_look_do_span__active {
+.accent_text {
   color: var(--primary);
+}
+
+.save_your_money_title {
+  max-width: funcs.px-rem(726);
+}
+
+.save_your_money_wrap__body {
+  margin-bottom: funcs.px-rem(40);
+}
+
+.save_your_money_wrap__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: funcs.px-rem(16);
+
+  @include breakpoints.media-screen(breakpoints.$md) {
+    gap: funcs.px-rem(16);
+    flex-direction: row;
+  }
+}
+
+.contact_with_us_title {
+  font-weight: 600;
+}
+
+.our_branch_section {
+}
+
+.our_branch_wrap__map {
+  position: relative;
+  min-height: funcs.px-rem(700);
+}
+
+.our_branch_map_wrap__bg {
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: url("../../shared/assets/media/imgs/map-example.jpg");
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.our_branch_map_wrap__map {
+  position: absolute;
+  top: 50%;
+  right: funcs.px-rem(252);
+
+  width: 536px;
+  height: 536px;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  // backdrop-filter: blur(5px);
+
+  border: funcs.px-rem(32) solid var(--text-contrast);
 }

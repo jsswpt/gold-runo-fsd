@@ -12,13 +12,15 @@
   --text-secondary: #9a9a9a;
 
   --stroke: var(--text-secondary);
-  --light-stroke: #e7e7e7;
+  --light-stroke: #f5f3f5;
 
   // --primary: rgb(255, 214, 64);
   --primary: #7c4dff;
-  --success: #93a11a;
-  --danger: #ed544a;
-  --warning: #d7ed1a;
+  --success: #07a717;
+  --danger: #dc0a0a;
+  --warning: #ffc700;
+
+  --shadow: rgba(0, 0, 0, 0.2);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,16 +42,24 @@ body {
   &:has(#modal) {
     overflow-y: hidden;
   }
+
+  scroll-behavior: smooth;
 }
 
 .h1 {
+  font-weight: 600;
+  font-size: funcs.px-rem(28);
+
+  @include breakpoints.media-screen(breakpoints.$md) {
+    font-size: funcs.px-rem(48);
+  }
 }
 .h2 {
   font-weight: 600;
-  font-size: funcs.px-rem(18);
+  font-size: funcs.px-rem(32);
 
   @include breakpoints.media-screen(breakpoints.$md) {
-    font-size: funcs.px-rem(50);
+    font-size: funcs.px-rem(48);
   }
 }
 .h3 {
@@ -59,24 +69,22 @@ body {
 .h5 {
   font-size: funcs.px-rem(14);
   font-weight: 500;
-  line-height: 1.1;
 
   @include breakpoints.media-screen(breakpoints.$md) {
     font-size: funcs.px-rem(22);
   }
 }
 .h6 {
-  font-weight: 400;
-  font-size: funcs.px-rem(12);
+  font-weight: 600;
+  font-size: funcs.px-rem(14);
   @include breakpoints.media-screen(breakpoints.$md) {
-    font-size: funcs.px-rem(18);
+    font-size: funcs.px-rem(21);
   }
 }
 
 .subtitle1 {
   font-weight: 400;
-  line-height: 1.05;
-  font-size: funcs.px-rem(12);
+  font-size: funcs.px-rem(19);
 
   @include breakpoints.media-screen(breakpoints.$md) {
     font-size: funcs.px-rem(18);
@@ -84,7 +92,6 @@ body {
 }
 .subtitle2 {
   font-weight: 400;
-  line-height: 1.3;
   font-size: funcs.px-rem(14);
 
   @include breakpoints.media-screen(breakpoints.$md) {
@@ -93,8 +100,8 @@ body {
 }
 
 .body1 {
-  font-weight: 500;
-  font-size: funcs.px-rem(12);
+  font-weight: 400;
+  font-size: funcs.px-rem(16);
 
   @include breakpoints.media-screen(breakpoints.$md) {
     font-size: funcs.px-rem(16);
@@ -103,9 +110,9 @@ body {
 
 .body2 {
   font-weight: 400;
-  font-size: funcs.px-rem(10);
+  font-size: funcs.px-rem(13);
   @include breakpoints.media-screen(breakpoints.$md) {
-    font-size: funcs.px-rem(14);
+    font-size: funcs.px-rem(12);
   }
 }
 
@@ -119,7 +126,7 @@ body {
 
 .caption {
   font-size: funcs.px-rem(10);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .light-selection {

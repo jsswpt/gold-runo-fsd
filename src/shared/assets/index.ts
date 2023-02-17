@@ -1,3 +1,5 @@
+export { Arrow } from "./ui/svgs/arrow";
+
 export { ChevronLeft } from "./ui/svgs/chevron-left";
 
 export { Close } from "./ui/svgs/close";

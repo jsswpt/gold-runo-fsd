@@ -164,3 +164,38 @@
   border-color: var(--stroke);
   color: var(--stroke);
 }
+
+.primary_on_hover {
+  &:hover {
+    background: var(--primary);
+    color: var(--text-contrast);
+  }
+}
+.danger_on_hover {
+  &:hover {
+    background: var(--danger);
+    color: var(--text-contrast);
+  }
+}
+.default_on_hover {
+  &:hover {
+    background: var(--primary);
+    color: var(--text-contrast);
+  }
+}
+.warning_on_hover {
+  &:hover {
+    background: var(--warning);
+    color: var(--text-contrast);
+  }
+}
+.success_on_hover {
+  &:hover {
+    background: var(--success);
+    color: var(--text-contrast);
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}

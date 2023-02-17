@@ -1,11 +1,13 @@
 @use "../../modules/funcs.module";
 
-.swiper_wrap {
-  position: relative;
-}
-
 .swiper {
   width: 100%;
+  overflow-y: visible !important;
+  overflow-x: clip !important;
+}
+
+.swiper_wrap {
+  position: relative;
 }
 
 .button_next_wrapper,

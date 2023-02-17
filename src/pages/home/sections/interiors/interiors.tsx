@@ -65,7 +65,9 @@ export const Interiors = (props: Interiors) => {
     >
       <ThreeAndOneQuarterLayout
         direction="row-reversed"
-        threeQuartersEl={<Image alt="Image" src={InteriorExample} />}
+        threeQuartersEl={
+          <Image alt="Image" src={InteriorExample} className="dark-selection" />
+        }
         oneQuarterEl={
           <ProductCard
             colors={[]}

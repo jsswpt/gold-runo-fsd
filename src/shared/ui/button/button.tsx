@@ -6,18 +6,16 @@ import { ButtonProps } from "./button.type";
 import { returnClasses } from "./lib/return-classes";
 
 export const Button = (props: ButtonProps) => {
-  const { size, variant, color, ...restProps } = props;
+  const { size, variant, color, colorOnHover, fullWidth, ...restProps } = props;
   return (
     <button
       {...restProps}
       className={cn(
         st.button,
         {
-          [st.sm]: size === "sm",
-          [st.md]: size === "md" || !size,
-          [st.lg]: size === "lg",
+          [st.fullWidth]: props.fullWidth,
         },
-        returnClasses({ color, size, variant }),
+        returnClasses({ color, size, variant, colorOnHover }),
         props.className
       )}
     >
