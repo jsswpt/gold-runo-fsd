@@ -13,6 +13,7 @@
   margin-bottom: funcs.px-rem(32);
 
   @include breakpoints.media-screen(breakpoints.$md) {
+    padding-left: funcs.px-rem(48);
     margin-bottom: funcs.px-rem(48);
   }
 }

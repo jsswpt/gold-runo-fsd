@@ -5,7 +5,10 @@
   border-radius: units.$round-xl;
   overflow: hidden;
   background: var(--surface);
-  box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20) var(--shadow);
+
+  &:hover {
+    box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20) var(--shadow);
+  }
 
   transition: 0.16s ease-out;
 }

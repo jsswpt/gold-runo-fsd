@@ -3,7 +3,7 @@ import { createRef, useEffect, useRef } from "react";
 import st from "../../styles.module.scss";
 import cn from "classnames";
 import { SectionLayout } from "@/shared/ui";
-import { useInView } from "framer-motion";
+import { useInView, useScroll } from "framer-motion";
 
 type OurBranch = {};
 
@@ -29,6 +29,7 @@ export const OurBranch = (props: OurBranch) => {
       });
     }
   }, [inView, ref]);
+
   return (
     <SectionLayout
       ref={ref}

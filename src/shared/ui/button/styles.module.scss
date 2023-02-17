@@ -26,6 +26,9 @@
 
   user-select: none;
 
+  box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20)
+    rgba(0, 0, 0, 0.2);
+
   &:hover {
     scale: 1.05;
   }
@@ -110,10 +113,6 @@
 
 .contained {
   color: #fff;
-  &:hover {
-    box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20)
-      rgba(0, 0, 0, 0.2);
-  }
 }
 
 .outlined {

@@ -14,6 +14,7 @@ type CustomSwiper = {
   swiperProps?: SwiperProps;
   slidesPerView?: number;
   children: React.ReactNode;
+  disableShadows?: boolean;
 };
 
 export const CustomSwiper = (props: CustomSwiper) => {
@@ -37,7 +38,11 @@ export const CustomSwiper = (props: CustomSwiper) => {
         onSlideNextTransitionEnd={(e) => setCurrentSlide(e.activeIndex)}
         onSlidePrevTransitionEnd={(e) => setCurrentSlide(e.activeIndex)}
         onInit={(el) => setSwiper(el)}
-        className={cn(st.swiper, props.className)}
+        className={cn(
+          st.swiper,
+          !props.disableShadows && st.with_shadows,
+          props.className
+        )}
       >
         {swiper && props.children}
       </Swiper>

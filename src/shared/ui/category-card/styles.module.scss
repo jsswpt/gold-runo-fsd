@@ -2,13 +2,15 @@
 @use "../../modules/funcs.module";
 
 .category_card {
-  background: var(--surface);
   border-radius: units.$round-xl;
+  background: var(--surface);
+
+  transition: 0.32s;
+
   overflow: hidden;
 
-  box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20) var(--shadow);
-
   &:hover {
+    box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20) var(--shadow);
     .category_card_wrap__image {
       & > * {
         scale: 1.1;

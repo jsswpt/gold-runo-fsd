@@ -1,9 +1,35 @@
 @use "../../modules/funcs.module";
 
 .swiper {
+  position: relative;
   width: 100%;
   overflow-y: visible !important;
   overflow-x: clip !important;
+}
+
+.with_shadows {
+  &::after {
+    z-index: 10;
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: none;
+    box-shadow: 0 0 40px 56px #fff;
+  }
+  &::before {
+    z-index: 10;
+    content: "";
+    position: absolute;
+    right: -1px;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: none;
+    box-shadow: 0 0 32px 40px #fff;
+  }
 }
 
 .swiper_wrap {
