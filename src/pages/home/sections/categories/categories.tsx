@@ -26,7 +26,7 @@ export const Categories = (props: Categories) => {
   }, [currentScreen]);
 
   return (
-    <SectionLayout disableHeadlines>
+    <SectionLayout disableHeadlines disablePaddingForBody>
       <div className={st.categories_wrap__swiper}>
         <CustomSwiper
           navType="buttons"

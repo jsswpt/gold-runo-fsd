@@ -32,6 +32,7 @@ export const OurBranch = (props: OurBranch) => {
 
   return (
     <SectionLayout
+      disablePaddingForBody
       ref={ref}
       title="Наш филиал"
       subElement="Мы находимся в г. Челябинск, ул. Линейный Переулок 5Б"

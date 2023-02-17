@@ -26,6 +26,8 @@ export const NewProducts = (props: NewProducts) => {
   }, [currentScreen]);
   return (
     <SectionLayout
+      disablePaddingForBody
+      disablePaddingForHeadlines
       risingAnimation
       alignHeadlines="center"
       title="Новинки"

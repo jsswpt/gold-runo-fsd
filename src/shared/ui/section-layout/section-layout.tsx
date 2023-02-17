@@ -14,6 +14,8 @@ type SectionLayout = {
   risingAnimation?: boolean;
   className?: any;
   disableHeadlines?: boolean;
+  disablePaddingForHeadlines?: boolean;
+  disablePaddingForBody?: boolean;
 };
 
 export const SectionLayout = forwardRef<HTMLElement, SectionLayout>(
@@ -31,7 +33,12 @@ export const SectionLayout = forwardRef<HTMLElement, SectionLayout>(
       >
         <Container className={st.section_container}>
           {!props.disableHeadlines && (
-            <div className={st.section_wrap__headlines}>
+            <div
+              className={cn(
+                st.section_wrap__headlines,
+                !props.disablePaddingForHeadlines && st.padding
+              )}
+            >
               <div
                 className={cn(
                   st.headlines_wrap__title,
@@ -64,7 +71,14 @@ export const SectionLayout = forwardRef<HTMLElement, SectionLayout>(
               </div>
             </div>
           )}
-          <div className={st.section_wrap__body}>{props.children}</div>
+          <div
+            className={cn(
+              st.section_wrap__body,
+              !props.disablePaddingForBody && st.padding
+            )}
+          >
+            {props.children}
+          </div>
         </Container>
       </motion.section>
     );

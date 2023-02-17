@@ -52,6 +52,9 @@
 
   transition: 0.16s ease-out;
 
+  box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20)
+    rgba(0, 0, 0, 0.2);
+
   &:hover {
     scale: 1.05;
   }

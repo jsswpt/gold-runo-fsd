@@ -24,6 +24,7 @@ export const Sets = memo((props: Sets) => {
   );
   return (
     <SectionLayout
+      disablePaddingForBody
       risingAnimation
       title="Комплекты"
       subElement={

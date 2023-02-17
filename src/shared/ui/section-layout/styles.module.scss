@@ -13,8 +13,13 @@
   margin-bottom: funcs.px-rem(32);
 
   @include breakpoints.media-screen(breakpoints.$md) {
-    padding-left: funcs.px-rem(150);
     margin-bottom: funcs.px-rem(48);
+  }
+}
+
+.padding {
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    padding: 0 funcs.px-rem(150);
   }
 }
 
