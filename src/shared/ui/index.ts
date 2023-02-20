@@ -1,3 +1,5 @@
+export { SignInBy } from "./sign-in-by/sign-in-by";
+
 export { ReviewAndBlogCard } from "./review-and-blog-card/review-and-blog-card";
 
 export { Select } from "./select/select";

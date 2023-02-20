@@ -1,3 +1,3 @@
 export type HeaderT = {
-  actions: React.ReactNode;
+  actions: React.ReactNode[];
 };

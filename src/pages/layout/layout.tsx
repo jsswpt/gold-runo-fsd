@@ -1,11 +1,11 @@
-import { CartPopup, Header } from "@/widgets";
+import { useMemo } from "react";
+import { CartPopup, Favorites, Header, Profile } from "@/widgets";
 
-import { AuthorizeCard, Dropdown, Footer, IconButton } from "@/shared/ui";
-import { Cart, Favorite, Person } from "@/shared/assets";
 import { useScreen } from "@/shared/hooks";
 
 import st from "./styles.module.scss";
 import Link from "next/link";
+import { Footer } from "@/shared/ui";
 
 type Layout = {
   children: React.ReactNode;
@@ -13,41 +13,17 @@ type Layout = {
 
 export const Layout = (props: Layout) => {
   const { currentScreen } = useScreen();
+
+  const actions = useMemo(() => {
+    if (currentScreen !== "xs" && currentScreen !== "sm") {
+      return [<Favorites />, <CartPopup />, <Profile />];
+    }
+
+    return [<Favorites />, <CartPopup />];
+  }, [currentScreen]);
   return (
     <>
-      <Header
-        actions={
-          <>
-            <div className={st.header_actions_wrapper}>
-              <Link href="/favorites">
-                <IconButton>
-                  <Favorite />
-                </IconButton>
-              </Link>
-            </div>
-            <div className={st.header_actions_wrapper}>
-              <CartPopup />
-            </div>
-
-            {currentScreen !== "xs" && (
-              <div className={st.header_actions_wrapper}>
-                <Dropdown
-                  justify="start"
-                  align="bottom"
-                  anchorEl={
-                    <IconButton variant="contained" color="default">
-                      <Person />
-                    </IconButton>
-                  }
-                  triggerOn="click"
-                >
-                  <AuthorizeCard />
-                </Dropdown>
-              </div>
-            )}
-          </>
-        }
-      />
+      <Header actions={actions} />
 
       <main className={st.main}>{props.children}</main>
       <Footer />

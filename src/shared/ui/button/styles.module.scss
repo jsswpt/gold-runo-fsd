@@ -119,7 +119,7 @@
 }
 
 .outlined {
-  background: var(--surface);
+  background: none;
 }
 
 .bg_primary {
@@ -136,7 +136,7 @@
   background: var(--success);
 }
 .bg_default {
-  background: var(--background);
+  background: var(--surface);
   color: var(--text-primary);
 }
 

@@ -3,8 +3,8 @@ import {} from "react";
 import st from "./styles.module.scss";
 import cn from "classnames";
 
-type Favorites = {};
+type SignInBy = {};
 
-export const Favorites = (props: Favorites) => {
-  return <>favorites</>;
+export const SignInBy = (props: SignInBy) => {
+  return <>SignInBy</>;
 };

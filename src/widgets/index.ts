@@ -1,3 +1,7 @@
+export { Favorites } from "./favorites/favorites";
+
+export { Profile } from "./profile/profile";
+
 export { SignUpWidget } from "./sign-up/sign-up";
 
 export { SignInWidget } from "./sign-in/sign-in";

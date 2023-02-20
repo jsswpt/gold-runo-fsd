@@ -1,8 +1,21 @@
 @use "../../modules/funcs.module";
 @use "../../modules/breakpoints.module";
+@use "../../modules/units.module";
 
 .section {
-  padding: funcs.px-rem(64) 0;
+  padding: funcs.px-rem(32) 0;
+
+  @include breakpoints.media-screen(breakpoints.$md) {
+    padding: funcs.px-rem(64) 0;
+  }
+}
+
+.contrast_bg {
+  background: var(--base);
+
+  * {
+    color: var(--text-contrast) !important;
+  }
 }
 
 .section_container {

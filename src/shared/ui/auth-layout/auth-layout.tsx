@@ -8,7 +8,8 @@ import { Divider } from "../";
 
 type AuthLayout = {
   form: React.ReactNode;
-  title?: string;
+  title?: React.ReactNode;
+  alternate?: React.ReactNode;
 };
 
 export const AuthLayout = (props: AuthLayout) => {
@@ -29,26 +30,12 @@ export const AuthLayout = (props: AuthLayout) => {
         )}
       </div>
       <div className={st.actions_wrap__form}>{props.form}</div>
-      <Divider alignTitle="center" title="или" />
-      <div className={st.actions_wrap__alternate}>
-        <div className={st.alternate_wrap__grid}>
-          <div className={st.alternate_grid_item}>
-            <div className={st.alternate_img_wrapper}></div>
-          </div>
-          <div className={st.alternate_grid_item}>
-            <div className={st.alternate_img_wrapper}></div>
-          </div>
-          <div className={st.alternate_grid_item}>
-            <div className={st.alternate_img_wrapper}></div>
-          </div>
-          <div className={st.alternate_grid_item}>
-            <div className={st.alternate_img_wrapper}></div>
-          </div>
-          <div className={st.alternate_grid_item}>
-            <div className={st.alternate_img_wrapper}></div>
-          </div>
-        </div>
-      </div>
+      {props.alternate && (
+        <>
+          <Divider alignTitle="center" title="или" />
+          {props.alternate}
+        </>
+      )}
     </div>
   );
 };

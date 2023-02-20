@@ -141,6 +141,27 @@
   color: var(--primary);
 }
 
+.save_your_money_wrap {
+  position: relative;
+
+  @include breakpoints.media-screen(breakpoints.$lg) {
+    &::before {
+      z-index: 1;
+      content: "";
+      position: absolute;
+      right: 0;
+      top: -200%;
+
+      width: funcs.px-rem(377);
+      height: funcs.px-rem(354);
+
+      background: url("../../shared/assets/media/imgs/save-your-money-illustration.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
 .save_your_money_title {
   max-width: funcs.px-rem(726);
 }
@@ -173,7 +194,7 @@
 }
 
 .our_branch_map_wrap__bg {
-  z-index: -1;
+  z-index: 1;
   position: absolute;
   left: 0;
   top: 0;
@@ -186,18 +207,28 @@
 }
 
 .our_branch_map_wrap__map {
+  z-index: 1;
   position: absolute;
   top: 50%;
   right: funcs.px-rem(252);
 
-  width: 536px;
-  height: 536px;
+  width: funcs.px-rem(536);
+  height: funcs.px-rem(536);
+  overflow: hidden;
 
   transform: translateY(-50%);
 
   border-radius: 50%;
-
-  // backdrop-filter: blur(5px);
-
   border: funcs.px-rem(32) solid var(--text-contrast);
+
+  & > * {
+    width: 100%;
+    height: 100%;
+    & > * {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+  }
 }

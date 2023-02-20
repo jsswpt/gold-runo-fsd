@@ -28,6 +28,10 @@
   color: var(--text-primary);
 
   text-align: center;
+
+  & > a {
+    color: var(--primary);
+  }
 }
 
 .alternate_wrap__grid {

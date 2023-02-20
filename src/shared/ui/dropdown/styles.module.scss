@@ -10,7 +10,7 @@
 
 .menu {
   box-shadow: 0 0 funcs.px-rem(24) rgba(0, 0, 0, 0.1);
-  background: var(--background);
+  background: var(--surface);
   border-radius: calc(units.$round-xl / 2);
   overflow: hidden;
 }

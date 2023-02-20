@@ -4,6 +4,10 @@ import st from "../../styles.module.scss";
 import cn from "classnames";
 import { SectionLayout } from "@/shared/ui";
 import { useInView, useScroll } from "framer-motion";
+import Image from "next/image";
+
+import Map from "shared/assets/media/imgs/map.png";
+import Link from "next/link";
 
 type OurBranch = {};
 
@@ -40,7 +44,14 @@ export const OurBranch = (props: OurBranch) => {
     >
       <div className={st.our_branch_wrap__map}>
         <div className={st.our_branch_map_wrap__bg}></div>
-        <div className={st.our_branch_map_wrap__map}></div>
+        <div className={st.our_branch_map_wrap__map}>
+          <a
+            href="https://yandex.ru/maps/org/yorkom/6183322808/?ll=61.513253%2C55.160257&z=10"
+            target="_blank"
+          >
+            <Image alt="123" src={Map} />
+          </a>
+        </div>
       </div>
     </SectionLayout>
   );

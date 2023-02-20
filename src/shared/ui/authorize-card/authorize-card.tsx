@@ -21,14 +21,14 @@ export const AuthorizeCard = (props: AuthorizeCard) => {
         <p className={cn("dark-selection", st.authorize_text)}>
           <Link
             href={"/auth/sign-in"}
-            className={cn("dark-selection", st.authorizt_text, st.link)}
+            className={cn("dark-selection", st.authorize_text, st.link)}
           >
             Вход
           </Link>{" "}
           или{" "}
           <Link
             href={"/auth/sign-up"}
-            className={cn("dark-selection", st.authorizt_text, st.link)}
+            className={cn("dark-selection", st.authorize_text, st.link)}
           >
             регистрация
           </Link>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 
 import st from "./styles.module.scss";
 import cn from "classnames";
@@ -8,7 +8,7 @@ import { QuarterScreenPopup } from "@/shared/ui/quarter-screen-popup/quarter-scr
 
 type CartPopup = {};
 
-export const CartPopup = (props: CartPopup) => {
+export const CartPopup = memo((props: CartPopup) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
@@ -24,4 +24,4 @@ export const CartPopup = (props: CartPopup) => {
       </QuarterScreenPopup>
     </>
   );
-};
+});

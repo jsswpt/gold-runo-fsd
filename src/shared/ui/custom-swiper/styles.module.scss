@@ -33,7 +33,7 @@
       height: 100%;
       width: 1px;
       background: none;
-      box-shadow: 0 0 $blur $spread #fff;
+      box-shadow: 0 0 $blur $spread var(--background);
     }
   }
 }

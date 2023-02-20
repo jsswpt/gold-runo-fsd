@@ -1,11 +1,18 @@
 import { SignIn } from "@/features";
-import { AuthLayout } from "@/shared/ui/";
+import { AuthLayout, SignInBy } from "@/shared/ui/";
+import Link from "next/link";
 
 export const SignInWidget = () => {
   return (
     <AuthLayout
-      title="Войдите в аккаунт, чтобы получить больше возможностей"
+      title={
+        <>
+          Войдите или <Link href={"/auth/sign-up"}>создайте</Link> аккаунт,
+          чтобы получить больше возможностей
+        </>
+      }
       form={<SignIn />}
+      alternate={<SignInBy />}
     />
   );
 };
