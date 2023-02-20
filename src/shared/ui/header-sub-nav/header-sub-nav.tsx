@@ -35,7 +35,10 @@ export const HeaderSubNav = memo(({ navList }: HeaderSubNav) => {
   useEffect(() => {
     if (
       isScrolledEnough &&
-      (currentScreen === "xxl" || currentScreen === "xxxl")
+      (currentScreen === "lg" ||
+        currentScreen === "xl" ||
+        currentScreen === "xxl" ||
+        currentScreen === "xxxl")
     ) {
       bottomBlockControls.start({
         y: `-${bottomBlockRef.current!.clientHeight}px`,
@@ -54,7 +57,10 @@ export const HeaderSubNav = memo(({ navList }: HeaderSubNav) => {
     }
   }, [isScrolledEnough, currentScreen]);
 
-  return currentScreen === "xxl" || currentScreen === "xxxl" ? (
+  return currentScreen === "lg" ||
+    currentScreen === "xl" ||
+    currentScreen === "xxl" ||
+    currentScreen === "xxxl" ? (
     <motion.nav
       ref={bottomBlockRef}
       initial={{ y: 0 }}

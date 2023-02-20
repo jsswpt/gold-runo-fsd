@@ -1,15 +1,23 @@
 @use "../../modules/funcs.module";
 @use "../../modules/units.module";
+@use "../../modules/breakpoints.module";
 
 .sub_nav {
   z-index: 90;
   position: fixed;
   display: flex;
   top: units.$header-height-desktop;
-  height: units.$header-bottom-block-desktop;
   width: 100%;
+  height: units.$header-bottom-block-desktop;
 
   background: var(--surface);
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    top: units.$header-height-tablet;
+  }
+  @include breakpoints.media-screen(breakpoints.$xxl) {
+    top: units.$header-height-desktop;
+  }
 }
 
 .sub_nav_container {

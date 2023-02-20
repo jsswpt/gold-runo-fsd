@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   background: none;
   outline: none;
   border: none;
@@ -13,27 +14,30 @@
   font-weight: 600;
   font-size: funcs.px-rem(12);
   line-height: 130%;
+  color: var(--text-primary);
+  white-space: nowrap;
 
   border-radius: units.$round-xl;
 
-  cursor: pointer;
-
-  color: var(--text-primary);
-
   transition: 0.16s;
-
-  white-space: nowrap;
 
   user-select: none;
 
   box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20)
-    rgba(0, 0, 0, 0.2);
+    rgba(0, 0, 0, 0.1);
 
-  &:hover {
+  cursor: pointer;
+
+  &:not(:disabled):hover {
     scale: 1.05;
   }
-  &:active {
+  &:not(:disabled):active {
     scale: 0.8;
+  }
+
+  &:disabled {
+    filter: grayscale(1);
+    cursor: default;
   }
 }
 
@@ -124,6 +128,10 @@
 
 .bg_primary {
   background: var(--primary);
+
+  &:disabled {
+    background: var(--primary-disabled);
+  }
 }
 
 .bg_warning {
@@ -168,31 +176,31 @@
 }
 
 .primary_on_hover {
-  &:hover {
+  &:not(:disabled):hover {
     background: var(--primary);
     color: var(--text-contrast);
   }
 }
 .danger_on_hover {
-  &:hover {
+  &:not(:disabled):hover {
     background: var(--danger);
     color: var(--text-contrast);
   }
 }
 .default_on_hover {
-  &:hover {
+  &:not(:disabled):hover {
     background: var(--primary);
     color: var(--text-contrast);
   }
 }
 .warning_on_hover {
-  &:hover {
+  &:not(:disabled):hover {
     background: var(--warning);
     color: var(--text-contrast);
   }
 }
 .success_on_hover {
-  &:hover {
+  &:not(:disabled):hover {
     background: var(--success);
     color: var(--text-contrast);
   }

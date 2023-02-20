@@ -25,7 +25,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: funcs.px-rem(64);
+  gap: funcs.px-rem(32);
+
+  @include breakpoints.media-screen(breakpoints.$xxl) {
+    gap: funcs.px-rem(64);
+  }
 }
 
 .header_wrap__logo {
@@ -87,5 +91,5 @@
 .actions_list {
   display: flex;
   align-items: center;
-  gap: funcs.px-rem(8);
+  gap: funcs.px-rem(12);
 }

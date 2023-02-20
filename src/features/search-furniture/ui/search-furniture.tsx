@@ -3,50 +3,36 @@ import { memo, useState } from "react";
 import st from "./styles.module.scss";
 import cn from "classnames";
 import {
+  Button,
   Container,
   FullScreenPopup,
   IconButton,
   Input,
   Modal,
 } from "@/shared/ui";
-import { Search } from "@/shared/assets";
 import { useScreen } from "@/shared/hooks";
-import { QuarterScreenPopup } from "@/shared/ui/quarter-screen-popup/quarter-screen-popup";
+import { Search } from "@/shared/assets";
 
 export const SearchFurniture = memo(() => {
-  const [isOpened, setIsOpened] = useState(false);
-
-  const { currentScreen } = useScreen();
+  const [value, setValue] = useState("");
   return (
-    <>
-      {currentScreen === "sm" ||
-      currentScreen === "xs" ||
-      currentScreen === "md" ? (
-        <IconButton onClick={() => setIsOpened(true)}>
-          <Search />
-        </IconButton>
-      ) : (
+    <form>
+      <div style={{ display: "flex", gap: "16px" }}>
         <Input
-          fullWidth
-          onFocus={() => setIsOpened(true)}
+          onChange={(e) => setValue(e.currentTarget.value)}
+          placeholder="Поиск по каталогу"
           icon={<Search />}
-          placeholder="Введите запрос"
         />
-      )}
-      <QuarterScreenPopup
-        position="top"
-        isOpen={isOpened}
-        onClose={() => setIsOpened(false)}
-      >
-        <Container>
-          <Input
-            autoFocus
-            icon={<Search />}
-            placeholder="Введите запрос"
-            fullWidth
-          />
-        </Container>
-      </QuarterScreenPopup>
-    </>
+        <Button
+          type="submit"
+          variant="outlined"
+          color="primary"
+          colorOnHover="primary"
+          disabled={value.length > 3 ? false : true}
+        >
+          Найти
+        </Button>
+      </div>
+    </form>
   );
 });

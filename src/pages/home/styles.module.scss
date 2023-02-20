@@ -13,9 +13,7 @@
     min-height: calc(100vh - units.$header-height-tablet);
   }
   @include breakpoints.media-screen(breakpoints.$xxl) {
-    min-height: calc(
-      100vh - units.$header-height-desktop - units.$header-bottom-block-desktop
-    );
+    min-height: calc(100vh - units.$header-height-desktop);
   }
 }
 

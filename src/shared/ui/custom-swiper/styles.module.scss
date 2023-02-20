@@ -80,22 +80,25 @@
 
   border: none;
   outline: none;
-  background: var(--text-primary);
+  background: var(--light-stroke);
 
   transition: 0.16s;
 
   cursor: pointer;
 
   border-radius: 12px;
+
+  &:hover {
+    background: var(--stroke);
+  }
 }
 
 .swiper_nav_plate__active {
-  background: var(--text-secondary);
-  transform: scaleY(1.5);
+  background: var(--base);
 
   cursor: default;
 
   &:hover {
-    transform: scaleY(1.5);
+    background: var(--light-stroke);
   }
 }
