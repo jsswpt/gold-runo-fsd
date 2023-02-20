@@ -27,6 +27,7 @@ export const SearchFurniture = memo(() => {
         </IconButton>
       ) : (
         <Input
+          fullWidth
           onFocus={() => setIsOpened(true)}
           icon={<Search />}
           placeholder="Введите запрос"

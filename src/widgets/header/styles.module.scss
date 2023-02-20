@@ -25,7 +25,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: funcs.px-rem(40);
+  gap: funcs.px-rem(64);
 }
 
 .header_wrap__logo {
@@ -60,6 +60,7 @@
 }
 
 .info_text {
+  display: block;
   color: var(--text-primary);
   white-space: nowrap;
 }

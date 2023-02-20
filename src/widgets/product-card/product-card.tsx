@@ -44,7 +44,7 @@ export const ProductCard = memo((props: ProductCard) => {
           )}
 
           <div className={st.product_info_wrap__name}>
-            <h3 className={cn("subtitle2", "dark-selection", st.product_name)}>
+            <h3 className={cn("subtitle1", "dark-selection", st.product_name)}>
               <Link href={""} className="dark-selection">
                 {props.name}
               </Link>
@@ -61,7 +61,6 @@ export const ProductCard = memo((props: ProductCard) => {
             )}
           </div>
         </div>
-        <Divider />
         <div className={st.product_card_actions_wrapper}>
           <AddToCart />
           <BuyByOneTap />

@@ -68,7 +68,14 @@ export const HeaderChunk = (props: HeaderT) => {
           {(currentScreen === "xxl" || currentScreen === "xxxl") && (
             <div className={cn(st.header_wrap, st.header_wrap__info)}>
               <div className={st.header_info_wrapper}>
-                <p className={cn("body2", "dark-selection", st.info_text)}>
+                <p
+                  className={cn(
+                    "link1",
+                    "dark-selection",
+                    st.info_text,
+                    st.link
+                  )}
+                >
                   г. Челябинск
                 </p>
               </div>
@@ -76,7 +83,7 @@ export const HeaderChunk = (props: HeaderT) => {
                 <a
                   href="tel:89000928086"
                   className={cn(
-                    "body2",
+                    "link1",
                     "dark-selection",
                     st.info_text,
                     st.link

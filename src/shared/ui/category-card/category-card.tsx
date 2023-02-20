@@ -27,7 +27,7 @@ export const CategoryCard = (props: CategoryCard) => {
       </div>
       <div className={st.category_card_wrap__body}>
         <div className={st.category_card_body_wrap__title}>
-          <h3 className={cn("subtitle2", "dark-selection", st.category_title)}>
+          <h3 className={cn("h5", "dark-selection", st.category_title)}>
             {props.title}
           </h3>
         </div>
