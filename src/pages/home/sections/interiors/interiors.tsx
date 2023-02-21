@@ -70,15 +70,7 @@ export const Interiors = (props: Interiors) => {
           <Image alt="Image" src={InteriorExample} className="dark-selection" />
         }
         oneQuarterEl={
-          <ProductCard
-            colors={[]}
-            description="шик диван"
-            id={1}
-            imgs={[InteriorExample]}
-            name="Диван №32323"
-            price={2000}
-            oldPrice={null}
-          />
+          <ProductCard media={[{ image_url: "", video_url: null }]} />
         }
       />
     </SectionLayout>

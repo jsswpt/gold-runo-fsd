@@ -17,7 +17,6 @@ import {
   Input,
 } from "@/shared/ui";
 import { Logo, Search } from "@/shared/assets";
-import { SearchFurniture } from "@/features";
 import { headerLinks } from "@/shared/api/internal/";
 import { HeaderT } from "./header.type";
 
@@ -114,7 +113,10 @@ export const HeaderChunk = (props: HeaderT) => {
           )}
         </Container>
       </motion.header>
-      <HeaderSubNav navList={headerLinks} />
+
+      {(currentScreen === "xxl" || currentScreen === "xxxl") && (
+        <HeaderSubNav navList={headerLinks} />
+      )}
     </>
   ) : (
     <></>

@@ -8,7 +8,7 @@ const initialState: BannerSliceT = {
 
 const PATH = "entities/banner";
 
-const BannerSlice = createSlice({
+const bannerSlice = createSlice({
   initialState,
   name: PATH,
   reducers: {
@@ -18,8 +18,8 @@ const BannerSlice = createSlice({
   },
 });
 
-const reducers = { [PATH]: BannerSlice.reducer };
-const actions = { ...BannerSlice.actions };
+const reducers = { [PATH]: bannerSlice.reducer };
+const actions = { ...bannerSlice.actions };
 
 export const banner = {
   reducers,

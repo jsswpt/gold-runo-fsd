@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export type Size = "sm" | "md" | "lg";
 export type Variants = "outlined" | "contained";
 export type AlignIcon = "start" | "end";
@@ -15,6 +17,7 @@ export type Colors =
   | "vanish";
 
 export type ColorObjT = {
-  name: string;
-  img: string;
+  id: number;
+  title: string;
+  image_url: string | StaticImageData | null;
 };

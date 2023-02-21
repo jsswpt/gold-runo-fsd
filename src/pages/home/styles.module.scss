@@ -3,6 +3,7 @@
 @use "../../shared/modules/breakpoints.module";
 
 .section_banner {
+  transform: translateY(units.$header-bottom-block-desktop-minus);
 }
 
 .banner_wrap__slider {

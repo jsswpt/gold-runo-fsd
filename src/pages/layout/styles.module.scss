@@ -9,6 +9,8 @@
     padding-top: units.$header-height-tablet;
   }
   @include breakpoints.media-screen(breakpoints.$xxl) {
-    padding-top: calc(units.$header-height-desktop);
+    padding-top: calc(
+      units.$header-height-desktop + units.$header-bottom-block-desktop
+    );
   }
 }

@@ -16,15 +16,7 @@ export const YouTubeChunk = (props: YouTubeChunk) => {
         animate: { opacity: 1 },
       }}
       oneQuarterEl={
-        <ProductCard
-          colors={[]}
-          description="???"
-          imgs={[]}
-          id={1}
-          name="Диван"
-          price={35000}
-          oldPrice={2000}
-        />
+        <ProductCard media={[{ image_url: "", video_url: null }]} />
       }
       threeQuartersEl={<div style={{ background: "#b7b7b7" }}></div>}
     />

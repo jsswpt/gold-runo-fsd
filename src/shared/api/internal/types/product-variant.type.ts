@@ -8,5 +8,5 @@ export type ProductVariantT = {
   price: number;
   oldPrice: number | null;
   description: string;
-  imgs: string[] | StaticImageData[];
+  media: Array<string | StaticImageData>;
 };

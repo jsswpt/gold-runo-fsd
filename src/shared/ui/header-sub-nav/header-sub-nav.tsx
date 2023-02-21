@@ -57,10 +57,7 @@ export const HeaderSubNav = memo(({ navList }: HeaderSubNav) => {
     }
   }, [isScrolledEnough, currentScreen]);
 
-  return currentScreen === "lg" ||
-    currentScreen === "xl" ||
-    currentScreen === "xxl" ||
-    currentScreen === "xxxl" ? (
+  return (
     <motion.nav
       ref={bottomBlockRef}
       initial={{ y: 0 }}
@@ -89,7 +86,5 @@ export const HeaderSubNav = memo(({ navList }: HeaderSubNav) => {
         </AnimatePresence>
       </Container>
     </motion.nav>
-  ) : (
-    <></>
   );
 });

@@ -51,13 +51,7 @@ export const NewProducts = (props: NewProducts) => {
                     whileInView: { opacity: 1 },
                     viewport: { amount: 0.5, once: true },
                   }}
-                  colors={[]}
-                  description="??"
-                  id={1}
-                  imgs={[NewProductExample]}
-                  name="Новый диван"
-                  price={10000}
-                  oldPrice={8000}
+                  media={[{ image_url: null, video_url: "" }]}
                 />
               </SwiperSlide>
             ))}

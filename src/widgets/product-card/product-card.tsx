@@ -1,76 +1,45 @@
+import { memo } from "react";
+
 import st from "./styles.module.scss";
 import cn from "classnames";
 import Link from "next/link";
-import { Button, Divider } from "@/shared/ui";
-import { AddToCart, BuyByOneTap } from "@/features";
-import { memo } from "react";
 import { ProductVariantT } from "@/shared/api/internal";
 
 import { HTMLMotionProps, motion } from "framer-motion";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import { useScreen } from "@/shared/hooks";
+import { CustomSwiper } from "@/shared/ui";
+import { SwiperSlide } from "swiper/react";
+import { SwiperDesktop } from "./swiper-desktop/swiper-desktop";
+import { SwiperMobile } from "./swiper-mobile/swiper-mobile";
 
-interface ProductCard extends ProductVariantT {
+interface ProductCard {
   animation?: HTMLMotionProps<"article">;
+  media: Array<{
+    image_url: string | StaticImageData | null;
+    video_url: string | null;
+  }>;
 }
 
 export const ProductCard = memo((props: ProductCard) => {
-  return (
-    <motion.article {...props.animation} className={st.product_card}>
-      <div className={st.product_card_image_wrapper}>
-        <Link
-          href={`/product/${props.id}`}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <Image
-            src={props.imgs[0]}
-            alt="Картинка"
-            className={cn("dark-selection", st.card_img)}
-          />
-        </Link>
-      </div>
-      <div className={st.product_card_body}>
-        <div className={st.product_card_info_wrapper}>
-          {props.colors && (
-            <div className={st.product_info_wrap__color}>
-              {props.colors.map((item) => (
-                <Link
-                  href={`/product/${props.id}/${item.name}`}
-                  className={st.color_point}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <Link href={`/product/${props.id}/`} className={st.color_point}>
-                +7
-              </Link>
-            </div>
-          )}
+  const { media, animation } = props;
 
-          <div className={st.product_info_wrap__name}>
-            <h3 className={cn("subtitle1", "dark-selection", st.product_name)}>
-              <Link href={`/product/${props.id}/`} className="dark-selection">
-                {props.name}
-              </Link>
-            </h3>
-          </div>
-          <div className={st.product_info_wrap__price}>
-            <p className={cn("dark-selection", "h5", st.product_current_price)}>
-              {props.price} ₽
-            </p>
-            {props.oldPrice && (
-              <p className={cn("h6", "dark-selection", st.product_old_price)}>
-                {props.oldPrice} ₽
-              </p>
-            )}
-          </div>
-        </div>
-        <div
-          className={st.product_card_actions_wrapper}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <AddToCart />
-          <BuyByOneTap />
-        </div>
+  const { currentScreen } = useScreen();
+  return (
+    <motion.article {...animation} className={st.product_card}>
+      <div className={st.product_card__media}>
+        {currentScreen === "xl" ||
+        currentScreen === "xxl" ||
+        currentScreen === "xxxl" ? (
+          <>
+            {media.length > 1 ? <SwiperDesktop list={media} /> : <>несколько</>}
+          </>
+        ) : (
+          <>{media.length > 1 ? <SwiperMobile list={media} /> : <>один</>}</>
+        )}
+      </div>
+      <div className={st.product_card__body}>
+        <div className="asd">123</div>
       </div>
     </motion.article>
   );

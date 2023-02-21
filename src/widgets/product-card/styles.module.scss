@@ -2,22 +2,14 @@
 @use "../../shared/modules/units.module";
 
 .product_card {
+  background: red;
   border-radius: units.$round-xl;
   overflow: hidden;
-  background: var(--surface);
-
-  &:hover {
-    box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20) var(--shadow);
-  }
-
-  transition: 0.16s ease-out;
 }
 
-.product_card_image_wrapper {
-  padding-top: 87.7%;
+.product_card__media {
   position: relative;
-
-  background: var(--stroke);
+  padding-top: 80%;
 
   & > * {
     position: absolute;
@@ -25,79 +17,24 @@
     top: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background: blue;
   }
 }
 
-.card_img {
-  width: 100%;
+.product_card__body {
+  padding: funcs.px-rem(24) funcs.px-rem(32);
+}
+
+.some {
   height: 100%;
-  object-fit: cover;
 }
 
-.product_card_info_wrapper {
-}
+.media_wrap {
+  position: relative;
 
-.product_card_body {
-  padding: funcs.px-rem(32) funcs.px-rem(16);
-  display: flex;
-  flex-direction: column;
-  gap: funcs.px-rem(16);
-}
-
-.product_info_wrap__name {
-  margin-bottom: funcs.px-rem(16);
-}
-
-.product_name {
-  text-align: center;
-  color: var(--text-primary);
-}
-
-.product_info_wrap__price {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: funcs.px-rem(40);
-  row-gap: funcs.px-rem(16);
-  flex-wrap: wrap;
-}
-
-.product_current_price {
-  font-weight: 600;
-  font-size: funcs.px-rem(22);
-  line-height: 1.3;
-
-  color: var(--text-primary);
-
-  white-space: nowrap;
-}
-
-.product_old_price {
-  color: var(--text-secondary);
-  white-space: nowrap;
-  text-decoration: line-through;
-}
-
-.product_card_actions_wrapper {
-  display: flex;
-  justify-content: center;
-  column-gap: funcs.px-rem(32);
-  row-gap: funcs.px-rem(8);
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.product_info_wrap__color {
-  display: flex;
-  gap: funcs.px-rem(5);
-}
-
-.color_point {
-  width: funcs.px-rem(30);
-  height: funcs.px-rem(30);
-  border: 1px solid var(--text-secondary);
-  border-radius: 5px;
-
-  overflow: hidden;
+  & > * {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }

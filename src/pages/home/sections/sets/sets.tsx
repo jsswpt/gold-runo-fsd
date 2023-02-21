@@ -39,7 +39,7 @@ export const Sets = memo((props: Sets) => {
         oneQuarterEl={
           <ProductCard
             {...currentSet!}
-            imgs={[SetImage]}
+            media={[{ image_url: null, video_url: "" }]}
             key={currentSet!.id}
           />
         }

@@ -4,19 +4,20 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const setsTemplate: ProductVariantT[] = [
   {
-    colors: [{ name: "Белый-123", img: "url" }],
+    colors: [{ id: 2, title: "белый-123", image_url: "" }],
+
     description: "Описание-1",
     id: 1,
-    imgs: [],
+    media: [],
     name: "Комплект-1",
     oldPrice: 35000,
     price: 30000,
   },
   {
-    colors: [{ name: "Чёрный-123", img: "url" }],
+    colors: [{ id: 1, title: "Чёрный-123", image_url: "" }],
     description: "Описание-2",
     id: 2,
-    imgs: [],
+    media: [],
     name: "Комплект-2",
     oldPrice: 35000,
     price: 30000,

@@ -1,3 +1,7 @@
+export { Category } from "./category/category";
+
+export { Products } from "./products/products";
+
 export { Favorites } from "./favorites/favorites";
 
 export { ForgotPasswordPage } from "./forgot-password-page/forgot-password";

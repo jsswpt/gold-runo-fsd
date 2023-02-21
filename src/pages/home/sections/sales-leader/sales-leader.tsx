@@ -9,11 +9,12 @@ import { SwiperSlide } from "swiper/react";
 import SalesImg from "shared/assets/media/imgs/sales-example.jpeg";
 
 import { useScreen } from "@/shared/hooks";
-
-const length = 7;
+import { useAppSelector } from "@/shared/lib";
 
 export const SalesLeader = memo(() => {
   const { currentScreen } = useScreen();
+
+  const list = useAppSelector((state) => state["entities/sales-leader"].list);
 
   const slidesPerView = useMemo(() => {
     if (currentScreen === "xs") {
@@ -40,27 +41,19 @@ export const SalesLeader = memo(() => {
           navType="buttons"
           swiperProps={{ spaceBetween: 32 }}
         >
-          {Array(length)
-            .fill(0)
-            .map((item, idx) => (
-              <SwiperSlide key={idx}>
-                <ProductCard
-                  animation={{
-                    exit: { opacity: 0 },
-                    initial: { opacity: 0 },
-                    whileInView: { opacity: 1 },
-                    viewport: { amount: 0.5, once: true },
-                  }}
-                  colors={[]}
-                  description="Описание"
-                  id={1}
-                  imgs={[SalesImg]}
-                  name="Название"
-                  oldPrice={null}
-                  price={32000}
-                />
-              </SwiperSlide>
-            ))}
+          {list.map((item, idx) => (
+            <SwiperSlide key={item.id}>
+              <ProductCard
+                media={[{ image_url: item.image_url, video_url: null }]}
+                animation={{
+                  exit: { opacity: 0 },
+                  initial: { opacity: 0 },
+                  whileInView: { opacity: 1 },
+                  viewport: { amount: 0.5, once: true },
+                }}
+              />
+            </SwiperSlide>
+          ))}
           <SwiperSlide>
             <button>показать ещё</button>
           </SwiperSlide>
