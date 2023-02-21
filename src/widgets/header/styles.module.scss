@@ -55,6 +55,13 @@
 
 .header_wrap__search {
   flex-grow: 1;
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    display: flex;
+    justify-content: center;
+  }
+  @include breakpoints.media-screen(breakpoints.$xxl) {
+    display: block;
+  }
 }
 
 .header_wrap__info {

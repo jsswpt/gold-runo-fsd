@@ -27,7 +27,7 @@ export const SwiperButtons = (props: SwiperButtons) => {
             animate={{ opacity: 1 }}
             className={st.button_prev_wrapper}
           >
-            <IconButton size="lg" onClick={slideBack}>
+            <IconButton size="lg" color="default" onClick={slideBack}>
               <ChevronLeft />
             </IconButton>
           </motion.div>
@@ -42,7 +42,7 @@ export const SwiperButtons = (props: SwiperButtons) => {
             animate={{ opacity: 1 }}
             className={st.button_next_wrapper}
           >
-            <IconButton size="lg" onClick={slideNext}>
+            <IconButton size="lg" color="default" onClick={slideNext}>
               <ChevronRight />
             </IconButton>
           </motion.div>

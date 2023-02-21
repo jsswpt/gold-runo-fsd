@@ -6,6 +6,8 @@ export type ButtonBase = {
   variant?: Variants;
   color?: Colors;
   colorOnHover?: Colors;
+  innerOnHover?: Colors;
+  shadow?: "always" | "onHover";
 };
 
 export interface ButtonProps

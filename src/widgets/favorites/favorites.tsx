@@ -9,7 +9,7 @@ type Favorites = {};
 
 export const Favorites = memo((props: Favorites) => {
   return (
-    <IconButton>
+    <IconButton innerOnHover="danger">
       <Favorite />
     </IconButton>
   );

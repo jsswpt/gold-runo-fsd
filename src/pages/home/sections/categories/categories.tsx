@@ -39,7 +39,7 @@ export const Categories = (props: Categories) => {
                 whileInView: { opacity: 1 },
                 initial: { opacity: 0 },
                 exit: { opacity: 0 },
-                viewport: { once: true, amount: 0.5 },
+                viewport: { once: true, amount: 0.1 },
               }}
               id={"pryamie"}
               title="Прямые диваны"

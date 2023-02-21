@@ -9,7 +9,8 @@ import { motion } from "framer-motion";
 interface IconButton extends ButtonProps {}
 
 export const IconButton = (props: IconButton) => {
-  const { size, variant, color, ...restProps } = props;
+  const { size, variant, colorOnHover, innerOnHover, color, ...restProps } =
+    props;
   return (
     <button
       {...restProps}
@@ -22,7 +23,7 @@ export const IconButton = (props: IconButton) => {
           [st.contained]: variant === "contained" || !variant,
           [st.outlined]: variant === "outlined",
         },
-        returnClasses({ color, size, variant })
+        returnClasses({ color, size, variant, colorOnHover, innerOnHover })
       )}
     >
       {props.children}

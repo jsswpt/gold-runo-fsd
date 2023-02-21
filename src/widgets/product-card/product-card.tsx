@@ -17,7 +17,10 @@ export const ProductCard = memo((props: ProductCard) => {
   return (
     <motion.article {...props.animation} className={st.product_card}>
       <div className={st.product_card_image_wrapper}>
-        <Link href={`/product/${props.id}`}>
+        <Link
+          href={`/product/${props.id}`}
+          onClick={(e) => e.stopPropagation()}
+        >
           <Image
             src={props.imgs[0]}
             alt="Картинка"
@@ -37,7 +40,7 @@ export const ProductCard = memo((props: ProductCard) => {
                   {item.name}
                 </Link>
               ))}
-              <Link href={`/product/${props.id}`} className={st.color_point}>
+              <Link href={`/product/${props.id}/`} className={st.color_point}>
                 +7
               </Link>
             </div>
@@ -45,7 +48,7 @@ export const ProductCard = memo((props: ProductCard) => {
 
           <div className={st.product_info_wrap__name}>
             <h3 className={cn("subtitle1", "dark-selection", st.product_name)}>
-              <Link href={""} className="dark-selection">
+              <Link href={`/product/${props.id}/`} className="dark-selection">
                 {props.name}
               </Link>
             </h3>
@@ -61,7 +64,10 @@ export const ProductCard = memo((props: ProductCard) => {
             )}
           </div>
         </div>
-        <div className={st.product_card_actions_wrapper}>
+        <div
+          className={st.product_card_actions_wrapper}
+          onClick={(e) => e.stopPropagation()}
+        >
           <AddToCart />
           <BuyByOneTap />
         </div>

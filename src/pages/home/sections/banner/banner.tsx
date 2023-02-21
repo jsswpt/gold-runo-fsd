@@ -7,10 +7,10 @@ import { CustomSwiper } from "@/shared/ui";
 
 import BannerImage from "shared/assets/media/imgs/banner-example.jpg";
 import Image from "next/image";
-
-const slides = [0, 1, 2];
+import { useAppSelector } from "@/shared/lib";
 
 export const Banner = memo(() => {
+  const slides = useAppSelector((state) => state["entities/banner"].slides);
   return (
     <section className={cn(st.section_banner)}>
       <CustomSwiper
@@ -22,13 +22,18 @@ export const Banner = memo(() => {
         className={st.banner_wrap__slider}
       >
         {slides.map((item) => (
-          <SwiperSlide key={item}>
+          <SwiperSlide key={item.id}>
             <div className={st.banner_bg_wrapper}>
-              <Image
-                src={BannerImage}
-                alt="banner"
-                className="dark-selection"
-              />
+              {item.image_url ? (
+                <Image
+                  fill
+                  src={item.image_url}
+                  alt="banner"
+                  className="dark-selection"
+                />
+              ) : (
+                <>video</>
+              )}
             </div>
           </SwiperSlide>
         ))}

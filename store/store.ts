@@ -1,10 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import { setsPreview } from "entities/";
+import { setsPreview, banner } from "entities/";
 
 export const store = configureStore({
   reducer: {
     ...setsPreview.reducers,
+    ...banner.reducers,
   },
 });
 

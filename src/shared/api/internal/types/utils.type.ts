@@ -6,7 +6,13 @@ export type Icon = {
   className?: any;
 };
 
-export type Colors = "primary" | "success" | "danger" | "warning" | "default";
+export type Colors =
+  | "primary"
+  | "success"
+  | "danger"
+  | "warning"
+  | "default"
+  | "vanish";
 
 export type ColorObjT = {
   name: string;
