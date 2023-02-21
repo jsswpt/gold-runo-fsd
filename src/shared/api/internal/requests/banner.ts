@@ -1,5 +1,4 @@
 import { BannerT } from "../types/banner.type";
-import BannerExample from "shared/assets/media/imgs/banner-example.jpg";
 import BannerExample2 from "shared/assets/media/imgs/banner-example-2.jpg";
 import BannerExample3 from "shared/assets/media/imgs/banner-example-3.jpg";
 

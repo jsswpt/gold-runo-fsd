@@ -1,5 +1,6 @@
+import { BannerT } from "@/shared/api/internal";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { BannerSliceT, BannerT } from "../banner.type";
+import { BannerSliceT } from "../banner.type";
 
 const initialState: BannerSliceT = {
   slides: [],
