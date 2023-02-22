@@ -37,7 +37,7 @@ type ProductCard = {
 
 // доработать
 export const ProductCard = (props: ProductCard) => {
-  const { inView, ref } = useInView({ threshold: 0.01 });
+  const { inView, ref } = useInView({ threshold: 0.01, triggerOnce: true });
 
   const { currentScreen } = useScreen();
 

@@ -18,8 +18,8 @@ export const Product = (props: Product) => {
         хлебные крошки
       </SectionLayout>
       <SectionLayout
-        title="Майами"
-        subElement="Диваны майами чо"
+        title="Диваны"
+        subElement="Диваны норм купите"
         disablePaddingForBody
         disablePaddingForHeadlines
       >

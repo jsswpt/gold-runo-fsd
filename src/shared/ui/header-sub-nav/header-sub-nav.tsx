@@ -51,13 +51,17 @@ export const HeaderSubNav = memo(({ navList }: HeaderSubNav) => {
       subNavInnerControls.start({
         y: `-${bottomBlockRef.current!.clientHeight}px`,
         opacity: 1,
+        transition: { duration: 0.48 },
       });
     } else if (!isScrolledEnough) {
       bottomBlockControls.start({
         y: 0,
       });
 
-      subNavInnerControls.start({ y: "0" });
+      subNavInnerControls.start({
+        y: "0",
+        transition: { delay: 0.32, duration: 0.48 },
+      });
     }
   }, [isScrolledEnough, currentScreen]);
 
@@ -66,16 +70,12 @@ export const HeaderSubNav = memo(({ navList }: HeaderSubNav) => {
       ref={bottomBlockRef}
       initial={{ y: 0 }}
       animate={bottomBlockControls}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.56 }}
       className={cn(st.sub_nav)}
     >
       <Container className={st.sub_nav_container}>
         <AnimatePresence mode="wait">
-          <motion.ul
-            animate={subNavInnerControls}
-            transition={{ duration: 0.4, delay: 0.24 }}
-            className={st.sub_nav__list}
-          >
+          <motion.ul animate={subNavInnerControls} className={st.sub_nav__list}>
             {navList.map((item) => (
               <li className={st.sub_nav__item} key={item.href + item.title}>
                 <Link
