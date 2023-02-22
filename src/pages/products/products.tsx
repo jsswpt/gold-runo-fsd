@@ -9,7 +9,13 @@ type Products = {};
 export const Products = (props: Products) => {
   return (
     <>
-      <SectionLayout disableHeadlines>хлебные крошки</SectionLayout>
+      <SectionLayout
+        disableHeadlines
+        disablePaddingForBody
+        disablePaddingForHeadlines
+      >
+        хлебные крошки
+      </SectionLayout>
       <SectionLayout
         title="Товары"
         subElement="В этом списке представлены все товары"

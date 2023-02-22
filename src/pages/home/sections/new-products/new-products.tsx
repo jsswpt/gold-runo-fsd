@@ -45,7 +45,7 @@ export const NewProducts = (props: NewProducts) => {
             .map((item, idx) => (
               <SwiperSlide key={idx}>
                 <ProductCard
-                  media={[]}
+                  media={[{ id: 1, image_url: "", video_url: null }]}
                   price={1}
                   priceT="static"
                   title="Новинка"

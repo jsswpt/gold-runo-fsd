@@ -17,14 +17,12 @@ export const SwiperItem = (props: SwiperItem) => {
       className={st.swiper_item_inner}
       fill
     />
-  ) : props.item.video_url ? (
+  ) : (
     <Image
-      src={props.item.video_url}
+      src={props.item.video_url!}
       alt="video"
       className={st.swiper_item_inner}
       fill
     />
-  ) : (
-    <></>
   );
 };

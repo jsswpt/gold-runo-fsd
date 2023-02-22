@@ -19,9 +19,10 @@ type Sets = {};
 
 export const Sets = memo((props: Sets) => {
   const currentSet = useAppSelector(
-    (state) => state["entities/sets"].currentSet,
-    (prev, next) => prev === next
+    (state) => state["entities/sets"].currentSet
   );
+
+  console.log(currentSet);
   return (
     <SectionLayout
       disablePaddingForBody

@@ -35,8 +35,9 @@ type ProductCard = {
   blockProps?: HTMLMotionProps<"article">;
 };
 
+// доработать
 export const ProductCard = (props: ProductCard) => {
-  const { inView, ref } = useInView({ threshold: 0.25 });
+  const { inView, ref } = useInView({ threshold: 0.01 });
 
   const { currentScreen } = useScreen();
 

@@ -1,5 +1,6 @@
 @use "../../shared/modules/funcs.module";
 @use "../../shared/modules/units.module";
+@use "../../shared/modules/breakpoints.module";
 
 .product_card {
   box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20) var(--shadow);
@@ -12,7 +13,7 @@
 
 .product_card_wrap__media {
   position: relative;
-  padding-top: 72%;
+  padding-top: 88%;
 
   background: rgba(100, 100, 100, 0.5);
 
@@ -29,6 +30,7 @@
   padding: funcs.px-rem(32);
   display: flex;
   flex-direction: column;
+
   gap: funcs.px-rem(24);
 }
 
@@ -66,12 +68,12 @@
 
 .product_body_wrap__actions {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: funcs.px-rem(32);
 }
 
 .swiper {
-  background: red;
   height: 100%;
 }
 

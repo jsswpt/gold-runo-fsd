@@ -12,17 +12,23 @@ type TapSwiper = {
 };
 
 export const TapSwiper = memo((props: TapSwiper) => {
-  return (
-    <CustomSwiper
-      className={st.swiper}
-      swiperProps={{ loop: true }}
-      disableShadows
-    >
-      {props.list.map((item) => (
-        <SwiperSlide key={item.id}>
-          <SwiperItem item={item} />
-        </SwiperSlide>
-      ))}
-    </CustomSwiper>
-  );
+  if (props.list.length > 1) {
+    return (
+      <CustomSwiper
+        className={st.swiper}
+        swiperProps={{ loop: true }}
+        disableShadows
+      >
+        {props.list.map((item) => (
+          <SwiperSlide key={item.id}>
+            <SwiperItem item={item} />
+          </SwiperSlide>
+        ))}
+      </CustomSwiper>
+    );
+  } else if (props.list.length) {
+    return <SwiperItem item={props.list[0]} />;
+  } else {
+    return <>где элементы сука</>;
+  }
 });

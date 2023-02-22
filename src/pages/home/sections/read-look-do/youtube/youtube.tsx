@@ -17,7 +17,12 @@ export const YouTubeChunk = (props: YouTubeChunk) => {
       }}
       oneQuarterEl={
         <>
-          <ProductCard media={[]} price={1} priceT="static" title="Ютуб вау" />
+          <ProductCard
+            media={[{ id: 1, image_url: null, video_url: "" }]}
+            price={1}
+            priceT="static"
+            title="Ютуб вау"
+          />
         </>
       }
       threeQuartersEl={<div style={{ background: "#b7b7b7" }}></div>}

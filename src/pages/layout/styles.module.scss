@@ -8,7 +8,7 @@
   @include breakpoints.media-screen(breakpoints.$sm) {
     padding-top: units.$header-height-tablet;
   }
-  @include breakpoints.media-screen(breakpoints.$xxl) {
+  @include breakpoints.media-screen(breakpoints.$xl) {
     padding-top: calc(
       units.$header-height-desktop + units.$header-bottom-block-desktop
     );

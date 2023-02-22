@@ -65,7 +65,7 @@
   color: var(--text-primary);
 }
 
-.section_body {
+.section_wrap__body {
   display: flex;
   flex-direction: column;
   gap: funcs.px-rem(96);

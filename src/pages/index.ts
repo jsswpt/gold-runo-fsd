@@ -1,4 +1,4 @@
-export { Category } from "./category/category";
+export { Product } from "./product/product";
 
 export { Products } from "./products/products";
 

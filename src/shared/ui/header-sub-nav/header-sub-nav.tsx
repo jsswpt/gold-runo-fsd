@@ -6,11 +6,15 @@ import cn from "classnames";
 import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
 import Link from "next/link";
 import { Container } from "../container/container";
-import { HeaderLinks } from "@/shared/api/internal/";
+import { Category, HeaderLinks } from "@/shared/api/internal/";
 import { useScreen } from "@/shared/hooks";
 
+interface NavList extends Category {
+  href: string;
+}
+
 type HeaderSubNav = {
-  navList: HeaderLinks[];
+  navList: NavList[];
 };
 
 export const HeaderSubNav = memo(({ navList }: HeaderSubNav) => {
