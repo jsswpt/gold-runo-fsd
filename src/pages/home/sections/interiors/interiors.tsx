@@ -3,7 +3,6 @@ import {} from "react";
 import st from "../../styles.module.scss";
 import cn from "classnames";
 import { SectionLayout, Select, ThreeAndOneQuarterLayout } from "@/shared/ui";
-import { ProductCard } from "@/widgets";
 
 import InteriorExample from "shared/assets/media/imgs/interior-example.jpg";
 import Image from "next/image";
@@ -69,9 +68,7 @@ export const Interiors = (props: Interiors) => {
         threeQuartersEl={
           <Image alt="Image" src={InteriorExample} className="dark-selection" />
         }
-        oneQuarterEl={
-          <ProductCard media={[{ image_url: "", video_url: null }]} />
-        }
+        oneQuarterEl={<></>}
       />
     </SectionLayout>
   );

@@ -3,7 +3,6 @@ import { memo, useMemo, useState } from "react";
 import st from "../../styles.module.scss";
 import cn from "classnames";
 import { CustomSwiper, SectionLayout } from "@/shared/ui";
-import { ProductCard } from "@/widgets";
 import { SwiperSlide } from "swiper/react";
 
 import SalesImg from "shared/assets/media/imgs/sales-example.jpeg";
@@ -42,17 +41,7 @@ export const SalesLeader = memo(() => {
           swiperProps={{ spaceBetween: 32 }}
         >
           {list.map((item, idx) => (
-            <SwiperSlide key={item.id}>
-              <ProductCard
-                media={[{ image_url: item.image_url, video_url: null }]}
-                animation={{
-                  exit: { opacity: 0 },
-                  initial: { opacity: 0 },
-                  whileInView: { opacity: 1 },
-                  viewport: { amount: 0.5, once: true },
-                }}
-              />
-            </SwiperSlide>
+            <SwiperSlide key={item.id}></SwiperSlide>
           ))}
           <SwiperSlide>
             <button>показать ещё</button>

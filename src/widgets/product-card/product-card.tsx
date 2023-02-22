@@ -1,46 +1,117 @@
-import { memo } from "react";
+import {} from "react";
 
 import st from "./styles.module.scss";
 import cn from "classnames";
-import Link from "next/link";
-import { ProductVariantT } from "@/shared/api/internal";
+import { MediaType, SizesObjT } from "@/shared/api/internal";
 
-import { HTMLMotionProps, motion } from "framer-motion";
-import Image, { StaticImageData } from "next/image";
+import { motion, HTMLMotionProps } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { AddToCart, BuyByOneTap } from "@/features";
 import { useScreen } from "@/shared/hooks";
-import { CustomSwiper } from "@/shared/ui";
-import { SwiperSlide } from "swiper/react";
-import { SwiperDesktop } from "./swiper-desktop/swiper-desktop";
-import { SwiperMobile } from "./swiper-mobile/swiper-mobile";
+import dynamic from "next/dynamic";
 
-interface ProductCard {
-  animation?: HTMLMotionProps<"article">;
-  media: Array<{
-    image_url: string | StaticImageData | null;
-    video_url: string | null;
-  }>;
-}
+const HoverSwiper = dynamic(
+  () => import("./ui/hover-swiper/hover-swiper").then((m) => m.HoverSwiper),
+  { ssr: false, loading: (props) => (props.isLoading ? <>Loading...</> : null) }
+);
+const TapSwiper = dynamic(
+  () => import("./ui/tap-swiper/tap-swiper").then((m) => m.TapSwiper),
+  { ssr: false, loading: (props) => (props.isLoading ? <>Loading...</> : null) }
+);
 
-export const ProductCard = memo((props: ProductCard) => {
-  const { media, animation } = props;
+type ProductCard = {
+  disableColors?: boolean;
+  title: string;
+  description?: string;
+  sizes?: SizesObjT;
+  priceT: "min" | "static";
+  price: number;
+  alternatePrice?: number;
+
+  disableActions?: boolean;
+
+  media: MediaType[];
+
+  blockProps?: HTMLMotionProps<"article">;
+};
+
+export const ProductCard = (props: ProductCard) => {
+  const { inView, ref } = useInView({ threshold: 0.25 });
 
   const { currentScreen } = useScreen();
+
   return (
-    <motion.article {...animation} className={st.product_card}>
-      <div className={st.product_card__media}>
-        {currentScreen === "xl" ||
-        currentScreen === "xxl" ||
-        currentScreen === "xxxl" ? (
+    <motion.article
+      ref={ref}
+      {...props.blockProps}
+      className={cn(st.product_card)}
+    >
+      <div className={st.product_card_wrap__media}>
+        {inView ? (
           <>
-            {media.length > 1 ? <SwiperDesktop list={media} /> : <>несколько</>}
+            {currentScreen === "xl" ||
+            currentScreen === "xxl" ||
+            currentScreen === "xxxl" ? (
+              <HoverSwiper list={props.media} />
+            ) : (
+              <TapSwiper list={props.media} />
+            )}
           </>
         ) : (
-          <>{media.length > 1 ? <SwiperMobile list={media} /> : <>один</>}</>
+          <>скелетон</>
         )}
       </div>
-      <div className={st.product_card__body}>
-        <div className="asd">123</div>
+      <div className={st.product_card_wrap__body}>
+        <div className={st.product_body_wrap__main_info}>
+          <h3 className={cn("subtitle2", "dark-selection", st.product_title)}>
+            {props.title}
+          </h3>
+          {props.description && (
+            <p
+              className={cn("body2", "dark-selection", st.product_description)}
+            >
+              {props.description}
+            </p>
+          )}
+        </div>
+        {props.sizes && (
+          <div className={st.product_body_wrap__sizes}>
+            <p className={cn("body1", "dark-selection", st.product_size_title)}>
+              Размер (ДхШхВ)
+            </p>
+            <p className={cn("dark-selection", st.product_size)}>
+              {props.sizes.length} x {props.sizes.width} x {props.sizes.height}
+            </p>
+          </div>
+        )}
+        <div className={st.product_body_wrap__price}>
+          <p className={cn("h6", "dark-selection", st.product_price_title)}>
+            {props.priceT === "min" && "от"} {props.price} ₽
+          </p>
+          {props.alternatePrice && (
+            <p
+              className={cn(
+                "subtitle1",
+                "dark-selection",
+                st.product_alternate_price_title
+              )}
+            >
+              {props.alternatePrice} ₽
+            </p>
+          )}
+        </div>
+        <div className={st.product_body_wrap__rating}>Будет рейтинг</div>
+        {!props.disableActions && (
+          <div className={st.product_body_wrap__actions}>
+            <div className={st.product_body_actions__item}>
+              <AddToCart />
+            </div>
+            <div className={st.product_body_actions__item}>
+              <BuyByOneTap />
+            </div>
+          </div>
+        )}
       </div>
     </motion.article>
   );
-});
+};

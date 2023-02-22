@@ -2,14 +2,19 @@
 @use "../../shared/modules/units.module";
 
 .product_card {
-  background: red;
+  box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20) var(--shadow);
+
   border-radius: units.$round-xl;
+  background: var(--surface);
+
   overflow: hidden;
 }
 
-.product_card__media {
+.product_card_wrap__media {
   position: relative;
-  padding-top: 80%;
+  padding-top: 60%;
+
+  background: rgba(100, 100, 100, 0.5);
 
   & > * {
     position: absolute;
@@ -17,24 +22,106 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background: blue;
   }
 }
 
-.product_card__body {
-  padding: funcs.px-rem(24) funcs.px-rem(32);
+.product_card_wrap__body {
+  padding: funcs.px-rem(32);
+  display: flex;
+  flex-direction: column;
+  gap: funcs.px-rem(24);
 }
 
-.some {
+.product_body_wrap__main_info {
+  display: flex;
+  flex-direction: column;
+  gap: funcs.px-rem(16);
+}
+
+.product_size_title {
+  margin-bottom: funcs.px-rem(8);
+  color: var(--text-primary);
+}
+
+.product_size {
+  font-weight: 500;
+  font-size: funcs.px-rem(14);
+  color: var(--text-primary);
+}
+
+.product_body_wrap__price {
+  display: flex;
+  align-items: center;
+  gap: funcs.px-rem(24);
+}
+
+.product_price_title {
+  color: var(--text-primary);
+}
+
+.product_alternate_price_title {
+  color: var(--text-secondary);
+  text-decoration: line-through;
+}
+
+.product_body_wrap__actions {
+  display: flex;
+  align-items: center;
+  gap: funcs.px-rem(32);
+}
+
+.swiper {
+  background: red;
   height: 100%;
 }
 
-.media_wrap {
+.swiper_item {
   position: relative;
+}
 
-  & > * {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+.swiper_item_inner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hover_swiper {
+  display: flex;
+}
+
+.slide_selector {
+  z-index: 5;
+  flex-grow: 1;
+}
+
+.slides_presentator_wrap {
+  padding: 0 funcs.px-rem(32);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  bottom: funcs.px-rem(-16);
+  left: 50%;
+
+  height: funcs.px-rem(2);
+
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.slides_presentator {
+  flex-grow: 1;
+  height: 100%;
+
+  background: var(--text-secondary);
+  transition: 0.16s;
+}
+
+.slides_presentator_active {
+  background: var(--base);
+}
+
+.animation_wrapper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }

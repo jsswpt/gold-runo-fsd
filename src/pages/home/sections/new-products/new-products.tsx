@@ -4,7 +4,6 @@ import st from "../../styles.module.scss";
 import cn from "classnames";
 import { CustomSwiper, SectionLayout } from "@/shared/ui";
 import { SwiperSlide } from "swiper/react";
-import { ProductCard } from "@/widgets";
 import { useScreen } from "@/shared/hooks";
 
 import NewProductExample from "shared/assets/media/imgs/new-example.jpg";
@@ -43,17 +42,7 @@ export const NewProducts = (props: NewProducts) => {
           {Array(10)
             .fill(0)
             .map((item, idx) => (
-              <SwiperSlide key={idx}>
-                <ProductCard
-                  animation={{
-                    exit: { opacity: 0 },
-                    initial: { opacity: 0 },
-                    whileInView: { opacity: 1 },
-                    viewport: { amount: 0.5, once: true },
-                  }}
-                  media={[{ image_url: null, video_url: "" }]}
-                />
-              </SwiperSlide>
+              <SwiperSlide key={idx}></SwiperSlide>
             ))}
         </CustomSwiper>
       </div>

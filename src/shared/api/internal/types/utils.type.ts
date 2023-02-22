@@ -21,3 +21,5 @@ export type ColorObjT = {
   title: string;
   image_url: string | StaticImageData | null;
 };
+
+export type SizesObjT = { length: number; width: number; height: number };

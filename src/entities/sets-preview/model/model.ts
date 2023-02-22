@@ -5,7 +5,6 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 const setsTemplate: ProductVariantT[] = [
   {
     colors: [{ id: 2, title: "белый-123", image_url: "" }],
-
     description: "Описание-1",
     id: 1,
     media: [],

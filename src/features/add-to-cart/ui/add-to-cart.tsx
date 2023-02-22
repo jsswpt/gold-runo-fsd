@@ -7,9 +7,5 @@ import { Button } from "@/shared/ui";
 type AddToCart = {};
 
 export const AddToCart = (props: AddToCart) => {
-  return (
-    <Button variant="outlined" color="primary">
-      В корзину
-    </Button>
-  );
+  return <Button color="primary">В корзину</Button>;
 };

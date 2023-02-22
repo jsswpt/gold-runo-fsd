@@ -9,7 +9,6 @@ import {
 } from "@/shared/ui";
 import { SelectSet } from "@/features";
 import { useAppSelector } from "@/shared/lib";
-import { ProductCard } from "@/widgets";
 import { AnimatePresence, motion } from "framer-motion";
 
 import SetImage from "shared/assets/media/imgs/set-example.jpg";
@@ -36,13 +35,7 @@ export const Sets = memo((props: Sets) => {
       <ThreeAndOneQuarterLayout
         oneQuarterKey={currentSet!.id}
         threeQuarterKey={currentSet!.id}
-        oneQuarterEl={
-          <ProductCard
-            {...currentSet!}
-            media={[{ image_url: null, video_url: "" }]}
-            key={currentSet!.id}
-          />
-        }
+        oneQuarterEl={<></>}
         threeQuartersEl={
           <Image src={SetImage} alt="" className="dark-selection" />
         }

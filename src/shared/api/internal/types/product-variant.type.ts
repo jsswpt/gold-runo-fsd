@@ -8,5 +8,11 @@ export type ProductVariantT = {
   price: number;
   oldPrice: number | null;
   description: string;
-  media: Array<string | StaticImageData>;
+  media: Array<MediaType>;
+};
+
+export type MediaType = {
+  id: number;
+  image_url: string | StaticImageData | null;
+  video_url: string | StaticImageData | null;
 };
