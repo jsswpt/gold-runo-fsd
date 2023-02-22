@@ -41,32 +41,38 @@ export const HoverSwiper = memo((props: HoverSwiper) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <AnimatePresence initial={false} mode="sync">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.32 }}
-          className={st.animation_wrapper}
-          key={currentItem.id}
-        >
-          <SwiperItem item={currentItem} />
-        </motion.div>
-      </AnimatePresence>
-      {isHovered && memoizedSelector}
-
-      <AnimatePresence mode="wait">
-        {isHovered && (
+        {currentItem && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.16 }}
-            className={st.slides_presentator_wrap}
+            transition={{ duration: 0.32 }}
+            className={st.animation_wrapper}
+            key={currentItem.id}
           >
-            {memoizedPresentator}
+            <SwiperItem item={currentItem} />
           </motion.div>
         )}
       </AnimatePresence>
+      {props.list.length > 1 && (
+        <>
+          {isHovered && memoizedSelector}
+
+          <AnimatePresence mode="wait">
+            {isHovered && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.16 }}
+                className={st.slides_presentator_wrap}
+              >
+                {memoizedPresentator}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </>
+      )}
     </div>
   );
 });

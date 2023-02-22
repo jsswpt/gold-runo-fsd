@@ -55,11 +55,11 @@
 
 .header_wrap__search {
   flex-grow: 1;
-  @include breakpoints.media-screen(breakpoints.$xl) {
+  @include breakpoints.media-screen(breakpoints.$lg) {
     display: flex;
     justify-content: center;
   }
-  @include breakpoints.media-screen(breakpoints.$xxl) {
+  @include breakpoints.media-screen(breakpoints.$xl) {
     display: block;
   }
 }

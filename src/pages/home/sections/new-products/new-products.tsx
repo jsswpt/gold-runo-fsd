@@ -7,6 +7,7 @@ import { SwiperSlide } from "swiper/react";
 import { useScreen } from "@/shared/hooks";
 
 import NewProductExample from "shared/assets/media/imgs/new-example.jpg";
+import { ProductCard } from "@/widgets";
 
 type NewProducts = {};
 
@@ -42,7 +43,14 @@ export const NewProducts = (props: NewProducts) => {
           {Array(10)
             .fill(0)
             .map((item, idx) => (
-              <SwiperSlide key={idx}></SwiperSlide>
+              <SwiperSlide key={idx}>
+                <ProductCard
+                  media={[]}
+                  price={1}
+                  priceT="static"
+                  title="Новинка"
+                />
+              </SwiperSlide>
             ))}
         </CustomSwiper>
       </div>

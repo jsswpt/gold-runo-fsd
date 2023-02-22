@@ -33,20 +33,24 @@ export const HeaderChunk = (props: HeaderT) => {
     <>
       <motion.header className={st.header}>
         <Container className={st.header_container}>
-          {currentScreen !== "xxl" && currentScreen !== "xxxl" && (
-            <div className={st.actions_list}>
-              <div className={st.header_action}>
-                <HeaderBurger />
+          {currentScreen !== "xxl" &&
+            currentScreen !== "xxxl" &&
+            currentScreen !== "xl" && (
+              <div className={st.actions_list}>
+                <div className={st.header_action}>
+                  <HeaderBurger />
+                </div>
               </div>
-            </div>
-          )}
+            )}
           <div className={cn(st.header_wrap, st.header_wrap__logo)}>
             <Link href="/" className={st.logo_img_wrapper}>
               <Logo />
             </Link>
           </div>
 
-          {(currentScreen === "xxxl" || currentScreen === "xxl") && (
+          {(currentScreen === "xxxl" ||
+            currentScreen === "xxl" ||
+            currentScreen === "xl") && (
             <div className={st.header_wrap__nav}>
               <HeaderNavList />
             </div>
@@ -114,9 +118,9 @@ export const HeaderChunk = (props: HeaderT) => {
         </Container>
       </motion.header>
 
-      {(currentScreen === "xxl" || currentScreen === "xxxl") && (
-        <HeaderSubNav navList={headerLinks} />
-      )}
+      {(currentScreen === "xxl" ||
+        currentScreen === "xxxl" ||
+        currentScreen === "xl") && <HeaderSubNav navList={headerLinks} />}
     </>
   ) : (
     <></>

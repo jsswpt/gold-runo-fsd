@@ -1,3 +1,5 @@
+export { ProductCard } from "./product-card/product-card";
+
 export { Favorites } from "./favorites/favorites";
 
 export { Profile } from "./profile/profile";

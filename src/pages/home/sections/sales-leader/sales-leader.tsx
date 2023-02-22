@@ -9,6 +9,7 @@ import SalesImg from "shared/assets/media/imgs/sales-example.jpeg";
 
 import { useScreen } from "@/shared/hooks";
 import { useAppSelector } from "@/shared/lib";
+import { ProductCard } from "@/widgets";
 
 export const SalesLeader = memo(() => {
   const { currentScreen } = useScreen();
@@ -41,7 +42,15 @@ export const SalesLeader = memo(() => {
           swiperProps={{ spaceBetween: 32 }}
         >
           {list.map((item, idx) => (
-            <SwiperSlide key={item.id}></SwiperSlide>
+            <SwiperSlide key={item.id}>
+              <ProductCard
+                price={item.price}
+                priceT={"min"}
+                title={item.title}
+                media={[{ id: 1, image_url: item.image_url, video_url: null }]}
+                disableActions
+              />
+            </SwiperSlide>
           ))}
           <SwiperSlide>
             <button>показать ещё</button>

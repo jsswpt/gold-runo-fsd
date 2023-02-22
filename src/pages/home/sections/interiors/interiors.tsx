@@ -6,6 +6,7 @@ import { SectionLayout, Select, ThreeAndOneQuarterLayout } from "@/shared/ui";
 
 import InteriorExample from "shared/assets/media/imgs/interior-example.jpg";
 import Image from "next/image";
+import { ProductCard } from "@/widgets";
 
 type Interiors = {};
 
@@ -68,7 +69,17 @@ export const Interiors = (props: Interiors) => {
         threeQuartersEl={
           <Image alt="Image" src={InteriorExample} className="dark-selection" />
         }
-        oneQuarterEl={<></>}
+        oneQuarterEl={
+          <>
+            <ProductCard
+              price={10000}
+              priceT="min"
+              title="Интерьер афигеть"
+              media={[{ id: 1, image_url: InteriorExample, video_url: null }]}
+              disableActions
+            />
+          </>
+        }
       />
     </SectionLayout>
   );
