@@ -9,6 +9,8 @@ import { useInView } from "react-intersection-observer";
 import { AddToCart, BuyByOneTap } from "@/features";
 import { useScreen } from "@/shared/hooks";
 import dynamic from "next/dynamic";
+import { SofaIllustration } from "@/shared/assets";
+import Link from "next/link";
 
 const HoverSwiper = dynamic(
   () => import("./ui/hover-swiper/hover-swiper").then((m) => m.HoverSwiper),
@@ -20,6 +22,8 @@ const TapSwiper = dynamic(
 );
 
 type ProductCard = {
+  id: number;
+  href: string;
   disableColors?: boolean;
   title: string;
   description?: string;
@@ -30,7 +34,7 @@ type ProductCard = {
 
   disableActions?: boolean;
 
-  media: MediaType[];
+  media: MediaType[] | null;
 
   blockProps?: HTMLMotionProps<"article">;
 };
@@ -47,8 +51,8 @@ export const ProductCard = (props: ProductCard) => {
       {...props.blockProps}
       className={cn(st.product_card)}
     >
-      <div className={st.product_card_wrap__media}>
-        {inView ? (
+      <Link href={props.href} className={st.product_card_wrap__media}>
+        {inView && props.media ? (
           <>
             {currentScreen === "xl" ||
             currentScreen === "xxl" ||
@@ -59,13 +63,15 @@ export const ProductCard = (props: ProductCard) => {
             )}
           </>
         ) : (
-          <>скелетон</>
+          <>
+            <SofaIllustration />
+          </>
         )}
-      </div>
+      </Link>
       <div className={st.product_card_wrap__body}>
         <div className={st.product_body_wrap__main_info}>
           <h3 className={cn("subtitle2", "dark-selection", st.product_title)}>
-            {props.title}
+            <Link href={props.href}>{props.title}</Link>
           </h3>
           {props.description && (
             <p

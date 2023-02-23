@@ -44,10 +44,12 @@ export const SalesLeader = memo(() => {
           {list.map((item, idx) => (
             <SwiperSlide key={item.id}>
               <ProductCard
+                href=""
+                id={1}
                 price={item.price}
                 priceT={"min"}
                 title={item.title}
-                media={[{ id: 1, image_url: item.image_url, video_url: null }]}
+                media={null}
                 disableActions
               />
             </SwiperSlide>

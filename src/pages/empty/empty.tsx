@@ -11,5 +11,19 @@ import VideoExample from "shared/assets/media/imgs/fake-video.png";
 import PhotoExample from "shared/assets/media/imgs/new-example.jpg";
 
 export const Empty = () => {
-  return <>empty</>;
+  return (
+    <div style={{ minWidth: "60px", width: "100%", maxWidth: "500px" }}>
+      <ProductCard
+        price={10000}
+        title="чтооо"
+        priceT={"min"}
+        href=""
+        id={1}
+        media={[
+          { id: 1, image_url: PhotoExample, video_url: null },
+          { id: 2, image_url: null, video_url: VideoExample },
+        ]}
+      />
+    </div>
+  );
 };

@@ -1,15 +1,14 @@
-import { Products } from "@/pages";
+import { Favorites } from "@/pages";
 import Head from "next/head";
 import {} from "react";
 
-// вообще все продукты, что есть
 const Index = () => {
   return (
     <>
       <Head>
-        <title>Товары | YORCOM</title>
+        <title>Избранное | YORCOM</title>
       </Head>
-      <Products />
+      <Favorites />
     </>
   );
 };

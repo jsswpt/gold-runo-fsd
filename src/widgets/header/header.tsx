@@ -24,14 +24,14 @@ import { HeaderT } from "./header.type";
 
 import { useAppSelector } from "@/shared/lib";
 
-export const HeaderChunk = (props: HeaderT) => {
+export const Header = (props: HeaderT) => {
   const { currentScreen } = useScreen();
 
   const [isMounted, setIsMounted] = useState(false);
 
   const categories = useAppSelector(
     (state) => state["entities/categories"].list
-  ).map((item) => ({ ...item, href: `/products/${item.id}` }));
+  ).map((item) => ({ ...item, href: `/category/${item.id}` }));
 
   useEffect(() => {
     setIsMounted(true);
@@ -100,9 +100,7 @@ export const HeaderChunk = (props: HeaderT) => {
             </div>
           )}
 
-          {currentScreen !== "md" &&
-          currentScreen !== "sm" &&
-          currentScreen !== "xs" ? (
+          {currentScreen !== "xs" ? (
             <div
               className={cn(
                 st.header_wrap,

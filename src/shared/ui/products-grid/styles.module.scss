@@ -1,0 +1,25 @@
+@use "../../modules/funcs.module";
+@use "../../modules/breakpoints.module";
+
+.products_grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: funcs.px-rem(24);
+  row-gap: funcs.px-rem(16);
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    column-gap: funcs.px-rem(48);
+    row-gap: funcs.px-rem(32);
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include breakpoints.media-screen(breakpoints.$lg) {
+    column-gap: funcs.px-rem(48);
+    row-gap: funcs.px-rem(32);
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    column-gap: funcs.px-rem(48);
+    row-gap: funcs.px-rem(32);
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

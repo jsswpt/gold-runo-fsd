@@ -1,8 +1,9 @@
-import {} from "react";
+import { useRef } from "react";
 
 import st from "./styles.module.scss";
 import cn from "classnames";
-import { Button, SectionLayout } from "@/shared/ui";
+import { Button, ProductsGrid, SectionLayout } from "@/shared/ui";
+import { ProductCard } from "@/widgets";
 
 type Products = {};
 
@@ -17,16 +18,130 @@ export const Products = (props: Products) => {
         хлебные крошки
       </SectionLayout>
       <SectionLayout
-        title="Товары"
-        subElement="В этом списке представлены все товары"
+        title="Диваны"
+        subElement="Диваны"
         disablePaddingForBody
         disablePaddingForHeadlines
       >
         <div className={st.products_wrap__filter}>фильтры</div>
-        <div className={st.products_wrap__items}>Товары</div>
-        <div className={st.products_wrap__banner}>Баннер</div>
-        <div className={st.products_wrap__items}>Товары</div>
-        <div className={st.products_wrap__items}>Пагинация</div>
+        <div className={st.products_wrap__items}>
+          <ProductsGrid>
+            <div className={st.products_items_grid__item}>
+              <ProductCard
+                href="/products/1"
+                id={1}
+                media={null}
+                price={1000}
+                priceT={"min"}
+                title="Майами"
+              />
+            </div>
+            <div className={st.products_items_grid__item}>
+              <ProductCard
+                href="/products/2"
+                id={2}
+                media={null}
+                price={1000}
+                priceT={"min"}
+                title="Бали"
+              />
+            </div>
+            <div className={st.products_items_grid__item}>
+              <ProductCard
+                href="/products/3"
+                id={3}
+                media={null}
+                price={1000}
+                priceT={"min"}
+                title="Ещё какая-то модель"
+              />
+            </div>
+          </ProductsGrid>
+        </div>
+      </SectionLayout>
+      <SectionLayout
+        title="Пуфики"
+        subElement="Пуфики"
+        disablePaddingForBody
+        disablePaddingForHeadlines
+      >
+        <div className={st.products_wrap__filter}>фильтры</div>
+        <div className={st.products_wrap__items}>
+          <ProductsGrid>
+            <div className={st.products_items_grid__item}>
+              <ProductCard
+                href="/products/1"
+                id={1}
+                media={null}
+                price={1000}
+                priceT={"min"}
+                title="Майами"
+              />
+            </div>
+            <div className={st.products_items_grid__item}>
+              <ProductCard
+                href="/products/2"
+                id={2}
+                media={null}
+                price={1000}
+                priceT={"min"}
+                title="Бали"
+              />
+            </div>
+            <div className={st.products_items_grid__item}>
+              <ProductCard
+                href="/products/3"
+                id={3}
+                media={null}
+                price={1000}
+                priceT={"min"}
+                title="Ещё какая-то модель"
+              />
+            </div>
+          </ProductsGrid>
+        </div>
+      </SectionLayout>
+      <SectionLayout
+        title="Матрасы"
+        subElement="Матрасы"
+        disablePaddingForBody
+        disablePaddingForHeadlines
+      >
+        <div className={st.products_wrap__filter}>фильтры</div>
+        <div className={st.products_wrap__items}>
+          <ProductsGrid>
+            <div className={st.products_items_grid__item}>
+              <ProductCard
+                href="/products/1"
+                id={1}
+                media={null}
+                price={1000}
+                priceT={"min"}
+                title="Майами"
+              />
+            </div>
+            <div className={st.products_items_grid__item}>
+              <ProductCard
+                href="/products/2"
+                id={2}
+                media={null}
+                price={1000}
+                priceT={"min"}
+                title="Бали"
+              />
+            </div>
+            <div className={st.products_items_grid__item}>
+              <ProductCard
+                href="/products/3"
+                id={3}
+                media={null}
+                price={1000}
+                priceT={"min"}
+                title="Ещё какая-то модель"
+              />
+            </div>
+          </ProductsGrid>
+        </div>
       </SectionLayout>
     </>
   );

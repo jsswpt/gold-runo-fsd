@@ -1,14 +1,14 @@
 import { StaticImageData } from "next/image";
 import { ColorObjT } from "./utils.type";
 
-export type ProductVariantT = {
+export type ProductT = {
   id: number;
-  colors: ColorObjT[];
+  colors: ColorObjT[] | null;
   name: string;
   price: number;
   oldPrice: number | null;
-  description: string;
-  media: Array<MediaType>;
+  description: string | null;
+  media: Array<MediaType> | null;
 };
 
 export type MediaType = {

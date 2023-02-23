@@ -72,10 +72,12 @@ export const Interiors = (props: Interiors) => {
         oneQuarterEl={
           <>
             <ProductCard
+              href=""
+              id={1}
               price={10000}
               priceT="min"
               title="Интерьер афигеть"
-              media={[{ id: 1, image_url: InteriorExample, video_url: null }]}
+              media={null}
               disableActions
             />
           </>

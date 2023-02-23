@@ -1,3 +1,8 @@
+export { DelieveryAndPayment } from "./delievery-and-payment/delievery-and-payment";
+export { Interiors } from "./interiors/interiors";
+
+export { AboutCompany } from "./about-company/about-company";
+
 export { Product } from "./product/product";
 
 export { Products } from "./products/products";

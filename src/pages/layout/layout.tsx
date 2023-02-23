@@ -35,18 +35,10 @@ type Layout = {
 export const Layout = (props: Layout) => {
   const { currentScreen } = useScreen();
 
-  const actions = useMemo(() => {
-    if (currentScreen !== "xs" && currentScreen !== "sm") {
-      return [<Favorites />, <CartPopup />, <Profile />];
-    }
-
-    return [<Favorites />, <CartPopup />];
-  }, [currentScreen]);
-
   return (
     <>
       <Header
-        actions={actions}
+        actions={[<Favorites />, <CartPopup />, <Profile />]}
         search={
           currentScreen === "xs" ||
           currentScreen === "sm" ||

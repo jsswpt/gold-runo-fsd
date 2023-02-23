@@ -1,10 +1,10 @@
-import { ProductVariantT } from "@/shared/api/internal";
+import { ProductT } from "@/shared/api/internal";
 
-export interface CurrentSet extends ProductVariantT {}
+export interface CurrentSet extends ProductT {}
 
 export type InitialState = {
   isLoading: boolean;
-  setsForChoose: ProductVariantT[];
-  setsList: ProductVariantT[];
+  setsForChoose: ProductT[];
+  setsList: ProductT[];
   currentSet: CurrentSet | null;
 };

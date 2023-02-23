@@ -22,7 +22,6 @@ export const Sets = memo((props: Sets) => {
     (state) => state["entities/sets"].currentSet
   );
 
-  console.log(currentSet);
   return (
     <SectionLayout
       disablePaddingForBody
@@ -40,6 +39,8 @@ export const Sets = memo((props: Sets) => {
         oneQuarterEl={
           <>
             <ProductCard
+              href=""
+              id={1}
               media={currentSet!.media}
               price={currentSet!.price}
               priceT="min"

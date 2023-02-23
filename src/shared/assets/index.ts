@@ -1,3 +1,5 @@
+export { SofaIllustration } from "./media/svgs/sofa-illustration";
+
 export { Arrow } from "./ui/svgs/arrow";
 
 export { ChevronLeft } from "./ui/svgs/chevron-left";

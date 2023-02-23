@@ -1,3 +1,5 @@
+export { ProductsGrid } from "./products-grid/products-grid";
+
 export { SignInBy } from "./sign-in-by/sign-in-by";
 
 export { ReviewAndBlogCard } from "./review-and-blog-card/review-and-blog-card";

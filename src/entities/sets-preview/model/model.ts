@@ -1,15 +1,15 @@
 import { InitialState } from "@/entities/sets-preview/sets.type";
-import { ProductVariantT } from "@/shared/api/internal";
+import { ProductT } from "@/shared/api/internal";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import SetExample from "shared/assets/media/imgs/set-example.jpg";
 
-const setsTemplate: ProductVariantT[] = [
+const setsTemplate: ProductT[] = [
   {
     colors: [{ id: 2, title: "белый-123", image_url: "" }],
     description: "Описание-1",
     id: 1,
-    media: [{ id: 1, image_url: SetExample, video_url: null }],
+    media: null,
     name: "Комплект-1",
     oldPrice: 35000,
     price: 30000,
@@ -18,7 +18,7 @@ const setsTemplate: ProductVariantT[] = [
     colors: [{ id: 1, title: "Чёрный-123", image_url: "" }],
     description: "Описание-2",
     id: 2,
-    media: [{ id: 1, image_url: SetExample, video_url: null }],
+    media: null,
 
     name: "Комплект-2",
     oldPrice: 35000,
