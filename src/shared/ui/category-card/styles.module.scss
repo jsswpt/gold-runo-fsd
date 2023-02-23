@@ -1,5 +1,6 @@
 @use "../../modules/units.module";
 @use "../../modules/funcs.module";
+@use "../../modules/breakpoints.module";
 
 .category_card {
   border-radius: units.$round-xl;
@@ -28,7 +29,7 @@
 
 .category_card_wrap__image {
   position: relative;
-  padding-top: 63%;
+  padding-top: 71%;
   overflow: hidden;
 
   transition: 0.16s;
@@ -46,11 +47,19 @@
 }
 
 .category_card_wrap__body {
-  padding: funcs.px-rem(24) funcs.px-rem(40);
+  padding: funcs.px-rem(16) funcs.px-rem(24);
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    padding: funcs.px-rem(24) funcs.px-rem(40);
+  }
 }
 
 .category_card_body_wrap__title {
-  margin-bottom: funcs.px-rem(24);
+  margin-bottom: funcs.px-rem(8);
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    margin-bottom: funcs.px-rem(24);
+  }
 }
 
 .category_title {

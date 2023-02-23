@@ -70,9 +70,9 @@ export const ProductCard = (props: ProductCard) => {
       </Link>
       <div className={st.product_card_wrap__body}>
         <div className={st.product_body_wrap__main_info}>
-          <h3 className={cn("subtitle2", "dark-selection", st.product_title)}>
+          <h4 className={cn("h4", "dark-selection", st.product_title)}>
             <Link href={props.href}>{props.title}</Link>
-          </h3>
+          </h4>
           {props.description && (
             <p
               className={cn("body2", "dark-selection", st.product_description)}
@@ -92,13 +92,13 @@ export const ProductCard = (props: ProductCard) => {
           </div>
         )}
         <div className={st.product_body_wrap__price}>
-          <p className={cn("h6", "dark-selection", st.product_price_title)}>
+          <p className={cn("h3", "dark-selection", st.product_price_title)}>
             {props.priceT === "min" && "от"} {props.price} ₽
           </p>
           {props.alternatePrice && (
             <p
               className={cn(
-                "subtitle1",
+                "body1",
                 "dark-selection",
                 st.product_alternate_price_title
               )}
@@ -107,7 +107,9 @@ export const ProductCard = (props: ProductCard) => {
             </p>
           )}
         </div>
-        <div className={st.product_body_wrap__rating}>Будет рейтинг</div>
+        <div className={st.product_body_wrap__rating}>
+          <p className="body2">Будет рейтинг</p>
+        </div>
         {!props.disableActions && (
           <div className={st.product_body_wrap__actions}>
             <div className={st.product_body_actions__item}>

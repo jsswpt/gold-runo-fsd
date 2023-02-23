@@ -23,11 +23,7 @@
 }
 
 .section_wrap__headlines {
-  margin-bottom: funcs.px-rem(32);
-
-  @include breakpoints.media-screen(breakpoints.$md) {
-    margin-bottom: funcs.px-rem(48);
-  }
+  margin-bottom: funcs.px-rem(80);
 }
 
 .padding {

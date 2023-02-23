@@ -58,7 +58,7 @@ export const SectionLayout = forwardRef<HTMLElement, SectionLayout>(
                 {subElementType === "string" ? (
                   <p
                     className={cn(
-                      "body1",
+                      "subtitle1",
                       "dark-selection",
                       st.section_subtitle
                     )}

@@ -32,7 +32,11 @@
   display: flex;
   flex-direction: column;
 
-  gap: funcs.px-rem(24);
+  gap: funcs.px-rem(12);
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    gap: funcs.px-rem(24);
+  }
 }
 
 .product_body_wrap__main_info {

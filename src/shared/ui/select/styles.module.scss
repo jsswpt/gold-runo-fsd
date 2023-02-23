@@ -1,7 +1,8 @@
 .radio_wrapper {
-  &:has(input:checked) {
+  &:has(input:checked),
+  &:has(input:focus) {
     label p {
-      font-weight: 600;
+      font-weight: 500;
       color: var(--text-primary);
     }
   }
