@@ -13,8 +13,11 @@ export const SignUpWidget = (props: SignUpWidget) => {
     <AuthLayout
       title={
         <>
-          Создайте или <Link href={"/auth/sign-in"}>войдите</Link> аккаунт,
-          чтобы получить больше возможностей
+          Создайте или{" "}
+          <Link href={"/auth/sign-in"} className="dark-selection">
+            войдите
+          </Link>{" "}
+          аккаунт, чтобы получить больше возможностей
         </>
       }
       form={<SignUp />}

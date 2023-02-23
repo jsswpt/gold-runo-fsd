@@ -6,6 +6,27 @@ import { useScreen } from "@/shared/hooks";
 import st from "./styles.module.scss";
 import Link from "next/link";
 import { Footer } from "@/shared/ui";
+import dynamic from "next/dynamic";
+
+const SearchPopupXs = dynamic(
+  () => import("widgets/index").then((m) => m.SearchPopupXs),
+  {
+    ssr: false,
+    loading: (arg) => {
+      return arg.isLoading ? <>loading...</> : null;
+    },
+  }
+);
+
+const SearchPopupLg = dynamic(
+  () => import("widgets/index").then((m) => m.SearchPopupLg),
+  {
+    ssr: false,
+    loading: (arg) => {
+      return arg.isLoading ? <>loading...</> : null;
+    },
+  }
+);
 
 type Layout = {
   children: React.ReactNode;
@@ -21,9 +42,21 @@ export const Layout = (props: Layout) => {
 
     return [<Favorites />, <CartPopup />];
   }, [currentScreen]);
+
   return (
     <>
-      <Header actions={actions} />
+      <Header
+        actions={actions}
+        search={
+          currentScreen === "xs" ||
+          currentScreen === "sm" ||
+          currentScreen === "md" ? (
+            <SearchPopupXs />
+          ) : (
+            <SearchPopupLg />
+          )
+        }
+      />
 
       <main className={st.main}>{props.children}</main>
       <Footer />

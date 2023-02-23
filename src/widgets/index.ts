@@ -1,3 +1,7 @@
+export { SearchPopupXs } from "./search-popup-xs/search-popup-xs";
+
+export { SearchPopupLg } from "./search-popup-lg/search-popup-lg";
+
 export { ProductCard } from "./product-card/product-card";
 
 export { Favorites } from "./favorites/favorites";

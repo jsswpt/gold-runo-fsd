@@ -18,6 +18,7 @@ export const HoverSwiper = memo((props: HoverSwiper) => {
     return props.list.map((item) => (
       <div
         className={st.slide_selector}
+        key={item.id}
         onMouseOver={() => setCurrentItem(item)}
       ></div>
     ));
@@ -26,6 +27,7 @@ export const HoverSwiper = memo((props: HoverSwiper) => {
   const memoizedPresentator = useMemo(() => {
     return props.list.map((item, idx) => (
       <div
+        key={item.id}
         className={cn(
           st.slides_presentator,
           item.id === currentItem.id && st.slides_presentator_active

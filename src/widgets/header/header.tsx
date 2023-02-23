@@ -10,15 +10,18 @@ import { useScreen } from "@/shared/hooks";
 
 import { motion } from "framer-motion";
 import {
+  Divider,
   HeaderBurger,
   HeaderNavList,
   HeaderSubNav,
   IconButton,
   Input,
 } from "@/shared/ui";
+
 import { Logo, Search } from "@/shared/assets";
 import { headerLinks } from "@/shared/api/internal/";
 import { HeaderT } from "./header.type";
+
 import { useAppSelector } from "@/shared/lib";
 
 export const HeaderChunk = (props: HeaderT) => {
@@ -64,9 +67,7 @@ export const HeaderChunk = (props: HeaderT) => {
           {currentScreen !== "md" &&
             currentScreen !== "sm" &&
             currentScreen !== "xs" && (
-              <div className={st.header_wrap__search}>
-                <Input placeholder="Поиск по каталогу" icon={<Search />} />
-              </div>
+              <div className={st.header_wrap__search}>{props.search}</div>
             )}
 
           {(currentScreen === "xxxl" || currentScreen === "xxl") && (
@@ -116,9 +117,7 @@ export const HeaderChunk = (props: HeaderT) => {
               ))}
             </div>
           ) : (
-            <IconButton>
-              <Search />
-            </IconButton>
+            <div className={st.header_action}>{props.search}</div>
           )}
         </Container>
       </motion.header>

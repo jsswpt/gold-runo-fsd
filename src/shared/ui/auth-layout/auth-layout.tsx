@@ -24,7 +24,7 @@ export const AuthLayout = (props: AuthLayout) => {
           </div>
         </div>
         {props.title && (
-          <h1 className={cn("h5", "dark-selection", st.title)}>
+          <h1 className={cn("subtitle1", "dark-selection", st.title)}>
             {props.title}
           </h1>
         )}

@@ -28,14 +28,18 @@ export const Modal = (props: Modal) => {
       <AnimatePresence mode="wait">
         {props.isOpen && (
           <motion.div
-            initial={{ backdropFilter: "brightness(1) grayscale(0)" }}
-            animate={{ backdropFilter: "brightness(0.5) grayscale(0.7)" }}
-            exit={{ backdropFilter: "brightness(1) grayscale(0)" }}
+            initial={{
+              backdropFilter: props.bg === "darken" ? "brightness(1)" : "none",
+            }}
+            animate={{
+              backdropFilter:
+                props.bg === "darken" ? "brightness(0.5)" : "none",
+            }}
+            exit={{
+              backdropFilter: props.bg === "darken" ? "brightness(1)" : "none",
+            }}
             transition={{ duration: 0.64 }}
-            className={cn(st.modal_bg, {
-              [st.bg_none]: props.bg === "none" || !props.bg,
-              [st.bg_darken]: props.bg === "darken",
-            })}
+            className={cn(st.modal_bg)}
             id="modal"
           >
             {props.children}

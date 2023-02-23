@@ -1,0 +1,58 @@
+@use "../../shared/modules/funcs.module";
+@use "../../shared/modules/units.module";
+@use "../../shared/modules/breakpoints.module";
+
+.search_popup_wrap__actions {
+  display: flex;
+  align-items: center;
+  gap: funcs.px-rem(32);
+}
+
+.divider_container {
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+
+  & > * {
+    width: 100%;
+  }
+
+  transform: translateX(-50%);
+  top: units.$header-height-mobile;
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    top: units.$header-height-tablet;
+  }
+  @include breakpoints.media-screen(breakpoints.$xxl) {
+    top: units.$header-height-desktop;
+  }
+}
+
+.search_popup_wrap__popup_wrapper {
+  z-index: 5;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: units.$header-height-mobile;
+
+  box-shadow: funcs.px-rem(5) funcs.px-rem(100) 40px var(--shadow);
+
+  border-radius: 0 0 units.$round-xl units.$round-xl;
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    top: units.$header-height-tablet;
+  }
+  @include breakpoints.media-screen(breakpoints.$xxl) {
+    top: units.$header-height-desktop;
+  }
+
+  overflow: hidden;
+}
+
+.search_popup_wrap__popup {
+  padding: funcs.px-rem(32) funcs.px-rem(150);
+
+  width: 100%;
+  height: funcs.px-rem(300);
+  background: var(--surface);
+}
