@@ -22,7 +22,7 @@ export const OurBranch = (props: OurBranch) => {
           window.scrollTo({ behavior: "smooth", top: ref.current!.offsetTop });
           setTimeout(() => {
             res(0);
-          }, 500);
+          }, 800);
         });
       };
 

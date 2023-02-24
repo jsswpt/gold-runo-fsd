@@ -7,7 +7,12 @@
   background: var(--surface);
   overflow: hidden;
 
-  box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20) var(--shadow);
+  border: funcs.px-rem(1) solid var(--light-stroke);
+
+  @include breakpoints.media-screen(breakpoints.$md) {
+    border: none;
+    box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20) var(--shadow);
+  }
 }
 
 .card_wrap__img {

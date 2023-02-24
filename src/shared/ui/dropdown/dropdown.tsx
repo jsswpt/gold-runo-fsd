@@ -76,7 +76,7 @@ export const Dropdown = (props: Dropdown) => {
                   maxHeight: 0,
                 }
           }
-          transition={{ duration: 0.45, mass: 0 }}
+          transition={{ duration: 0.64, mass: 0 }}
           className={cn(st.menu)}
         >
           {props.children}

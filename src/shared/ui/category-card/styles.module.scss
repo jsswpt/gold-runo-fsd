@@ -10,8 +10,17 @@
 
   overflow: hidden;
 
+  border: funcs.px-rem(1) solid var(--light-stroke);
+
+  @include breakpoints.media-screen(breakpoints.$md) {
+    border: none;
+
+    &:hover {
+      box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20) var(--shadow);
+    }
+  }
+
   &:hover {
-    box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20) var(--shadow);
     .category_card_wrap__image {
       & > * {
         scale: 1.1;

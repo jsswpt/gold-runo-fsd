@@ -10,6 +10,7 @@ type SaveYourMoney = {};
 export const SaveYourMoney = (props: SaveYourMoney) => {
   return (
     <SectionLayout
+      risingAnimation
       title={
         <>
           Сэкономим Ваше{" "}

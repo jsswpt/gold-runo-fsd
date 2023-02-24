@@ -188,7 +188,7 @@ blockquote {
   &::-webkit-scrollbar {
     width: funcs.px-rem(6);
     height: funcs.px-rem(6);
-    background: var(--text-secondary);
+    background: var(--light-stroke);
     border-radius: 16px;
   }
 

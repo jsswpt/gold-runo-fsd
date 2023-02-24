@@ -3,12 +3,17 @@
 @use "../../shared/modules/breakpoints.module";
 
 .product_card {
-  box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20) var(--shadow);
-
   border-radius: units.$round-xl;
   background: var(--surface);
 
   overflow: hidden;
+
+  border: funcs.px-rem(1) solid var(--light-stroke);
+
+  @include breakpoints.media-screen(breakpoints.$md) {
+    border: none;
+    box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20) var(--shadow);
+  }
 }
 
 .product_card_wrap__media {

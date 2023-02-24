@@ -27,6 +27,7 @@ export const Profile = memo((props: Profile) => {
       <Dropdown
         align="bottom"
         justify="start"
+        triggerOn="hover"
         anchorEl={
           <IconButton>
             <Person />

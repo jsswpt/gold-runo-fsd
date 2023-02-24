@@ -114,14 +114,16 @@ export const ProductCard = (props: ProductCard) => {
             <div className={st.product_card_main_info_wrap__rating}></div>
           )}{" "}
         </div>
-        <div className={st.product_card_body_wrap__actions}>
-          <div className={st.product_actions_wrap}>
-            <AddToCart />
+        {!props.disableActions && (
+          <div className={st.product_card_body_wrap__actions}>
+            <div className={st.product_actions_wrap}>
+              <AddToCart />
+            </div>
+            <div className={st.product_actions_wrap}>
+              <BuyByOneTap />
+            </div>
           </div>
-          <div className={st.product_actions_wrap}>
-            <BuyByOneTap />
-          </div>
-        </div>
+        )}
       </div>
     </motion.article>
   );

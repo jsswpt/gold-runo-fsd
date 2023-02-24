@@ -14,7 +14,7 @@ export const SearchPopupXs = (props: SearchPopupXs) => {
       </IconButton>
 
       <QuarterScreenPopup
-        position="left"
+        position="top"
         isOpen={isFocused}
         onClose={() => setIsFocused(false)}
       >
