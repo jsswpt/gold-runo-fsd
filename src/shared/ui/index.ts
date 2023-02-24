@@ -1,3 +1,5 @@
+export { ProductPresentatorLayout } from "./product-presentator-layout/product-presentator-layout";
+
 export { ProductsGrid } from "./products-grid/products-grid";
 
 export { SignInBy } from "./sign-in-by/sign-in-by";

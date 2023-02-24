@@ -48,6 +48,9 @@ export const Header = (props: HeaderT) => {
                 <div className={st.header_action}>
                   <HeaderBurger />
                 </div>
+                {(currentScreen === "sm" || currentScreen === "md") && (
+                  <div className={st.header_action}>{props.search}</div>
+                )}
               </div>
             )}
           <div className={cn(st.header_wrap, st.header_wrap__logo)}>

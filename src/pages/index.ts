@@ -1,3 +1,5 @@
+export { ProductPresentator } from "./product-presentator/product-presentator";
+
 export { DelieveryAndPayment } from "./delievery-and-payment/delievery-and-payment";
 export { Interiors } from "./interiors/interiors";
 
