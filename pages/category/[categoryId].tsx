@@ -23,15 +23,17 @@ const products = [
 ];
 
 const findProducts = (
-  minPrice: number,
-  maxPrice: number,
-  categoryId: number
+  minPrice: number | null,
+  maxPrice: number | null,
+  categoryId: number | null
 ) => {
-  console.log(minPrice, maxPrice, categoryId);
+  const modifiedMinPrice = minPrice || 0;
+  const modifiedMaxPrice = maxPrice || 100000000;
+
   const findedProducts = products.filter((item) => {
     if (
-      item.price > minPrice &&
-      item.price < maxPrice &&
+      item.price > modifiedMinPrice &&
+      item.price < modifiedMaxPrice &&
       item.categoryId === categoryId
     )
       return item;
@@ -42,17 +44,22 @@ const findProducts = (
 
 // пример работы
 const Index = (props: any) => {
+  const [color, setColor] = useState<"yellow" | "red" | "blue" | null>(null);
+  const [minPrice, setMinPrice] = useState<number | null>(null);
+  const [maxPrice, setMaxPrice] = useState<number | null>(null);
+
+  const [isFetched, setIsFetched] = useState(false);
+
   const [products, setProducts] = useState<any>([]);
   const router = useRouter();
 
-  const categoryId = router.query.categoryId as string;
-  const minPrice = router.query.minPrice as string;
-  const maxPrice = router.query.maxPrice as string;
+  console.log(props);
 
   useEffect(() => {
-    const list = findProducts(+minPrice, +maxPrice, +categoryId);
-
+    const list = findProducts(minPrice, maxPrice, props.category.id);
+    console.log("Otrabotal", list);
     setProducts(list);
+    setIsFetched(true);
   }, [router]);
 
   return (
@@ -60,7 +67,57 @@ const Index = (props: any) => {
       <Head>
         <title>Диваны | YORCOM</title>
       </Head>
-      <>{JSON.stringify(products)}</>
+      <div>
+        <p>minPrice - {minPrice}</p>
+        <p>maxPrice - {maxPrice}</p>
+        <p>color - {color}</p>
+      </div>
+      <div>
+        <h1>Фильтры</h1>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            router.push({
+              query: {
+                minPrice,
+                maxPrice,
+                color,
+                categoryId: props.category.id,
+              },
+            });
+          }}
+        >
+          <input
+            placeholder="Минимальная цена"
+            type="number"
+            value={minPrice || undefined}
+            onChange={(e) => setMinPrice(+e.currentTarget.value)}
+          />
+          <input
+            placeholder="Максимальная цена"
+            type="number"
+            value={maxPrice || undefined}
+            onChange={(e) => setMaxPrice(+e.currentTarget.value)}
+          />
+          <select
+            defaultValue={"default"}
+            onChange={(e) =>
+              setColor(e.currentTarget.value as "yellow" | "blue" | "red")
+            }
+          >
+            <option value="default" disabled>
+              Выбор цвета
+            </option>
+            <option value="red">Красный</option>
+            <option value="yellow">Жёлтый</option>
+            <option value="blue">Синий</option>
+          </select>
+          <button type="submit">Найти</button>
+        </form>
+      </div>
+      <>
+        {isFetched ? JSON.stringify(products) : JSON.stringify(props.baseList)}
+      </>
     </>
   );
 };
@@ -69,7 +126,10 @@ export const getStaticProps: GetStaticProps = (context) => {
   const id = context.params!.categoryId as string;
 
   return {
-    props: { category: categoriesList.find((item) => item.id === +id)! },
+    props: {
+      category: categoriesList.find((item) => item.id === +id)!,
+      baseList: products.filter((item) => item.categoryId === +id),
+    },
   };
 };
 

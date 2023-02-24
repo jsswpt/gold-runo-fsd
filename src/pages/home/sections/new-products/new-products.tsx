@@ -29,7 +29,6 @@ export const NewProducts = (props: NewProducts) => {
       disablePaddingForBody
       disablePaddingForHeadlines
       risingAnimation
-      alignHeadlines="center"
       title="Новинки"
       subElement="Обратите внимание на последние поступления"
     >

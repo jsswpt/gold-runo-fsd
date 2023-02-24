@@ -231,3 +231,17 @@
     }
   }
 }
+
+.title_wrap__text {
+  text-align: center;
+  @include breakpoints.media-screen(breakpoints.$md) {
+    text-align: start;
+  }
+}
+
+.info_wrap__buttons {
+  justify-content: center;
+  @include breakpoints.media-screen(breakpoints.$md) {
+    justify-content: start;
+  }
+}

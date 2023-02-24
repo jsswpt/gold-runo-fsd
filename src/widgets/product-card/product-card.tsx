@@ -32,6 +32,8 @@ type ProductCard = {
   price: number;
   alternatePrice?: number;
 
+  rating?: number;
+
   disableActions?: boolean;
 
   media: MediaType[] | null;
@@ -69,57 +71,57 @@ export const ProductCard = (props: ProductCard) => {
         )}
       </Link>
       <div className={st.product_card_wrap__body}>
-        <div className={st.product_body_wrap__main_info}>
-          <h4 className={cn("h4", "dark-selection", st.product_title)}>
-            <Link href={props.href}>{props.title}</Link>
-          </h4>
+        <div className={st.product_card_body_wrap__colors}>Цвета</div>
+        <div className={st.product_card_body_wrap__main_info}>
+          <div className={st.product_card_main_info_wrap__title}>
+            <Link href={props.href}>
+              <h4 className={cn("h4", "dark-selection", st.product_title)}>
+                {props.title}
+              </h4>
+            </Link>
+          </div>
           {props.description && (
-            <p
-              className={cn("body2", "dark-selection", st.product_description)}
-            >
-              {props.description}
-            </p>
-          )}
-        </div>
-        {props.sizes && (
-          <div className={st.product_body_wrap__sizes}>
-            <p className={cn("body1", "dark-selection", st.product_size_title)}>
-              Размер (ДхШхВ)
-            </p>
-            <p className={cn("dark-selection", st.product_size)}>
-              {props.sizes.length} x {props.sizes.width} x {props.sizes.height}
-            </p>
-          </div>
-        )}
-        <div className={st.product_body_wrap__price}>
-          <p className={cn("h3", "dark-selection", st.product_price_title)}>
-            {props.priceT === "min" && "от"} {props.price} ₽
-          </p>
-          {props.alternatePrice && (
-            <p
-              className={cn(
-                "body1",
-                "dark-selection",
-                st.product_alternate_price_title
-              )}
-            >
-              {props.alternatePrice} ₽
-            </p>
-          )}
-        </div>
-        <div className={st.product_body_wrap__rating}>
-          <p className="body2">Будет рейтинг</p>
-        </div>
-        {!props.disableActions && (
-          <div className={st.product_body_wrap__actions}>
-            <div className={st.product_body_actions__item}>
-              <AddToCart />
+            <div className={st.product_card_main_info_wrap__description}>
+              <Link
+                href={props.href}
+                className={cn(
+                  "subtitle1",
+                  "dark-selection",
+                  st.product_description
+                )}
+              >
+                {props.description}
+              </Link>
             </div>
-            <div className={st.product_body_actions__item}>
-              <BuyByOneTap />
-            </div>
+          )}
+          <div className={st.product_card_main_info_wrap__price}>
+            <p className={cn("h3", "dark-selection", st.product_price)}>
+              {props.priceT === "min" && "От"} {props.price} ₽
+            </p>
+            {props.alternatePrice && (
+              <p
+                className={cn(
+                  "body1",
+                  "dark-selection",
+                  st.product_price_alternate
+                )}
+              >
+                {props.alternatePrice} ₽
+              </p>
+            )}
           </div>
-        )}
+          {props.rating && (
+            <div className={st.product_card_main_info_wrap__rating}></div>
+          )}{" "}
+        </div>
+        <div className={st.product_card_body_wrap__actions}>
+          <div className={st.product_actions_wrap}>
+            <AddToCart />
+          </div>
+          <div className={st.product_actions_wrap}>
+            <BuyByOneTap />
+          </div>
+        </div>
       </div>
     </motion.article>
   );

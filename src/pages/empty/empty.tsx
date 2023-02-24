@@ -15,8 +15,10 @@ export const Empty = () => {
     <div style={{ minWidth: "60px", width: "100%", maxWidth: "500px" }}>
       <ProductCard
         price={10000}
-        title="чтооо"
+        title="Диван мегашик базарю жиест уффф фывлыфвфыовфы"
+        description="Дескрипшн (opisanie) description (описание) Дескрипшн (opisanie) description (описание) Дескрипшн (opisanie) description (описание)"
         priceT={"min"}
+        alternatePrice={10000}
         href=""
         id={1}
         media={[

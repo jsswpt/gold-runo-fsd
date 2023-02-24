@@ -24,7 +24,7 @@ export const ReviewAndBlogCard = memo((props: ReviewAndBlogCard) => {
       <div className={st.card_wrap__info}>
         <div className={st.info_wrap__top}>
           <div className={st.info_top_wrap__title}>
-            <h3 className={cn("h5", "dark-selection", st.info_title)}>
+            <h3 className={cn("h4", "dark-selection", st.info_title)}>
               {props.title}
             </h3>
           </div>

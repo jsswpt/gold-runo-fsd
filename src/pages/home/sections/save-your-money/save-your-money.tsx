@@ -28,9 +28,7 @@ export const SaveYourMoney = (props: SaveYourMoney) => {
     >
       <div className={st.save_your_money_wrap}>
         <div className={st.save_your_money_wrap__body}>
-          <p
-            className={cn("body2", "dark-selection", st.contact_with_us_title)}
-          >
+          <p className={cn("h5", "dark-selection", st.contact_with_us_title)}>
             Свяжитесь с нами удобным для Вас способом:
           </p>
         </div>

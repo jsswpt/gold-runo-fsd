@@ -8,5 +8,5 @@ import { Button } from "@/shared/ui";
 type BuyByOneTap = {};
 
 export const BuyByOneTap = () => {
-  return <Button>Купить в один клик</Button>;
+  return <Button fullWidth>Купить в один клик</Button>;
 };

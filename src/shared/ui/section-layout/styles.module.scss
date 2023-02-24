@@ -40,7 +40,29 @@
   }
 }
 
+.section_title {
+  text-align: center;
+  @include breakpoints.media-screen(breakpoints.$md) {
+    text-align: start;
+  }
+}
+
 .headlines_wrap__subtitle {
+  display: flex;
+  justify-content: center;
+  @include breakpoints.media-screen(breakpoints.$md) {
+    justify-content: start;
+  }
+
+  & > * {
+    text-align: center;
+    @include breakpoints.media-screen(breakpoints.$md) {
+      text-align: start;
+    }
+  }
+}
+
+.section_subtitle {
 }
 
 .align_center {
