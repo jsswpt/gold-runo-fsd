@@ -2,7 +2,7 @@ import { Suspense, useState } from "react";
 
 import st from "../../styles.module.scss";
 import cn from "classnames";
-import { SectionLayout, Select } from "@/shared/ui";
+import { Checkbox, SectionLayout, Select } from "@/shared/ui";
 import dynamic from "next/dynamic";
 import { AnimatePresence } from "framer-motion";
 
@@ -77,34 +77,15 @@ export const ReadLookDo = (props: ReadLookDo) => {
       }
       subElement={
         <div className={st.options_wrap}>
-          <Select
-            defaultChecked
-            id="1"
-            title="YouTube"
-            selectName="block-type"
-            value={"youtube"}
-            onSelect={(arg) => {
-              setCurrentCategory(arg);
-            }}
-          />
-          <Select
-            id="2"
-            title="Блог"
-            selectName="block-type"
-            value={"blog"}
-            onSelect={(arg) => {
-              setCurrentCategory(arg);
-            }}
-          />
-          <Select
-            id="3"
-            title="Отзывы"
-            selectName="block-type"
-            value={"reviews"}
-            onSelect={(arg) => {
-              setCurrentCategory(arg);
-            }}
-          />
+          <Checkbox type="radio" defaultChecked name="block-type">
+            Youtube
+          </Checkbox>
+          <Checkbox type="radio" name="block-type">
+            Блог
+          </Checkbox>
+          <Checkbox type="radio" name="block-type">
+            Отзывы
+          </Checkbox>
         </div>
       }
     >
