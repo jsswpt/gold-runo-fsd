@@ -15,6 +15,7 @@ type CustomSwiper = {
   slidesPerView?: number;
   children: React.ReactNode;
   disableShadows?: boolean;
+  currentSlideIndicator?: boolean;
 };
 
 export const CustomSwiper = (props: CustomSwiper) => {
