@@ -1,4 +1,5 @@
 @use "../../modules/funcs.module";
+@use "../../modules/units.module";
 @use "../../modules/breakpoints.module";
 
 .quarters_layout {
@@ -58,6 +59,8 @@
 }
 
 .quarters_wrap__big {
+  overflow: hidden;
+  border-radius: units.$round-xl;
   width: 75%;
 }
 

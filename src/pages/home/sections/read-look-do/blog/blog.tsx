@@ -27,7 +27,7 @@ export const BlogChunk = (props: BlogChunk) => {
         slidesPerView={
           currentScreen === "xs" ? 1 : currentScreen === "sm" ? 1 : 3
         }
-        swiperProps={{ spaceBetween: 48 }}
+        swiperProps={{ spaceBetween: 32 }}
       >
         {Array(10)
           .fill(0)

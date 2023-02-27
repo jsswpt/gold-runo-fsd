@@ -26,8 +26,10 @@ export const Banner = memo(() => {
             <div className={st.banner_bg_wrapper}>
               {item.image_url ? (
                 <Image
-                  fill
+                  // fill
                   src={item.image_url}
+                  width={1920}
+                  height={1080}
                   alt="banner"
                   className="dark-selection"
                 />

@@ -15,14 +15,17 @@ export const NewProducts = (props: NewProducts) => {
   const { currentScreen } = useScreen();
 
   const slidesPerView = useMemo(() => {
-    if (currentScreen === "xs") {
-      return 1;
-    } else if (currentScreen === "sm" || currentScreen === "md") {
+    if (
+      currentScreen === "sm" ||
+      currentScreen === "md" ||
+      currentScreen === "xs"
+    ) {
       return 2;
     } else if (currentScreen === "lg") {
       return 3;
-    }
-    return 4;
+    } else if (currentScreen === "xl") {
+      return 4;
+    } else return 5;
   }, [currentScreen]);
   return (
     <SectionLayout
@@ -35,7 +38,7 @@ export const NewProducts = (props: NewProducts) => {
       <div className={st.new_products_wrap__slider}>
         <CustomSwiper
           navType="buttons"
-          swiperProps={{ spaceBetween: 32 }}
+          swiperProps={{ spaceBetween: slidesPerView * 8 }}
           slidesPerView={slidesPerView}
           className={st.products_slider}
         >
@@ -50,6 +53,7 @@ export const NewProducts = (props: NewProducts) => {
                   price={1}
                   priceT="static"
                   title="Новинка"
+                  alternatePrice={1000}
                 />
               </SwiperSlide>
             ))}

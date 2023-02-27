@@ -26,36 +26,38 @@ export const Products = (props: Products) => {
         <div className={st.products_wrap__filter}>фильтры</div>
         <div className={st.products_wrap__items}>
           <ProductsGrid>
-            <div className={st.products_items_grid__item}>
-              <ProductCard
-                href="/products/1"
-                id={1}
-                media={null}
-                price={1000}
-                priceT={"min"}
-                title="Майами"
-              />
-            </div>
-            <div className={st.products_items_grid__item}>
-              <ProductCard
-                href="/products/2"
-                id={2}
-                media={null}
-                price={1000}
-                priceT={"min"}
-                title="Бали"
-              />
-            </div>
-            <div className={st.products_items_grid__item}>
-              <ProductCard
-                href="/products/3"
-                id={3}
-                media={null}
-                price={1000}
-                priceT={"min"}
-                title="Ещё какая-то модель"
-              />
-            </div>
+            <ProductCard
+              href="/products/1"
+              id={1}
+              media={null}
+              price={1000}
+              priceT={"min"}
+              title="Майами"
+            />
+            <ProductCard
+              href="/products/2"
+              id={2}
+              media={null}
+              price={1000}
+              priceT={"min"}
+              title="Бали"
+            />
+            <ProductCard
+              href="/products/3"
+              id={3}
+              media={null}
+              price={1000}
+              priceT={"min"}
+              title="Ещё какая-то"
+            />
+            <ProductCard
+              href="/products/3"
+              id={3}
+              media={null}
+              price={1000}
+              priceT={"min"}
+              title="Ещё какая-то модель"
+            />
           </ProductsGrid>
         </div>
       </SectionLayout>
@@ -68,36 +70,38 @@ export const Products = (props: Products) => {
         <div className={st.products_wrap__filter}>фильтры</div>
         <div className={st.products_wrap__items}>
           <ProductsGrid>
-            <div className={st.products_items_grid__item}>
-              <ProductCard
-                href="/products/1"
-                id={1}
-                media={null}
-                price={1000}
-                priceT={"min"}
-                title="Майами"
-              />
-            </div>
-            <div className={st.products_items_grid__item}>
-              <ProductCard
-                href="/products/2"
-                id={2}
-                media={null}
-                price={1000}
-                priceT={"min"}
-                title="Бали"
-              />
-            </div>
-            <div className={st.products_items_grid__item}>
-              <ProductCard
-                href="/products/3"
-                id={3}
-                media={null}
-                price={1000}
-                priceT={"min"}
-                title="Ещё какая-то модель"
-              />
-            </div>
+            <ProductCard
+              href="/products/1"
+              id={1}
+              media={null}
+              price={1000}
+              priceT={"min"}
+              title="Майами"
+            />
+            <ProductCard
+              href="/products/2"
+              id={2}
+              media={null}
+              price={1000}
+              priceT={"min"}
+              title="Бали"
+            />
+            <ProductCard
+              href="/products/3"
+              id={3}
+              media={null}
+              price={1000}
+              priceT={"min"}
+              title="Ещё какая-то модель"
+            />
+            <ProductCard
+              href="/products/3"
+              id={3}
+              media={null}
+              price={1000}
+              priceT={"min"}
+              title="Ещё какая-то модель"
+            />
           </ProductsGrid>
         </div>
       </SectionLayout>
@@ -110,36 +114,30 @@ export const Products = (props: Products) => {
         <div className={st.products_wrap__filter}>фильтры</div>
         <div className={st.products_wrap__items}>
           <ProductsGrid>
-            <div className={st.products_items_grid__item}>
-              <ProductCard
-                href="/products/1"
-                id={1}
-                media={null}
-                price={1000}
-                priceT={"min"}
-                title="Майами"
-              />
-            </div>
-            <div className={st.products_items_grid__item}>
-              <ProductCard
-                href="/products/2"
-                id={2}
-                media={null}
-                price={1000}
-                priceT={"min"}
-                title="Бали"
-              />
-            </div>
-            <div className={st.products_items_grid__item}>
-              <ProductCard
-                href="/products/3"
-                id={3}
-                media={null}
-                price={1000}
-                priceT={"min"}
-                title="Ещё какая-то модель"
-              />
-            </div>
+            <ProductCard
+              href="/products/1"
+              id={1}
+              media={null}
+              price={1000}
+              priceT={"min"}
+              title="Майами"
+            />
+            <ProductCard
+              href="/products/2"
+              id={2}
+              media={null}
+              price={1000}
+              priceT={"min"}
+              title="Бали"
+            />
+            <ProductCard
+              href="/products/3"
+              id={3}
+              media={null}
+              price={1000}
+              priceT={"min"}
+              title="Ещё какая-то модель"
+            />
           </ProductsGrid>
         </div>
       </SectionLayout>

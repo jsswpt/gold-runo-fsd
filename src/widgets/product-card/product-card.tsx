@@ -74,11 +74,14 @@ export const ProductCard = (props: ProductCard) => {
         <div className={st.product_card_body_wrap__colors}>Цвета</div>
         <div className={st.product_card_body_wrap__main_info}>
           <div className={st.product_card_main_info_wrap__title}>
-            <Link href={props.href}>
-              <h4 className={cn("h4", "dark-selection", st.product_title)}>
+            <h4 className={cn("h4", "dark-selection")}>
+              <Link
+                href={props.href}
+                className={cn("h4", "dark-selection", st.product_title)}
+              >
                 {props.title}
-              </h4>
-            </Link>
+              </Link>
+            </h4>
           </div>
           {props.description && (
             <div className={st.product_card_main_info_wrap__description}>
@@ -101,7 +104,7 @@ export const ProductCard = (props: ProductCard) => {
             {props.alternatePrice && (
               <p
                 className={cn(
-                  "body1",
+                  "body2",
                   "dark-selection",
                   st.product_price_alternate
                 )}

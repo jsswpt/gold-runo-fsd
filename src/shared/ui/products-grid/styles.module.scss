@@ -3,23 +3,19 @@
 
 .products_grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  column-gap: funcs.px-rem(24);
-  row-gap: funcs.px-rem(16);
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: funcs.px-rem(8);
+  row-gap: funcs.px-rem(24);
 
-  @include breakpoints.media-screen(breakpoints.$sm) {
-    column-gap: funcs.px-rem(48);
-    row-gap: funcs.px-rem(32);
-    grid-template-columns: repeat(2, 1fr);
-  }
   @include breakpoints.media-screen(breakpoints.$lg) {
-    column-gap: funcs.px-rem(48);
+    column-gap: funcs.px-rem(16);
     row-gap: funcs.px-rem(32);
     grid-template-columns: repeat(3, 1fr);
   }
   @include breakpoints.media-screen(breakpoints.$xl) {
-    column-gap: funcs.px-rem(48);
-    row-gap: funcs.px-rem(32);
     grid-template-columns: repeat(4, 1fr);
+  }
+  @include breakpoints.media-screen(breakpoints.$xxl) {
+    grid-template-columns: repeat(5, 1fr);
   }
 }

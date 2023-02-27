@@ -31,7 +31,7 @@ export const Categories = (props: Categories) => {
         <CustomSwiper
           navType="buttons"
           slidesPerView={slidesPerView}
-          swiperProps={{ spaceBetween: 32 }}
+          swiperProps={{ spaceBetween: slidesPerView * 8 }}
         >
           <SwiperSlide>
             <CategoryCard
