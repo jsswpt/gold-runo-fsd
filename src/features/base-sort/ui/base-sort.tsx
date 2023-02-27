@@ -18,7 +18,7 @@ export const BaseSort = (props: BaseSort) => {
         <option>По убиванию цены</option>
         <option>По возрастанию цены</option>
       </select> */}
-      <Select baseTitle="asdsad" />
+      <Select baseTitle="asdsad">???</Select>
     </>
   );
 };
