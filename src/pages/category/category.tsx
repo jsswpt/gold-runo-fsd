@@ -1,8 +1,8 @@
-import { useRef, useState } from "react";
+import {} from "react";
 
 import st from "./styles.module.scss";
 import cn from "classnames";
-import { Button, ProductsGrid, SectionLayout } from "@/shared/ui";
+import { ProductsGrid, SectionLayout } from "@/shared/ui";
 import {
   FilterByKindAndSortProducts,
   FilterProducts,
@@ -12,10 +12,11 @@ import {
 
 import Image1 from "shared/assets/media/imgs/interior-example.jpg";
 import Video1 from "shared/assets/media/imgs/fake-video.png";
+import { BaseSort, FilterProductsByKind } from "@/features";
 
-type Products = {};
+type Category = {};
 
-export const Products = (props: Products) => {
+export const Category = (props: Category) => {
   return (
     <>
       <SectionLayout
@@ -26,15 +27,13 @@ export const Products = (props: Products) => {
         хлебные крошки
       </SectionLayout>
       <SectionLayout
-        title="Товары"
-        subElement={<FilterByKindAndSortProducts />}
+        title="Диваны"
         disablePaddingForBody
         disablePaddingForHeadlines
+        subElement={<FilterByKindAndSortProducts />}
       >
-        <div className={st.products_wrap__filter}>
-          <FilterProducts />
-        </div>
-        <div className={st.products_wrap__items}>
+        <FilterProducts />
+        <div className={st.category_wrap__items}>
           <ProductsGrid>
             <ProductCard
               href="/products/3"

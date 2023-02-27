@@ -1,3 +1,7 @@
+export { BaseSort } from "./base-sort/ui/base-sort";
+
+export { FilterProductsByKind } from "./filter-products-by-kind/ui/filter-products-by-kind";
+
 export { SelectSet } from "./select-set/ui/select-set";
 
 export { AddToCart } from "./add-to-cart/ui/add-to-cart";

@@ -28,11 +28,11 @@ export const Profile = memo((props: Profile) => {
         align="bottom"
         justify="start"
         triggerOn="hover"
-        anchorEl={
+        anchorEl={() => (
           <IconButton>
             <Person />
           </IconButton>
-        }
+        )}
       >
         <AuthorizeCard />
       </Dropdown>

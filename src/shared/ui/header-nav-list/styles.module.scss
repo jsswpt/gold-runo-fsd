@@ -17,7 +17,7 @@
 }
 
 .header_nav__link {
-  transition: 0.32s;
+  transition: 0.32s ease-out;
   color: var(--text-secondary);
 
   white-space: nowrap;

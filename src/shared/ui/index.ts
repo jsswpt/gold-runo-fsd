@@ -1,3 +1,5 @@
+export { Checkbox } from "./checkbox/checkbox";
+
 export { ProductPresentatorLayout } from "./product-presentator-layout/product-presentator-layout";
 
 export { ProductsGrid } from "./products-grid/products-grid";

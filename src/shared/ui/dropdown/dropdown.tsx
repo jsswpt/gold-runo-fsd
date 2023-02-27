@@ -4,18 +4,17 @@ import st from "./styles.module.scss";
 import cn from "classnames";
 
 import { AnimatePresence, motion } from "framer-motion";
+import { ChevronLeft } from "@/shared/assets";
 
 type Dropdown = {
-  anchorEl: React.ReactNode;
+  anchorEl: (isOpened: boolean) => React.ReactNode;
   triggerOn?: "hover" | "click";
   justify?: "end" | "start" | "center";
   align?: "top" | "center" | "bottom";
   children?: React.ReactNode;
+  withIndicator?: boolean;
 };
 
-/**
- * не закончен
- */
 export const Dropdown = (props: Dropdown) => {
   const [isOpened, setIsOpened] = useState(false);
 
@@ -49,7 +48,7 @@ export const Dropdown = (props: Dropdown) => {
             setIsOpened((value) => !value);
         }}
       >
-        {props.anchorEl}
+        {props.anchorEl(isOpened)}
       </div>
       <div
         ref={menuRef}
@@ -63,25 +62,22 @@ export const Dropdown = (props: Dropdown) => {
           [st.align_bottom]: props.align === "bottom",
         })}
       >
-        <motion.div
-          initial={{ maxHeight: 0 }}
-          animate={
-            isOpened
-              ? {
-                  opacity: 1,
-                  maxHeight: "30rem",
-                }
-              : {
-                  opacity: 0.2,
-                  maxHeight: 0,
-                }
-          }
-          transition={{ duration: 0.64, mass: 0 }}
-          className={cn(st.menu)}
-        >
-          {props.children}
-          {/* <div className={st.menu_inner}>{props.children}</div> */}
-        </motion.div>
+        <AnimatePresence mode="wait" initial={false}>
+          {isOpened && (
+            <motion.div
+              initial={{ maxHeight: 0 }}
+              animate={{
+                opacity: 1,
+                maxHeight: "30rem",
+              }}
+              exit={{ maxHeight: 0 }}
+              transition={{ duration: 0.64, mass: 0 }}
+              className={cn(st.menu)}
+            >
+              <div className={st.menu_inner}>{props.children}</div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

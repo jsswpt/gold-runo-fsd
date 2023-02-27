@@ -2,8 +2,9 @@
 @use "../../modules/funcs.module";
 
 .button {
-  padding: 0 funcs.px-rem(24);
+  padding: 0 units.$default-padding;
   display: flex;
+  gap: funcs.px-rem(16);
   align-items: center;
   justify-content: center;
 
@@ -23,8 +24,7 @@
 
   user-select: none;
 
-  box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20)
-    rgba(0, 0, 0, 0.1);
+  box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20) var(--shadow);
 
   cursor: pointer;
 
@@ -40,8 +40,13 @@
   }
 
   &:disabled {
-    filter: grayscale(1);
+    filter: grayscale(0);
+    box-shadow: none !important;
     cursor: default;
+
+    &:hover {
+      box-shadow: none !important;
+    }
   }
 }
 
@@ -170,29 +175,28 @@
 }
 
 .outlined {
-  border-width: funcs.px-rem(1);
-  border-style: solid;
+  margin: funcs.px-rem(1);
 }
 
 .border_primary {
-  border-color: var(--primary);
+  box-shadow: 0 0 funcs.px-rem(1) funcs.px-rem(1) var(--primary);
   color: var(--primary);
 }
 
 .border_warning {
-  border-color: var(--warning);
+  box-shadow: 0 0 funcs.px-rem(1) funcs.px-rem(1) var(--warning);
   color: var(--warning);
 }
 .border_danger {
-  border-color: var(--danger);
+  box-shadow: 0 0 funcs.px-rem(1) funcs.px-rem(1) var(--danger);
   color: var(--danger);
 }
 .border_success {
-  border-color: var(--success);
+  box-shadow: 0 0 funcs.px-rem(1) funcs.px-rem(1) var(--success);
   color: var(--success);
 }
 .border_default {
-  border-color: var(--stroke);
+  box-shadow: 0 0 funcs.px-rem(1) funcs.px-rem(1) var(--stroke);
   color: var(--stroke);
 }
 

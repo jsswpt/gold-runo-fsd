@@ -4,7 +4,7 @@ import st from "./styles.module.scss";
 import cn from "classnames";
 import { useAppDispatch, useAppSelector } from "@/shared/lib";
 import { setsPreview } from "entities/index";
-import { Select } from "@/shared/ui";
+import { Checkbox, Select } from "@/shared/ui";
 
 type SelectSet = {};
 
@@ -24,14 +24,14 @@ export const SelectSet = (props: SelectSet) => {
   return (
     <div className={st.select_set_wrapper}>
       {list.map((item) => (
-        <Select
-          value={item.id}
-          id={`radio-${item.id}`}
-          selectName={`select-set`}
-          title={item.name}
-          onSelect={(val) => dispatch(setsPreview.actions.setCurrentSet(val))}
+        <Checkbox
+          type="radio"
+          name="select-set"
+          onChange={() => dispatch(setsPreview.actions.setCurrentSet(item.id))}
           key={item.id}
-        />
+        >
+          {item.name}
+        </Checkbox>
       ))}
     </div>
   );

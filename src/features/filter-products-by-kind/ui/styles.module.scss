@@ -1,0 +1,8 @@
+@use "../../../shared/modules/funcs.module";
+
+.filter_products_by_kind_wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: funcs.px-rem(8);
+}

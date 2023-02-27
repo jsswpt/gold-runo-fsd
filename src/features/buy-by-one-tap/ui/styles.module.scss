@@ -6,7 +6,7 @@
   font-weight: 600;
   color: var(--text-secondary);
 
-  transition: 0.32s;
+  transition: 0.32s ease-out;
 
   &::before {
     content: "";
@@ -18,13 +18,13 @@
     background: var(--text-secondary);
 
     transform: translate(-50%, 0);
-    transition: 0.32s;
+    transition: 0.32s ease-out;
   }
 
   &:hover {
-    color: var(--text-primary);
+    color: var(--success);
     &::before {
-      background: var(--text-primary);
+      background: var(--success);
     }
   }
 }

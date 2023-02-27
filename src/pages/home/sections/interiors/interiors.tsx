@@ -2,7 +2,12 @@ import {} from "react";
 
 import st from "../../styles.module.scss";
 import cn from "classnames";
-import { SectionLayout, Select, ThreeAndOneQuarterLayout } from "@/shared/ui";
+import {
+  Checkbox,
+  SectionLayout,
+  Select,
+  ThreeAndOneQuarterLayout,
+} from "@/shared/ui";
 
 import InteriorExample from "shared/assets/media/imgs/interior-example.jpg";
 import Image from "next/image";
@@ -18,49 +23,24 @@ export const Interiors = (props: Interiors) => {
       title="Интерьеры с нашими моделями"
       subElement={
         <div className={st.options_wrap}>
-          <Select
-            id="1"
-            selectName="interior"
-            title="Гостиная"
-            value={"living"}
-            defaultChecked
-            onSelect={() => {}}
-          />
-          <Select
-            id="2"
-            selectName="interior"
-            title="Спальня"
-            value={"bed"}
-            onSelect={() => {}}
-          />
-          <Select
-            id="3"
-            selectName="interior"
-            title="Столовая"
-            value={"dining"}
-            onSelect={() => {}}
-          />
-          <Select
-            id="4"
-            selectName="interior"
-            title="Прихожая"
-            value={"hallway"}
-            onSelect={() => {}}
-          />
-          <Select
-            id="5"
-            selectName="interior"
-            title="Детская"
-            value={"childrens"}
-            onSelect={() => {}}
-          />
-          <Select
-            id="6"
-            selectName="interior"
-            title="Рабочее место"
-            value={"working"}
-            onSelect={() => {}}
-          />
+          <Checkbox type="radio" name="select-interior" defaultChecked>
+            Гостиная
+          </Checkbox>
+          <Checkbox type="radio" name="select-interior">
+            Спальня
+          </Checkbox>
+          <Checkbox type="radio" name="select-interior">
+            Столовая
+          </Checkbox>
+          <Checkbox type="radio" name="select-interior">
+            Прихожая
+          </Checkbox>
+          <Checkbox type="radio" name="select-interior">
+            Детская
+          </Checkbox>
+          <Checkbox type="radio" name="select-interior">
+            Рабочее место
+          </Checkbox>
         </div>
       }
     >

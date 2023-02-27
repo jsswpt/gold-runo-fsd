@@ -3,14 +3,15 @@
 @use "../../modules/breakpoints.module";
 
 .category_card {
+  margin: funcs.px-rem(1);
   border-radius: units.$round-xl;
   background: var(--surface);
 
-  transition: 0.32s;
+  transition: 0.32s ease-out;
 
   overflow: hidden;
 
-  border: funcs.px-rem(1) solid var(--light-stroke);
+  box-shadow: 0 0 funcs.px-rem(1) funcs.px-rem(1) var(--light-stroke);
 
   @include breakpoints.media-screen(breakpoints.$md) {
     border: none;
@@ -41,7 +42,7 @@
   padding-top: 71%;
   overflow: hidden;
 
-  transition: 0.16s;
+  transition: 0.16s ease-out;
 
   & > * {
     position: absolute;
@@ -51,7 +52,7 @@
     height: 100%;
     object-fit: cover;
 
-    transition: 0.64s;
+    transition: 0.64s ease-out;
   }
 }
 
@@ -84,13 +85,13 @@
   align-items: center;
   gap: funcs.px-rem(24);
   width: fit-content;
-  transition: 0.32s;
+  transition: 0.32s ease-out;
 
   color: var(--text-secondary);
 
   svg {
     width: funcs.px-rem(16);
-    transition: 0.32s;
+    transition: 0.32s ease-out;
     color: var(--text-secondary);
   }
 }

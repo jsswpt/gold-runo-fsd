@@ -1,3 +1,9 @@
+export { FilterByKindAndSortProducts } from "./filter-by-kind-and-sort-products/filter-by-kind-and-sort-products";
+
+export { FilterProducts } from "./filter-products/filter-products";
+
+export { SortProducts } from "./sort-products/sort-products";
+
 export { SearchPopupXs } from "./search-popup-xs/search-popup-xs";
 
 export { SearchPopupLg } from "./search-popup-lg/search-popup-lg";

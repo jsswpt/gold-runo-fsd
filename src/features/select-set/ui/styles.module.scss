@@ -9,7 +9,7 @@
 .select {
   white-space: nowrap;
   color: var(--text-secondary);
-  transition: 0.16s;
+  transition: 0.16s ease-out;
 }
 
 .active {

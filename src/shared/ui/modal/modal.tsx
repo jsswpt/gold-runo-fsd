@@ -20,8 +20,19 @@ export const Modal = (props: Modal) => {
   useEffect(() => {
     setMounted(true);
 
-    return () => setMounted(false);
+    return () => {
+      setMounted(false);
+      document.body.style.overflowY = "auto";
+    };
   }, []);
+
+  useEffect(() => {
+    if (props.isOpen) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "auto";
+    }
+  }, [props.isOpen]);
 
   return mounted ? (
     ReactDOM.createPortal(

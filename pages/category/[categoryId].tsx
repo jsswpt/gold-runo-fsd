@@ -1,3 +1,4 @@
+import { Category } from "@/pages";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -53,11 +54,8 @@ const Index = (props: any) => {
   const [products, setProducts] = useState<any>([]);
   const router = useRouter();
 
-  console.log(props);
-
   useEffect(() => {
     const list = findProducts(minPrice, maxPrice, props.category.id);
-    console.log("Otrabotal", list);
     setProducts(list);
     setIsFetched(true);
   }, [router]);
@@ -67,57 +65,7 @@ const Index = (props: any) => {
       <Head>
         <title>Диваны | YORCOM</title>
       </Head>
-      <div>
-        <p>minPrice - {minPrice}</p>
-        <p>maxPrice - {maxPrice}</p>
-        <p>color - {color}</p>
-      </div>
-      <div>
-        <h1>Фильтры</h1>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            router.push({
-              query: {
-                minPrice,
-                maxPrice,
-                color,
-                categoryId: props.category.id,
-              },
-            });
-          }}
-        >
-          <input
-            placeholder="Минимальная цена"
-            type="number"
-            value={minPrice || undefined}
-            onChange={(e) => setMinPrice(+e.currentTarget.value)}
-          />
-          <input
-            placeholder="Максимальная цена"
-            type="number"
-            value={maxPrice || undefined}
-            onChange={(e) => setMaxPrice(+e.currentTarget.value)}
-          />
-          <select
-            defaultValue={"default"}
-            onChange={(e) =>
-              setColor(e.currentTarget.value as "yellow" | "blue" | "red")
-            }
-          >
-            <option value="default" disabled>
-              Выбор цвета
-            </option>
-            <option value="red">Красный</option>
-            <option value="yellow">Жёлтый</option>
-            <option value="blue">Синий</option>
-          </select>
-          <button type="submit">Найти</button>
-        </form>
-      </div>
-      <>
-        {isFetched ? JSON.stringify(products) : JSON.stringify(props.baseList)}
-      </>
+      <Category />
     </>
   );
 };

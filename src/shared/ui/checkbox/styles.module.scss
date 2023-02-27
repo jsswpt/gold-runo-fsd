@@ -1,0 +1,32 @@
+@use "../../modules/funcs.module";
+@use "../../modules/units.module";
+
+.checkbox_wrapper {
+  &:has(input:checked) {
+    .checkbox {
+      box-shadow: 0 0 funcs.px-rem(1) funcs.px-rem(1) var(--base);
+      color: var(--text-primary);
+    }
+  }
+}
+
+.checkbox {
+  margin: funcs.px-rem(1);
+  padding: 0 units.$default-padding;
+  display: flex;
+  align-items: center;
+  height: units.$md;
+  border-radius: units.$round-xl;
+
+  background: none;
+
+  box-shadow: 0 0 funcs.px-rem(1) funcs.px-rem(1) var(--stroke);
+
+  transition: 0.16s ease-out;
+
+  user-select: none;
+
+  color: var(--stroke);
+
+  cursor: pointer;
+}

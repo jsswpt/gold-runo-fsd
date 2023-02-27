@@ -3,7 +3,9 @@
 @use "../../shared/modules/breakpoints.module";
 
 .section_banner {
-  transform: translateY(units.$header-bottom-block-desktop-minus);
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    transform: translateY(units.$header-bottom-block-desktop-minus);
+  }
 }
 
 .banner_wrap__slider {
@@ -133,7 +135,7 @@
 .read_look_do_span {
   color: var(--text-primary);
 
-  transition: 0.32s;
+  transition: 0.32s ease-out;
 }
 
 .accent_text {

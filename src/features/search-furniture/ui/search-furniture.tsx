@@ -19,15 +19,14 @@ export const SearchFurniture = memo(() => {
     <form>
       <div style={{ display: "flex", gap: "16px" }}>
         <Input
+          autoFocus
           onChange={(e) => setValue(e.currentTarget.value)}
           placeholder="Поиск по каталогу"
           icon={<Search />}
         />
         <Button
           type="submit"
-          variant="outlined"
           color="primary"
-          colorOnHover="primary"
           disabled={value.length > 3 ? false : true}
         >
           Найти
