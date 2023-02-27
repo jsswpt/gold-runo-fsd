@@ -10,6 +10,7 @@ type Checkbox = {
   onChange?: (evt: ChangeEvent<HTMLInputElement>) => void;
   type: "radio" | "checkbox";
   name?: string;
+  value?: any;
 };
 
 export const Checkbox = (props: Checkbox) => {
@@ -17,6 +18,7 @@ export const Checkbox = (props: Checkbox) => {
   return (
     <div className={st.checkbox_wrapper}>
       <input
+        value={props.value}
         defaultChecked={props.defaultChecked}
         id={`checkbox-${id}`}
         name={props.name}

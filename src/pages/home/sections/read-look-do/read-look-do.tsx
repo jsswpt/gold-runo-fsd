@@ -77,13 +77,35 @@ export const ReadLookDo = (props: ReadLookDo) => {
       }
       subElement={
         <div className={st.options_wrap}>
-          <Checkbox type="radio" defaultChecked name="block-type">
+          <Checkbox
+            value={"youtube"}
+            onChange={(e) =>
+              setCurrentCategory(e.currentTarget.value as Categories)
+            }
+            type="radio"
+            defaultChecked
+            name="block-type"
+          >
             Youtube
           </Checkbox>
-          <Checkbox type="radio" name="block-type">
+          <Checkbox
+            value={"blog"}
+            onChange={(e) =>
+              setCurrentCategory(e.currentTarget.value as Categories)
+            }
+            type="radio"
+            name="block-type"
+          >
             Блог
           </Checkbox>
-          <Checkbox type="radio" name="block-type">
+          <Checkbox
+            value={"reviews"}
+            onChange={(e) =>
+              setCurrentCategory(e.currentTarget.value as Categories)
+            }
+            type="radio"
+            name="block-type"
+          >
             Отзывы
           </Checkbox>
         </div>
