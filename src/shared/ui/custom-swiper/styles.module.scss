@@ -69,15 +69,17 @@
 
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: funcs.px-rem(16);
+  width: 65%;
 
   transform: translate(-50%, -50%);
 }
 
 .swiper_nav_plate {
-  height: funcs.px-rem(6);
-  width: funcs.px-rem(80);
-
+  height: funcs.px-rem(2);
+  width: 100%;
+  max-width: funcs.px-rem(64);
   border: none;
   outline: none;
   background: var(--light-stroke);
