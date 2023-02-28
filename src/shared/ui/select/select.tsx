@@ -1,38 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import st from "./styles.module.scss";
 import cn from "classnames";
 import { Dropdown } from "../dropdown/dropdown";
-import { Button } from "../button/button";
 import { ChevronLeft } from "@/shared/assets";
-import { useRouter } from "next/router";
+import { SelectItemBaseT, SelectT } from "./select.type";
+import { SelectItem } from "./ui/select-item";
+import { AnimatePresence, motion } from "framer-motion";
 
-type Select = {
-  baseTitle: string;
-  children: React.ReactNode;
-};
-
-export const Select = (props: Select) => {
-  const [title, setTitle] = useState("");
-
-  const [value, setValue] = useState<any>(null);
-
-  const handleClick = (e: React.MouseEvent<HTMLUListElement, MouseEvent>) => {
-    const path = e.nativeEvent.composedPath() as HTMLElement[];
-    const item = path.find((item) => item.id === "menu-item");
-
-    if (item) {
-      setValue(item.dataset.value);
-      setTitle(item.dataset.title!);
-    }
-  };
+export const Select = (props: SelectT) => {
+  const [activeItem, setActiveItem] = useState<SelectItemBaseT | null>(null);
 
   useEffect(() => {
-    setTitle(props.baseTitle);
+    setActiveItem(props.options[0]);
   }, []);
 
+  useEffect(() => {
+    if (activeItem) {
+      props.onSelect(activeItem.value);
+    }
+  }, [activeItem]);
   return (
     <Dropdown
+      fullWidth={props.fullWidth}
       triggerOn="click"
       justify="center"
       align="bottom"
@@ -43,7 +33,9 @@ export const Select = (props: Select) => {
             isOpened && st.select_wrapper__opened
           )}
         >
-          <p className={cn("body1", st.select_title)}>{title}</p>
+          <p className={cn("action-inner", "dark-selection", st.select_title)}>
+            {activeItem?.title}
+          </p>
           <div
             className={cn(st.icon_wrapper, isOpened && st.icon_wrapper__opened)}
           >
@@ -52,7 +44,17 @@ export const Select = (props: Select) => {
         </div>
       )}
     >
-      <ul onClick={handleClick}>{props.children}</ul>
+      <ul>
+        {props.options.map((item) => (
+          <SelectItem
+            onClick={() => setActiveItem(item)}
+            active={item.value === activeItem?.value}
+            title={item.title}
+            value={item.value}
+            key={item.title + item.value}
+          />
+        ))}
+      </ul>
     </Dropdown>
   );
 };

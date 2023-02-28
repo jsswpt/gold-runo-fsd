@@ -27,7 +27,10 @@ export const Checkbox = (props: Checkbox) => {
         type={props.type}
         hidden
       />
-      <label htmlFor={`checkbox-${id}`} className={cn("body2", st.checkbox)}>
+      <label
+        htmlFor={`checkbox-${id}`}
+        className={cn("action-inner", st.checkbox)}
+      >
         {props.children}
       </label>
     </div>

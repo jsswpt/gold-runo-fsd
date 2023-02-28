@@ -1,3 +1,5 @@
+export { SelectItem } from "./select/ui/select-item";
+
 export { Checkbox } from "./checkbox/checkbox";
 
 export { ProductPresentatorLayout } from "./product-presentator-layout/product-presentator-layout";

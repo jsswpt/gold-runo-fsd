@@ -36,15 +36,20 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         <input
           ref={ref}
           {...restProps}
-          className={cn(st.input, "dark-selection", {
-            [st.sm]: size === "sm",
-            [st.md]: size === "md" || !size,
-            [st.lg]: size === "lg",
-            [st.text_start]: alignText === "start" || !alignText,
-            [st.text_center]: alignText === "center",
+          className={cn(
+            st.input,
+            "dark-selection",
+            {
+              [st.sm]: size === "sm",
+              [st.md]: size === "md" || !size,
+              [st.lg]: size === "lg",
+              [st.text_start]: alignText === "start" || !alignText,
+              [st.text_center]: alignText === "center",
 
-            [st.outlined]: variant === "outlined" || !variant,
-          })}
+              [st.outlined]: variant === "outlined" || !variant,
+            },
+            "action-inner"
+          )}
         />
       </div>
     );

@@ -4,12 +4,19 @@
 .dropdown_wrapper {
   position: relative;
 }
+
+.fullWidth {
+  width: 100%;
+}
+
 .menu_wrapper {
-  padding: funcs.px-rem(16);
+  padding-top: funcs.px-rem(16);
+  min-width: 100%;
   position: absolute;
 }
 
 .menu {
+  width: 100%;
   box-shadow: 0 0 funcs.px-rem(24) rgba(0, 0, 0, 0.1);
   background: var(--surface);
   border-radius: calc(units.$round-xl / 2);
@@ -34,10 +41,9 @@
   top: 0;
 }
 .align_bottom {
-  // padding-top: funcs.px-rem(32);
   top: 100%;
 }
 
 .menu_inner {
-  padding: funcs.px-rem(16) funcs.px-rem(32);
+  // padding: funcs.px-rem(16) funcs.px-rem(32);
 }

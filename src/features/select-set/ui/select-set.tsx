@@ -29,6 +29,7 @@ export const SelectSet = (props: SelectSet) => {
           name="select-set"
           onChange={() => dispatch(setsPreview.actions.setCurrentSet(item.id))}
           key={item.id}
+          defaultChecked={item.id === currentSet!.id}
         >
           {item.name}
         </Checkbox>

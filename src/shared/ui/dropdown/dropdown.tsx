@@ -12,7 +12,7 @@ type Dropdown = {
   justify?: "end" | "start" | "center";
   align?: "top" | "center" | "bottom";
   children?: React.ReactNode;
-  withIndicator?: boolean;
+  fullWidth?: boolean;
 };
 
 export const Dropdown = (props: Dropdown) => {
@@ -37,7 +37,7 @@ export const Dropdown = (props: Dropdown) => {
   }, [isOpened]);
 
   return (
-    <div className={st.dropdown_wrapper}>
+    <div className={cn(st.dropdown_wrapper, props.fullWidth && st.fullWidth)}>
       <div
         ref={labelRef}
         onMouseOver={() => {

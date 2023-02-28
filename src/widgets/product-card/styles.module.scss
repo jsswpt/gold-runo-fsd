@@ -19,7 +19,11 @@
 .product_card_wrap__media {
   display: block;
   position: relative;
-  padding-top: 88%;
+  padding-top: 100%;
+
+  @include breakpoints.media-screen(breakpoints.$md) {
+    padding-top: 88%;
+  }
 
   & > * {
     position: absolute;

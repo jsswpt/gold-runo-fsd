@@ -44,5 +44,6 @@ export const returnClasses = (props: ButtonBase) => {
 
     [st.shadow]: shadow === "always",
     [st.shadow_on_hover]: shadow === "onHover" || !shadow,
+    "action-inner": true,
   };
 };

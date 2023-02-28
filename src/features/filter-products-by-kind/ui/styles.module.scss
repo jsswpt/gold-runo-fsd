@@ -3,6 +3,7 @@
 .filter_products_by_kind_wrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: funcs.px-rem(8);
 }

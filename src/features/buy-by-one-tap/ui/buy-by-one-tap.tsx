@@ -9,7 +9,7 @@ type BuyByOneTap = {};
 
 export const BuyByOneTap = () => {
   return (
-    <Link href="" className={cn("body2", st.link)}>
+    <Link href="" className={cn("link2", st.link)}>
       Купить в один клик
     </Link>
   );

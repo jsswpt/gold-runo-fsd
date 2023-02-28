@@ -33,7 +33,7 @@ export const CategoryCard = (props: CategoryCard) => {
             </h3>
           </div>
           <div className={st.category_card_body_wrap__button}>
-            <p className={cn("body1", "dark-selection", st.learn_more_button)}>
+            <p className={cn("link1", "dark-selection", st.learn_more_button)}>
               Подробнее
               <Arrow />
             </p>

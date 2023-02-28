@@ -73,7 +73,7 @@ export const SearchPopupLg = (props: SearchPopup) => {
                 height: "fit-content",
                 opacity: 1,
               }}
-              exit={{ height: 0, opacity: [1, 0.8, 0.6, 0.4, 0.2, 0] }}
+              exit={{ height: 0, opacity: 1 }}
               transition={{
                 duration: 0.48,
               }}

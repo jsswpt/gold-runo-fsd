@@ -2,23 +2,23 @@ import {} from "react";
 
 import st from "./styles.module.scss";
 import cn from "classnames";
-import { Select } from "@/shared/ui";
+import { Select, SelectItem } from "@/shared/ui";
 
 type BaseSort = {};
 
 export const BaseSort = (props: BaseSort) => {
   return (
     <>
-      {/* <select defaultValue={"default"}>
-        <option disabled value="default">
-          Сортировать по:
-        </option>
-        <option>По алфавиту а-я</option>
-        <option>По алфавиту я-а</option>
-        <option>По убиванию цены</option>
-        <option>По возрастанию цены</option>
-      </select> */}
-      <Select baseTitle="asdsad">???</Select>
+      <Select
+        fullWidth
+        onSelect={(value) => {}}
+        options={[
+          { title: "По умолчанию", value: "default" },
+          { title: "Самые популярные", value: "by-famous" },
+          { title: "По возрастанию цены", value: "by-price-increment" },
+          { title: "По убыванию цены", value: "by-price-decrement" },
+        ]}
+      />
     </>
   );
 };
