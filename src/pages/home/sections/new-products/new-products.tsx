@@ -47,6 +47,12 @@ export const NewProducts = (props: NewProducts) => {
             .map((item, idx) => (
               <SwiperSlide key={idx}>
                 <ProductCard
+                  blockProps={{
+                    whileInView: { opacity: 1 },
+                    initial: { opacity: 0 },
+                    exit: { opacity: 0 },
+                    viewport: { once: true, amount: 0.1 },
+                  }}
                   href=""
                   id={1}
                   media={null}

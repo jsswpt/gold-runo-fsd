@@ -2,11 +2,16 @@
 @use "../../modules/units.module";
 
 .checkbox_wrapper {
-  &:has(input:checked) {
-    .checkbox {
-      box-shadow: 0 0 funcs.px-rem(1) funcs.px-rem(1) var(--base);
-      color: var(--text-primary);
-    }
+  // &:has(input:checked) {
+  //   .checkbox {
+  //     box-shadow: 0 0 funcs.px-rem(1) funcs.px-rem(1) var(--base);
+  //     color: var(--text-primary);
+  //   }
+  // }
+
+  input:checked ~ .checkbox {
+    box-shadow: 0 0 funcs.px-rem(1) funcs.px-rem(1) var(--base);
+    color: var(--text-primary);
   }
 }
 
@@ -26,7 +31,7 @@
 
   user-select: none;
 
-  color: var(--stroke);
+  color: var(--text-secondary);
 
   cursor: pointer;
 }

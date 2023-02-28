@@ -16,7 +16,10 @@ type Checkbox = {
 export const Checkbox = (props: Checkbox) => {
   const id = useId();
   return (
-    <div className={st.checkbox_wrapper}>
+    <label
+      htmlFor={`checkbox-${id}`}
+      className={cn("action-inner", st.checkbox_wrapper)}
+    >
       <input
         value={props.value}
         defaultChecked={props.defaultChecked}
@@ -27,12 +30,7 @@ export const Checkbox = (props: Checkbox) => {
         type={props.type}
         hidden
       />
-      <label
-        htmlFor={`checkbox-${id}`}
-        className={cn("action-inner", st.checkbox)}
-      >
-        {props.children}
-      </label>
-    </div>
+      <div className={st.checkbox}>{props.children}</div>
+    </label>
   );
 };
