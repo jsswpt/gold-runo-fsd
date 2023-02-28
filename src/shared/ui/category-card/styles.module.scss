@@ -14,7 +14,7 @@
   box-shadow: 0 0 funcs.px-rem(1) funcs.px-rem(1) var(--light-stroke);
 
   @include breakpoints.media-screen(breakpoints.$md) {
-    border: none;
+    box-shadow: none;
 
     &:hover {
       box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20) var(--shadow);
