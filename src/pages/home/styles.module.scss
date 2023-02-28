@@ -209,17 +209,20 @@
 .our_branch_map_wrap__map {
   z-index: 1;
   position: absolute;
-  top: 50%;
-  right: funcs.px-rem(252);
 
-  width: funcs.px-rem(536);
-  height: funcs.px-rem(536);
+  top: 25%;
+  right: funcs.px-rem(25);
+
+  width: funcs.px-rem(252);
+  height: funcs.px-rem(252);
+
   overflow: hidden;
 
   transform: translateY(-50%);
 
   border-radius: 50%;
-  border: funcs.px-rem(32) solid var(--text-contrast);
+
+  border: funcs.px-rem(16) solid var(--text-contrast);
 
   & > * {
     width: 100%;
@@ -230,6 +233,40 @@
       height: 100%;
       pointer-events: none;
     }
+  }
+
+  img {
+    transition: 0.64s ease-out;
+  }
+
+  &:hover {
+    img {
+      scale: 1.05;
+    }
+  }
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    top: 50%;
+    right: auto;
+
+    left: 50%;
+
+    width: funcs.px-rem(400);
+    height: funcs.px-rem(400);
+
+    transform: translate(-50%, -50%);
+    border: funcs.px-rem(32) solid var(--text-contrast);
+  }
+
+  @include breakpoints.media-screen(breakpoints.$lg) {
+    top: 50%;
+    right: 25%;
+
+    width: funcs.px-rem(536);
+    height: funcs.px-rem(536);
+    left: auto;
+
+    transform: translateY(-50%);
   }
 }
 

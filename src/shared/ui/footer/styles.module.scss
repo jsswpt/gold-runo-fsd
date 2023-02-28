@@ -12,31 +12,68 @@
 }
 
 .footer_wrap__top {
+  display: flex;
+  justify-content: center;
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    justify-content: flex-start;
+  }
 }
+
 .footer_wrap__body {
   width: 100%;
 }
 .footer_wrap__grid {
   display: grid;
   gap: funcs.px-rem(32);
-  grid-template-columns: 100%;
+  // grid-template-columns: 100%;
 
-  @include breakpoints.media-screen(breakpoints.$md) {
-    grid-template-columns: 15% auto auto auto 30%;
-  }
+  // @include breakpoints.media-screen(breakpoints.$sm) {
+  grid-template-columns: repeat(auto-fit, minmax(funcs.px-rem(150), 1fr));
+  // }
 }
 .footer_grid__item {
   flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    justify-content: flex-start;
+  }
+}
+
+.footer_point {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    align-items: flex-start;
+  }
 }
 
 .footer_point_wrap__title {
   margin-bottom: funcs.px-rem(16);
+  text-align: center;
+}
+
+.footer_point_item__title {
+  display: block;
+  text-align: center;
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    display: inline;
+    text-align: start;
+  }
 }
 
 .footer_point_body_wrap__list {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: funcs.px-rem(8);
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    align-items: flex-start;
+  }
 }
 
 .footer_point_wrap__body {
