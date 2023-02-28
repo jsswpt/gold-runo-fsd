@@ -29,9 +29,17 @@ export const Categories = (props: Categories) => {
     <SectionLayout disableHeadlines disablePaddingForBody>
       <div className={st.categories_wrap__swiper}>
         <CustomSwiper
-          navType="buttons"
+          navType={
+            currentScreen === "xs" || currentScreen === "sm" ? null : "buttons"
+          }
+          swiperProps={{
+            centeredSlides:
+              (currentScreen === "xs" || currentScreen === "sm") && true,
+            spaceBetween:
+              currentScreen === "xs" || currentScreen === "sm" ? 16 : 32,
+          }}
+          enableIndicator={currentScreen === "xs" || currentScreen === "sm"}
           slidesPerView={slidesPerView}
-          swiperProps={{ spaceBetween: slidesPerView * 8 }}
         >
           <SwiperSlide>
             <CategoryCard

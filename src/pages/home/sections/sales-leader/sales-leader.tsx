@@ -17,11 +17,9 @@ export const SalesLeader = memo(() => {
   const list = useAppSelector((state) => state["entities/sales-leader"].list);
 
   const slidesPerView = useMemo(() => {
-    if (
-      currentScreen === "sm" ||
-      currentScreen === "md" ||
-      currentScreen === "xs"
-    ) {
+    if (currentScreen === "xs") {
+      return 1.25;
+    } else if (currentScreen === "sm" || currentScreen === "md") {
       return 2;
     } else if (currentScreen === "lg") {
       return 3;
@@ -41,8 +39,16 @@ export const SalesLeader = memo(() => {
       <div className={cn(st.sales_wrap, st.sales_wrap__products)}>
         <CustomSwiper
           slidesPerView={slidesPerView}
-          navType="buttons"
-          swiperProps={{ spaceBetween: slidesPerView * 8 }}
+          enableIndicator={currentScreen === "xs" || currentScreen === "sm"}
+          navType={
+            currentScreen === "xs" || currentScreen === "sm" ? null : "buttons"
+          }
+          swiperProps={{
+            centeredSlides:
+              (currentScreen === "xs" || currentScreen === "sm") && true,
+            spaceBetween:
+              currentScreen === "xs" || currentScreen === "sm" ? 16 : 32,
+          }}
         >
           {list.map((item, idx) => (
             <SwiperSlide key={item.id}>

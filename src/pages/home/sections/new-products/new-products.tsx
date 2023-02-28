@@ -15,11 +15,9 @@ export const NewProducts = (props: NewProducts) => {
   const { currentScreen } = useScreen();
 
   const slidesPerView = useMemo(() => {
-    if (
-      currentScreen === "sm" ||
-      currentScreen === "md" ||
-      currentScreen === "xs"
-    ) {
+    if (currentScreen === "xs") {
+      return 1.25;
+    } else if (currentScreen === "sm" || currentScreen === "md") {
       return 2;
     } else if (currentScreen === "lg") {
       return 3;
@@ -27,6 +25,7 @@ export const NewProducts = (props: NewProducts) => {
       return 4;
     } else return 5;
   }, [currentScreen]);
+
   return (
     <SectionLayout
       disablePaddingForBody
@@ -37,8 +36,16 @@ export const NewProducts = (props: NewProducts) => {
     >
       <div className={st.new_products_wrap__slider}>
         <CustomSwiper
-          navType="buttons"
-          swiperProps={{ spaceBetween: slidesPerView * 8 }}
+          enableIndicator={currentScreen === "xs" || currentScreen === "sm"}
+          navType={
+            currentScreen === "xs" || currentScreen === "sm" ? null : "buttons"
+          }
+          swiperProps={{
+            centeredSlides:
+              (currentScreen === "xs" || currentScreen === "sm") && true,
+            spaceBetween:
+              currentScreen === "xs" || currentScreen === "sm" ? 16 : 32,
+          }}
           slidesPerView={slidesPerView}
           className={st.products_slider}
         >

@@ -63,7 +63,7 @@
 .payment_wrapper {
   position: relative;
 
-  @include breakpoints.media-screen(breakpoints.$md) {
+  @include breakpoints.media-screen(breakpoints.$lg) {
     &::before {
       z-index: -1;
       content: "";
@@ -147,7 +147,7 @@
 
   @include breakpoints.media-screen(breakpoints.$lg) {
     &::before {
-      z-index: 1;
+      z-index: -1;
       content: "";
       position: absolute;
       right: 0;

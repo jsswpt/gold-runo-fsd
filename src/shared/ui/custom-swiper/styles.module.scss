@@ -102,3 +102,28 @@
     background: var(--light-stroke);
   }
 }
+
+.swiper_slide_indicator_wrap {
+  margin-top: funcs.px-rem(40);
+  display: flex;
+  justify-content: center;
+}
+
+.swiper_slide_indicator_wrapper {
+  display: flex;
+  align-items: center;
+  width: 65%;
+}
+
+.swiper_indicator_plate {
+  height: funcs.px-rem(2);
+  flex-grow: 1;
+
+  transition: 0.16s ease-out;
+
+  background: var(--stroke);
+}
+
+.swiper_indicator_plate__active {
+  background: var(--base);
+}

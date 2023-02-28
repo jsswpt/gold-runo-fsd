@@ -6,16 +6,17 @@ import { SwiperButtons } from "./swiper-buttons/swiper-buttons";
 import { Swiper as SwiperT } from "swiper";
 import { Swiper, SwiperProps, SwiperSlide } from "swiper/react";
 import { SwiperNavPlates } from "./swiper-nav-plates/swiper-nav-plates";
+import { SwiperSlideIndicator } from "./swiper-slide-indicator/swiper-slide-indicator";
 
 type CustomSwiper = {
   className?: any;
   wrapperClassName?: any;
-  navType?: "buttons" | "plates" | "points" | "numbers";
+  navType?: "buttons" | "plates" | "points" | "numbers" | null;
   swiperProps?: SwiperProps;
   slidesPerView?: number;
   children: React.ReactNode;
   disableShadows?: boolean;
-  currentSlideIndicator?: boolean;
+  enableIndicator?: boolean;
 };
 
 export const CustomSwiper = (props: CustomSwiper) => {
@@ -47,6 +48,9 @@ export const CustomSwiper = (props: CustomSwiper) => {
       >
         {swiper && props.children}
       </Swiper>
+      {props.enableIndicator && (
+        <SwiperSlideIndicator currentSlide={currentSlide} length={length} />
+      )}
       {swiper && props.navType === "buttons" && (
         <SwiperButtons
           activeIndex={currentSlide}
