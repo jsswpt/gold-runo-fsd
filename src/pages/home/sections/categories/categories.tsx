@@ -19,11 +19,11 @@ export const Categories = (props: Categories) => {
         <PreviewSliderLayout>
           <SwiperSlide>
             <CategoryCard
-              animation={{
+              blockProps={{
                 whileInView: { opacity: 1 },
                 initial: { opacity: 0 },
                 exit: { opacity: 0 },
-                viewport: { once: true, amount: 0.1 },
+                viewport: { once: true, amount: 0.25 },
               }}
               id={"pryamie"}
               title="Прямые диваны"
@@ -32,11 +32,11 @@ export const Categories = (props: Categories) => {
           </SwiperSlide>
           <SwiperSlide>
             <CategoryCard
-              animation={{
+              blockProps={{
                 whileInView: { opacity: 1 },
                 initial: { opacity: 0 },
                 exit: { opacity: 0 },
-                viewport: { once: true, amount: 0.5 },
+                viewport: { once: true, amount: 0.25 },
               }}
               id={"uglovie"}
               title="Угловые диваны"
@@ -45,11 +45,11 @@ export const Categories = (props: Categories) => {
           </SwiperSlide>
           <SwiperSlide>
             <CategoryCard
-              animation={{
+              blockProps={{
                 whileInView: { opacity: 1 },
                 initial: { opacity: 0 },
                 exit: { opacity: 0 },
-                viewport: { once: true, amount: 0.5 },
+                viewport: { once: true, amount: 0.25 },
               }}
               id={"p-obraznie"}
               title="П-образные диваны"
@@ -58,11 +58,11 @@ export const Categories = (props: Categories) => {
           </SwiperSlide>
           <SwiperSlide>
             <CategoryCard
-              animation={{
+              blockProps={{
                 whileInView: { opacity: 1 },
                 initial: { opacity: 0 },
                 exit: { opacity: 0 },
-                viewport: { once: true, amount: 0.5 },
+                viewport: { once: true, amount: 0.25 },
               }}
               id={"s-podstavkoy"}
               title="Диваны с подставкой"
@@ -71,11 +71,11 @@ export const Categories = (props: Categories) => {
           </SwiperSlide>
           <SwiperSlide>
             <CategoryCard
-              animation={{
+              blockProps={{
                 whileInView: { opacity: 1 },
                 initial: { opacity: 0 },
                 exit: { opacity: 0 },
-                viewport: { once: true, amount: 0.5 },
+                viewport: { once: true, amount: 0.25 },
               }}
               id={"s-kompikom"}
               title="Диваны с компиком"
@@ -84,11 +84,11 @@ export const Categories = (props: Categories) => {
           </SwiperSlide>
           <SwiperSlide>
             <CategoryCard
-              animation={{
+              blockProps={{
                 whileInView: { opacity: 1 },
                 initial: { opacity: 0 },
                 exit: { opacity: 0 },
-                viewport: { once: true, amount: 0.5 },
+                viewport: { once: true, amount: 0.25 },
               }}
               id={"s-kompikom"}
               title="Диваны с компиком"

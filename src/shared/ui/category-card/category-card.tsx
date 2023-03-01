@@ -12,12 +12,12 @@ type CategoryCard = {
   img: StaticImageData | string;
   title: string;
   id: number | string;
-  animation?: HTMLMotionProps<"article">;
+  blockProps?: HTMLMotionProps<"article">;
 };
 
 export const CategoryCard = (props: CategoryCard) => {
   return (
-    <motion.article {...props.animation} className={st.category_card}>
+    <motion.article {...props.blockProps} className={st.category_card}>
       <Link href={`/categories/${props.id}`}>
         <div className={st.category_card_wrap__image}>
           <Image

@@ -2,7 +2,7 @@ import { useMemo } from "react";
 
 import st from "../../styles.module.scss";
 import cn from "classnames";
-import { CustomSwiper, SectionLayout } from "@/shared/ui";
+import { CustomSwiper, PreviewSliderLayout, SectionLayout } from "@/shared/ui";
 import { SwiperSlide } from "swiper/react";
 import { useScreen } from "@/shared/hooks";
 
@@ -35,20 +35,7 @@ export const NewProducts = (props: NewProducts) => {
       subElement="Обратите внимание на последние поступления"
     >
       <div className={st.new_products_wrap__slider}>
-        <CustomSwiper
-          enableIndicator={currentScreen === "xs" || currentScreen === "sm"}
-          navType={
-            currentScreen === "xs" || currentScreen === "sm" ? null : "buttons"
-          }
-          swiperProps={{
-            centeredSlides:
-              (currentScreen === "xs" || currentScreen === "sm") && true,
-            spaceBetween:
-              currentScreen === "xs" || currentScreen === "sm" ? 16 : 32,
-          }}
-          slidesPerView={slidesPerView}
-          className={st.products_slider}
-        >
+        <PreviewSliderLayout maxSlidesPerScreen={5}>
           {Array(10)
             .fill(0)
             .map((item, idx) => (
@@ -58,7 +45,7 @@ export const NewProducts = (props: NewProducts) => {
                     whileInView: { opacity: 1 },
                     initial: { opacity: 0 },
                     exit: { opacity: 0 },
-                    viewport: { once: true, amount: 0.1 },
+                    viewport: { once: true, amount: 0.25 },
                   }}
                   href=""
                   id={1}
@@ -70,7 +57,7 @@ export const NewProducts = (props: NewProducts) => {
                 />
               </SwiperSlide>
             ))}
-        </CustomSwiper>
+        </PreviewSliderLayout>
       </div>
     </SectionLayout>
   );
