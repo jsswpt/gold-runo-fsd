@@ -20,7 +20,7 @@ export const Variants = (props: Variants) => {
       <PreviewSliderLayout>
         <SwiperSlide>
           <CategoryCard
-            animation={{
+            blockProps={{
               whileInView: { opacity: 1 },
               initial: { opacity: 0 },
               exit: { opacity: 0 },
@@ -33,7 +33,7 @@ export const Variants = (props: Variants) => {
         </SwiperSlide>
         <SwiperSlide>
           <CategoryCard
-            animation={{
+            blockProps={{
               whileInView: { opacity: 1 },
               initial: { opacity: 0 },
               exit: { opacity: 0 },
@@ -46,7 +46,7 @@ export const Variants = (props: Variants) => {
         </SwiperSlide>
         <SwiperSlide>
           <CategoryCard
-            animation={{
+            blockProps={{
               whileInView: { opacity: 1 },
               initial: { opacity: 0 },
               exit: { opacity: 0 },
@@ -59,7 +59,7 @@ export const Variants = (props: Variants) => {
         </SwiperSlide>
         <SwiperSlide>
           <CategoryCard
-            animation={{
+            blockProps={{
               whileInView: { opacity: 1 },
               initial: { opacity: 0 },
               exit: { opacity: 0 },
@@ -72,7 +72,7 @@ export const Variants = (props: Variants) => {
         </SwiperSlide>
         <SwiperSlide>
           <CategoryCard
-            animation={{
+            blockProps={{
               whileInView: { opacity: 1 },
               initial: { opacity: 0 },
               exit: { opacity: 0 },
@@ -85,7 +85,7 @@ export const Variants = (props: Variants) => {
         </SwiperSlide>
         <SwiperSlide>
           <CategoryCard
-            animation={{
+            blockProps={{
               whileInView: { opacity: 1 },
               initial: { opacity: 0 },
               exit: { opacity: 0 },
