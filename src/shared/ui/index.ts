@@ -1,3 +1,5 @@
+export { SectionCardLayout } from "./section-card-layout/section-card-layout";
+
 export { PreviewSliderLayout } from "./preview-slider-layout/preview-slide-layout";
 
 export { SelectItem } from "./select/ui/select-item";
