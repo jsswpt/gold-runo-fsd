@@ -1,3 +1,5 @@
+export { PreviewSliderLayout } from "./preview-slider-layout/preview-slide-layout";
+
 export { SelectItem } from "./select/ui/select-item";
 
 export { Checkbox } from "./checkbox/checkbox";

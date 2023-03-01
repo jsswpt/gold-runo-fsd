@@ -1,15 +1,26 @@
+import {} from "react";
+
 import st from "../../styles.module.scss";
 import cn from "classnames";
-import { SwiperSlide } from "swiper/react";
-import "swiper/css";
-import { memo, useRef } from "react";
 import { CustomSwiper } from "@/shared/ui";
+import { SwiperSlide } from "swiper/react";
+import { MediaType } from "@/shared/api/internal";
 
+import Banner1 from "shared/assets/media/imgs/banner-example-3.jpg";
+import Banner2 from "shared/assets/media/imgs/set-example.jpg";
+import Banner3 from "shared/assets/media/imgs/interior-example.jpg";
+import Banner4 from "shared/assets/media/imgs/fake-video.jpg";
 import Image from "next/image";
-import { useAppSelector } from "@/shared/lib";
 
-export const Banner = memo(() => {
-  const slides = useAppSelector((state) => state["entities/banner"].slides);
+type Banner = {};
+
+export const Banner = (props: Banner) => {
+  const slides: MediaType[] = [
+    { image_url: Banner1, video_url: null, id: 1 },
+    { image_url: Banner2, video_url: null, id: 2 },
+    { image_url: Banner3, video_url: null, id: 3 },
+    { image_url: Banner4, video_url: null, id: 4 },
+  ];
   return (
     <section className={cn(st.section_banner)}>
       <CustomSwiper
@@ -27,8 +38,8 @@ export const Banner = memo(() => {
                 <Image
                   // fill
                   src={item.image_url}
-                  width={1920}
-                  height={1080}
+                  width={2560}
+                  height={1200}
                   alt="banner"
                   className="dark-selection"
                 />
@@ -41,4 +52,4 @@ export const Banner = memo(() => {
       </CustomSwiper>
     </section>
   );
-});
+};

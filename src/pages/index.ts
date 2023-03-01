@@ -1,6 +1,6 @@
-export { Category } from "./category/category";
+export { ProductPreview } from "./product-preview/product-preview";
 
-export { ProductPresentator } from "./product-presentator/product-presentator";
+export { Category } from "./category/category";
 
 export { DelieveryAndPayment } from "./delievery-and-payment/delievery-and-payment";
 export { Interiors } from "./interiors/interiors";

@@ -1,0 +1,35 @@
+@use "../../shared/modules/funcs.module";
+@use "../../shared/modules/units.module";
+@use "../../shared/modules/breakpoints.module";
+
+.section_banner {
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    transform: translateY(units.$header-bottom-block-desktop-minus);
+  }
+}
+
+.banner_wrap__slider {
+  display: flex;
+  min-height: calc(100vh - units.$header-height-mobile);
+
+  @include breakpoints.media-screen(breakpoints.$sm) {
+    min-height: calc(90vh - units.$header-height-tablet);
+  }
+  @include breakpoints.media-screen(breakpoints.$xxl) {
+    min-height: calc(90vh - units.$header-height-desktop);
+  }
+}
+
+.banner_bg_wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  & > * {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    object-fit: cover;
+  }
+}

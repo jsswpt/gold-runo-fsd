@@ -11,7 +11,7 @@ import {
 } from "@/widgets";
 
 import Image1 from "shared/assets/media/imgs/interior-example.jpg";
-import Video1 from "shared/assets/media/imgs/fake-video.png";
+import Video1 from "shared/assets/media/imgs/fake-video.jpg";
 import { BaseSort, FilterProductsByKind } from "@/features";
 
 type Category = {};
@@ -36,7 +36,7 @@ export const Category = (props: Category) => {
         <div className={st.category_wrap__items}>
           <ProductsGrid>
             <ProductCard
-              href="/products/3"
+              href="/product-preview/1"
               id={3}
               media={[
                 { id: 1, image_url: Image1, video_url: null },
@@ -44,10 +44,10 @@ export const Category = (props: Category) => {
               ]}
               price={1000}
               priceT={"min"}
-              title="Ещё какая-то"
+              title="Майами"
             />
             <ProductCard
-              href="/products/3"
+              href="/product-preview/2"
               id={3}
               media={[
                 { id: 1, image_url: Image1, video_url: null },
@@ -55,10 +55,10 @@ export const Category = (props: Category) => {
               ]}
               price={1000}
               priceT={"min"}
-              title="Ещё какая-то"
+              title="Бали"
             />
             <ProductCard
-              href="/products/3"
+              href="/product-preview/3"
               id={3}
               media={[
                 { id: 1, image_url: Image1, video_url: null },
@@ -66,10 +66,10 @@ export const Category = (props: Category) => {
               ]}
               price={1000}
               priceT={"min"}
-              title="Ещё какая-то"
+              title="Финка"
             />
             <ProductCard
-              href="/products/3"
+              href="/product-preview/4"
               id={3}
               media={[
                 { id: 1, image_url: Image1, video_url: null },
@@ -77,7 +77,7 @@ export const Category = (props: Category) => {
               ]}
               price={1000}
               priceT={"min"}
-              title="Ещё какая-то"
+              title="Атланта"
             />
           </ProductsGrid>
         </div>

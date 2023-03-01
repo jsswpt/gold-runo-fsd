@@ -37,6 +37,7 @@ export const CustomSwiper = (props: CustomSwiper) => {
       <Swiper
         {...props.swiperProps}
         slidesPerView={props.slidesPerView || 1}
+        speed={props.swiperProps?.speed ? props.swiperProps.speed : 640}
         onSlideNextTransitionStart={(e) => setCurrentSlide(e.activeIndex)}
         onSlidePrevTransitionStart={(e) => setCurrentSlide(e.activeIndex)}
         onInit={(el) => setSwiper(el)}

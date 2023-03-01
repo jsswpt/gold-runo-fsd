@@ -7,7 +7,7 @@ import { Button, Input } from "@/shared/ui";
 import Some from "shared/assets/media/imgs/new-example.jpg";
 import { ProductCard } from "@/widgets/product-card/product-card";
 
-import VideoExample from "shared/assets/media/imgs/fake-video.png";
+import VideoExample from "shared/assets/media/imgs/fake-video.jpg";
 import PhotoExample from "shared/assets/media/imgs/new-example.jpg";
 
 export const Empty = () => {

@@ -11,7 +11,7 @@ import {
 } from "@/widgets";
 
 import Image1 from "shared/assets/media/imgs/interior-example.jpg";
-import Video1 from "shared/assets/media/imgs/fake-video.png";
+import Video1 from "shared/assets/media/imgs/fake-video.jpg";
 
 type Products = {};
 

@@ -2,45 +2,21 @@ import { useMemo } from "react";
 
 import st from "../../styles.module.scss";
 import cn from "classnames";
-import { CustomSwiper, SectionLayout } from "@/shared/ui";
+import { CustomSwiper, PreviewSliderLayout, SectionLayout } from "@/shared/ui";
 import { SwiperSlide } from "swiper/react";
 import { CategoryCard } from "@/shared/ui/category-card/category-card";
 
-import CategoryExample from "shared/assets/media/imgs/category-example.jpg";
+import SofaExample from "shared/assets/media/imgs/sofa-example.jpg";
+
 import { useScreen } from "@/shared/hooks";
 
 type Categories = {};
 
 export const Categories = (props: Categories) => {
-  const { currentScreen } = useScreen();
-
-  const slidesPerView = useMemo(() => {
-    if (currentScreen === "xs") {
-      return 1;
-    } else if (currentScreen === "sm") {
-      return 2;
-    } else if (currentScreen === "md" || currentScreen === "lg") {
-      return 3;
-    }
-    return 4;
-  }, [currentScreen]);
-
   return (
     <SectionLayout disableHeadlines disablePaddingForBody>
       <div className={st.categories_wrap__swiper}>
-        <CustomSwiper
-          navType={
-            currentScreen === "xs" || currentScreen === "sm" ? null : "buttons"
-          }
-          swiperProps={{
-            centeredSlides:
-              (currentScreen === "xs" || currentScreen === "sm") && true,
-            spaceBetween:
-              currentScreen === "xs" || currentScreen === "sm" ? 16 : 32,
-          }}
-          enableIndicator={currentScreen === "xs" || currentScreen === "sm"}
-          slidesPerView={slidesPerView}
-        >
+        <PreviewSliderLayout>
           <SwiperSlide>
             <CategoryCard
               animation={{
@@ -51,7 +27,7 @@ export const Categories = (props: Categories) => {
               }}
               id={"pryamie"}
               title="Прямые диваны"
-              img={CategoryExample}
+              img={SofaExample}
             />
           </SwiperSlide>
           <SwiperSlide>
@@ -64,7 +40,7 @@ export const Categories = (props: Categories) => {
               }}
               id={"uglovie"}
               title="Угловые диваны"
-              img={CategoryExample}
+              img={SofaExample}
             />
           </SwiperSlide>
           <SwiperSlide>
@@ -77,7 +53,7 @@ export const Categories = (props: Categories) => {
               }}
               id={"p-obraznie"}
               title="П-образные диваны"
-              img={CategoryExample}
+              img={SofaExample}
             />
           </SwiperSlide>
           <SwiperSlide>
@@ -90,7 +66,7 @@ export const Categories = (props: Categories) => {
               }}
               id={"s-podstavkoy"}
               title="Диваны с подставкой"
-              img={CategoryExample}
+              img={SofaExample}
             />
           </SwiperSlide>
           <SwiperSlide>
@@ -103,7 +79,7 @@ export const Categories = (props: Categories) => {
               }}
               id={"s-kompikom"}
               title="Диваны с компиком"
-              img={CategoryExample}
+              img={SofaExample}
             />
           </SwiperSlide>
           <SwiperSlide>
@@ -116,10 +92,10 @@ export const Categories = (props: Categories) => {
               }}
               id={"s-kompikom"}
               title="Диваны с компиком"
-              img={CategoryExample}
+              img={SofaExample}
             />
           </SwiperSlide>
-        </CustomSwiper>
+        </PreviewSliderLayout>
       </div>
     </SectionLayout>
   );

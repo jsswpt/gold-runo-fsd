@@ -45,21 +45,6 @@ const findProducts = (
 
 // пример работы
 const Index = (props: any) => {
-  const [color, setColor] = useState<"yellow" | "red" | "blue" | null>(null);
-  const [minPrice, setMinPrice] = useState<number | null>(null);
-  const [maxPrice, setMaxPrice] = useState<number | null>(null);
-
-  const [isFetched, setIsFetched] = useState(false);
-
-  const [products, setProducts] = useState<any>([]);
-  const router = useRouter();
-
-  useEffect(() => {
-    const list = findProducts(minPrice, maxPrice, props.category.id);
-    setProducts(list);
-    setIsFetched(true);
-  }, [router]);
-
   return (
     <>
       <Head>
