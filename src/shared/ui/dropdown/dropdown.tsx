@@ -13,6 +13,9 @@ type Dropdown = {
   align?: "top" | "center" | "bottom";
   children?: React.ReactNode;
   fullWidth?: boolean;
+  disablePadding?: boolean;
+  rounded?: "full" | "partly";
+  enableStroke?: boolean;
 };
 
 export const Dropdown = (props: Dropdown) => {
@@ -60,19 +63,24 @@ export const Dropdown = (props: Dropdown) => {
           [st.align_center]: props.align === "center" || !props.align,
           [st.align_top]: props.align === "top",
           [st.align_bottom]: props.align === "bottom",
+          [st.showed]: isOpened,
+          [st.disable_padding]: props.disablePadding,
         })}
       >
         <AnimatePresence mode="wait" initial={false}>
           {isOpened && (
             <motion.div
-              initial={{ maxHeight: 0 }}
+              initial={{ height: 0 }}
               animate={{
                 opacity: 1,
-                maxHeight: "30rem",
+                height: "fit-content",
               }}
-              exit={{ maxHeight: 0 }}
-              transition={{ duration: 0.64, mass: 0 }}
-              className={cn(st.menu)}
+              exit={{ height: 0 }}
+              transition={{ duration: 0.32, mass: 0 }}
+              className={cn(st.menu, {
+                [st.with_stroke]: props.enableStroke,
+                [st.partly_rounded]: props.rounded === "partly",
+              })}
             >
               <div className={st.menu_inner}>{props.children}</div>
             </motion.div>

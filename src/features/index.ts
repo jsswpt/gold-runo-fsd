@@ -1,3 +1,7 @@
+export { FilterByPrice } from "./filter-by-price/ui/filter-by-price";
+
+export { FilterByColor } from "./filter-by-color/ui/filter-by-color";
+
 export { BaseSort } from "./base-sort/ui/base-sort";
 
 export { FilterProductsByKind } from "./filter-products-by-kind/ui/filter-products-by-kind";
