@@ -29,7 +29,6 @@ export const NewProducts = (props: NewProducts) => {
   return (
     <SectionLayout
       disablePaddingForBody
-      disablePaddingForHeadlines
       risingAnimation
       title="Новинки"
       subElement="Обратите внимание на последние поступления"

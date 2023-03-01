@@ -1,12 +1,12 @@
 // import CustomSlider from "@/shared/ui/slider/CustomSlider";
 
+import { ReadLookDo } from "@/widgets";
 import { Banner } from "./sections/banner/banner";
 import { Categories } from "./sections/categories/categories";
 import { ConvenientPayment } from "./sections/convenient-payment/convenient-payment";
 import { Interiors } from "./sections/interiors/interiors";
 import { NewProducts } from "./sections/new-products/new-products";
 import { OurBranch } from "./sections/our-branch/our-branch";
-import { ReadLookDo } from "./sections/read-look-do/read-look-do";
 import { SalesLeader } from "./sections/sales-leader/sales-leader";
 import { SaveYourMoney } from "./sections/save-your-money/save-your-money";
 import { Sets } from "./sections/sets/sets";

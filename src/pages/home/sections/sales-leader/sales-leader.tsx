@@ -17,7 +17,6 @@ export const SalesLeader = memo(() => {
   return (
     <SectionLayout
       disablePaddingForBody
-      alignHeadlines="center"
       risingAnimation
       title="Лидеры продаж"
       subElement="Наиболее популярные модели из всех категорий интернет-магазина"

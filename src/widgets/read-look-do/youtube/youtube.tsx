@@ -1,6 +1,6 @@
 import {} from "react";
 
-import st from "../../../styles.module.scss";
+import st from "../styles.module.scss";
 import cn from "classnames";
 import { ThreeAndOneQuarterLayout } from "@/shared/ui";
 import { ProductCard } from "@/widgets";

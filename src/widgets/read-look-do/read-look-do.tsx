@@ -1,8 +1,8 @@
 import { Suspense, useState } from "react";
 
-import st from "../../styles.module.scss";
+import st from "./styles.module.scss";
 import cn from "classnames";
-import { Checkbox, SectionLayout, Select } from "@/shared/ui";
+import { Checkbox, SectionLayout } from "@/shared/ui";
 import dynamic from "next/dynamic";
 import { AnimatePresence } from "framer-motion";
 

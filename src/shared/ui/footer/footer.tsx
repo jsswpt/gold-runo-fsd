@@ -127,7 +127,7 @@ export const Footer = (props: Footer) => {
                       st.footer_point_title
                     )}
                   >
-                    Ерком
+                    Йорком
                   </h6>
                 </div>
                 <div className={st.footer_point_wrap__body}>

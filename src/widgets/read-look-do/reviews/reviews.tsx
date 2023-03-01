@@ -1,8 +1,12 @@
-import {} from "react";
+import { useMemo } from "react";
 
-import st from "../../../styles.module.scss";
+import st from "../styles.module.scss";
 import cn from "classnames";
-import { CustomSwiper, ReviewAndBlogCard } from "@/shared/ui";
+import {
+  CustomSwiper,
+  PreviewSliderLayout,
+  ReviewAndBlogCard,
+} from "@/shared/ui";
 import { SwiperSlide } from "swiper/react";
 import { useScreen } from "@/shared/hooks";
 
@@ -14,6 +18,18 @@ type ReviewsChunk = {};
 
 export const ReviewsChunk = (props: ReviewsChunk) => {
   const { currentScreen } = useScreen();
+
+  const slidesPerView = useMemo(() => {
+    if (currentScreen === "xs") {
+      return 1.25;
+    } else if (currentScreen === "sm" || currentScreen === "md") {
+      return 2;
+    } else if (currentScreen === "lg") {
+      return 3;
+    } else {
+      return 4;
+    }
+  }, [currentScreen]);
   return (
     <motion.div
       exit={{ opacity: 0 }}
@@ -22,13 +38,7 @@ export const ReviewsChunk = (props: ReviewsChunk) => {
       transition={{ when: "beforeChildren" }}
       className={st.reviews_wrap__swiper}
     >
-      <CustomSwiper
-        navType="buttons"
-        slidesPerView={
-          currentScreen === "xs" ? 1 : currentScreen === "sm" ? 1 : 3
-        }
-        swiperProps={{ spaceBetween: 32 }}
-      >
+      <PreviewSliderLayout>
         {Array(10)
           .fill(0)
           .map((item, idx) => (
@@ -47,7 +57,7 @@ export const ReviewsChunk = (props: ReviewsChunk) => {
               />
             </SwiperSlide>
           ))}
-      </CustomSwiper>
+      </PreviewSliderLayout>
     </motion.div>
   );
 };

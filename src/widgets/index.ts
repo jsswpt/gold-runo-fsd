@@ -1,3 +1,5 @@
+export { ReadLookDo } from "./read-look-do/read-look-do";
+
 export { FilterByKindAndSortProducts } from "./filter-by-kind-and-sort-products/filter-by-kind-and-sort-products";
 
 export { FilterProducts } from "./filter-products/filter-products";
