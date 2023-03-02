@@ -1,3 +1,5 @@
+export { RangeSlider } from "./range-slider/range-slider";
+
 export { SectionCardLayout } from "./section-card-layout/section-card-layout";
 
 export { PreviewSliderLayout } from "./preview-slider-layout/preview-slide-layout";

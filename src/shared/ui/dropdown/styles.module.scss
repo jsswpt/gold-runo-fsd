@@ -10,7 +10,7 @@
 }
 
 .menu_wrapper {
-  z-index: -1;
+  z-index: 50;
   position: absolute;
   padding-top: funcs.px-rem(16);
 
@@ -19,10 +19,6 @@
 
 .disable_padding {
   padding: 0;
-}
-
-.showed {
-  z-index: 1;
 }
 
 .menu {
