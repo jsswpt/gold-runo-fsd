@@ -25,7 +25,6 @@ export const Sets = memo((props: Sets) => {
   return (
     <SectionLayout
       disablePaddingForBody
-      risingAnimation
       title="Комплекты"
       subElement={
         <div className={st.sets_wrap__select}>
@@ -53,22 +52,6 @@ export const Sets = memo((props: Sets) => {
         threeQuartersEl={
           <Image src={SetImage} alt="" className="dark-selection" />
         }
-        oneQuarterAnimation={{
-          initial: {
-            opacity: 0,
-          },
-          animate: { opacity: 1 },
-          exit: {
-            opacity: 0,
-          },
-          transition: { duration: 0.32 },
-        }}
-        threeQuarterAnimation={{
-          initial: { scale: 0, opacity: 0 },
-          animate: { scale: 1, opacity: 1 },
-          exit: { scale: 0, opacity: 0 },
-          transition: { duration: 0.32 },
-        }}
       />
     </SectionLayout>
   );

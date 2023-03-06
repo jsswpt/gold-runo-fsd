@@ -6,7 +6,9 @@ import { AuthLayout } from "@/shared/ui";
 import { SignUp } from "@/features";
 import Link from "next/link";
 
-type SignUpWidget = {};
+type SignUpWidget = {
+  alternate?: React.ReactNode;
+};
 
 export const SignUpWidget = (props: SignUpWidget) => {
   return (
@@ -21,6 +23,7 @@ export const SignUpWidget = (props: SignUpWidget) => {
         </>
       }
       form={<SignUp />}
+      alternate={props.alternate}
     />
   );
 };

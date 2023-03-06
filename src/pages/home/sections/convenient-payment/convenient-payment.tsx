@@ -11,7 +11,6 @@ type ConvenientPayment = {};
 export const ConvenientPayment = (props: ConvenientPayment) => {
   return (
     <SectionLayout
-      risingAnimation
       title="Оплата удобным способом"
       subElement={
         <div className={st.payment_points}>

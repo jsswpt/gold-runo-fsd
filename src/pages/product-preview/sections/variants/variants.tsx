@@ -12,89 +12,29 @@ type Variants = {};
 
 export const Variants = (props: Variants) => {
   return (
-    <SectionLayout
-      title="Варианты модели"
-      risingAnimation
-      disablePaddingForBody
-    >
+    <SectionLayout title="Варианты модели" disablePaddingForBody>
       <PreviewSliderLayout>
         <SwiperSlide>
-          <CategoryCard
-            blockProps={{
-              whileInView: { opacity: 1 },
-              initial: { opacity: 0 },
-              exit: { opacity: 0 },
-              viewport: { once: true, amount: 0.1 },
-            }}
-            id={"pryamie"}
-            title="Вариант 1"
-            img={SofaExample}
-          />
+          <CategoryCard id={"pryamie"} title="Вариант 1" img={SofaExample} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <CategoryCard id={"uglovie"} title="Вариант 2" img={SofaExample} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <CategoryCard id={"p-obraznie"} title="Вариант 3" img={SofaExample} />
         </SwiperSlide>
         <SwiperSlide>
           <CategoryCard
-            blockProps={{
-              whileInView: { opacity: 1 },
-              initial: { opacity: 0 },
-              exit: { opacity: 0 },
-              viewport: { once: true, amount: 0.5 },
-            }}
-            id={"uglovie"}
-            title="Вариант 2"
-            img={SofaExample}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CategoryCard
-            blockProps={{
-              whileInView: { opacity: 1 },
-              initial: { opacity: 0 },
-              exit: { opacity: 0 },
-              viewport: { once: true, amount: 0.5 },
-            }}
-            id={"p-obraznie"}
-            title="Вариант 3"
-            img={SofaExample}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CategoryCard
-            blockProps={{
-              whileInView: { opacity: 1 },
-              initial: { opacity: 0 },
-              exit: { opacity: 0 },
-              viewport: { once: true, amount: 0.5 },
-            }}
             id={"s-podstavkoy"}
             title="Вариант 4"
             img={SofaExample}
           />
         </SwiperSlide>
         <SwiperSlide>
-          <CategoryCard
-            blockProps={{
-              whileInView: { opacity: 1 },
-              initial: { opacity: 0 },
-              exit: { opacity: 0 },
-              viewport: { once: true, amount: 0.5 },
-            }}
-            id={"s-kompikom"}
-            title="Вариант 5"
-            img={SofaExample}
-          />
+          <CategoryCard id={"s-kompikom"} title="Вариант 5" img={SofaExample} />
         </SwiperSlide>
         <SwiperSlide>
-          <CategoryCard
-            blockProps={{
-              whileInView: { opacity: 1 },
-              initial: { opacity: 0 },
-              exit: { opacity: 0 },
-              viewport: { once: true, amount: 0.5 },
-            }}
-            id={"s-kompikom"}
-            title="Вариант 6"
-            img={SofaExample}
-          />
+          <CategoryCard id={"s-kompikom"} title="Вариант 6" img={SofaExample} />
         </SwiperSlide>
       </PreviewSliderLayout>
     </SectionLayout>

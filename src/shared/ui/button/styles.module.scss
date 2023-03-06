@@ -26,27 +26,6 @@
   box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20) var(--shadow);
 
   cursor: pointer;
-
-  & > * {
-    transition: 0.16s ease-out;
-  }
-
-  &:not(:disabled):hover {
-    scale: 1.05;
-  }
-  &:not(:disabled):active {
-    scale: 0.8;
-  }
-
-  &:disabled {
-    filter: grayscale(0);
-    box-shadow: none !important;
-    cursor: default;
-
-    &:hover {
-      box-shadow: none !important;
-    }
-  }
 }
 
 .icon_button {
@@ -275,4 +254,28 @@
 
 .fullWidth {
   width: 100%;
+}
+
+.button,
+.icon_button {
+  & > * {
+    transition: 0.16s ease-out;
+  }
+
+  &:not(:disabled):hover {
+    scale: 1.05;
+  }
+  &:not(:disabled):active {
+    scale: 0.8;
+  }
+
+  &:disabled {
+    filter: grayscale(0);
+    box-shadow: none !important;
+    cursor: default;
+
+    &:hover {
+      box-shadow: none !important;
+    }
+  }
 }

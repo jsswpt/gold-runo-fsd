@@ -33,9 +33,6 @@ export const BlogChunk = (props: BlogChunk) => {
 
   return (
     <motion.div
-      exit={{ opacity: 0 }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
       transition={{ when: "beforeChildren" }}
       className={st.reviews_wrap__swiper}
     >
@@ -45,12 +42,6 @@ export const BlogChunk = (props: BlogChunk) => {
           .map((item, idx) => (
             <SwiperSlide key={idx}>
               <ReviewAndBlogCard
-                animation={{
-                  exit: { opacity: 0 },
-                  initial: { opacity: 0 },
-                  whileInView: { opacity: 1 },
-                  viewport: { amount: 0.5, once: true },
-                }}
                 id={idx}
                 img={BlogExample}
                 title="Розыгрыш дивана!"

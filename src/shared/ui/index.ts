@@ -1,3 +1,5 @@
+export { SignInByPoint } from "./sign-in-by-point/sign-in-by-point";
+
 export { RangeSlider } from "./range-slider/range-slider";
 
 export { SectionCardLayout } from "./section-card-layout/section-card-layout";
@@ -11,8 +13,6 @@ export { Checkbox } from "./checkbox/checkbox";
 export { ProductPresentatorLayout } from "./product-presentator-layout/product-presentator-layout";
 
 export { ProductsGrid } from "./products-grid/products-grid";
-
-export { SignInBy } from "./sign-in-by/sign-in-by";
 
 export { ReviewAndBlogCard } from "./review-and-blog-card/review-and-blog-card";
 

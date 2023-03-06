@@ -17,7 +17,6 @@ export const SalesLeader = memo(() => {
   return (
     <SectionLayout
       disablePaddingForBody
-      risingAnimation
       title="Лидеры продаж"
       subElement="Наиболее популярные модели из всех категорий интернет-магазина"
     >
@@ -26,12 +25,6 @@ export const SalesLeader = memo(() => {
           {list.map((item, idx) => (
             <SwiperSlide key={item.id}>
               <ProductCard
-                blockProps={{
-                  whileInView: { opacity: 1 },
-                  initial: { opacity: 0 },
-                  exit: { opacity: 0 },
-                  viewport: { once: true, amount: 0.25 },
-                }}
                 href=""
                 id={1}
                 price={item.price}

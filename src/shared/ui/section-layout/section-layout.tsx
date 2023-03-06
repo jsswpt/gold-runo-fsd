@@ -11,7 +11,6 @@ type SectionLayout = {
   subElement?: React.ReactNode | string;
   children: React.ReactNode;
   alignHeadlines?: "center" | "start";
-  risingAnimation?: boolean;
   className?: any;
   disableHeadlines?: boolean;
   disablePaddingForHeadlines?: boolean;
@@ -24,10 +23,6 @@ export const SectionLayout = forwardRef<HTMLElement, SectionLayout>(
     return (
       <motion.section
         ref={ref}
-        whileInView={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        initial={{ opacity: props.risingAnimation ? 0 : 1 }}
-        viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.64 }}
         className={cn(st.section, props.className)}
       >

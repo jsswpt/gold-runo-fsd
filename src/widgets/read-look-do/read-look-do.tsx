@@ -40,7 +40,6 @@ export const ReadLookDo = (props: ReadLookDo) => {
   return (
     <SectionLayout
       disablePaddingForBody
-      risingAnimation
       alignHeadlines="center"
       title={
         <>

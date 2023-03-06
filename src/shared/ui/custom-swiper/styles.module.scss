@@ -20,9 +20,12 @@
       left: -1px;
       top: 0;
       height: 100%;
-      width: 1px;
-      background: none;
-      box-shadow: 0 0 $blur $spread var(--background);
+      width: $spread;
+      border-radius: 50%;
+      filter: blur($blur);
+      background: var(--background);
+
+      transform: translateX(-50%);
     }
     &::before {
       z-index: 10;
@@ -31,9 +34,11 @@
       right: -1px;
       top: 0;
       height: 100%;
-      width: 1px;
-      background: none;
-      box-shadow: 0 0 $blur $spread var(--background);
+      width: $spread;
+      border-radius: 50%;
+      filter: blur($blur);
+      background: var(--background);
+      transform: translateX(50%);
     }
   }
 }
@@ -42,21 +47,26 @@
   position: relative;
 }
 
+.swiper_controls_wrapper {
+  margin-bottom: funcs.px-rem(32);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.swiper_buttons_wrapper {
+  display: flex;
+  gap: funcs.px-rem(16);
+}
+
 .button_next_wrapper,
 .button_prev_wrapper {
   z-index: 5;
-  position: absolute;
-  top: 50%;
 }
 
 .button_prev_wrapper {
-  left: 0;
-  transform: translate(0, -50%);
 }
 
 .button_next_wrapper {
-  right: 0;
-  transform: translate(0, -50%);
 }
 
 .swiper_nav_plates_wrap {

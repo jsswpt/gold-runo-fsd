@@ -12,6 +12,8 @@
 
   background: var(--surface);
 
+  box-shadow: funcs.px-rem(5) funcs.px-rem(20) funcs.px-rem(20) var(--shadow);
+
   @include breakpoints.media-screen(breakpoints.$sm) {
     top: units.$header-height-tablet;
   }

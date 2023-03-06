@@ -29,7 +29,6 @@ export const NewProducts = (props: NewProducts) => {
   return (
     <SectionLayout
       disablePaddingForBody
-      risingAnimation
       title="Новинки"
       subElement="Обратите внимание на последние поступления"
     >
@@ -40,12 +39,6 @@ export const NewProducts = (props: NewProducts) => {
             .map((item, idx) => (
               <SwiperSlide key={idx}>
                 <ProductCard
-                  blockProps={{
-                    whileInView: { opacity: 1 },
-                    initial: { opacity: 0 },
-                    exit: { opacity: 0 },
-                    viewport: { once: true, amount: 0.25 },
-                  }}
                   href=""
                   id={1}
                   media={null}

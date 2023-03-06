@@ -23,6 +23,7 @@ export const FilterByPrice = (props: FilterByPrice) => {
         {minValue <= maxValue ? (
           <>
             <Input
+              name="jopa"
               value={minValue}
               type="number"
               min={100}
@@ -30,6 +31,7 @@ export const FilterByPrice = (props: FilterByPrice) => {
               onChange={minValueHandler}
             />
             <Input
+              name="jopa1"
               value={maxValue}
               type="number"
               min={100}
@@ -40,6 +42,7 @@ export const FilterByPrice = (props: FilterByPrice) => {
         ) : (
           <>
             <Input
+              name="jopa1"
               value={maxValue}
               type="number"
               min={100}
@@ -47,6 +50,7 @@ export const FilterByPrice = (props: FilterByPrice) => {
               onChange={maxValueHandler}
             />
             <Input
+              name="jopa"
               value={minValue}
               type="number"
               min={100}
@@ -67,7 +71,7 @@ export const FilterByPrice = (props: FilterByPrice) => {
         />
       </div>
       <div>
-        <Button fullWidth color="success">
+        <Button type="submit" fullWidth color="success">
           Применить
         </Button>
       </div>

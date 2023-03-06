@@ -18,47 +18,27 @@ type SwiperButtons = {
 export const SwiperButtons = (props: SwiperButtons) => {
   const { activeIndex, length, slideBack, slideNext, slidesPerView } = props;
   return length > 0 ? (
-    <>
-      <AnimatePresence mode="wait" initial={false}>
-        {activeIndex > 0 && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            exit={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className={st.button_prev_wrapper}
-          >
-            <IconButton
-              shadow="always"
-              size="lg"
-              color="default"
-              onClick={slideBack}
-            >
-              <ChevronLeft />
-            </IconButton>
-          </motion.div>
-        )}
-      </AnimatePresence>
+    <div className={st.swiper_buttons_wrapper}>
+      <IconButton
+        shadow="always"
+        size="sm"
+        color={activeIndex > 0 ? "default" : "vanish"}
+        onClick={slideBack}
+        disabled={activeIndex <= 0}
+      >
+        <ChevronLeft />
+      </IconButton>
 
-      <AnimatePresence mode="wait" initial={false}>
-        {activeIndex <= length - slidesPerView && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            exit={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className={st.button_next_wrapper}
-          >
-            <IconButton
-              shadow="always"
-              size="lg"
-              color="default"
-              onClick={slideNext}
-            >
-              <ChevronRight />
-            </IconButton>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+      <IconButton
+        shadow="always"
+        size="sm"
+        color="default"
+        onClick={slideNext}
+        disabled={activeIndex >= length - slidesPerView}
+      >
+        <ChevronRight />
+      </IconButton>
+    </div>
   ) : (
     <></>
   );

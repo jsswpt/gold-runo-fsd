@@ -4,7 +4,7 @@ import st from "./styles.module.scss";
 import cn from "classnames";
 import { SwiperButtons } from "./swiper-buttons/swiper-buttons";
 import { Swiper as SwiperT } from "swiper";
-import { Swiper, SwiperProps, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperProps } from "swiper/react";
 import { SwiperNavPlates } from "./swiper-nav-plates/swiper-nav-plates";
 import { SwiperSlideIndicator } from "./swiper-slide-indicator/swiper-slide-indicator";
 
@@ -34,6 +34,26 @@ export const CustomSwiper = (props: CustomSwiper) => {
 
   return (
     <div className={cn(st.swiper_wrap, props.wrapperClassName)}>
+      {swiper && props.navType === "buttons" && (
+        <div className={st.swiper_controls_wrapper}>
+          <SwiperButtons
+            activeIndex={currentSlide}
+            length={length}
+            slideBack={() => {
+              if (swiper.slidePrev) {
+                swiper.slidePrev();
+              }
+            }}
+            slideNext={() => {
+              if (swiper.slideNext) {
+                swiper.slideNext();
+              }
+            }}
+            slidesPerView={props.slidesPerView || 1}
+          />
+        </div>
+      )}
+
       <Swiper
         {...props.swiperProps}
         slidesPerView={props.slidesPerView || 1}
@@ -52,23 +72,7 @@ export const CustomSwiper = (props: CustomSwiper) => {
       {props.enableIndicator && (
         <SwiperSlideIndicator currentSlide={currentSlide} length={length} />
       )}
-      {swiper && props.navType === "buttons" && (
-        <SwiperButtons
-          activeIndex={currentSlide}
-          length={length}
-          slideBack={() => {
-            if (swiper.slidePrev) {
-              swiper.slidePrev();
-            }
-          }}
-          slideNext={() => {
-            if (swiper.slideNext) {
-              swiper.slideNext();
-            }
-          }}
-          slidesPerView={props.slidesPerView || 1}
-        />
-      )}
+
       {swiper && props.navType === "plates" && (
         <SwiperNavPlates
           activeIndex={currentSlide}

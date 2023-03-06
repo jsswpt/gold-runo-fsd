@@ -1,0 +1,11 @@
+@use "../../shared/modules/funcs.module";
+
+.sign_in_variants_wrapper {
+  display: grid;
+  gap: funcs.px-rem(16);
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.sign_in_variants_item {
+  overflow: hidden;
+}

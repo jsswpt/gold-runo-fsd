@@ -1,3 +1,7 @@
+export { Vkontakte } from "./media/svgs/vkontakte";
+
+export { Yandex } from "./media/svgs/yandex";
+
 export { SofaIllustration } from "./media/svgs/sofa-illustration";
 
 export { Arrow } from "./ui/svgs/arrow";

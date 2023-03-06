@@ -1,12 +1,13 @@
 import st from "../../styles.module.scss";
 import cn from "classnames";
 import { SwiperSlide } from "swiper/react";
-import "swiper/css";
 import { memo, useRef } from "react";
 import { CustomSwiper } from "@/shared/ui";
 
 import Image from "next/image";
 import { useAppSelector } from "@/shared/lib";
+
+import "swiper/css";
 
 export const Banner = memo(() => {
   const slides = useAppSelector((state) => state["entities/banner"].slides);
@@ -17,7 +18,9 @@ export const Banner = memo(() => {
         navType="plates"
         wrapperClassName={st.banner_wrap__slider}
         slidesPerView={1}
-        swiperProps={{ spaceBetween: 32 }}
+        swiperProps={{
+          spaceBetween: 32,
+        }}
         className={st.banner_wrap__slider}
       >
         {slides.map((item) => (

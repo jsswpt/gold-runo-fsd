@@ -1,8 +1,12 @@
 import { SignIn } from "@/features";
-import { AuthLayout, SignInBy } from "@/shared/ui/";
+import { AuthLayout } from "@/shared/ui/";
 import Link from "next/link";
 
-export const SignInWidget = () => {
+type SignInWidget = {
+  alternate?: React.ReactNode;
+};
+
+export const SignInWidget = (props: SignInWidget) => {
   return (
     <AuthLayout
       title={
@@ -15,7 +19,7 @@ export const SignInWidget = () => {
         </>
       }
       form={<SignIn />}
-      alternate={<SignInBy />}
+      alternate={props.alternate}
     />
   );
 };

@@ -1,5 +1,3 @@
-// import CustomSlider from "@/shared/ui/slider/CustomSlider";
-
 import { ReadLookDo } from "@/widgets";
 import { Banner } from "./sections/banner/banner";
 import { Categories } from "./sections/categories/categories";

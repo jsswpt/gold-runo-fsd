@@ -10,11 +10,6 @@ type YouTubeChunk = {};
 export const YouTubeChunk = (props: YouTubeChunk) => {
   return (
     <ThreeAndOneQuarterLayout
-      blockAnimation={{
-        exit: { opacity: 0 },
-        initial: { opacity: 0 },
-        animate: { opacity: 1 },
-      }}
       oneQuarterEl={
         <>
           <ProductCard

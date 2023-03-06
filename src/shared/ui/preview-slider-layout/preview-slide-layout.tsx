@@ -28,16 +28,15 @@ export const PreviewSliderLayout = (props: PreviewSliderLayout) => {
 
   return (
     <CustomSwiper
-      navType={
-        currentScreen === "xs" || currentScreen === "sm" ? null : "buttons"
-      }
+      navType={currentScreen === "xs" ? null : "buttons"}
       swiperProps={{
-        centeredSlides:
-          (currentScreen === "xs" || currentScreen === "sm") && true,
-        spaceBetween:
-          currentScreen === "xs" || currentScreen === "sm" ? 16 : 32,
+        onSlideChange(swiper) {
+          swiper.activeIndex;
+        },
+        centeredSlides: currentScreen === "xs" && true,
+        spaceBetween: currentScreen === "xs" ? 16 : 32,
       }}
-      enableIndicator={currentScreen === "xs" || currentScreen === "sm"}
+      enableIndicator={currentScreen === "xs"}
       slidesPerView={slidesPerView}
     >
       {props.children}

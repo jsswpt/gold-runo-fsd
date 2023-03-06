@@ -1,3 +1,6 @@
+export { SignInByVk } from "./sign-in-by-vk/ui/sign-in-by-vk";
+export { SignInByYandex } from "./sign-in-by-yandex/ui/sign-in-by-yandex";
+
 export { FilterByPrice } from "./filter-by-price/ui/filter-by-price";
 
 export { FilterByColor } from "./filter-by-color/ui/filter-by-color";
