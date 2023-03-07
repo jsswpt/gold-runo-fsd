@@ -6,7 +6,6 @@ import { MediaType, SizesObjT } from "@/shared/api/internal";
 
 import { motion, HTMLMotionProps } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { AddToCart, BuyByOneTap } from "@/features";
 import { useScreen } from "@/shared/hooks";
 import dynamic from "next/dynamic";
 import { SofaIllustration } from "@/shared/assets";
