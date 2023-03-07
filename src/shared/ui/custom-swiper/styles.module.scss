@@ -10,7 +10,7 @@
 
 .with_shadows {
   $blur: 8px;
-  $spread: 24px;
+  $spread: 48px;
 
   @include breakpoints.media-screen(breakpoints.$md) {
     &::after {
@@ -18,10 +18,10 @@
       content: "";
       position: absolute;
       left: -1px;
-      top: 0;
-      height: 100%;
+      top: -20px;
+      bottom: -20px;
       width: $spread;
-      border-radius: 50%;
+      border-radius: 25%;
       filter: blur($blur);
       background: var(--background);
 
@@ -32,10 +32,10 @@
       content: "";
       position: absolute;
       right: -1px;
-      top: 0;
-      height: 100%;
+      top: -20px;
+      bottom: -20px;
       width: $spread;
-      border-radius: 50%;
+      border-radius: 25%;
       filter: blur($blur);
       background: var(--background);
       transform: translateX(50%);

@@ -3,7 +3,6 @@
 @use "../../modules/breakpoints.module";
 
 .card {
-  margin: funcs.px-rem(1);
   border-radius: units.$round-xl;
   background: var(--surface);
   overflow: hidden;

@@ -4,6 +4,7 @@ import st from "../../styles.module.scss";
 import cn from "classnames";
 import {
   Checkbox,
+  ProductCard,
   SectionLayout,
   Select,
   ThreeAndOneQuarterLayout,
@@ -11,7 +12,6 @@ import {
 
 import InteriorExample from "shared/assets/media/imgs/interior-example.jpg";
 import Image from "next/image";
-import { ProductCard } from "@/widgets";
 
 type Interiors = {};
 
@@ -57,7 +57,6 @@ export const Interiors = (props: Interiors) => {
               priceT="min"
               title="Интерьер афигеть"
               media={null}
-              disableActions
             />
           </>
         }

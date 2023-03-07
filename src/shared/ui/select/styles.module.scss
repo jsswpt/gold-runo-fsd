@@ -47,7 +47,7 @@
 
   & > * {
     transition: 0.16s ease-out;
-    transform: rotate(-90deg);
+    transform: rotate(0);
     width: 100%;
     height: 100%;
     color: var(--text-secondary);
@@ -56,7 +56,7 @@
 
 .icon_wrapper__opened {
   & > * {
-    transform: rotate(90deg);
+    transform: rotate(180deg);
   }
 }
 

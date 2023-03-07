@@ -1,4 +1,9 @@
+export { FilterDimensionsByHeight } from "./filter-dimensions-by-height/ui/filter-dimensions-by-height";
+export { FilterDimensionsByLength } from "./filter-dimensions-by-length/ui/filter-dimensions-by-length";
+export { FilterDimensionsByWidth } from "./filter-dimensions-by-width/ui/filter-dimensions-by-width";
+
 export { SignInByVk } from "./sign-in-by-vk/ui/sign-in-by-vk";
+
 export { SignInByYandex } from "./sign-in-by-yandex/ui/sign-in-by-yandex";
 
 export { FilterByPrice } from "./filter-by-price/ui/filter-by-price";

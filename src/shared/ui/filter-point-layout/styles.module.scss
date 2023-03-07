@@ -1,0 +1,5 @@
+@use "../../modules/funcs.module";
+
+.filter_point_wrap__title {
+  margin-bottom: funcs.px-rem(16);
+}

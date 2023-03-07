@@ -1,9 +1,16 @@
+import { addLocalStorage } from "@/shared/utils";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import {} from "react";
+import { useEffect } from "react";
 
 const Index = () => {
   const router = useRouter();
+
+  useEffect(() => {
+    addLocalStorage("token", router.query.token as string);
+    addLocalStorage("userId", router.query.userId as string);
+  }, [router]);
+
   return (
     <>
       <Head>

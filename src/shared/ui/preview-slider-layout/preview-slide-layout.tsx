@@ -1,14 +1,17 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 
 import st from "./styles.module.scss";
 import cn from "classnames";
 import { useScreen } from "@/shared/hooks";
 import { CustomSwiper } from "../custom-swiper/custom-swiper";
+import Swiper from "swiper";
 
 /**Чилдреном принимает SwiperSlide */
 type PreviewSliderLayout = {
   children: React.ReactNode;
   maxSlidesPerScreen?: number;
+  setSlidesPerView?: (arg: number) => void;
+  onSlideChange?: (swiper: Swiper) => void;
 };
 
 export const PreviewSliderLayout = (props: PreviewSliderLayout) => {
@@ -26,12 +29,16 @@ export const PreviewSliderLayout = (props: PreviewSliderLayout) => {
     }
   }, [currentScreen]);
 
+  useEffect(() => {
+    props.setSlidesPerView && props.setSlidesPerView(slidesPerView);
+  }, [slidesPerView]);
+
   return (
     <CustomSwiper
       navType={currentScreen === "xs" ? null : "buttons"}
       swiperProps={{
         onSlideChange(swiper) {
-          swiper.activeIndex;
+          props.onSlideChange && props.onSlideChange(swiper);
         },
         centeredSlides: currentScreen === "xs" && true,
         spaceBetween: currentScreen === "xs" ? 16 : 32,

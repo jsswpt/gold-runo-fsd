@@ -2,11 +2,10 @@ import { useRef, useState } from "react";
 
 import st from "./styles.module.scss";
 import cn from "classnames";
-import { Button, ProductsGrid, SectionLayout } from "@/shared/ui";
+import { Button, ProductCard, ProductsGrid, SectionLayout } from "@/shared/ui";
 import {
   FilterByKindAndSortProducts,
   FilterProducts,
-  ProductCard,
   SortProducts,
 } from "@/widgets";
 
@@ -45,7 +44,7 @@ export const Products = (props: Products) => {
               ]}
               price={1000}
               priceT={"min"}
-              title="Ещё какая-то"
+              title="Диван Бали"
             />
             <ProductCard
               href="/products/3"
@@ -56,7 +55,7 @@ export const Products = (props: Products) => {
               ]}
               price={1000}
               priceT={"min"}
-              title="Ещё какая-то"
+              title="Пуфик (вставить название)"
             />
             <ProductCard
               href="/products/3"
@@ -67,7 +66,7 @@ export const Products = (props: Products) => {
               ]}
               price={1000}
               priceT={"min"}
-              title="Ещё какая-то"
+              title="Матрас тытыты"
             />
             <ProductCard
               href="/products/3"
@@ -78,7 +77,7 @@ export const Products = (props: Products) => {
               ]}
               price={1000}
               priceT={"min"}
-              title="Ещё какая-то"
+              title="Стул крутой"
             />
           </ProductsGrid>
         </div>

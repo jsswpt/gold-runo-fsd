@@ -1,6 +1,6 @@
-@use "../../shared/modules/funcs.module";
-@use "../../shared/modules/units.module";
-@use "../../shared/modules/breakpoints.module";
+@use "../../modules/funcs.module";
+@use "../../modules/units.module";
+@use "../../modules/breakpoints.module";
 
 .product_card {
   border-radius: units.$round-xl;

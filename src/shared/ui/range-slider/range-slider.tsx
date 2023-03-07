@@ -16,8 +16,8 @@ type RangeSlider = {
   min: number;
   max: number;
 
-  onMinChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  onMaxChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onMinChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  onMaxChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
 export const RangeSlider = (props: RangeSlider) => {
@@ -51,7 +51,7 @@ export const RangeSlider = (props: RangeSlider) => {
         <i className={st.range_presentator}></i>
       </div>
       <input
-        onChange={props.onMinChange}
+        onChange={props.onMinChange && props.onMinChange}
         value={props.minValue}
         min={props.min}
         max={props.max}
@@ -59,7 +59,7 @@ export const RangeSlider = (props: RangeSlider) => {
         className={st.min}
       />
       <input
-        onChange={props.onMaxChange}
+        onChange={props.onMaxChange && props.onMaxChange}
         value={props.maxValue}
         min={props.min}
         max={props.max}

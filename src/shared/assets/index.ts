@@ -1,3 +1,5 @@
+export { ChevronDown } from "./ui/svgs/chevron-down";
+
 export { Vkontakte } from "./media/svgs/vkontakte";
 
 export { Yandex } from "./media/svgs/yandex";

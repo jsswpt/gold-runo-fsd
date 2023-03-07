@@ -4,6 +4,7 @@ import st from "../../styles.module.scss";
 import cn from "classnames";
 import {
   Container,
+  ProductCard,
   SectionLayout,
   ThreeAndOneQuarterLayout,
 } from "@/shared/ui";
@@ -13,7 +14,6 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import SetImage from "shared/assets/media/imgs/set-example.jpg";
 import Image from "next/image";
-import { ProductCard } from "@/widgets";
 
 type Sets = {};
 
@@ -44,7 +44,6 @@ export const Sets = memo((props: Sets) => {
               price={currentSet!.price}
               priceT="min"
               title={currentSet!.name}
-              disableActions
               disableColors
             />
           </>

@@ -1,0 +1,7 @@
+@use "../../modules/funcs.module";
+
+.layout_wrap__two_inputs {
+  margin-bottom: funcs.px-rem(24);
+  display: flex;
+  gap: funcs.px-rem(16);
+}

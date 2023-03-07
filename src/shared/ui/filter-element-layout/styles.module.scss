@@ -1,0 +1,41 @@
+@use "../../modules/funcs.module";
+
+.filter_element {
+  padding: funcs.px-rem(32) funcs.px-rem(16);
+  display: flex;
+  flex-direction: column;
+  gap: funcs.px-rem(16);
+}
+
+.filter_wrap__headline {
+}
+
+.filter_wrap__body {
+  display: flex;
+  flex-direction: column;
+  gap: funcs.px-rem(32);
+  overflow: hidden;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: funcs.px-rem(16);
+  outline: none;
+  border: none;
+  background: none;
+  color: var(--text-primary);
+
+  cursor: pointer;
+}
+
+.icon {
+  width: funcs.px-rem(12);
+  height: funcs.px-rem(12);
+  transition: 0.16s ease-out;
+  color: var(--base);
+}
+
+.icon__opened {
+  transform: rotate(180deg);
+}

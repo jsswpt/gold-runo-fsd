@@ -2,7 +2,12 @@ import { useState } from "react";
 
 import st from "./styles.module.scss";
 import cn from "classnames";
-import { Button, Input, RangeSlider } from "@/shared/ui";
+import {
+  Button,
+  FilterTwoInputsAndRangeLayout,
+  Input,
+  RangeSlider,
+} from "@/shared/ui";
 
 type FilterByPrice = {};
 
@@ -19,62 +24,18 @@ export const FilterByPrice = (props: FilterByPrice) => {
 
   return (
     <form>
-      <div>
-        {minValue <= maxValue ? (
-          <>
-            <Input
-              name="jopa"
-              value={minValue}
-              type="number"
-              min={100}
-              max={10000}
-              onChange={minValueHandler}
-            />
-            <Input
-              name="jopa1"
-              value={maxValue}
-              type="number"
-              min={100}
-              max={10000}
-              onChange={maxValueHandler}
-            />
-          </>
-        ) : (
-          <>
-            <Input
-              name="jopa1"
-              value={maxValue}
-              type="number"
-              min={100}
-              max={10000}
-              onChange={maxValueHandler}
-            />
-            <Input
-              name="jopa"
-              value={minValue}
-              type="number"
-              min={100}
-              max={10000}
-              onChange={minValueHandler}
-            />
-          </>
-        )}
-      </div>
-      <div>
-        <RangeSlider
-          maxValue={maxValue}
-          minValue={minValue}
-          onMaxChange={(e) => setMaxValue(+e.currentTarget.value)}
-          onMinChange={(e) => setMinValue(+e.currentTarget.value)}
-          max={10000}
-          min={100}
-        />
-      </div>
-      <div>
-        <Button type="submit" fullWidth color="success">
-          Применить
-        </Button>
-      </div>
+      <FilterTwoInputsAndRangeLayout
+        firstInput={<Input placeholder="От" size="sm" />}
+        secondInput={<Input placeholder="До" size="sm" />}
+        range={
+          <RangeSlider
+            min={10000}
+            max={100000}
+            maxValue={80000}
+            minValue={20000}
+          />
+        }
+      />
     </form>
   );
 };

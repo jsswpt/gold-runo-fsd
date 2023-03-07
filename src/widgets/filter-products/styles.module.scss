@@ -6,6 +6,12 @@
 }
 
 .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: funcs.px-rem(16);
+
   min-width: funcs.px-rem(250);
   height: units.$md;
 
@@ -45,4 +51,17 @@
     background: var(--base);
     color: var(--light-stroke);
   }
+}
+
+.icon {
+  width: funcs.px-rem(12);
+  height: funcs.px-rem(12);
+
+  color: var(--base);
+
+  transition: 0.16s ease-out;
+}
+
+.icon__opened {
+  transform: rotate(180deg);
 }

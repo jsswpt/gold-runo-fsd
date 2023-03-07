@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import st from "./styles.module.scss";
 import cn from "classnames";
 import { Dropdown } from "../dropdown/dropdown";
-import { ChevronLeft } from "@/shared/assets";
+import { ChevronDown, ChevronLeft } from "@/shared/assets";
 import { SelectItemBaseT, SelectT } from "./select.type";
 import { SelectItem } from "./ui/select-item";
 import { AnimatePresence, motion } from "framer-motion";
@@ -39,7 +39,7 @@ export const Select = (props: SelectT) => {
           <div
             className={cn(st.icon_wrapper, isOpened && st.icon_wrapper__opened)}
           >
-            <ChevronLeft />
+            <ChevronDown />
           </div>
         </div>
       )}

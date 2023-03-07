@@ -5,10 +5,6 @@
   position: relative;
   width: fit-content;
 
-  .input {
-    padding: 0 units.$default-padding;
-  }
-
   &:has(.icon_wrapper) {
     .input {
       padding-left: calc(
@@ -20,6 +16,8 @@
 }
 
 .input {
+  padding: 0 units.$default-padding;
+
   width: 100%;
   outline: none;
   border-radius: units.$round-xl;
@@ -48,6 +46,11 @@
       height: calc(units.$md / 2.5);
     }
   }
+}
+
+.sm {
+  padding: 0 calc(units.$default-padding / 1.5) !important;
+  height: units.$sm;
 }
 
 .md {
@@ -88,7 +91,6 @@
 }
 
 .outlined {
-  margin: funcs.px-rem(1);
   box-shadow: 0 0 funcs.px-rem(1) funcs.px-rem(1) var(--stroke);
 
   &:focus,

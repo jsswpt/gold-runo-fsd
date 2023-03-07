@@ -2,12 +2,16 @@ import { useMemo } from "react";
 
 import st from "../../styles.module.scss";
 import cn from "classnames";
-import { CustomSwiper, PreviewSliderLayout, SectionLayout } from "@/shared/ui";
+import {
+  CustomSwiper,
+  PreviewSliderLayout,
+  ProductCard,
+  SectionLayout,
+} from "@/shared/ui";
 import { SwiperSlide } from "swiper/react";
 import { useScreen } from "@/shared/hooks";
 
 import NewProductExample from "shared/assets/media/imgs/new-example.jpg";
-import { ProductCard } from "@/widgets";
 
 type NewProducts = {};
 
