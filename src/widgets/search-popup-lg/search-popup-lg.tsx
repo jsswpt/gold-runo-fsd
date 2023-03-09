@@ -15,10 +15,12 @@ import { SearchFurniture } from "@/features";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import {
+  preSearchModel,
   PreSearchResultsList,
   RecentRequestsList,
   SearchResults,
 } from "@/entities";
+import { useAppDispatch, useAppSelector } from "@/shared/lib";
 
 type SearchPopup = {};
 
@@ -26,6 +28,10 @@ type SearchPopup = {};
 export const SearchPopupLg = (props: SearchPopup) => {
   const [isFocused, setIsFocused] = useState(false);
   const [baseValue, setBaseValue] = useState("");
+
+  const dispatch = useAppDispatch();
+
+  const query = useAppSelector((state) => state["entities/pre-search"].query);
 
   const router = useRouter();
 
@@ -113,16 +119,22 @@ export const SearchPopupLg = (props: SearchPopup) => {
                     <PopupBlockLayout title="Вы недавно искали">
                       <RecentRequestsList
                         onClick={(arg) =>
-                          router.replace(`/search?query=${arg.query}`)
+                          dispatch(preSearchModel.actions.setQuery(arg.query))
                         }
                       />
                     </PopupBlockLayout>
                     <PopupBlockLayout title="Популярные запросы"></PopupBlockLayout>
                   </div>
                   <div className={st.search_popup_wrap__right}>
-                    <PopupBlockLayout title="Результаты по запросу: ыфвыфв">
-                      <PreSearchResultsList />
-                    </PopupBlockLayout>
+                    {query ? (
+                      <PopupBlockLayout
+                        title={`Результаты по запросу ${query}`}
+                      >
+                        <PreSearchResultsList />
+                      </PopupBlockLayout>
+                    ) : (
+                      <>какой-то блок</>
+                    )}
                   </div>
                 </Container>
               </div>

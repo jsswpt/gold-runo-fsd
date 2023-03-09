@@ -7,6 +7,7 @@ import {
   categories,
   sessionModel,
   recentRequestsModel,
+  preSearchModel,
 } from "entities/";
 
 export const store = configureStore({
@@ -17,6 +18,7 @@ export const store = configureStore({
     ...categories.reducers,
     ...sessionModel.reducers,
     ...recentRequestsModel.reducers,
+    ...preSearchModel.reducers,
   },
 });
 

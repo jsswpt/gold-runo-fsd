@@ -8,7 +8,7 @@ import { Search } from "@/shared/assets";
 
 import { v4 as uuidv4 } from "uuid";
 import { useAppDispatch } from "@/shared/lib";
-import { recentRequestsModel } from "@/entities";
+import { preSearchModel, recentRequestsModel } from "@/entities";
 
 type SearchFurniture = {
   baseValue?: string;
@@ -20,6 +20,8 @@ export const SearchFurniture = memo((props: SearchFurniture) => {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    dispatch(preSearchModel.actions.setQuery(value));
 
     dispatch(
       recentRequestsModel.actions.addRequest({
