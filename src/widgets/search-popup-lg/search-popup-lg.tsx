@@ -14,7 +14,11 @@ import { Close, Search } from "@/shared/assets";
 import { SearchFurniture } from "@/features";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
-import { RecentRequestsList, SearchResults } from "@/entities";
+import {
+  PreSearchResultsList,
+  RecentRequestsList,
+  SearchResults,
+} from "@/entities";
 
 type SearchPopup = {};
 
@@ -117,7 +121,7 @@ export const SearchPopupLg = (props: SearchPopup) => {
                   </div>
                   <div className={st.search_popup_wrap__right}>
                     <PopupBlockLayout title="Результаты по запросу: ыфвыфв">
-                      <SearchResults />
+                      <PreSearchResultsList />
                     </PopupBlockLayout>
                   </div>
                 </Container>

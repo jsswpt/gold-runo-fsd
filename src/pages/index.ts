@@ -1,3 +1,5 @@
+export { Search } from "./search/search";
+
 export { Profile } from "./profile/profile";
 
 export { ProductPreview } from "./product-preview/product-preview";

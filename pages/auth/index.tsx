@@ -2,7 +2,7 @@ import { Layout } from "@/pages";
 import {} from "react";
 
 const Index = () => {
-  return <Layout>Auth</Layout>;
+  return <>Auth</>;
 };
 
 export default Index;
