@@ -1,0 +1,8 @@
+@use "../../../../shared/modules/funcs.module";
+
+.recent_requests_list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: funcs.px-rem(8);
+}

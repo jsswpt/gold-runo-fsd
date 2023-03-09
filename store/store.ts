@@ -5,7 +5,8 @@ import {
   banner,
   salesLeader,
   categories,
-  session,
+  sessionModel,
+  recentRequestsModel,
 } from "entities/";
 
 export const store = configureStore({
@@ -14,7 +15,8 @@ export const store = configureStore({
     ...banner.reducers,
     ...salesLeader.reducers,
     ...categories.reducers,
-    ...session.reducers,
+    ...sessionModel.reducers,
+    ...recentRequestsModel.reducers,
   },
 });
 

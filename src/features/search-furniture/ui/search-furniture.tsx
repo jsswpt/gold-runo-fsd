@@ -1,25 +1,49 @@
-import { memo, useState } from "react";
+import { FormEvent, memo, useEffect, useState } from "react";
 
 import st from "./styles.module.scss";
 import cn from "classnames";
-import {
-  Button,
-  Container,
-  FullScreenPopup,
-  IconButton,
-  Input,
-  Modal,
-} from "@/shared/ui";
-import { useScreen } from "@/shared/hooks";
+
+import { Button, Input } from "@/shared/ui";
 import { Search } from "@/shared/assets";
 
-export const SearchFurniture = memo(() => {
+import { v4 as uuidv4 } from "uuid";
+import { useAppDispatch } from "@/shared/lib";
+import { recentRequestsModel } from "@/entities";
+
+type SearchFurniture = {
+  baseValue?: string;
+};
+
+export const SearchFurniture = memo((props: SearchFurniture) => {
   const [value, setValue] = useState("");
+  const dispatch = useAppDispatch();
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    dispatch(
+      recentRequestsModel.actions.addRequest({
+        id: uuidv4(),
+        creationDate: new Date(),
+        query: value,
+      })
+    );
+  };
+
+  useEffect(() => {
+    if (props.baseValue) {
+      setValue(props.baseValue);
+    } else {
+      setValue("");
+    }
+  }, [props.baseValue]);
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div style={{ display: "flex", gap: "16px" }}>
         <Input
           autoFocus
+          value={value}
           onChange={(e) => setValue(e.currentTarget.value)}
           placeholder="Поиск по каталогу"
           icon={<Search />}

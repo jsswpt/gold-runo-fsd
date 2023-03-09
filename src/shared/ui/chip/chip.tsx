@@ -9,8 +9,12 @@ type Chip = {
 };
 
 export const Chip = (props: Chip) => {
+  const { title, ...restProps } = props;
   return (
-    <button className={cn("action-inner", "dark-selection", st.chip)}>
+    <button
+      {...restProps}
+      className={cn("action-inner", "dark-selection", st.chip)}
+    >
       {props.title}
     </button>
   );

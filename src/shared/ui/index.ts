@@ -1,3 +1,5 @@
+export { PopupBlockLayout } from "./popup-block-layout/popup-block-layout";
+
 export { Chip } from "./chip/chip";
 
 export { ProductCard } from "./product-card/product-card";

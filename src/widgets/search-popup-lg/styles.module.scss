@@ -50,9 +50,27 @@
 }
 
 .search_popup_wrap__popup {
-  padding: funcs.px-rem(32) funcs.px-rem(150);
-
-  width: 100%;
-  height: funcs.px-rem(300);
   background: var(--surface);
+}
+
+.container {
+  padding: funcs.px-rem(32) funcs.px-rem(150);
+  display: flex;
+  gap: funcs.px-rem(64);
+  & > * {
+    height: funcs.px-rem(250);
+    overflow-y: auto;
+  }
+}
+
+.search_popup_wrap__left {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: funcs.px-rem(48);
+  width: 25%;
+}
+
+.search_popup_wrap__right {
+  width: 100%;
 }

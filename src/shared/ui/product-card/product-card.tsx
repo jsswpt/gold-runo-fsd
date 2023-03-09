@@ -1,11 +1,10 @@
-import {} from "react";
+import { useRef } from "react";
 
 import st from "./styles.module.scss";
 import cn from "classnames";
 import { MediaType, SizesObjT } from "@/shared/api/internal";
 
-import { motion, HTMLMotionProps } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { motion, HTMLMotionProps, useInView } from "framer-motion";
 import { useScreen } from "@/shared/hooks";
 import dynamic from "next/dynamic";
 import { SofaIllustration } from "@/shared/assets";
@@ -42,7 +41,9 @@ type ProductCard = {
 
 // доработать
 export const ProductCard = (props: ProductCard) => {
-  const { inView, ref } = useInView({ threshold: 0.01, triggerOnce: true });
+  const ref = useRef<HTMLElement>(null);
+
+  const inView = useInView(ref, { once: true, amount: 0.25 });
 
   const { currentScreen } = useScreen();
 

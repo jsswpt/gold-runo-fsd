@@ -7,7 +7,7 @@ import { ScreenTypes } from "@/shared/contexts/screen/screen.type";
 
 import { Provider } from "react-redux";
 import { store } from "../store/store";
-import { session } from "@/entities";
+import { recentRequestsModel, sessionModel } from "@/entities";
 import Head from "next/head";
 
 const pxToRem = (width: number) => (width + 32) / 16;
@@ -51,7 +51,8 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
   useEffect(() => {
-    store.dispatch(session.thunks.getSessionThunk());
+    store.dispatch(recentRequestsModel.actions.initRequests());
+    store.dispatch(sessionModel.thunks.getSessionThunk());
   }, []);
 
   return (

@@ -1,0 +1,5 @@
+@use "../../modules/funcs.module";
+
+.layout_wrap__headline {
+  margin-bottom: funcs.px-rem(16);
+}

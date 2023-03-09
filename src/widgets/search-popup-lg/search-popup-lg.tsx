@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import st from "./styles.module.scss";
 import {
@@ -8,15 +8,31 @@ import {
   IconButton,
   Input,
   Modal,
+  PopupBlockLayout,
 } from "@/shared/ui";
 import { Close, Search } from "@/shared/assets";
 import { SearchFurniture } from "@/features";
 import { AnimatePresence, motion } from "framer-motion";
+import { useRouter } from "next/router";
+import { RecentRequestsList, SearchResults } from "@/entities";
 
 type SearchPopup = {};
 
+// Исправить кросс-импорт
 export const SearchPopupLg = (props: SearchPopup) => {
   const [isFocused, setIsFocused] = useState(false);
+  const [baseValue, setBaseValue] = useState("");
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.query.query) {
+      const query = router.query.query as string;
+      setBaseValue(query);
+    } else {
+      setBaseValue("");
+    }
+  }, [router]);
 
   return (
     <>
@@ -32,6 +48,7 @@ export const SearchPopupLg = (props: SearchPopup) => {
           >
             <div className={st.search_popup_actions__item}>
               <Input
+                value={baseValue}
                 onFocus={() => setIsFocused(true)}
                 placeholder="Поиск по каталогу"
                 icon={<Search />}
@@ -48,7 +65,7 @@ export const SearchPopupLg = (props: SearchPopup) => {
             key="form"
           >
             <div className={st.search_popup_actions__item}>
-              <SearchFurniture />
+              <SearchFurniture baseValue={baseValue} />
             </div>
             <div className={st.search_popup_actions__item}>
               <IconButton onClick={() => setIsFocused(false)}>
@@ -87,8 +104,22 @@ export const SearchPopupLg = (props: SearchPopup) => {
               className={st.search_popup_wrap__popup_wrapper}
             >
               <div className={st.search_popup_wrap__popup}>
-                <Container>
-                  <Chip title="Что??" />
+                <Container className={st.container}>
+                  <div className={st.search_popup_wrap__left}>
+                    <PopupBlockLayout title="Вы недавно искали">
+                      <RecentRequestsList
+                        onClick={(arg) =>
+                          router.replace(`/search?query=${arg.query}`)
+                        }
+                      />
+                    </PopupBlockLayout>
+                    <PopupBlockLayout title="Популярные запросы"></PopupBlockLayout>
+                  </div>
+                  <div className={st.search_popup_wrap__right}>
+                    <PopupBlockLayout title="Результаты по запросу: ыфвыфв">
+                      <SearchResults />
+                    </PopupBlockLayout>
+                  </div>
                 </Container>
               </div>
             </motion.div>

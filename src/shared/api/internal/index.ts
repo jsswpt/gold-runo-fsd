@@ -1,3 +1,4 @@
+export * from "./types/recent-request.type";
 export * from "./types/banner.type";
 export * from "./types/sales-leader.type";
 export * from "./types/categories.type";
