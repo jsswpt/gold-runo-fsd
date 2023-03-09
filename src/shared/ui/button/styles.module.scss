@@ -12,8 +12,6 @@
   outline: none;
   border: none;
 
-  font-weight: 600;
-  line-height: 130%;
   color: var(--text-primary);
   white-space: nowrap;
 
@@ -24,6 +22,10 @@
   user-select: none;
 
   box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20) var(--shadow);
+
+  &:disabled {
+    opacity: 0.4;
+  }
 
   cursor: pointer;
 }
@@ -47,10 +49,14 @@
 
   transition: 0.16s ease-out;
 
-  &:hover {
+  &:disabled {
+    opacity: 0.4;
+  }
+
+  &:not(:disabled):hover {
     scale: 1.05;
   }
-  &:active {
+  &:not(:disabled):active {
     scale: 0.8;
   }
 }
@@ -126,10 +132,6 @@
 
 .bg_primary {
   background: var(--primary);
-
-  &:disabled {
-    background: var(--primary-disabled);
-  }
 }
 
 .bg_warning {

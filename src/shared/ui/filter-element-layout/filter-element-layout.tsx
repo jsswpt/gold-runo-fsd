@@ -41,7 +41,7 @@ export const FilterElementLayout = (props: FilterElementLayout) => {
           <motion.div
             initial={{ height: "0px" }}
             animate={{ height: "fit-content" }}
-            exit={{ height: "0px" }}
+            exit={{ height: "0px", overflowY: "hidden" }}
             transition={{ duration: 0.32 }}
             className={st.filter_wrap__body}
           >

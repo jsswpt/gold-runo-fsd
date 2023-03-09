@@ -10,13 +10,15 @@
 
 .banner_wrap__slider {
   display: flex;
-  min-height: calc(100vh - units.$header-height-mobile);
+  min-height: calc(80vh - units.$header-height-mobile);
 
   @include breakpoints.media-screen(breakpoints.$sm) {
-    min-height: calc(90vh - units.$header-height-tablet);
+    min-height: calc(80vh - units.$header-height-tablet);
   }
-  @include breakpoints.media-screen(breakpoints.$xxl) {
-    min-height: calc(90vh - units.$header-height-desktop);
+  @include breakpoints.media-screen(breakpoints.$xl) {
+    min-height: calc(
+      80vh - units.$header-height-desktop + units.$header-bottom-block-desktop
+    );
   }
 }
 

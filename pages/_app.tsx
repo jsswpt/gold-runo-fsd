@@ -7,6 +7,8 @@ import { ScreenTypes } from "@/shared/contexts/screen/screen.type";
 
 import { Provider } from "react-redux";
 import { store } from "../store/store";
+import { session } from "@/entities";
+import Head from "next/head";
 
 const pxToRem = (width: number) => (width + 32) / 16;
 
@@ -48,13 +50,20 @@ export default function App({ Component, pageProps }: AppProps) {
       );
   }, []);
 
+  useEffect(() => {
+    store.dispatch(session.thunks.getSessionThunk());
+  }, []);
+
   return (
-    <Provider store={store}>
-      <ScreenContext.Provider value={{ currentScreen: screen }}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </ScreenContext.Provider>
-    </Provider>
+    <>
+      <Head>YORCOM</Head>
+      <Provider store={store}>
+        <ScreenContext.Provider value={{ currentScreen: screen }}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ScreenContext.Provider>
+      </Provider>
+    </>
   );
 }

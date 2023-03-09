@@ -1,3 +1,5 @@
+export { Chip } from "./chip/chip";
+
 export { ProductCard } from "./product-card/product-card";
 
 export { FilterElementLayout } from "./filter-element-layout/filter-element-layout";

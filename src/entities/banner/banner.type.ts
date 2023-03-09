@@ -1,5 +1,5 @@
 import { BannerT } from "@/shared/api/internal";
 
-export type BannerSliceT = {
+export type InitialState = {
   slides: BannerT[];
 };

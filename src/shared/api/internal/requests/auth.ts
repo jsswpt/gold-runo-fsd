@@ -1,5 +1,6 @@
 import axios from "axios";
 import { APIinstance } from "../axios/axios";
+import { User } from "../types/user.type";
 
 export const getVkontakteAuthUrl = async () => {
   try {
@@ -21,4 +22,8 @@ export const getYandexAuthUrl = async () => {
   }
 };
 
-export const getUser = async () => {};
+export const getUser = async (): Promise<User> => {
+  const user = await APIinstance.get<User>("/user");
+
+  return user.data;
+};

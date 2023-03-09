@@ -1,7 +1,14 @@
 import { useState } from "react";
 
 import st from "./styles.module.scss";
-import { Container, Divider, IconButton, Input, Modal } from "@/shared/ui";
+import {
+  Chip,
+  Container,
+  Divider,
+  IconButton,
+  Input,
+  Modal,
+} from "@/shared/ui";
 import { Close, Search } from "@/shared/assets";
 import { SearchFurniture } from "@/features";
 import { AnimatePresence, motion } from "framer-motion";
@@ -80,7 +87,9 @@ export const SearchPopupLg = (props: SearchPopup) => {
               className={st.search_popup_wrap__popup_wrapper}
             >
               <div className={st.search_popup_wrap__popup}>
-                <Container>Search</Container>
+                <Container>
+                  <Chip title="Что??" />
+                </Container>
               </div>
             </motion.div>
           </>

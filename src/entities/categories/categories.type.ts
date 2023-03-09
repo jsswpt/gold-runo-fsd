@@ -1,5 +1,5 @@
 import { Category } from "@/shared/api/internal";
 
-export type CategoriesSliceT = {
+export type InitialState = {
   list: Category[];
 };

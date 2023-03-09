@@ -5,14 +5,19 @@ import cn from "classnames";
 import { AuthorizeCard, Dropdown, IconButton } from "@/shared/ui";
 import { Person } from "@/shared/assets";
 import Link from "next/link";
-import { useScreen } from "@/shared/hooks";
+import { useAppSelector } from "@/shared/lib";
 
 type Profile = {};
 
 export const Profile = memo((props: Profile) => {
-  const isAuth = false;
+  const isAuth = useAppSelector((state) => state["entities/session"].isAuthed);
+  const isLoading = useAppSelector(
+    (state) => state["entities/session"].isLoading
+  );
 
-  const { currentScreen } = useScreen();
+  if (isLoading) {
+    return <div>loading...</div>;
+  }
 
   if (isAuth) {
     return (

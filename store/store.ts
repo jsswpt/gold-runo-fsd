@@ -1,6 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import { setsPreview, banner, salesLeader, categories } from "entities/";
+import {
+  setsPreview,
+  banner,
+  salesLeader,
+  categories,
+  session,
+} from "entities/";
 
 export const store = configureStore({
   reducer: {
@@ -8,6 +14,7 @@ export const store = configureStore({
     ...banner.reducers,
     ...salesLeader.reducers,
     ...categories.reducers,
+    ...session.reducers,
   },
 });
 

@@ -1,8 +1,8 @@
 import { BannerT, SalesLeader } from "@/shared/api/internal";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { SalesLeaderSlice } from "../sales-leader.type";
+import { InitialState } from "../sales-leader.type";
 
-const initialState: SalesLeaderSlice = {
+const initialState: InitialState = {
   list: [],
 };
 

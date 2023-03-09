@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { CategoriesSliceT } from "../categories.type";
+import { InitialState } from "../categories.type";
 
 const PATH = "entities/categories";
 
-const initialState: CategoriesSliceT = {
+const initialState: InitialState = {
   list: [
     { id: 1, title: "Диваны" },
     { id: 2, title: "Кресла" },

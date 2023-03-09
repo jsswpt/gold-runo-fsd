@@ -1,5 +1,5 @@
 import { SalesLeader } from "@/shared/api/internal";
 
-export type SalesLeaderSlice = {
+export type InitialState = {
   list: SalesLeader[];
 };
