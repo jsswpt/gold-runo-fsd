@@ -1,0 +1,8 @@
+@use "../../modules/funcs.module";
+
+.actions_wrapper {
+  display: flex;
+  align-items: center;
+
+  gap: funcs.px-rem(32);
+}

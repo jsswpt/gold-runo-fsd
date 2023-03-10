@@ -1,8 +1,8 @@
+export { SearchPopupXs } from "./search-popup-xs/search-popup-xs";
+
 export { SearchPopupLgSkeleton } from "./search-popup-lg/search-popup-lg-skeleton";
 
 export { SearchPopupLg } from "./search-popup-lg/search-popup-lg";
-
-export { SearchPopupXsContent } from "./search-popup-xs-content/search-popup-xs-content";
 
 export { SearchPopupResponse } from "./search-popup-response/search-popup-response";
 

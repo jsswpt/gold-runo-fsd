@@ -35,6 +35,8 @@
   width: 100%;
   top: units.$header-height-mobile;
 
+  overflow: hidden;
+
   box-shadow: funcs.px-rem(5) funcs.px-rem(100) 40px var(--shadow);
 
   border-radius: 0 0 units.$round-xl units.$round-xl;
@@ -59,7 +61,11 @@
   display: flex;
   gap: funcs.px-rem(64);
 
-  overflow-y: scroll;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
 .search_popup_wrap__left {
@@ -75,5 +81,5 @@
 }
 
 .skeleton {
-  background: var(--primary);
+  background: var(--danger) !important;
 }
