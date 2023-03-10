@@ -30,7 +30,7 @@ export const SignInByYandex = (props: SignInByYandex) => {
   }, []);
 
   if (isLoading) {
-    return <div>загрузка...</div>;
+    return <div>skeleton</div>;
   }
 
   if (error) {

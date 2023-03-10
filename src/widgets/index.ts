@@ -1,3 +1,11 @@
+export { SearchPopupLgSkeleton } from "./search-popup-lg/search-popup-lg-skeleton";
+
+export { SearchPopupLg } from "./search-popup-lg/search-popup-lg";
+
+export { SearchPopupXsContent } from "./search-popup-xs-content/search-popup-xs-content";
+
+export { SearchPopupResponse } from "./search-popup-response/search-popup-response";
+
 export { SignInVariants } from "./sign-in-variants/sign-in-variants";
 
 export { ReadLookDo } from "./read-look-do/read-look-do";
@@ -7,10 +15,6 @@ export { FilterByKindAndSortProducts } from "./filter-by-kind-and-sort-products/
 export { FilterProducts } from "./filter-products/filter-products";
 
 export { SortProducts } from "./sort-products/sort-products";
-
-export { SearchPopupXs } from "./search-popup-xs/search-popup-xs";
-
-export { SearchPopupLg } from "./search-popup-lg/search-popup-lg";
 
 export { Favorites } from "./favorites/favorites";
 

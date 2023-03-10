@@ -1,3 +1,4 @@
+import { Loader } from "@/shared/ui";
 import { addLocalStorage } from "@/shared/utils";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -16,7 +17,9 @@ const Index = () => {
       <Head>
         <title>Загружаем ваш профиль | YORCOM</title>
       </Head>
-      <div>loading...</div>
+      <div>
+        <Loader />
+      </div>
       <div>{JSON.stringify(router.query)}</div>
     </>
   );

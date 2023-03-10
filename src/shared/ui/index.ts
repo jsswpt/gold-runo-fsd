@@ -1,3 +1,9 @@
+export { SearchPopupToggler } from "./search-popup-toggler/search-popup-toggler";
+
+export { QuarterScreenPopup } from "./quarter-screen-popup/quarter-screen-popup";
+
+export { Loader } from "./loader/loader";
+
 export { PopupBlockLayout } from "./popup-block-layout/popup-block-layout";
 
 export { Chip } from "./chip/chip";

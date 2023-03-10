@@ -12,11 +12,11 @@ import Link from "next/link";
 
 const HoverSwiper = dynamic(
   () => import("./ui/hover-swiper/hover-swiper").then((m) => m.HoverSwiper),
-  { ssr: false, loading: (props) => (props.isLoading ? <>Loading...</> : null) }
+  { ssr: false, loading: (props) => (props.isLoading ? <>skeleton</> : null) }
 );
 const TapSwiper = dynamic(
   () => import("./ui/tap-swiper/tap-swiper").then((m) => m.TapSwiper),
-  { ssr: false, loading: (props) => (props.isLoading ? <>Loading...</> : null) }
+  { ssr: false, loading: (props) => (props.isLoading ? <>skeleton</> : null) }
 );
 
 type ProductCard = {

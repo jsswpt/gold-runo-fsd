@@ -1,19 +1,27 @@
-import { useMemo } from "react";
-import { CartPopup, Favorites, Header, Profile } from "@/widgets";
+import { useMemo, useState } from "react";
+import {
+  CartPopup,
+  Favorites,
+  Header,
+  Profile,
+  SearchPopupLgSkeleton,
+} from "@/widgets";
 
 import { useScreen } from "@/shared/hooks";
 
 import st from "./styles.module.scss";
 import Link from "next/link";
-import { Footer } from "@/shared/ui";
+import { Footer, SearchPopupToggler } from "@/shared/ui";
 import dynamic from "next/dynamic";
+import { useAppSelector } from "@/shared/lib";
+import { AnimatePresence } from "framer-motion";
 
-const SearchPopupXs = dynamic(
-  () => import("widgets/index").then((m) => m.SearchPopupXs),
+const SearchPopupXsContent = dynamic(
+  () => import("widgets/index").then((m) => m.SearchPopupXsContent),
   {
     ssr: false,
     loading: (arg) => {
-      return arg.isLoading ? <>loading...</> : null;
+      return arg.isLoading ? <>skeleton</> : null;
     },
   }
 );
@@ -23,7 +31,7 @@ const SearchPopupLg = dynamic(
   {
     ssr: false,
     loading: (arg) => {
-      return arg.isLoading ? <>loading...</> : null;
+      return arg.isLoading ? <SearchPopupLgSkeleton /> : null;
     },
   }
 );
@@ -35,18 +43,20 @@ type Layout = {
 export const Layout = (props: Layout) => {
   const { currentScreen } = useScreen();
 
+  const state = useAppSelector((state) => state["entities/pre-search"]);
+
   return (
     <>
       <Header
         actions={[<Favorites />, <CartPopup />, <Profile />]}
         search={
-          currentScreen === "xs" ||
-          currentScreen === "sm" ||
-          currentScreen === "md" ? (
-            <SearchPopupXs />
-          ) : (
-            <SearchPopupLg />
-          )
+          <SearchPopupToggler>
+            {(isFocused, setIsFocused) => (
+              <AnimatePresence mode="wait">
+                {isFocused && <SearchPopupLg />}
+              </AnimatePresence>
+            )}
+          </SearchPopupToggler>
         }
       />
 

@@ -1,0 +1,7 @@
+@use "../../../../shared/modules/funcs.module";
+
+.search_results_grid {
+  display: grid;
+  gap: funcs.px-rem(8);
+  grid-template-columns: repeat(4, 1fr);
+}

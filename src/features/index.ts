@@ -1,3 +1,5 @@
+export { PreSearchFurniture } from "./pre-search-furniture/ui/pre-search-furniture";
+
 export { FilterDimensionsByHeight } from "./filter-dimensions-by-height/ui/filter-dimensions-by-height";
 export { FilterDimensionsByLength } from "./filter-dimensions-by-length/ui/filter-dimensions-by-length";
 export { FilterDimensionsByWidth } from "./filter-dimensions-by-width/ui/filter-dimensions-by-width";

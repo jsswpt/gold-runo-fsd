@@ -45,22 +45,21 @@
   @include breakpoints.media-screen(breakpoints.$xxl) {
     top: units.$header-height-desktop;
   }
-
-  overflow: hidden;
 }
 
 .search_popup_wrap__popup {
+  display: flex;
+  height: funcs.px-rem(400);
   background: var(--surface);
+  overflow: hidden;
 }
 
 .container {
   padding: funcs.px-rem(32) funcs.px-rem(150);
   display: flex;
   gap: funcs.px-rem(64);
-  & > * {
-    height: funcs.px-rem(250);
-    overflow-y: auto;
-  }
+
+  overflow-y: scroll;
 }
 
 .search_popup_wrap__left {
@@ -73,4 +72,8 @@
 
 .search_popup_wrap__right {
   width: 100%;
+}
+
+.skeleton {
+  background: var(--primary);
 }

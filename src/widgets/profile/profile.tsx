@@ -16,7 +16,7 @@ export const Profile = memo((props: Profile) => {
   );
 
   if (isLoading) {
-    return <div>loading...</div>;
+    return <div>skeleton</div>;
   }
 
   if (isAuth) {

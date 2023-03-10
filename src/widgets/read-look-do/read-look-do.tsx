@@ -11,14 +11,14 @@ const YouTube = dynamic(
   {
     ssr: false,
     loading(loadingProps) {
-      return loadingProps.isLoading ? <>loading</> : null;
+      return loadingProps.isLoading ? <>skeleton</> : null;
     },
   }
 );
 const Blog = dynamic(() => import("./blog/blog").then((m) => m.BlogChunk), {
   ssr: false,
   loading(loadingProps) {
-    return loadingProps.isLoading ? <>loading</> : null;
+    return loadingProps.isLoading ? <>skeleton</> : null;
   },
 });
 const Reviews = dynamic(
@@ -26,7 +26,7 @@ const Reviews = dynamic(
   {
     ssr: false,
     loading(loadingProps) {
-      return loadingProps.isLoading ? <>loading</> : null;
+      return loadingProps.isLoading ? <>skeleton</> : null;
     },
   }
 );

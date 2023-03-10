@@ -10,10 +10,9 @@ export * from "./data/data";
 export * from "./data/data.type";
 
 export * from "./requests/banner";
-
 export * from "./requests/sales-leader";
-
 export * from "./requests/auth";
+export * from "./requests/search-furniture";
 
 export * from "./axios/axios";
 export * from "./axios/interceptors";

@@ -1,25 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import st from "./styles.module.scss";
 import cn from "classnames";
 import { Container } from "@/shared/ui/container/container";
-import Image from "next/image";
 
 import Link from "next/link";
 import { useScreen } from "@/shared/hooks";
 
 import { motion } from "framer-motion";
-import {
-  Divider,
-  HeaderBurger,
-  HeaderNavList,
-  HeaderSubNav,
-  IconButton,
-  Input,
-} from "@/shared/ui";
+import { HeaderBurger, HeaderNavList, HeaderSubNav } from "@/shared/ui";
 
-import { Logo, Search } from "@/shared/assets";
-import { headerLinks } from "@/shared/api/internal/";
+import { Logo } from "@/shared/assets";
 import { HeaderT } from "./header.type";
 
 import { useAppSelector } from "@/shared/lib";

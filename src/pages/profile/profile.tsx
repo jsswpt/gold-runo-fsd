@@ -5,6 +5,7 @@ import cn from "classnames";
 import { useAppSelector } from "@/shared/lib";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import { Loader } from "@/shared/ui";
 
 type Profile = {};
 
@@ -53,7 +54,9 @@ export const Profile = (props: Profile) => {
         <Head>
           <title>Загрузка | YORCOM</title>
         </Head>
-        <>loading...</>
+        <>
+          <Loader type="flying" />
+        </>
       </>
     );
   }

@@ -28,7 +28,7 @@ export const SignInByVk = (props: SignInByVk) => {
   }, []);
 
   if (isLoading) {
-    return <div>загрузка...</div>;
+    return <div>skeleton</div>;
   }
 
   if (error) {

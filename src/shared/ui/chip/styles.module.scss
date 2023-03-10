@@ -18,8 +18,9 @@
   color: var(--test-primary);
 
   &:not(:disabled):hover {
-    box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20)
-      rgba(0, 0, 0, 0.2);
+    filter: brightness(0.95);
+    // box-shadow: funcs.px-rem(5) funcs.px-rem(8) funcs.px-rem(20)
+    //   rgba(0, 0, 0, 0.2);
   }
 
   &:not(:disabled):active {
