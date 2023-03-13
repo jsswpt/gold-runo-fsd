@@ -9,14 +9,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 
 type SearchPopupLg = {
-  isOpened: boolean;
+  isOpen: boolean;
 };
 
 export const SearchPopupLg = (props: SearchPopupLg) => {
   const router = useRouter();
   return (
     <AnimatePresence mode="wait">
-      {props.isOpened && (
+      {props.isOpen && (
         <>
           <Container className={st.divider_container}>
             <motion.div

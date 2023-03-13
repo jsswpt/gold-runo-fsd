@@ -1,3 +1,9 @@
+export { Presenter360 } from "./presenter-360/presenter-360";
+
+export { Header } from "./header/header";
+
+export { SubHeader } from "./sub-header/sub-header";
+
 export { SearchPopupToggler } from "./search-popup-toggler/search-popup-toggler";
 
 export { QuarterScreenPopup } from "./quarter-screen-popup/quarter-screen-popup";
@@ -55,12 +61,6 @@ export { Footer } from "./footer/footer";
 export { AuthorizeCard } from "./authorize-card/authorize-card";
 
 export { Button } from "./button/button";
-
-export { HeaderSubNav } from "./header-sub-nav/header-sub-nav";
-
-export { HeaderBurger } from "./header-burger/header-burger";
-
-export { HeaderNavList } from "./header-nav-list/header-nav-list";
 
 export { IconButton } from "./button/icon-button";
 

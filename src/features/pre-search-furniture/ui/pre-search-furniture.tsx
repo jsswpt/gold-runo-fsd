@@ -7,6 +7,7 @@ import { useAppDispatch } from "@/shared/lib";
 import { Input, Button } from "@/shared/ui";
 import { usePreSearchFurniture } from "../model";
 import { Search } from "@/shared/assets";
+import { useScreen } from "@/shared/hooks";
 
 type PreSearchFurniture = {
   baseValue?: string;
@@ -16,6 +17,7 @@ export const PreSearchFurniture = (props: PreSearchFurniture) => {
   const { handleSubmit, setValue, value } = usePreSearchFurniture({
     baseValue: props.baseValue || null,
   });
+  const { currentScreen } = useScreen();
 
   return (
     <form onSubmit={handleSubmit}>
@@ -25,7 +27,8 @@ export const PreSearchFurniture = (props: PreSearchFurniture) => {
           value={value}
           onChange={(e) => setValue(e.currentTarget.value)}
           placeholder="Поиск по каталогу"
-          icon={<Search />}
+          icon={currentScreen !== "md" && <Search />}
+          className={st.input}
         />
         <Button
           type="submit"

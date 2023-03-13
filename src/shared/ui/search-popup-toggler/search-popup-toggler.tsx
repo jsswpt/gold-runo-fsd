@@ -29,9 +29,7 @@ export const SearchPopupToggler = (props: SearchPopupToggler) => {
 
   return (
     <>
-      {currentScreen === "xs" ||
-      currentScreen === "sm" ||
-      currentScreen === "md" ? (
+      {currentScreen === "xs" || currentScreen === "sm" ? (
         <IconButton onFocus={() => setIsFocused(true)}>
           <Search />
         </IconButton>
@@ -50,6 +48,7 @@ export const SearchPopupToggler = (props: SearchPopupToggler) => {
                 onFocus={() => setIsFocused(true)}
                 placeholder="Поиск по каталогу"
                 icon={<Search />}
+                className={st.input}
               />
             </motion.div>
           ) : (

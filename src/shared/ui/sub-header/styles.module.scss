@@ -1,0 +1,13 @@
+@use "../../modules/breakpoints.module";
+@use "../../modules/units.module";
+@use "../../modules/funcs.module";
+
+.sub_header {
+  z-index: 99;
+  position: fixed;
+  width: 100%;
+  top: units.$header-height-desktop;
+  height: units.$sub-header;
+
+  background: var(--surface);
+}

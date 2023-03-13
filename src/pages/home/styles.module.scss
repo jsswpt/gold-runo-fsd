@@ -4,7 +4,7 @@
 
 .section_banner {
   @include breakpoints.media-screen(breakpoints.$xl) {
-    transform: translateY(units.$header-bottom-block-desktop-minus);
+    transform: translateY(units.$sub-header-minus);
   }
 }
 
@@ -16,9 +16,7 @@
     min-height: calc(80vh - units.$header-height-tablet);
   }
   @include breakpoints.media-screen(breakpoints.$xl) {
-    min-height: calc(
-      80vh - units.$header-height-desktop + units.$header-bottom-block-desktop
-    );
+    min-height: calc(80vh - units.$header-height-desktop + units.$sub-header);
   }
 }
 

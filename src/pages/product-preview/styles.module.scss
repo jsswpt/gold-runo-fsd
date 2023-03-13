@@ -4,7 +4,7 @@
 
 .section_banner {
   @include breakpoints.media-screen(breakpoints.$xl) {
-    transform: translateY(units.$header-bottom-block-desktop-minus);
+    transform: translateY(units.$sub-header-minus);
   }
 }
 

@@ -39,6 +39,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           className={cn(
             st.input,
             "dark-selection",
+            "action-inner",
             {
               [st.sm]: size === "sm",
               [st.md]: size === "md" || !size,
@@ -48,7 +49,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 
               [st.outlined]: variant === "outlined" || !variant,
             },
-            "action-inner"
+            props.className
           )}
         />
       </div>
