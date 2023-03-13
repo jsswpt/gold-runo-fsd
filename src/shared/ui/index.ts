@@ -1,3 +1,5 @@
+export { PresenterSlide } from "./presenter-360/ui/presenter-slide/presenter-slide";
+
 export { Presenter360 } from "./presenter-360/presenter-360";
 
 export { Header } from "./header/header";

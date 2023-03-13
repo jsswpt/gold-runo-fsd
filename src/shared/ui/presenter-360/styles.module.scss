@@ -1,0 +1,38 @@
+.presenter_360 {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  scroll-behavior: auto;
+}
+
+.presenter_360_wrap__slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.presenter_slide {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  background: red;
+
+  & > * {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    user-select: none;
+    pointer-events: none;
+  }
+}
