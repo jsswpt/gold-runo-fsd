@@ -20,20 +20,30 @@ export const Presenter360 = (props: Presenter360) => {
 
   const [startX, setStartX] = useState(0);
 
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    setStartX(e.nativeEvent.offsetX);
+    setIsHolding(true);
+  };
+  const handleMouseUp = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsHolding(false);
+  };
+
   const handleMoving = (e: React.MouseEvent<HTMLDivElement>) => {
     if (isHolding) {
       if (startX > e.nativeEvent.offsetX) {
-        const space =
-          startX - e.nativeEvent.offsetX + currentSlide * neededSpace;
+        const space = startX - e.nativeEvent.offsetX;
 
-        const slides = +(space / neededSpace).toFixed();
-
-        setCurrentSlide(slides);
+        if (+Math.abs(space) >= neededSpace) {
+          console.log("otrabotsal vlevo");
+          setCurrentSlide((slides) => slides + 1);
+        }
       } else {
         const space = e.nativeEvent.offsetX - startX;
-        const slides = +(space / neededSpace).toFixed();
 
-        setCurrentSlide(maxSlides - slides);
+        if (+Math.abs(space) >= neededSpace) {
+          console.log("otrabotsal vpravo");
+          setCurrentSlide((slides) => slides - 1);
+        }
       }
     }
   };
@@ -52,23 +62,24 @@ export const Presenter360 = (props: Presenter360) => {
     } else if (currentSlide > maxSlides) {
       setCurrentSlide(0);
     }
+
     wrapperRef.current!.scrollTo({
       left: currentSlide * wrapperRef.current!.clientWidth,
     });
   }, [currentSlide]);
 
   return (
-    <>
-      <div>needed space: {neededSpace}</div>
-      <div>max: {maxSlides}</div>
-      <div>prev x: {startX}</div>
-      <div>current slide: {currentSlide}</div>
-      <div ref={wrapperRef} className={cn(st.presenter_360, props.className)}>
-        <div className={st.slider_saver}></div>
-        <div ref={sliderWrapRef} className={st.presenter_360_wrap__slides}>
-          {props.children}
-        </div>
+    <div
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      onMouseMove={handleMoving}
+      ref={wrapperRef}
+      className={cn(st.presenter_360, props.className)}
+    >
+      <div className={st.slider_saver}></div>
+      <div ref={sliderWrapRef} className={st.presenter_360_wrap__slides}>
+        {props.children}
       </div>
-    </>
+    </div>
   );
 };
